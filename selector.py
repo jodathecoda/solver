@@ -3893,6 +3893,124 @@ def slideValueSet():
         pressA7o(1), pressK6s(1)
     if procent > 41:
         pressA6o(1)
+    if procent > 42:
+        pressA5o(1)
+    if procent > 43:
+        pressA4o(1)
+    if procent > 44:
+        pressA3o(1)
+    if procent > 45:
+        pressA2o(1), press53s(1), press42s(1)
+    if procent > 46:
+        press32s(1), press43s(1)
+    if procent > 47:
+        pressK5s(1), pressQ7s(1), pressT7s(1)
+    if procent > 48:
+        pressJ7s(1), press85s(1), pressT8o(1)
+    if procent > 49:
+        pressJ8o(1), pressK8o(1)
+    if procent > 50:
+        pressK4s(1), press96s(1), pressQ6s(1)
+    if procent > 51:
+        pressK3s(1), pressQ5s(1)
+    if procent > 52:
+        pressK7o(1), pressQ8o(1)
+    if procent > 53:
+        press95s(1), pressK2s(1), pressJ6s(1)
+    if procent > 54:
+        pressJ5s(1), pressQ4s(1)
+    if procent > 55:
+        pressT6s(1), pressJ7o(1)
+    if procent > 56:
+        pressK6o(1)
+    if procent > 57:
+        pressQ3s(1), pressK5o(1)
+    if procent > 58:
+        pressQ7o(1)
+    if procent > 59:
+        pressQ2s(1), pressJ4s(1)
+    if procent > 60:
+        press63s(1), press52s(1), pressT7o(1)
+    if procent > 61:
+        pressK4o(1)
+    if procent > 62:
+        pressT5s(1), pressQ6o(1)
+    if procent > 63:
+        pressJ3s(1), pressT4s(1)
+    if procent > 64:
+        pressK3o(1)
+    if procent > 65:
+        pressJ2s(1), pressQ5o(1)
+    if procent > 66:
+        pressT3s(1), pressK2o(1)
+    if procent > 67:
+        press74s(1), pressT2s(1)
+    if procent > 68:
+        pressQ4o(1)
+    if procent > 69:
+        pressJ6o(1), press84s(1)
+    if procent > 70:
+        press94s(1), pressT6o(1)
+    if procent > 71:
+        press96o(1)
+    if procent > 72:
+        press93s(1), pressQ3o(1)
+    if procent > 73:
+        pressJ5o(1)
+    if procent > 74:
+        press92s(1), press73s(1)
+    if procent > 75:
+        pressQ2o(1)
+    if procent > 76:
+        pressJ4o(1)
+    if procent > 77:
+        press83s(1), press85o(1)
+    if procent > 78:
+        press82s(1), pressT5o(1)
+    if procent > 79:
+        press95o(1)
+    if procent > 80:
+        pressJ3o(1)
+    if procent > 81:
+        press62s(1), pressT4o(1)
+    if procent > 82:
+        pressJ2o(1)
+    if procent > 83:
+        press72s(1), pressT3o(1)
+    if procent > 84:
+        press74o(1)
+    if procent > 85:
+        press84o(1)
+    if procent > 86:
+        pressT2o(1)
+    if procent > 87:
+        press94o(1)
+    if procent > 88:
+        press53o(1)
+    if procent > 89:
+        press93o(1)
+    if procent > 90:
+        press63o(1)
+    if procent > 91:
+        press92o(1)
+    if procent > 92:
+        press73o(1)
+    if procent > 93:
+        press83o(1), press52o(1)
+    if procent > 94:
+        press43o(1)
+    if procent > 95:
+        press42o(1)
+    if procent > 96:
+        press82o(1)
+    if procent > 97:
+        press62o(1)
+    if procent > 98:
+        press32o(1)
+    if procent > 99:
+        press72o(1)
+
+    
 
 
 #Button
