@@ -647,6 +647,17 @@ def open_secondary_window():
 #Label
 #label = tk.Label(mywindow, text="Label Text")
 #label.grid(row=0,column=1)
+def ClearBoard():
+    pass
+
+def RandomFlop():
+    pass
+
+def RandomTurn():
+    pass
+
+def RandomRiver():
+    pass
 
 def buttonPress():
     print(selected_range)
@@ -4562,9 +4573,17 @@ button2d.grid(row=13,column=15,sticky = "NSEW")
 button2c = tk.Button(mywindow,text='2' + suit_club,command=press2c,bg=color_club, fg=color_club_selected)
 button2c.grid(row=13,column=16,sticky = "NSEW")
 
-#Button
+
+#Slider
+Slider = (tk.Scale(mywindow,variable=0,orient="horizontal", length=220))
+SliderButton = (tk.Button(mywindow,text='%',command=slideValueSet))
+Slider.grid(row=15,column=0, columnspan=12)
+SliderButton.grid(row=15,column=11)
+
+
+#Button Select Range/expand/
 buttonExpand = tk.Button(mywindow,text='=',command=buttonPress)
-buttonExpand.grid(row=15,column=15)
+buttonExpand.grid(row=15,column=12)
 
 '''
 #Textbox
@@ -4574,11 +4593,22 @@ textb.grid(row=3,column=0, sticky = tk.W+tk.E, columnspan=4)
 textbutton.grid(row=3,column=2)
 '''
 
-#Slider
-Slider = (tk.Scale(mywindow,variable=0,orient="horizontal", length=220))
-SliderButton = (tk.Button(mywindow,text='Set',command=slideValueSet))
-Slider.grid(row=15,column=0, columnspan=12)
-SliderButton.grid(row=15,column=13)
+
+#random flop
+buttonRandomFlop = tk.Button(mywindow,text='F',command=RandomFlop)
+buttonRandomFlop.grid(row=15,column=13)
+
+#random turn
+buttonRandomTurn = tk.Button(mywindow,text='T',command=RandomTurn)
+buttonRandomTurn.grid(row=15,column=14)
+
+#random river
+buttonRandomRiver = tk.Button(mywindow,text='R',command=RandomRiver)
+buttonRandomRiver.grid(row=15,column=15)
+
+#clear board
+buttonClearBoard = tk.Button(mywindow,text='C',command=ClearBoard)
+buttonClearBoard.grid(row=15,column=16)
 
 
 mywindow.mainloop()
