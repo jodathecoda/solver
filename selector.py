@@ -1,8 +1,9 @@
 import tkinter as tk
 
 import expander
-import slider_control
+import calculator
 import random
+import form
 
 mywindow = tk.Tk()
 mywindow.geometry("500x400")
@@ -920,7 +921,7 @@ def buttonPress():
     temporary_range_offsuit = []
     temporary_range_suit = []
     temporary_range_pp = []
-    open_secondary_window()
+    #open_secondary_window()
 
     #Suited
     for hand in selected_range:
@@ -955,6 +956,31 @@ def buttonPress():
     print(expanded_range)
     print("dead cards:")
     print(board_cards)
+    #card1 = form.format_card_for_calculating("ah")
+    #card2 = form.format_card_for_calculating("7d")
+    #random.choice(list)
+    random_hand = str(random.choice(expanded_range))
+    Bigcard1 = random_hand[:2]
+    Bigcard2 = random_hand[2:]
+    Lowcard1 = Bigcard1.lower()
+    Lowcard2 = Bigcard2.lower()
+    card1 = form.format_card_for_calculating(Lowcard1)
+    card2 = form.format_card_for_calculating(Lowcard2)
+
+    board_string = ""
+    for card in board_cards:
+        board_string += card
+    #print(board_string)
+    boardd = form.format_board_for_calculating(board_string.lower())
+
+    print(Lowcard1 + " " + Lowcard2)
+    print(board_string)
+
+    resultlist = []
+    resultlist = calculator.find_equx(card1, card2, boardd)
+    equx = round(float(resultlist[1]), 2)
+    print(resultlist)
+    print(str(equx))
     #popupwindow.mainloop()
 
 #pocket pairs handlers
