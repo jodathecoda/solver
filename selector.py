@@ -2,6 +2,7 @@ import tkinter as tk
 
 import expander
 import slider_control
+import random
 
 mywindow = tk.Tk()
 mywindow.geometry("500x400")
@@ -37,11 +38,6 @@ selected_range = []
 board_cards = []
 
 slideValue = 0
-
-def setRange(per):
-    print("setRange: " + str(per))
-    press22(1)
-
 
 #board cards functions A
 def pressAs():
@@ -647,6 +643,20 @@ def open_secondary_window():
 #Label
 #label = tk.Label(mywindow, text="Label Text")
 #label.grid(row=0,column=1)
+allBoard = ['As', 'Ah', 'Ad', 'Ac', 
+            'Ks', 'Kh', 'Kd', 'Kc',
+            'Qs', 'Qh', 'Qd', 'Qc', 
+            'Js', 'Jh', 'Jd', 'Jc', 
+            'Ts', 'Th', 'Td', 'Tc', 
+            '9s', '9h', '9d', '9c', 
+            '8s', '8h', '8d', '8c', 
+            '7s', '7h', '7d', '7c', 
+            '6s', '6h', '6d', '6c', 
+            '5s', '5h', '5d', '5c', 
+            '4s', '4h', '4d', '4c', 
+            '3s', '3h', '3d', '3c', 
+            '2s', '2h', '2d', '2c']
+
 def ClearBoard():
     #A
     if 'As' in board_cards:
@@ -765,16 +775,142 @@ def ClearBoard():
         press2d()
     if '2c' in board_cards:
         press2c()
-        
+
+def setBoardCards(random_range):
+    for hand in random_range:
+        #A
+        if 'As' in hand:
+            pressAs() 
+        if 'Ah' in hand:
+            pressAh() 
+        if 'Ad' in hand:
+            pressAd() 
+        if 'Ac' in hand:
+            pressAc()
+        #K
+        if 'Ks' in hand:
+            pressKs() 
+        if 'Kh' in hand:
+            pressKh() 
+        if 'Kd' in hand:
+            pressKd() 
+        if 'Kc' in hand:
+            pressKc()
+        #Q
+        if 'Qs' in hand:
+            pressQs() 
+        if 'Qh' in hand:
+            pressQh() 
+        if 'Qd' in hand:
+            pressQd() 
+        if 'Qc' in hand:
+            pressQc()
+        #J
+        if 'Js' in hand:
+            pressJs() 
+        if 'Jh' in hand:
+            pressJh() 
+        if 'Jd' in hand:
+            pressJd() 
+        if 'Jc' in hand:
+            pressJc()
+        #T
+        if 'Ts' in hand:
+            pressTs() 
+        if 'Th' in hand:
+            pressTh() 
+        if 'Td' in hand:
+            pressTd() 
+        if 'Tc' in hand:
+            pressTc()
+        #9
+        if '9s' in hand:
+            press9s() 
+        if '9h' in hand:
+            press9h() 
+        if '9d' in hand:
+            press9d() 
+        if '9c' in hand:
+            press9c()
+        #8
+        if '8s' in hand:
+            press8s() 
+        if '8h' in hand:
+            press8h() 
+        if '8d' in hand:
+            press8d() 
+        if '8c' in hand:
+            press8c()
+        #7
+        if '7s' in hand:
+            press7s() 
+        if '7h' in hand:
+            press7h() 
+        if '7d' in hand:
+            press7d() 
+        if '7c' in hand:
+            press7c()
+        #6
+        if '6s' in hand:
+            press6s() 
+        if '6h' in hand:
+            press6h() 
+        if '6d' in hand:
+            press6d() 
+        if '6c' in hand:
+            press6c()
+        #5
+        if '5s' in hand:
+            press5s() 
+        if '5h' in hand:
+            press5h() 
+        if '5d' in hand:
+            press5d() 
+        if '5c' in hand:
+            press5c()
+        #4
+        if '4s' in hand:
+            press4s() 
+        if '4h' in hand:
+            press4h() 
+        if '4d' in hand:
+            press4d() 
+        if '4c' in hand:
+            press4c()
+        #3
+        if '3s' in hand:
+            press3s() 
+        if '3h' in hand:
+            press3h() 
+        if '3d' in hand:
+            press3d() 
+        if '3c' in hand:
+            press3c()
+        #2
+        if '2s' in hand:
+            press2s() 
+        if '2h' in hand:
+            press2h() 
+        if '2d' in hand:
+            press2d() 
+        if '2c' in hand:
+            press2c()
+
 
 def RandomFlop():
-    pass
+    ClearBoard()
+    floprange = random.sample(allBoard, 3)
+    setBoardCards(floprange)
 
 def RandomTurn():
-    pass
+    ClearBoard()
+    turnrange = random.sample(allBoard, 4)
+    setBoardCards(turnrange)
 
 def RandomRiver():
-    pass
+    ClearBoard()
+    riverrange = random.sample(allBoard, 5)
+    setBoardCards(riverrange)
 
 def buttonPress():
     print(selected_range)
