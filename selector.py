@@ -943,11 +943,18 @@ def buttonPress():
             print("unknown hand")
             dumb = input("]")
 
+    for card in board_cards:
+        for hand in expanded_range:
+            if card in hand:
+                expanded_range.remove(hand)
+
     #PocketPairs
     fillrange = round(len(expanded_range)*100/1326,2)
     print("expanded range: " + str(len(expanded_range)) + "/1326   " + str(round(len(expanded_range)*100/1326,2)) + "%")
     Slider.set(round(fillrange))
     print(expanded_range)
+    print("dead cards:")
+    print(board_cards)
     #popupwindow.mainloop()
 
 #pocket pairs handlers
