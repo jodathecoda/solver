@@ -648,7 +648,124 @@ def open_secondary_window():
 #label = tk.Label(mywindow, text="Label Text")
 #label.grid(row=0,column=1)
 def ClearBoard():
-    pass
+    #A
+    if 'As' in board_cards:
+        pressAs()
+    if 'Ah' in board_cards:
+        pressAh()
+    if 'Ad' in board_cards:
+        pressAd()
+    if 'Ac' in board_cards:
+        pressAc()
+    #K
+    if 'Ks' in board_cards:
+        pressKs()
+    if 'Kh' in board_cards:
+        pressKh()
+    if 'Kd' in board_cards:
+        pressKd()
+    if 'Kc' in board_cards:
+        pressKc()
+    #Q
+    if 'Qs' in board_cards:
+        pressQs()
+    if 'Qh' in board_cards:
+        pressQh()
+    if 'Qd' in board_cards:
+        pressQd()
+    if 'Qc' in board_cards:
+        pressQc()
+    #J
+    if 'Js' in board_cards:
+        pressJs()
+    if 'Jh' in board_cards:
+        pressJh()
+    if 'Jd' in board_cards:
+        pressJd()
+    if 'Jc' in board_cards:
+        pressJc()
+    #T
+    if 'Ts' in board_cards:
+        pressTs()
+    if 'Th' in board_cards:
+        pressTh()
+    if 'Td' in board_cards:
+        pressTd()
+    if 'Tc' in board_cards:
+        pressTc()
+    #9
+    if '9s' in board_cards:
+        press9s()
+    if '9h' in board_cards:
+        press9h()
+    if '9d' in board_cards:
+        press9d()
+    if '9c' in board_cards:
+        press9c()
+    #8
+    if '8s' in board_cards:
+        press8s()
+    if '8h' in board_cards:
+        press8h()
+    if '8d' in board_cards:
+        press8d()
+    if '8c' in board_cards:
+        press8c()
+    #7
+    if '7s' in board_cards:
+        press7s()
+    if '7h' in board_cards:
+        press7h()
+    if '7d' in board_cards:
+        press7d()
+    if '7c' in board_cards:
+        press7c()
+    #6
+    if '6s' in board_cards:
+        press6s()
+    if '6h' in board_cards:
+        press6h()
+    if '6d' in board_cards:
+        press6d()
+    if '6c' in board_cards:
+        press6c()
+    #5
+    if '5s' in board_cards:
+        press5s()
+    if '5h' in board_cards:
+        press5h()
+    if '5d' in board_cards:
+        press5d()
+    if '5c' in board_cards:
+        press5c()
+    #4
+    if '4s' in board_cards:
+        press4s()
+    if '4h' in board_cards:
+        press4h()
+    if '4d' in board_cards:
+        press4d()
+    if '4c' in board_cards:
+        press4c()
+    #3
+    if '3s' in board_cards:
+        press3s()
+    if '3h' in board_cards:
+        press3h()
+    if '3d' in board_cards:
+        press3d()
+    if '3c' in board_cards:
+        press3c()
+    #2
+    if '2s' in board_cards:
+        press2s()
+    if '2h' in board_cards:
+        press2h()
+    if '2d' in board_cards:
+        press2d()
+    if '2c' in board_cards:
+        press2c()
+        
 
 def RandomFlop():
     pass
