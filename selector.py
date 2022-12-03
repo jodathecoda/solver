@@ -8,6 +8,17 @@ import form
 import matplotlib.pyplot as plt
 import numpy as np
 
+class PrintLogger(): # create file like object
+    def __init__(self, textbox): # pass reference to text widget
+        self.textbox = textbox # keep ref
+
+    def write(self, text):
+        self.textbox.insert(tk.END, text) # write text to textbox
+            # could also scroll to end of textbox here to make sure always visible
+
+    def flush(self): # needed for file like object
+        pass
+
 mywindow = tk.Tk()
 mywindow.geometry("500x400")
 
@@ -957,7 +968,7 @@ def buttonSolve():
         for hand in expanded_range:
             if card in hand:
                 expanded_range.remove(hand)
-                print("removed card: " + card)
+                #print("removed card: " + card)
     
 
     #PocketPairs
@@ -4923,9 +4934,5 @@ buttonRandomRiver.grid(row=15,column=15)
 #clear board
 buttonClearBoard = tk.Button(mywindow,text='C',command=ClearBoard)
 buttonClearBoard.grid(row=15,column=16)
-
-#label
-console = tk.Label(mywindow, text="")
-console.grid(row=16,column=0, columnspan=12)
 
 mywindow.mainloop()
