@@ -1014,6 +1014,8 @@ def buttonSolve():
         print("------------------------------")
 
     if showgraph.get():
+        plt.xlabel('Number of Hands in Range')
+        plt.ylabel('Range Equity')
         plt.plot(xpoints, -np.sort(-ypoints))
         plt.show()
     #popupwindow.mainloop()
