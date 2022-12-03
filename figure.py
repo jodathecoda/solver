@@ -8,17 +8,6 @@ import form
 import matplotlib.pyplot as plt
 import numpy as np
 
-class PrintLogger(): # create file like object
-    def __init__(self, textbox): # pass reference to text widget
-        self.textbox = textbox # keep ref
-
-    def write(self, text):
-        self.textbox.insert(tk.END, text) # write text to textbox
-            # could also scroll to end of textbox here to make sure always visible
-
-    def flush(self): # needed for file like object
-        pass
-
 mywindow = tk.Tk()
 mywindow.geometry("500x400")
 
@@ -982,9 +971,20 @@ def buttonSolve():
     xpoints = np.array([])
     counter = 1
 
+    class TextOngraph():
+        def __init__(self):
+            self.hand = "[][]"
+            self.xcoord = 0.0
+            self.ycoord = 0.0
+            self.equx = 0.0
+
+    txt = TextOngraph
+    txt_arr = []
+
     #random_hand = str(random.choice(expanded_range))
     for nexthand in expanded_range:
         str_hand = str(nexthand)
+        txt.hand = str_hand
         Bigcard1 = str_hand[:2]
         Bigcard2 = str_hand[2:]
         Lowcard1 = Bigcard1.lower()
@@ -1001,12 +1001,21 @@ def buttonSolve():
         resultlist = []
         resultlist = calculator.find_equx(card1, card2, boardd)
         equx = round(float(resultlist[1]), 5)*100
-        #ypoints.append(equx)
-        #xpoints.append(counter)
+        txt.equx = str(round(equx,3))
+
         old_ypoints = ypoints
         old_xpoints = xpoints
         ypoints = np.append(old_ypoints, equx)
         xpoints = np.append(old_xpoints, counter)
+        #print("ypoints: " + str(ypoints))
+        #print("xpoints: " + str(xpoints))
+        #dumb = input("]")
+        txt.ycoord = float(ypoints[counter-1])
+        txt.xcoord = float(xpoints[counter-1])
+        #print(str(txt.ycoord))
+        #print(str(txt.xcoord))
+        #dumb = input("]]]]")
+        txt_arr.append(txt)
         counter += 1
         #print(resultlist)
         print(Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
@@ -1014,11 +1023,31 @@ def buttonSolve():
         print("------------------------------")
 
     if showgraph.get():
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        text = ax.text(1, 1, 'Text')
+
+        def onclick(event):
+            print('%s click: button=%d, x=%d, y=%d, xdata=%f, ydata=%f' % ('double' if event.dblclick else 'single', event.button, event.x, event.y, event.xdata, event.ydata))
+           
+            text.set_text("card: " + str(round(event.xdata)) + " equity: " + str(round(event.ydata)))
+
+
+        def on_mouse_move(event):
+            if None not in (event.xdata, event.ydata):
+                text.set_position((event.xdata, event.ydata))
+                
+                fig.canvas.draw()
+
+        fig.canvas.mpl_connect('motion_notify_event', on_mouse_move)
+        fig.canvas.mpl_connect('button_press_event', onclick)
         plt.xlabel('Number of Hands in Range')
         plt.ylabel('Range Equity')
         plt.plot(xpoints, -np.sort(-ypoints))
         plt.show()
     #popupwindow.mainloop()
+
+
 
 #pocket pairs handlers
 
