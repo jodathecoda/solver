@@ -964,9 +964,9 @@ def buttonSolve():
     fillrange = round(len(expanded_range)*100/1326,2)
     print("expanded range: " + str(len(expanded_range)) + "/1326   " + str(round(len(expanded_range)*100/1326,2)) + "%")
     Slider.set(round(fillrange))
-    print(expanded_range)
-    print("dead cards:")
-    print(board_cards)
+    #print(expanded_range)
+    #print("dead cards:")
+    #print(board_cards)
     ypoints = np.array([])
     xpoints = np.array([])
     counter = 1
