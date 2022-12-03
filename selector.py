@@ -42,6 +42,7 @@ selected_range = []
 board_cards = []
 
 slideValue = 0
+showgraph = tk.IntVar()
 
 #board cards functions A
 def pressAs():
@@ -998,10 +999,12 @@ def buttonSolve():
         counter += 1
         #print(resultlist)
         print(Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
+        #console.config(text = Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
         print("------------------------------")
 
-    plt.plot(xpoints, -np.sort(-ypoints))
-    plt.show()
+    if showgraph.get():
+        plt.plot(xpoints, -np.sort(-ypoints))
+        plt.show()
     #popupwindow.mainloop()
 
 #pocket pairs handlers
@@ -4888,6 +4891,10 @@ Slider.grid(row=15,column=0, columnspan=12)
 SliderButton.grid(row=15,column=11)
 
 
+#checkbox for graph:
+buttonGraph = tk.Checkbutton(mywindow, text='',variable=showgraph, onvalue=1, offvalue=0)
+buttonGraph.grid(row=15,column=0)
+
 #Button Select Range/expand/
 buttonExpand = tk.Button(mywindow,text='=',command=buttonSolve)
 buttonExpand.grid(row=15,column=12)
@@ -4917,5 +4924,8 @@ buttonRandomRiver.grid(row=15,column=15)
 buttonClearBoard = tk.Button(mywindow,text='C',command=ClearBoard)
 buttonClearBoard.grid(row=15,column=16)
 
+#label
+console = tk.Label(mywindow, text="")
+console.grid(row=16,column=0, columnspan=12)
 
 mywindow.mainloop()
