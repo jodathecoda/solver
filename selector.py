@@ -914,9 +914,13 @@ def RandomRiver():
     setBoardCards(riverrange)
 
 def buttonSolve():
-    print(selected_range)
-    #print("Button Pressed!!")
-    #Slider.set(0)
+    #sanity check
+    if not len(selected_range):
+        return
+    if  len(board_cards) < 3 or len(board_cards) > 5:
+        return
+    #end of check
+
     expanded_range = []
     temporary_range_offsuit = []
     temporary_range_suit = []
@@ -944,10 +948,13 @@ def buttonSolve():
             print("unknown hand")
             dumb = input("]")
 
+    
     for card in board_cards:
         for hand in expanded_range:
             if card in hand:
                 expanded_range.remove(hand)
+                print("removed card: " + card)
+    
 
     #PocketPairs
     fillrange = round(len(expanded_range)*100/1326,2)
@@ -956,31 +963,29 @@ def buttonSolve():
     print(expanded_range)
     print("dead cards:")
     print(board_cards)
-    #card1 = form.format_card_for_calculating("ah")
-    #card2 = form.format_card_for_calculating("7d")
-    #random.choice(list)
-    random_hand = str(random.choice(expanded_range))
-    Bigcard1 = random_hand[:2]
-    Bigcard2 = random_hand[2:]
-    Lowcard1 = Bigcard1.lower()
-    Lowcard2 = Bigcard2.lower()
-    card1 = form.format_card_for_calculating(Lowcard1)
-    card2 = form.format_card_for_calculating(Lowcard2)
 
-    board_string = ""
-    for card in board_cards:
-        board_string += card
-    #print(board_string)
-    boardd = form.format_board_for_calculating(board_string.lower())
+    #random_hand = str(random.choice(expanded_range))
+    for nexthand in expanded_range:
+        str_hand = str(nexthand)
+        Bigcard1 = str_hand[:2]
+        Bigcard2 = str_hand[2:]
+        Lowcard1 = Bigcard1.lower()
+        Lowcard2 = Bigcard2.lower()
+        card1 = form.format_card_for_calculating(Lowcard1)
+        card2 = form.format_card_for_calculating(Lowcard2)
 
-    print(Lowcard1 + " " + Lowcard2)
-    print(board_string)
+        board_string = ""
+        for card in board_cards:
+            board_string += card
 
-    resultlist = []
-    resultlist = calculator.find_equx(card1, card2, boardd)
-    equx = round(float(resultlist[1]), 5)
-    print(resultlist)
-    print(str(equx))
+        boardd = form.format_board_for_calculating(board_string.lower())
+
+        resultlist = []
+        resultlist = calculator.find_equx(card1, card2, boardd)
+        equx = round(float(resultlist[1]), 5)
+        #print(resultlist)
+        print(Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(equx))
+        print("------------------------------")
     #popupwindow.mainloop()
 
 #pocket pairs handlers

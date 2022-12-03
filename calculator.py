@@ -375,5 +375,8 @@ def shuffle_deck(hole_cards, board):
     if board and len(board) > 0:
         burned_cards.extend(board)
     for dealt_card in burned_cards:
-        deck.remove(dealt_card)
+        try:
+            deck.remove(dealt_card)
+        except:
+            pass
     return tuple(deck)
