@@ -988,7 +988,7 @@ def buttonSolve():
 
         resultlist = []
         resultlist = calculator.find_equx(card1, card2, boardd)
-        equx = round(float(resultlist[1]), 5)
+        equx = round(float(resultlist[1]), 5)*100
         #ypoints.append(equx)
         #xpoints.append(counter)
         old_ypoints = ypoints
@@ -997,7 +997,7 @@ def buttonSolve():
         xpoints = np.append(old_xpoints, counter)
         counter += 1
         #print(resultlist)
-        print(Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(equx))
+        print(Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
         print("------------------------------")
 
     plt.plot(xpoints, -np.sort(-ypoints))
