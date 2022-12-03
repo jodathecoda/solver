@@ -968,7 +968,7 @@ def buttonSolve():
     print(board_cards)
     ypoints = np.array([])
     xpoints = np.array([])
-    counter = 0
+    counter = 1
 
     #random_hand = str(random.choice(expanded_range))
     for nexthand in expanded_range:
