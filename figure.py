@@ -977,12 +977,22 @@ def buttonSolve():
             self.xcoord = 0.0
             self.ycoord = 0.0
             self.equx = 0.0
+            
+    class PresentHand():
+        def __init__(self):
+            self.hand = "[][]"
+            self.xcoord = 0
+            self.equx = 0.0
 
-    txt = TextOngraph
+    ph = PresentHand
+    ph_arr = []
+
+    
     txt_arr = []
-
+    recordsarray = []
     #random_hand = str(random.choice(expanded_range))
     for nexthand in expanded_range:
+        txt = TextOngraph
         str_hand = str(nexthand)
         txt.hand = str_hand
         Bigcard1 = str_hand[:2]
@@ -1017,10 +1027,17 @@ def buttonSolve():
         #dumb = input("]]]]")
         txt_arr.append(txt)
         counter += 1
+        
         #print(resultlist)
+        newrecord = ""
+        newrecord = Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx))
         print(Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
+        print(newrecord)
+        recordsarray.append(newrecord)
         #console.config(text = Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
         print("------------------------------")
+        for tex in txt_arr:
+            print(txt.hand + " " + str(int(txt.xcoord)))
 
     if showgraph.get():
         fig = plt.figure()
@@ -1029,9 +1046,10 @@ def buttonSolve():
 
         def onclick(event):
             print('%s click: button=%d, x=%d, y=%d, xdata=%f, ydata=%f' % ('double' if event.dblclick else 'single', event.button, event.x, event.y, event.xdata, event.ydata))
-           
-            text.set_text("card: " + str(round(event.xdata)) + " equity: " + str(round(event.ydata)))
-
+            print("len recordsarray: " + str(len(recordsarray)))
+            print("str(int(event.xdata)): " + str(int(event.xdata)))
+            #text.set_text("card: " + str(round(event.xdata)) + " equity: " + str(round(event.ydata)))
+            text.set_text(recordsarray[int(event.xdata)])
 
         def on_mouse_move(event):
             if None not in (event.xdata, event.ydata):
