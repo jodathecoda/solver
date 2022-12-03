@@ -977,6 +977,7 @@ def buttonSolve():
             self.xcoord = 0.0
             self.ycoord = 0.0
             self.equx = 0.0
+            self.counterstrike = 0
             
     class PresentHand():
         def __init__(self):
@@ -987,7 +988,7 @@ def buttonSolve():
     ph = PresentHand
     ph_arr = []
 
-    
+   
     txt_arr = []
     recordsarray = []
     #random_hand = str(random.choice(expanded_range))
@@ -1022,10 +1023,12 @@ def buttonSolve():
         #dumb = input("]")
         txt.ycoord = float(ypoints[counter-1])
         txt.xcoord = float(xpoints[counter-1])
+        txt.counterstrike = counter
         #print(str(txt.ycoord))
         #print(str(txt.xcoord))
         #dumb = input("]]]]")
         txt_arr.append(txt)
+
         counter += 1
         
         #print(resultlist)
@@ -1036,8 +1039,6 @@ def buttonSolve():
         recordsarray.append(newrecord)
         #console.config(text = Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
         print("------------------------------")
-        for tex in txt_arr:
-            print(txt.hand + " " + str(int(txt.xcoord)))
 
     if showgraph.get():
         fig = plt.figure()
@@ -1046,10 +1047,21 @@ def buttonSolve():
 
         def onclick(event):
             print('%s click: button=%d, x=%d, y=%d, xdata=%f, ydata=%f' % ('double' if event.dblclick else 'single', event.button, event.x, event.y, event.xdata, event.ydata))
-            print("len recordsarray: " + str(len(recordsarray)))
-            print("str(int(event.xdata)): " + str(int(event.xdata)))
+
             #text.set_text("card: " + str(round(event.xdata)) + " equity: " + str(round(event.ydata)))
-            text.set_text(recordsarray[int(event.xdata)])
+            for tq in txt_arr:
+                #print(str(tq.counterstrike))
+                
+                print("len txt_arr: " + str(len(txt_arr)))
+                print("tq.counterstrike= " + str(tq.counterstrike))
+                print("int(event.xdata)= "+ str(int(event.xdata)))
+                if tq.counterstrike == int(event.xdata):
+                    text.set_text(tq.hand)
+                else:
+                    text.set_text("Click")
+                
+                    #text.set_text("OOOOOOO")
+            #text.set_text(recordsarray[int(event.xdata)])
 
         def on_mouse_move(event):
             if None not in (event.xdata, event.ydata):
@@ -1059,6 +1071,7 @@ def buttonSolve():
 
         fig.canvas.mpl_connect('motion_notify_event', on_mouse_move)
         fig.canvas.mpl_connect('button_press_event', onclick)
+        plt.title('Board: ' + board_string)
         plt.xlabel('Number of Hands in Range')
         plt.ylabel('Range Equity')
         plt.plot(xpoints, -np.sort(-ypoints))
