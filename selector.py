@@ -5,6 +5,9 @@ import calculator
 import random
 import form
 
+import matplotlib.pyplot as plt
+import numpy as np
+
 mywindow = tk.Tk()
 mywindow.geometry("500x400")
 
@@ -963,6 +966,9 @@ def buttonSolve():
     print(expanded_range)
     print("dead cards:")
     print(board_cards)
+    ypoints = np.array([])
+    xpoints = np.array([])
+    counter = 0
 
     #random_hand = str(random.choice(expanded_range))
     for nexthand in expanded_range:
@@ -983,9 +989,19 @@ def buttonSolve():
         resultlist = []
         resultlist = calculator.find_equx(card1, card2, boardd)
         equx = round(float(resultlist[1]), 5)
+        #ypoints.append(equx)
+        #xpoints.append(counter)
+        old_ypoints = ypoints
+        old_xpoints = xpoints
+        ypoints = np.append(old_ypoints, equx)
+        xpoints = np.append(old_xpoints, counter)
+        counter += 1
         #print(resultlist)
         print(Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(equx))
         print("------------------------------")
+
+    plt.plot(xpoints, -np.sort(-ypoints))
+    plt.show()
     #popupwindow.mainloop()
 
 #pocket pairs handlers
