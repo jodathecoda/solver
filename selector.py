@@ -913,7 +913,7 @@ def RandomRiver():
     riverrange = random.sample(allBoard, 5)
     setBoardCards(riverrange)
 
-def buttonPress():
+def buttonSolve():
     print(selected_range)
     #print("Button Pressed!!")
     #Slider.set(0)
@@ -978,7 +978,7 @@ def buttonPress():
 
     resultlist = []
     resultlist = calculator.find_equx(card1, card2, boardd)
-    equx = round(float(resultlist[1]), 2)
+    equx = round(float(resultlist[1]), 5)
     print(resultlist)
     print(str(equx))
     #popupwindow.mainloop()
@@ -4868,7 +4868,7 @@ SliderButton.grid(row=15,column=11)
 
 
 #Button Select Range/expand/
-buttonExpand = tk.Button(mywindow,text='=',command=buttonPress)
+buttonExpand = tk.Button(mywindow,text='=',command=buttonSolve)
 buttonExpand.grid(row=15,column=12)
 
 '''
