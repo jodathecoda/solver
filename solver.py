@@ -964,12 +964,37 @@ def buttonSolve():
     fillrange = round(len(expanded_range)*100/1326,2)
     print("expanded range: " + str(len(expanded_range)) + "/1326   " + str(round(len(expanded_range)*100/1326,2)) + "%")
     Slider.set(round(fillrange))
-    #print(expanded_range)
-    #print("dead cards:")
-    #print(board_cards)
+
     ypoints = np.array([])
     xpoints = np.array([])
     counter = 1
+
+    class Hande:
+        def __init__(self):
+            pohand = ""
+            contero = 0
+
+    class Hande:
+        def __init__(self, pohand):
+            self.pohand = pohand
+            self.contero = 0
+            self.print_name()
+
+        def print_name(self):
+            print("This object's name is {}.".format(self.pohand))
+
+    my_hands = {}
+    for i in range(1,1327):
+        pohand = 'obj_{}'.format(i)
+        my_hands[pohand] = my_hands.get(pohand, Hande(pohand = pohand))
+
+        
+
+
+    dumb = input("]")
+
+
+    
 
     #random_hand = str(random.choice(expanded_range))
     for nexthand in expanded_range:
@@ -990,8 +1015,6 @@ def buttonSolve():
         resultlist = []
         resultlist = calculator.find_equx(card1, card2, boardd)
         equx = round(float(resultlist[1]), 5)*100
-        #ypoints.append(equx)
-        #xpoints.append(counter)
         old_ypoints = ypoints
         old_xpoints = xpoints
         ypoints = np.append(old_ypoints, equx)
@@ -1015,7 +1038,7 @@ def buttonSolve():
         def on_mouse_move(event):
             if None not in (event.xdata, event.ydata):
                 text.set_position((event.xdata, event.ydata))
-                text.set_text('x=%d, y=%d, xdata=%f, ydata=%f' % (event.x, event.y, event.xdata, event.ydata) )
+                text.set_text('counter=%f, equx=%f' % (event.xdata, event.ydata) )
                 fig.canvas.draw()
 
         fig.canvas.mpl_connect('motion_notify_event', on_mouse_move)
