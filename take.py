@@ -44,6 +44,19 @@ board_cards = []
 slideValue = 0
 showgraph = tk.IntVar()
 
+class TextOngraph():
+    def __init__(self):
+        self.hand = "[][]"
+        self.equx = 0.0
+        self.id = 0
+
+    def print_data(self):
+        print(self.hand + " " + str(self.equx) + " " + str(self.id))
+            
+  
+txt_arr = []
+txt = TextOngraph
+
 #board cards functions A
 def pressAs():
     if 'As' in board_cards:
@@ -917,6 +930,8 @@ def RandomRiver():
     riverrange = random.sample(allBoard, 5)
     setBoardCards(riverrange)
 
+
+
 def buttonSolve():
     #sanity check
     if not len(selected_range):
@@ -964,34 +979,26 @@ def buttonSolve():
     fillrange = round(len(expanded_range)*100/1326,2)
     print("expanded range: " + str(len(expanded_range)) + "/1326   " + str(round(len(expanded_range)*100/1326,2)) + "%")
     Slider.set(round(fillrange))
-
+    #print(expanded_range)
+    #print("dead cards:")
+    #print(board_cards)
     ypoints = np.array([])
     xpoints = np.array([])
     counter = 1
 
-    class Hande:
-        def __init__(self):
-            self.pohand = "[][]"
-            self.x = -1
-            self.equx = - 1
-
-    handzArr = []
-    for i in range(0, 1236):
-        hendo  = Hande()
-        handzArr.append(hendo)
-          
-
+    
+    #recordsarray = []
     #random_hand = str(random.choice(expanded_range))
-    counter_hands_range = 0
     for nexthand in expanded_range:
+        #txt = TextOngraph
         str_hand = str(nexthand)
+        txt.hand = str_hand
         Bigcard1 = str_hand[:2]
         Bigcard2 = str_hand[2:]
         Lowcard1 = Bigcard1.lower()
         Lowcard2 = Bigcard2.lower()
         card1 = form.format_card_for_calculating(Lowcard1)
         card2 = form.format_card_for_calculating(Lowcard2)
-        handzArr[counter_hands_range].pohand = nexthand
 
         board_string = ""
         for card in board_cards:
@@ -1002,61 +1009,51 @@ def buttonSolve():
         resultlist = []
         resultlist = calculator.find_equx(card1, card2, boardd)
         equx = round(float(resultlist[1]), 5)*100
-        handzArr[counter_hands_range].equx = round(equx, 5)
-        handzArr[counter_hands_range].x = counter_hands_range
-        counter_hands_range += 1
+        txt.equx = round(equx,3)
+
         old_ypoints = ypoints
         old_xpoints = xpoints
         ypoints = np.append(old_ypoints, equx)
         xpoints = np.append(old_xpoints, counter)
+        txt.id = counter
+
         counter += 1
+        txt_arr.append(txt)
+        
         #print(resultlist)
-        #print(Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
+        newrecord = ""
+        newrecord = Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx))
+        print(Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
+        print(newrecord)
+
         #console.config(text = Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
-        #print("------------------------------")
-
-
-    sortedlist = sorted(handzArr, key=lambda x: x.equx, reverse=True)
-    thanewlist = []
-    for hh in sortedlist:
-        if hh.equx < 0:
-            pass
-        else:
-            thanewlist.append(hh)
-
-    newcounter = 0
-    for hh in thanewlist:
-        hh.x = newcounter
-            #print(hh.pohand + " x: " + str(hh.x) + " equx: " + str(hh.equx))
-        newcounter += 1
-
-    for hh in thanewlist:
-        print(hh.pohand + " x: " + str(hh.x) + " equx: " + str(hh.equx))
+        print("------------------------------")
+        
+    
 
 
     if showgraph.get():
+        print("tx_arr: ")
+        for ttt in txt_arr:
+            ttt.print_data()
+        '''
         fig = plt.figure()
         ax = fig.add_subplot(111)
         text = ax.text(1, 1, 'Text')
-        
+
         def onclick(event):
             print('%s click: button=%d, x=%d, y=%d, xdata=%f, ydata=%f' % ('double' if event.dblclick else 'single', event.button, event.x, event.y, event.xdata, event.ydata))
-            #text.set_text('x=%d, y=%d, xdata=%f, ydata=%f' % (event.x, event.y, event.xdata, event.ydata) )
-            #text.set_text("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
-            for hh in thanewlist:
-                if hh.x == round(event.xdata):
-                    text.set_text(hh.pohand + " " + str(hh.equx))
-        
+
+            #text.set_text("card: " + str(round(event.xdata)) + " equity: " + str(round(event.ydata)))
+                
+                    #text.set_text("OOOOOOO")
+            #text.set_text(recordsarray[int(event.xdata)])
+
         def on_mouse_move(event):
             if None not in (event.xdata, event.ydata):
                 text.set_position((event.xdata, event.ydata))
-                #text.set_text('event.xdata=%f, event.ydata=%f' % (event.xdata, event.ydata) )
-                for hh in thanewlist:
-                    if hh.x == round(event.xdata):
-                        text.set_text(hh.pohand + " " + str(hh.equx))
                 
                 fig.canvas.draw()
-                time.sleep(0.5)
 
         fig.canvas.mpl_connect('motion_notify_event', on_mouse_move)
         fig.canvas.mpl_connect('button_press_event', onclick)
@@ -1064,9 +1061,11 @@ def buttonSolve():
         plt.xlabel('Number of Hands in Range')
         plt.ylabel('Range Equity')
         plt.plot(xpoints, -np.sort(-ypoints))
-        plt.plot()
-        plt.show()
+        '''
+        #plt.show()
     #popupwindow.mainloop()
+
+
 
 #pocket pairs handlers
 
