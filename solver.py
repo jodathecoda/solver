@@ -4,6 +4,7 @@ import expander
 import calculator
 import random
 import form
+import time
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -20,6 +21,17 @@ color_offsuit_selected = '#8F8FBC'
 
 color_pp = '#CDCDB7'
 color_pp_selected = '#8B8B00'
+
+RED   = '\033[1;31m'
+BLUE  = '\033[1;34m'
+CYAN  = '\033[1;36m'
+GREEN = '\033[0;32m'
+RESET = '\033[0;0m'
+BOLD    = '\033[;1m'
+REVERSE = '\033[;7m'
+GREY = '\033[1;30m'
+YELLOW='\033[0;33m'
+RESET= '\033[0m'
 
 
 
@@ -1040,7 +1052,7 @@ def buttonSolve():
         text = ax.text(1, 1, 'Text')
         
         def onclick(event):
-            print('%s click: button=%d, x=%d, y=%d, xdata=%f, ydata=%f' % ('double' if event.dblclick else 'single', event.button, event.x, event.y, event.xdata, event.ydata))
+            #print('%s click: button=%d, x=%d, y=%d, xdata=%f, ydata=%f' % ('double' if event.dblclick else 'single', event.button, event.x, event.y, event.xdata, event.ydata))
             #text.set_text('x=%d, y=%d, xdata=%f, ydata=%f' % (event.x, event.y, event.xdata, event.ydata) )
             #text.set_text("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
             for hh in thanewlist:
@@ -1053,10 +1065,18 @@ def buttonSolve():
                 #text.set_text('event.xdata=%f, event.ydata=%f' % (event.xdata, event.ydata) )
                 for hh in thanewlist:
                     if hh.x == round(event.xdata):
+                        #displayhand = format__beauty_cards(hh.pohand)
                         text.set_text(hh.pohand + " " + str(hh.equx))
                 
                 fig.canvas.draw()
-                time.sleep(0.5)
+                time.sleep(0.1)
+
+        def format__beauty_cards(stringer):
+           stringer.replace("s", GREY + suit_spade + RESET)
+           stringer.replace("h", RED + suit_heart + RESET)
+           stringer.replace("d", BLUE + suit_spade + RESET)
+           stringer.replace("c", GREEN + suit_spade + RESET)
+           return stringer
 
         fig.canvas.mpl_connect('motion_notify_event', on_mouse_move)
         fig.canvas.mpl_connect('button_press_event', onclick)
