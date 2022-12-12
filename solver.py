@@ -56,6 +56,13 @@ board_cards = []
 slideValue = 0
 showgraph = tk.IntVar()
 
+var = tk.IntVar()
+var.set(1)
+
+def sel():
+   selection = "You selected the option " + str(var.get())
+   print(selection)
+
 #board cards functions A
 def pressAs():
     if 'As' in board_cards:
@@ -1022,10 +1029,6 @@ def buttonSolve():
         ypoints = np.append(old_ypoints, equx)
         xpoints = np.append(old_xpoints, counter)
         counter += 1
-        #print(resultlist)
-        #print(Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
-        #console.config(text = Lowcard1 + " " + Lowcard2 + " : " + board_string + " " + str(int(equx)))
-        #print("------------------------------")
 
 
     sortedlist = sorted(handzArr, key=lambda x: x.equx, reverse=True)
@@ -1039,7 +1042,6 @@ def buttonSolve():
     newcounter = 0
     for hh in thanewlist:
         hh.x = newcounter
-            #print(hh.pohand + " x: " + str(hh.x) + " equx: " + str(hh.equx))
         newcounter += 1
 
     for hh in thanewlist:
@@ -1054,7 +1056,6 @@ def buttonSolve():
         def onclick(event):
             #print('%s click: button=%d, x=%d, y=%d, xdata=%f, ydata=%f' % ('double' if event.dblclick else 'single', event.button, event.x, event.y, event.xdata, event.ydata))
             #text.set_text('x=%d, y=%d, xdata=%f, ydata=%f' % (event.x, event.y, event.xdata, event.ydata) )
-            #text.set_text("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
             for hh in thanewlist:
                 if hh.x == round(event.xdata):
                     text.set_text(hh.pohand + " " + str(hh.equx))
@@ -5004,5 +5005,15 @@ buttonRandomRiver.grid(row=15,column=15)
 #clear board
 buttonClearBoard = tk.Button(mywindow,text='C',command=ClearBoard)
 buttonClearBoard.grid(row=15,column=16)
+
+#Radio Button player OP Acts
+OP_Acts = tk.Radiobutton(mywindow, text = "A", variable = var, value = 1, command = sel)
+OP_Acts.grid(row=16,column=0, columnspan=2)
+
+OP_Bets = tk.Radiobutton(mywindow, text = "B", variable = var, value = 2, command = sel)
+OP_Bets.grid(row=16,column=2, columnspan=2)
+
+OP_Checks = tk.Radiobutton(mywindow, text = "C", variable = var, value = 3, command = sel)
+OP_Checks.grid(row=16,column=4, columnspan=2)
 
 mywindow.mainloop()
