@@ -1056,8 +1056,14 @@ def buttonSolve():
         hh.x = newcounter
         newcounter += 1
 
-    #for hh in thanewlist:
-        #print(hh.pohand + " x: " + str(hh.x) + " equx: " + str(hh.equx))
+    if var.get() == 1:
+        print("Player OP Acts")
+    elif var.get() == 2:
+        print("Player OP Bets, Player IP acts")
+    elif var.get() == 3:
+        print("Player OP Checks, Player IP acts")
+    else:
+        print("unknown situation")
 
 
     if showgraph.get():
@@ -1100,6 +1106,7 @@ def buttonSolve():
         plt.plot()
         plt.show()
     #popupwindow.mainloop()
+    
 
 #pocket pairs handlers
 
