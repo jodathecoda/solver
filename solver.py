@@ -51,6 +51,39 @@ suit_spade = '\u2660'
 selected_range = []
 board_cards = []
 
+global a_bet_fold
+global a_check_fold
+global a_check_raise
+global a_check_call
+global a_bet_call
+
+global b_fold
+global b_raise
+global b_call
+
+global c_bet_fold
+global c_check
+global c_bet_call
+
+#Player OP ranges var = 1   A:
+a_bet_fold     = []       # 0-a; d-e
+a_check_fold   = []       # a-b
+a_check_raise  = []       # b-c; f-1
+a_check_call   = []       # c-d
+a_bet_call     = []       # e-f
+
+#Player IP ranges var = 2   B:
+b_fold         = []       # 0-k
+b_raise        = []       # k-m; n-1
+b_call         = []       # m-n
+
+
+#Player IP ranges var = 3   C:
+c_bet_fold     = []      # 0-g; h-j
+c_check        = []      # g-h
+c_bet_call     = []      # g-1
+
+
 slideValue = 0
 showgraph = tk.IntVar()
 
@@ -70,6 +103,38 @@ j = 79.0
 k = 50.0
 m = 52.6
 n = 89.5
+
+def clear_players_ranges():
+    global a_bet_fold
+    global a_check_fold
+    global a_check_raise
+    global a_check_call
+    global a_bet_call
+
+    global b_fold
+    global b_raise
+    global b_call
+
+    global c_bet_fold
+    global c_check
+    global c_bet_call
+    #Player OP ranges var = 1   A:
+    a_bet_fold     = []       # 0-a; d-e
+    a_check_fold   = []       # a-b
+    a_check_raise  = []       # b-c; f-1
+    a_check_call   = []       # c-d
+    a_bet_call     = []       # e-f
+
+    #Player IP ranges var = 2   B:
+    b_fold         = []       # 0-k
+    b_raise        = []       # k-m; n-1
+    b_call         = []       # m-n
+
+
+    #Player IP ranges var = 3   C:
+    c_bet_fold     = []      # 0-g; h-j
+    c_check        = []      # g-h
+    c_bet_call     = []      # g-1
 
 def sel():
    selection = "You selected the option " + str(var.get())
@@ -949,6 +1014,21 @@ def RandomRiver():
     setBoardCards(riverrange)
 
 def buttonSolve():
+
+    global a_bet_fold
+    global a_check_fold
+    global a_check_raise
+    global a_check_call
+    global a_bet_call
+
+    global b_fold
+    global b_raise
+    global b_call
+
+    global c_bet_fold
+    global c_check
+    global c_bet_call
+
     #sanity check
     if not len(selected_range):
         return
@@ -1057,10 +1137,44 @@ def buttonSolve():
         newcounter += 1
 
     if var.get() == 1:
+        #A
         print("Player OP Acts")
+        for hh in thanewlist:
+            if hh.equx < a:
+                a_bet_fold.append(hh)
+            elif hh.equx < b:
+                a_check_fold.append(hh)
+            elif hh.equx < c:
+                a_check_raise.append(hh)
+            elif hh.equx < d:
+                a_check_call.append(hh)
+            elif hh.equx < e:
+                a_bet_fold.append(hh)
+            elif hh.equx < f:
+                a_bet_call.append(hh)
+            else:
+                a_check_raise.append(hh)
+        print("bet-fold:")
+        for hh in a_bet_fold:
+            print(hh.pohand + " " + str(hh.equx) + " " + board_string)
+        print("a_check_fold:")
+        for hh in a_check_fold:
+            print(hh.pohand + " " + str(hh.equx) + " " + board_string)
+        print("a_check_raise:")
+        for hh in a_check_raise:
+            print(hh.pohand + " " + str(hh.equx) + " " + board_string)
+        print("a_check_call:")
+        for hh in a_check_call:
+            print(hh.pohand + " " + str(hh.equx) + " " + board_string)
+        print("a_bet_call:")
+        for hh in a_bet_call:
+            print(hh.pohand + " " + str(hh.equx) + " " + board_string)
+
     elif var.get() == 2:
+        #B
         print("Player OP Bets, Player IP acts")
     elif var.get() == 3:
+        #C
         print("Player OP Checks, Player IP acts")
     else:
         print("unknown situation")
