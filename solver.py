@@ -1230,6 +1230,61 @@ def buttonSolve():
     #Clear Colors to color the solved matrix global solved = 1
     #row1
     buttonAA.config(bg = '#BDBDB7')
+    temporary_range_pp = expander.expandPP('AA')
+    print("temporary_range_pp")
+    print(temporary_range_pp)
+    print("hand: " + hand)
+
+
+
+    if var.get()  == 1:
+
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    
+    
+        #print("prio for AA: " + str(prio))
+        #dumb = input("]")
+    if prio == 5:
+        buttonAA.config(bg = 'red')
+    elif prio == 4:
+        buttonAA.config(bg = 'orange')
+    elif prio == 3:
+        buttonAA.config(bg = 'green')
+    elif prio == 2:
+        buttonAA.config(bg = 'lightblue')
+    elif prio == 1:
+        buttonAA.config(bg = 'blue')
+    else:
+        pass
+    
+
+
     buttonAKs.config(bg = '#BDBDB7')
     buttonAQs.config(bg = '#BDBDB7')
     buttonAJs.config(bg = '#BDBDB7')
