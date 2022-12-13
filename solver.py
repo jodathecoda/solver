@@ -33,8 +33,6 @@ GREY = '\033[1;30m'
 YELLOW='\033[0;33m'
 RESET= '\033[0m'
 
-
-
 color_spade = 'grey'
 color_heart = 'orange'
 color_diamond = 'lightblue'
@@ -59,232 +57,246 @@ showgraph = tk.IntVar()
 var = tk.IntVar()
 var.set(1)
 
+#solved game coefficients:
+a = 5.9
+b = 51.1
+c = 52.6
+d = 82.1
+e = 85.0
+f = 93.9
+g = 14.0
+h = 71.9
+j = 79.0
+k = 50.0
+m = 52.6
+n = 89.5
+
 def sel():
    selection = "You selected the option " + str(var.get())
-   print(selection)
+   #print(selection)
 
 #board cards functions A
 def pressAs():
     if 'As' in board_cards:
-        print('As=0')
+        #print('As=0')
         board_cards.remove('As')
         buttonAs.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('As=1')
+            #print('As=1')
             board_cards.append('As')
             buttonAs.config(bg=color_spade_selected, fg=color_spade)
 
 def pressAh():
     if 'Ah' in board_cards:
-        print('Ah=0')
+        #print('Ah=0')
         board_cards.remove('Ah')
         buttonAh.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('Ah=1')
+            #print('Ah=1')
             board_cards.append('Ah')
             buttonAh.config(bg=color_heart_selected, fg=color_heart)
 
 def pressAd():
     if 'Ad' in board_cards:
-        print('Ad=0')
+        #print('Ad=0')
         board_cards.remove('Ad')
         buttonAd.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('Ad=1')
+            #print('Ad=1')
             board_cards.append('Ad')
             buttonAd.config(bg=color_diamond_selected, fg=color_diamond)
 
 def pressAc():
     if 'Ac' in board_cards:
-        print('Ac=0')
+        #print('Ac=0')
         board_cards.remove('Ac')
         buttonAc.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('Ac=1')
+            #print('Ac=1')
             board_cards.append('Ac')
             buttonAc.config(bg=color_club_selected, fg=color_club)
 
 #board cards functions K
 def pressKs():
     if 'Ks' in board_cards:
-        print('Ks=0')
+        #print('Ks=0')
         board_cards.remove('Ks')
         buttonKs.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('Ks=1')
+            #print('Ks=1')
             board_cards.append('Ks')
             buttonKs.config(bg=color_spade_selected, fg=color_spade)
 
 def pressKh():
     if 'Kh' in board_cards:
-        print('Kh=0')
+        #print('Kh=0')
         board_cards.remove('Kh')
         buttonKh.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('Kh=1')
+            #print('Kh=1')
             board_cards.append('Kh')
             buttonKh.config(bg=color_heart_selected, fg=color_heart)
 
 def pressKd():
     if 'Kd' in board_cards:
-        print('Kd=0')
+        #print('Kd=0')
         board_cards.remove('Kd')
         buttonKd.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('Kd=1')
+            #print('Kd=1')
             board_cards.append('Kd')
             buttonKd.config(bg=color_diamond_selected, fg=color_diamond)
 
 def pressKc():
     if 'Kc' in board_cards:
-        print('Kc=0')
+        #print('Kc=0')
         board_cards.remove('Kc')
         buttonKc.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('Kc=1')
+            #print('Kc=1')
             board_cards.append('Kc')
             buttonKc.config(bg=color_club_selected, fg=color_club)
 
 #board cards functions Q
 def pressQs():
     if 'Qs' in board_cards:
-        print('Qs=0')
+        #print('Qs=0')
         board_cards.remove('Qs')
         buttonQs.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('Qs=1')
+            #print('Qs=1')
             board_cards.append('Qs')
             buttonQs.config(bg=color_spade_selected, fg=color_spade)
 
 def pressQh():
     if 'Qh' in board_cards:
-        print('Qh=0')
+        #print('Qh=0')
         board_cards.remove('Qh')
         buttonQh.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('Qh=1')
+            #print('Qh=1')
             board_cards.append('Qh')
             buttonQh.config(bg=color_heart_selected, fg=color_heart)
 
 def pressQd():
     if 'Qd' in board_cards:
-        print('Qd=0')
+        #print('Qd=0')
         board_cards.remove('Qd')
         buttonQd.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('Qd=1')
+            #print('Qd=1')
             board_cards.append('Qd')
             buttonQd.config(bg=color_diamond_selected, fg=color_diamond)
 
 def pressQc():
     if 'Qc' in board_cards:
-        print('Qc=0')
+        #print('Qc=0')
         board_cards.remove('Qc')
         buttonQc.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('Qc=1')
+            #print('Qc=1')
             board_cards.append('Qc')
             buttonQc.config(bg=color_club_selected, fg=color_club)
 
 #board cards functions J
 def pressJs():
     if 'Js' in board_cards:
-        print('Js=0')
+        #print('Js=0')
         board_cards.remove('Js')
         buttonJs.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('Js=1')
+            #print('Js=1')
             board_cards.append('Js')
             buttonJs.config(bg=color_spade_selected, fg=color_spade)
 
 def pressJh():
     if 'Jh' in board_cards:
-        print('Jh=0')
+        #print('Jh=0')
         board_cards.remove('Jh')
         buttonJh.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('Jh=1')
+            #print('Jh=1')
             board_cards.append('Jh')
             buttonJh.config(bg=color_heart_selected, fg=color_heart)
 
 def pressJd():
     if 'Jd' in board_cards:
-        print('Jd=0')
+        #print('Jd=0')
         board_cards.remove('Jd')
         buttonJd.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('Jd=1')
+            #print('Jd=1')
             board_cards.append('Jd')
             buttonJd.config(bg=color_diamond_selected, fg=color_diamond)
 
 def pressJc():
     if 'Jc' in board_cards:
-        print('Jc=0')
+        #print('Jc=0')
         board_cards.remove('Jc')
         buttonJc.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('Jc=1')
+            #print('Jc=1')
             board_cards.append('Jc')
             buttonJc.config(bg=color_club_selected, fg=color_club)
 
 #board cards functions T
 def pressTs():
     if 'Ts' in board_cards:
-        print('Ts=0')
+        #print('Ts=0')
         board_cards.remove('Ts')
         buttonTs.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('Ts=1')
+            #print('Ts=1')
             board_cards.append('Ts')
             buttonTs.config(bg=color_spade_selected, fg=color_spade)
 
 def pressTh():
     if 'Th' in board_cards:
-        print('Th=0')
+        #print('Th=0')
         board_cards.remove('Th')
         buttonTh.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('Th=1')
+            #print('Th=1')
             board_cards.append('Th')
             buttonTh.config(bg=color_heart_selected, fg=color_heart)
 
 def pressTd():
     if 'Td' in board_cards:
-        print('Td=0')
+        #print('Td=0')
         board_cards.remove('Td')
         buttonTd.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('Td=1')
+            #print('Td=1')
             board_cards.append('Td')
             buttonTd.config(bg=color_diamond_selected, fg=color_diamond)
 
 def pressTc():
     if 'Tc' in board_cards:
-        print('Tc=0')
+        #print('Tc=0')
         board_cards.remove('Tc')
         buttonTc.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('Tc=1')
+            #print('Tc=1')
             board_cards.append('Tc')
             buttonTc.config(bg=color_club_selected, fg=color_club)
 
@@ -292,360 +304,360 @@ def pressTc():
 #board cards functions 9
 def press9s():
     if '9s' in board_cards:
-        print('9s=0')
+        #print('9s=0')
         board_cards.remove('9s')
         button9s.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('9s=1')
+            #print('9s=1')
             board_cards.append('9s')
             button9s.config(bg=color_spade_selected, fg=color_spade)
 
 def press9h():
     if '9h' in board_cards:
-        print('9h=0')
+        #print('9h=0')
         board_cards.remove('9h')
         button9h.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('9h=1')
+            #print('9h=1')
             board_cards.append('9h')
             button9h.config(bg=color_heart_selected, fg=color_heart)
 
 def press9d():
     if '9d' in board_cards:
-        print('9d=0')
+        #print('9d=0')
         board_cards.remove('9d')
         button9d.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('9d=1')
+            #print('9d=1')
             board_cards.append('9d')
             button9d.config(bg=color_diamond_selected, fg=color_diamond)
 
 def press9c():
     if '9c' in board_cards:
-        print('9c=0')
+        #print('9c=0')
         board_cards.remove('9c')
         button9c.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('9c=1')
+            #print('9c=1')
             board_cards.append('9c')
             button9c.config(bg=color_club_selected, fg=color_club)
 
 #board cards functions 8
 def press8s():
     if '8s' in board_cards:
-        print('8s=0')
+        #print('8s=0')
         board_cards.remove('8s')
         button8s.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('8s=1')
+            #print('8s=1')
             board_cards.append('8s')
             button8s.config(bg=color_spade_selected, fg=color_spade)
 
 def press8h():
     if '8h' in board_cards:
-        print('8h=0')
+        #print('8h=0')
         board_cards.remove('8h')
         button8h.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('8h=1')
+            #print('8h=1')
             board_cards.append('8h')
             button8h.config(bg=color_heart_selected, fg=color_heart)
 
 def press8d():
     if '8d' in board_cards:
-        print('8d=0')
+        #print('8d=0')
         board_cards.remove('8d')
         button8d.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('8d=1')
+            #print('8d=1')
             board_cards.append('8d')
             button8d.config(bg=color_diamond_selected, fg=color_diamond)
 
 def press8c():
     if '8c' in board_cards:
-        print('8c=0')
+        #print('8c=0')
         board_cards.remove('8c')
         button8c.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('8c=1')
+            #print('8c=1')
             board_cards.append('8c')
             button8c.config(bg=color_club_selected, fg=color_club)
 
 #board cards functions 7
 def press7s():
     if '7s' in board_cards:
-        print('7s=0')
+        #print('7s=0')
         board_cards.remove('7s')
         button7s.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('7s=1')
+            #print('7s=1')
             board_cards.append('7s')
             button7s.config(bg=color_spade_selected, fg=color_spade)
 
 def press7h():
     if '7h' in board_cards:
-        print('7h=0')
+        #print('7h=0')
         board_cards.remove('7h')
         button7h.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('7h=1')
+            #print('7h=1')
             board_cards.append('7h')
             button7h.config(bg=color_heart_selected, fg=color_heart)
 
 def press7d():
     if '7d' in board_cards:
-        print('7d=0')
+        #print('7d=0')
         board_cards.remove('7d')
         button7d.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('7d=1')
+            #print('7d=1')
             board_cards.append('7d')
             button7d.config(bg=color_diamond_selected, fg=color_diamond)
 
 def press7c():
     if '7c' in board_cards:
-        print('7c=0')
+        #print('7c=0')
         board_cards.remove('7c')
         button7c.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('7c=1')
+            #print('7c=1')
             board_cards.append('7c')
             button7c.config(bg=color_club_selected, fg=color_club)
 
 #board cards functions 6
 def press6s():
     if '6s' in board_cards:
-        print('6s=0')
+        #print('6s=0')
         board_cards.remove('6s')
         button6s.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('6s=1')
+            #print('6s=1')
             board_cards.append('6s')
             button6s.config(bg=color_spade_selected, fg=color_spade)
 
 def press6h():
     if '6h' in board_cards:
-        print('6h=0')
+        #print('6h=0')
         board_cards.remove('6h')
         button6h.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('6h=1')
+            #print('6h=1')
             board_cards.append('6h')
             button6h.config(bg=color_heart_selected, fg=color_heart)
 
 def press6d():
     if '6d' in board_cards:
-        print('6d=0')
+        #print('6d=0')
         board_cards.remove('6d')
         button6d.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('6d=1')
+            #print('6d=1')
             board_cards.append('6d')
             button6d.config(bg=color_diamond_selected, fg=color_diamond)
 
 def press6c():
     if '6c' in board_cards:
-        print('6c=0')
+        #print('6c=0')
         board_cards.remove('6c')
         button6c.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('6c=1')
+            #print('6c=1')
             board_cards.append('6c')
             button6c.config(bg=color_club_selected, fg=color_club)
 
 #board cards functions 5
 def press5s():
     if '5s' in board_cards:
-        print('5s=0')
+        #print('5s=0')
         board_cards.remove('5s')
         button5s.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('5s=1')
+            #print('5s=1')
             board_cards.append('5s')
             button5s.config(bg=color_spade_selected, fg=color_spade)
 
 def press5h():
     if '5h' in board_cards:
-        print('5h=0')
+        #print('5h=0')
         board_cards.remove('5h')
         button5h.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('5h=1')
+            #print('5h=1')
             board_cards.append('5h')
             button5h.config(bg=color_heart_selected, fg=color_heart)
 
 def press5d():
     if '5d' in board_cards:
-        print('5d=0')
+        #print('5d=0')
         board_cards.remove('5d')
         button5d.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('5d=1')
+            #print('5d=1')
             board_cards.append('5d')
             button5d.config(bg=color_diamond_selected, fg=color_diamond)
             
 def press5c():
     if '5c' in board_cards:
-        print('5c=0')
+        #print('5c=0')
         board_cards.remove('5c')
         button5c.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('5c=1')
+            #print('5c=1')
             board_cards.append('5c')
             button5c.config(bg=color_club_selected, fg=color_club)
 
 #board cards functions 4
 def press4s():
     if '4s' in board_cards:
-        print('4s=0')
+        #print('4s=0')
         board_cards.remove('4s')
         button4s.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('4s=1')
+            #print('4s=1')
             board_cards.append('4s')
             button4s.config(bg=color_spade_selected, fg=color_spade)
 
 def press4h():
     if '4h' in board_cards:
-        print('4h=0')
+        #print('4h=0')
         board_cards.remove('4h')
         button4h.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('4h=1')
+            #print('4h=1')
             board_cards.append('4h')
             button4h.config(bg=color_heart_selected, fg=color_heart)
 
 def press4d():
     if '4d' in board_cards:
-        print('4d=0')
+        #print('4d=0')
         board_cards.remove('4d')
         button4d.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('4d=1')
+            #print('4d=1')
             board_cards.append('4d')
             button4d.config(bg=color_diamond_selected, fg=color_diamond)
             
 def press4c():
     if '4c' in board_cards:
-        print('4c=0')
+        #print('4c=0')
         board_cards.remove('4c')
         button4c.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('4c=1')
+            #print('4c=1')
             board_cards.append('4c')
             button4c.config(bg=color_club_selected, fg=color_club)
 
 #board cards functions 3
 def press3s():
     if '3s' in board_cards:
-        print('3s=0')
+        #print('3s=0')
         board_cards.remove('3s')
         button3s.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('3s=1')
+            #print('3s=1')
             board_cards.append('3s')
             button3s.config(bg=color_spade_selected, fg=color_spade)
 
 def press3h():
     if '3h' in board_cards:
-        print('3h=0')
+        #print('3h=0')
         board_cards.remove('3h')
         button3h.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('3h=1')
+            #print('3h=1')
             board_cards.append('3h')
             button3h.config(bg=color_heart_selected, fg=color_heart)
 
 def press3d():
     if '3d' in board_cards:
-        print('3d=0')
+        #print('3d=0')
         board_cards.remove('3d')
         button3d.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('3d=1')
+            #print('3d=1')
             board_cards.append('3d')
             button3d.config(bg=color_diamond_selected, fg=color_diamond)
             
 def press3c():
     if '3c' in board_cards:
-        print('3c=0')
+        #print('3c=0')
         board_cards.remove('3c')
         button3c.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('3c=1')
+            #print('3c=1')
             board_cards.append('3c')
             button3c.config(bg=color_club_selected, fg=color_club)
 
 #board cards functions 2
 def press2s():
     if '2s' in board_cards:
-        print('2s=0')
+        #print('2s=0')
         board_cards.remove('2s')
         button2s.config(bg=color_spade, fg=color_spade_selected)
     else:
         if len(board_cards) < 5:
-            print('2s=1')
+            #print('2s=1')
             board_cards.append('2s')
             button2s.config(bg=color_spade_selected, fg=color_spade)
 
 def press2h():
     if '2h' in board_cards:
-        print('2h=0')
+        #print('2h=0')
         board_cards.remove('2h')
         button2h.config(bg=color_heart, fg=color_heart_selected)
     else:
         if len(board_cards) < 5:
-            print('2h=1')
+            #print('2h=1')
             board_cards.append('2h')
             button2h.config(bg=color_heart_selected, fg=color_heart)
 
 def press2d():
     if '2d' in board_cards:
-        print('2d=0')
+        #print('2d=0')
         board_cards.remove('2d')
         button2d.config(bg=color_diamond, fg=color_diamond_selected)
     else:
         if len(board_cards) < 5:
-            print('2d=1')
+            #print('2d=1')
             board_cards.append('2d')
             button2d.config(bg=color_diamond_selected, fg=color_diamond)
             
 def press2c():
     if '2c' in board_cards:
-        print('2c=0')
+        #print('2c=0')
         board_cards.remove('2c')
         button2c.config(bg=color_club, fg=color_club_selected)
     else:
         if len(board_cards) < 5:
-            print('2c=1')
+            #print('2c=1')
             board_cards.append('2c')
             button2c.config(bg=color_club_selected, fg=color_club)
 
@@ -968,7 +980,7 @@ def buttonSolve():
                 if hand not in expanded_range:
                     expanded_range.append(hand)
         else:
-            print("unknown hand")
+            #print("unknown hand")
             dumb = input("]")
 
     
@@ -976,12 +988,12 @@ def buttonSolve():
         for hand in expanded_range:
             if card in hand:
                 expanded_range.remove(hand)
-                #print("removed card: " + card)
+                ##print("removed card: " + card)
     
 
     #PocketPairs
     fillrange = round(len(expanded_range)*100/1326,2)
-    print("expanded range: " + str(len(expanded_range)) + "/1326   " + str(round(len(expanded_range)*100/1326,2)) + "%")
+    #print("expanded range: " + str(len(expanded_range)) + "/1326   " + str(round(len(expanded_range)*100/1326,2)) + "%")
     Slider.set(round(fillrange))
 
     ypoints = np.array([])
@@ -1044,8 +1056,8 @@ def buttonSolve():
         hh.x = newcounter
         newcounter += 1
 
-    for hh in thanewlist:
-        print(hh.pohand + " x: " + str(hh.x) + " equx: " + str(hh.equx))
+    #for hh in thanewlist:
+        #print(hh.pohand + " x: " + str(hh.x) + " equx: " + str(hh.equx))
 
 
     if showgraph.get():
@@ -1054,7 +1066,7 @@ def buttonSolve():
         text = ax.text(1, 1, 'Text')
         
         def onclick(event):
-            #print('%s click: button=%d, x=%d, y=%d, xdata=%f, ydata=%f' % ('double' if event.dblclick else 'single', event.button, event.x, event.y, event.xdata, event.ydata))
+            ##print('%s click: button=%d, x=%d, y=%d, xdata=%f, ydata=%f' % ('double' if event.dblclick else 'single', event.button, event.x, event.y, event.xdata, event.ydata))
             #text.set_text('x=%d, y=%d, xdata=%f, ydata=%f' % (event.x, event.y, event.xdata, event.ydata) )
             for hh in thanewlist:
                 if hh.x == round(event.xdata):
@@ -4020,13 +4032,13 @@ def press32o(par):
 
 '''
 def textBox():
-    print(textb.get())
+    #print(textb.get())
 '''
     
 def slideValueSet():
     #clear all
     procent = int(Slider.get())
-    print (Slider.get())
+    #print (Slider.get())
     #clear row #1
     pressAA(0)
     pressAKs(0)
