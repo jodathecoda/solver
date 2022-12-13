@@ -1460,2928 +1460,3268 @@ def pressAA(par):
     # par = 0 clear
     # par = 1 set
     # par = 2 toggle
-    if par == 0:
-        if 'AA' in selected_range:
-            selected_range.remove('AA')
-            buttonAA.config(bg = color_pp)
-    elif par == 1:
-        if 'AA' not in selected_range:
-            selected_range.append('AA')
-            buttonAA.config(bg = color_pp_selected)
-    else: 
-        # par = 2 toggle
-        if 'AA' in selected_range:
-            selected_range.remove('AA')
-            buttonAA.config(bg = color_pp)
-        else:
-            selected_range.append('AA')
-            buttonAA.config(bg = color_pp_selected)
-            #open_secondary_window()
+    global solved
+    if not solved:
+        if par == 0:
+            if 'AA' in selected_range:
+                selected_range.remove('AA')
+                buttonAA.config(bg = color_pp)
+        elif par == 1:
+            if 'AA' not in selected_range:
+                selected_range.append('AA')
+                buttonAA.config(bg = color_pp_selected)
+        else: 
+            # par = 2 toggle
+            if 'AA' in selected_range:
+                selected_range.remove('AA')
+                buttonAA.config(bg = color_pp)
+            else:
+                selected_range.append('AA')
+                buttonAA.config(bg = color_pp_selected)
+    else:
+        #pickup color
+        pass
 
 def pressKK(par):
-    if par == 0:
-        if 'KK' in selected_range:
-            selected_range.remove('KK')
-            buttonKK.config(bg = color_pp)
-    elif par == 1:
-        if 'KK' not in selected_range:
-            selected_range.append('KK')
-            buttonKK.config(bg = color_pp_selected)
-    else: 
-        # par = 2 toggle
-        if 'KK' in selected_range:
-            selected_range.remove('KK')
-            buttonKK.config(bg = color_pp)
-        else:
-            selected_range.append('KK')
-            buttonKK.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if 'KK' in selected_range:
+                selected_range.remove('KK')
+                buttonKK.config(bg = color_pp)
+        elif par == 1:
+            if 'KK' not in selected_range:
+                selected_range.append('KK')
+                buttonKK.config(bg = color_pp_selected)
+        else: 
+            # par = 2 toggle
+            if 'KK' in selected_range:
+                selected_range.remove('KK')
+                buttonKK.config(bg = color_pp)
+            else:
+                selected_range.append('KK')
+                buttonKK.config(bg = color_pp_selected)
 
 def pressQQ(par):
-    if par == 0:
-        if 'QQ' in selected_range:
-            selected_range.remove('QQ')
-            buttonQQ.config(bg = color_pp)
-    elif par == 1:
-        if 'QQ' not in selected_range:
-            selected_range.append('QQ')
-            buttonQQ.config(bg = color_pp_selected)
-    else: 
-        # par = 2 toggle
-        if 'QQ' in selected_range:
-            selected_range.remove('QQ')
-            buttonQQ.config(bg = color_pp)
-        else:
-            selected_range.append('QQ')
-            buttonQQ.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if 'QQ' in selected_range:
+                selected_range.remove('QQ')
+                buttonQQ.config(bg = color_pp)
+        elif par == 1:
+            if 'QQ' not in selected_range:
+                selected_range.append('QQ')
+                buttonQQ.config(bg = color_pp_selected)
+        else: 
+            # par = 2 toggle
+            if 'QQ' in selected_range:
+                selected_range.remove('QQ')
+                buttonQQ.config(bg = color_pp)
+            else:
+                selected_range.append('QQ')
+                buttonQQ.config(bg = color_pp_selected)
 
 def pressJJ(par):
-    if par == 0:
-        if 'JJ' in selected_range:
-            selected_range.remove('JJ')
-            buttonJJ.config(bg = color_pp)
-    elif par == 1:
-        if 'JJ' not in selected_range:
-            selected_range.append('JJ')
-            buttonJJ.config(bg = color_pp_selected)
-    else: 
-        # par = 2 toggle
-        if 'JJ' in selected_range:
-            selected_range.remove('JJ')
-            buttonJJ.config(bg = color_pp)
-        else:
-            selected_range.append('JJ')
-            buttonJJ.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if 'JJ' in selected_range:
+                selected_range.remove('JJ')
+                buttonJJ.config(bg = color_pp)
+        elif par == 1:
+            if 'JJ' not in selected_range:
+                selected_range.append('JJ')
+                buttonJJ.config(bg = color_pp_selected)
+        else: 
+            # par = 2 toggle
+            if 'JJ' in selected_range:
+                selected_range.remove('JJ')
+                buttonJJ.config(bg = color_pp)
+            else:
+                selected_range.append('JJ')
+                buttonJJ.config(bg = color_pp_selected)
 
 def pressTT(par):
-    if par == 0:
-        if 'TT' in selected_range:
-            selected_range.remove('TT')
-            buttonTT.config(bg = color_pp)
-    elif par == 1:
-        if 'TT' not in selected_range:
-            selected_range.append('TT')
-            buttonTT.config(bg = color_pp_selected)
-    else: 
-        # par = 2 toggle
-        if 'TT' in selected_range:
-            selected_range.remove('TT')
-            buttonTT.config(bg = color_pp)
-        else:
-            selected_range.append('TT')
-            buttonTT.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if 'TT' in selected_range:
+                selected_range.remove('TT')
+                buttonTT.config(bg = color_pp)
+        elif par == 1:
+            if 'TT' not in selected_range:
+                selected_range.append('TT')
+                buttonTT.config(bg = color_pp_selected)
+        else: 
+            # par = 2 toggle
+            if 'TT' in selected_range:
+                selected_range.remove('TT')
+                buttonTT.config(bg = color_pp)
+            else:
+                selected_range.append('TT')
+                buttonTT.config(bg = color_pp_selected)
 
 def press99(par):
-    if par == 0:
-        if '99' in selected_range:
-            selected_range.remove('99')
-            button99.config(bg = color_pp)
-    elif par == 1:
-        if '99' not in selected_range:
-            selected_range.append('99')
-            button99.config(bg = color_pp_selected)
-    else: #toggle
-        if '99' in selected_range:
-            selected_range.remove('99')
-            button99.config(bg = color_pp)
-        else:
-            selected_range.append('99')
-            button99.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if '99' in selected_range:
+                selected_range.remove('99')
+                button99.config(bg = color_pp)
+        elif par == 1:
+            if '99' not in selected_range:
+                selected_range.append('99')
+                button99.config(bg = color_pp_selected)
+        else: #toggle
+            if '99' in selected_range:
+                selected_range.remove('99')
+                button99.config(bg = color_pp)
+            else:
+                selected_range.append('99')
+                button99.config(bg = color_pp_selected)
 
 def press88(par):
-    if par == 0:
-        if '88' in selected_range:
-            selected_range.remove('88')
-            button88.config(bg = color_pp)
-    elif par == 1:
-        if '88' not in selected_range:
-            selected_range.append('88')
-            button88.config(bg = color_pp_selected)
-    else: #toggle
-        if '88' in selected_range:
-            selected_range.remove('88')
-            button88.config(bg = color_pp)
-        else:
-            selected_range.append('88')
-            button88.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if '88' in selected_range:
+                selected_range.remove('88')
+                button88.config(bg = color_pp)
+        elif par == 1:
+            if '88' not in selected_range:
+                selected_range.append('88')
+                button88.config(bg = color_pp_selected)
+        else: #toggle
+            if '88' in selected_range:
+                selected_range.remove('88')
+                button88.config(bg = color_pp)
+            else:
+                selected_range.append('88')
+                button88.config(bg = color_pp_selected)
 
 def press77(par):
-    if par == 0:
-        if '77' in selected_range:
-            selected_range.remove('77')
-            button77.config(bg = color_pp)
-    elif par == 1:
-        if '77' not in selected_range:
-            selected_range.append('77')
-            button77.config(bg = color_pp_selected)
-    else: #toggle
-        if '77' in selected_range:
-            selected_range.remove('77')
-            button77.config(bg = color_pp)
-        else:
-            selected_range.append('77')
-            button77.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if '77' in selected_range:
+                selected_range.remove('77')
+                button77.config(bg = color_pp)
+        elif par == 1:
+            if '77' not in selected_range:
+                selected_range.append('77')
+                button77.config(bg = color_pp_selected)
+        else: #toggle
+            if '77' in selected_range:
+                selected_range.remove('77')
+                button77.config(bg = color_pp)
+            else:
+                selected_range.append('77')
+                button77.config(bg = color_pp_selected)
 
 def press66(par):
-    if par == 0:
-        if '66' in selected_range:
-            selected_range.remove('66')
-            button66.config(bg = color_pp)
-    elif par == 1:
-        if '66' not in selected_range:
-            selected_range.append('66')
-            button66.config(bg = color_pp_selected)
-    else: #toggle
-        if '66' in selected_range:
-            selected_range.remove('66')
-            button66.config(bg = color_pp)
-        else:
-            selected_range.append('66')
-            button66.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if '66' in selected_range:
+                selected_range.remove('66')
+                button66.config(bg = color_pp)
+        elif par == 1:
+            if '66' not in selected_range:
+                selected_range.append('66')
+                button66.config(bg = color_pp_selected)
+        else: #toggle
+            if '66' in selected_range:
+                selected_range.remove('66')
+                button66.config(bg = color_pp)
+            else:
+                selected_range.append('66')
+                button66.config(bg = color_pp_selected)
 
 def press55(par):
-    if par == 0:
-        if '55' in selected_range:
-            selected_range.remove('55')
-            button55.config(bg = color_pp)
-    elif par == 1:
-        if '55' not in selected_range:
-            selected_range.append('55')
-            button55.config(bg = color_pp_selected)
-    else: #toggle
-        if '55' in selected_range:
-            selected_range.remove('55')
-            button55.config(bg = color_pp)
-        else:
-            selected_range.append('55')
-            button55.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if '55' in selected_range:
+                selected_range.remove('55')
+                button55.config(bg = color_pp)
+        elif par == 1:
+            if '55' not in selected_range:
+                selected_range.append('55')
+                button55.config(bg = color_pp_selected)
+        else: #toggle
+            if '55' in selected_range:
+                selected_range.remove('55')
+                button55.config(bg = color_pp)
+            else:
+                selected_range.append('55')
+                button55.config(bg = color_pp_selected)
 
 def press44(par):
-    if par == 0:
-        if '44' in selected_range:
-            selected_range.remove('44')
-            button44.config(bg = color_pp)
-    elif par == 1:
-        if '44' not in selected_range:
-            selected_range.append('44')
-            button44.config(bg = color_pp_selected)
-    else: #toggle
-        if '44' in selected_range:
-            selected_range.remove('44')
-            button44.config(bg = color_pp)
-        else:
-            selected_range.append('44')
-            button44.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if '44' in selected_range:
+                selected_range.remove('44')
+                button44.config(bg = color_pp)
+        elif par == 1:
+            if '44' not in selected_range:
+                selected_range.append('44')
+                button44.config(bg = color_pp_selected)
+        else: #toggle
+            if '44' in selected_range:
+                selected_range.remove('44')
+                button44.config(bg = color_pp)
+            else:
+                selected_range.append('44')
+                button44.config(bg = color_pp_selected)
 
 def press33(par):
-    if par == 0:
-        if '33' in selected_range:
-            selected_range.remove('33')
-            button33.config(bg = color_pp)
-    elif par == 1:
-        if '33' not in selected_range:
-            selected_range.append('33')
-            button33.config(bg = color_pp_selected)
-    else: #toggle
-        if '33' in selected_range:
-            selected_range.remove('33')
-            button33.config(bg = color_pp)
-        else:
-            selected_range.append('33')
-            button33.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if '33' in selected_range:
+                selected_range.remove('33')
+                button33.config(bg = color_pp)
+        elif par == 1:
+            if '33' not in selected_range:
+                selected_range.append('33')
+                button33.config(bg = color_pp_selected)
+        else: #toggle
+            if '33' in selected_range:
+                selected_range.remove('33')
+                button33.config(bg = color_pp)
+            else:
+                selected_range.append('33')
+                button33.config(bg = color_pp_selected)
 
 def press22(par):
-    if par == 0:
-        if '22' in selected_range:
-            selected_range.remove('22')
-            button22.config(bg = color_pp)
-    elif par == 1:
-        if '22' not in selected_range:
-            selected_range.append('22')
-            button22.config(bg = color_pp_selected)
-    else: #toggle
-        if '22' in selected_range:
-            selected_range.remove('22')
-            button22.config(bg = color_pp)
-        else:
-            selected_range.append('22')
-            button22.config(bg = color_pp_selected)
+    global solved
+    if not solved:
+        if par == 0:
+            if '22' in selected_range:
+                selected_range.remove('22')
+                button22.config(bg = color_pp)
+        elif par == 1:
+            if '22' not in selected_range:
+                selected_range.append('22')
+                button22.config(bg = color_pp_selected)
+        else: #toggle
+            if '22' in selected_range:
+                selected_range.remove('22')
+                button22.config(bg = color_pp)
+            else:
+                selected_range.append('22')
+                button22.config(bg = color_pp_selected)
 
 #suited handlers A
 def pressAKs(par):
-    if par == 0:
-        if 'AKs' in selected_range:
-            buttonAKs.config(bg = color_suited)
-            selected_range.remove('AKs')
-    elif par == 1:
-        if 'AKs' not in selected_range:
-            buttonAKs.config(bg = color_suited_selected)
-            selected_range.append('AKs')
-    else: #toggle
-        if 'AKs' in selected_range:
-            buttonAKs.config(bg = color_suited)
-            selected_range.remove('AKs')
-        else:
-            buttonAKs.config(bg = color_suited_selected)
-            selected_range.append('AKs')       
+    global solved
+    if not solved:
+        if par == 0:
+            if 'AKs' in selected_range:
+                buttonAKs.config(bg = color_suited)
+                selected_range.remove('AKs')
+        elif par == 1:
+            if 'AKs' not in selected_range:
+                buttonAKs.config(bg = color_suited_selected)
+                selected_range.append('AKs')
+        else: #toggle
+            if 'AKs' in selected_range:
+                buttonAKs.config(bg = color_suited)
+                selected_range.remove('AKs')
+            else:
+                buttonAKs.config(bg = color_suited_selected)
+                selected_range.append('AKs')       
 
 def pressAQs(par):
-    if par == 0:
-        if 'AQs' in selected_range:
-            buttonAQs.config(bg = color_suited)
-            selected_range.remove('AQs')
-    elif par == 1:
-        if 'AQs' not in selected_range:
-            buttonAQs.config(bg = color_suited_selected)
-            selected_range.append('AQs')
-    else: #toggle
-        if 'AQs' in selected_range:
-            buttonAQs.config(bg = color_suited)
-            selected_range.remove('AQs')
-        else:
-            buttonAQs.config(bg = color_suited_selected)
-            selected_range.append('AQs')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'AQs' in selected_range:
+                buttonAQs.config(bg = color_suited)
+                selected_range.remove('AQs')
+        elif par == 1:
+            if 'AQs' not in selected_range:
+                buttonAQs.config(bg = color_suited_selected)
+                selected_range.append('AQs')
+        else: #toggle
+            if 'AQs' in selected_range:
+                buttonAQs.config(bg = color_suited)
+                selected_range.remove('AQs')
+            else:
+                buttonAQs.config(bg = color_suited_selected)
+                selected_range.append('AQs')
 
 def pressAJs(par):
-    if par == 0:
-        if 'AJs' in selected_range:
-            buttonAJs.config(bg = color_suited)
-            selected_range.remove('AJs')
-    elif par == 1:
-        if 'AJs' not in selected_range:
-            buttonAJs.config(bg = color_suited_selected)
-            selected_range.append('AJs')
-    else: #toggle
-        if 'AJs' in selected_range:
-            buttonAJs.config(bg = color_suited)
-            selected_range.remove('AJs')
-        else:
-            buttonAJs.config(bg = color_suited_selected)
-            selected_range.append('AJs')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'AJs' in selected_range:
+                buttonAJs.config(bg = color_suited)
+                selected_range.remove('AJs')
+        elif par == 1:
+            if 'AJs' not in selected_range:
+                buttonAJs.config(bg = color_suited_selected)
+                selected_range.append('AJs')
+        else: #toggle
+            if 'AJs' in selected_range:
+                buttonAJs.config(bg = color_suited)
+                selected_range.remove('AJs')
+            else:
+                buttonAJs.config(bg = color_suited_selected)
+                selected_range.append('AJs')
 
 def pressATs(par):
-    if par == 0:
-        if 'ATs' in selected_range:
-            buttonATs.config(bg = color_suited)
-            selected_range.remove('ATs')
-    elif par == 1:
-        if 'ATs' not in selected_range:
-            buttonATs.config(bg = color_suited_selected)
-            selected_range.append('ATs')
-    else: #toggle
-        if 'ATs' in selected_range:
-            buttonATs.config(bg = color_suited)
-            selected_range.remove('ATs')
-        else:
-            buttonATs.config(bg = color_suited_selected)
-            selected_range.append('ATs')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'ATs' in selected_range:
+                buttonATs.config(bg = color_suited)
+                selected_range.remove('ATs')
+        elif par == 1:
+            if 'ATs' not in selected_range:
+                buttonATs.config(bg = color_suited_selected)
+                selected_range.append('ATs')
+        else: #toggle
+            if 'ATs' in selected_range:
+                buttonATs.config(bg = color_suited)
+                selected_range.remove('ATs')
+            else:
+                buttonATs.config(bg = color_suited_selected)
+                selected_range.append('ATs')
 
 def pressA9s(par):
-    if par == 0:
-        if 'A9s' in selected_range:
-            buttonA9s.config(bg = color_suited)
-            selected_range.remove('A9s')
-    elif par == 1:
-        if 'A9s' not in selected_range:
-            buttonA9s.config(bg = color_suited_selected)
-            selected_range.append('A9s')
-    else: #toggle
-        if 'A9s' in selected_range:
-            buttonA9s.config(bg = color_suited)
-            selected_range.remove('A9s')
-        else:
-            buttonA9s.config(bg = color_suited_selected)
-            selected_range.append('A9s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A9s' in selected_range:
+                buttonA9s.config(bg = color_suited)
+                selected_range.remove('A9s')
+        elif par == 1:
+            if 'A9s' not in selected_range:
+                buttonA9s.config(bg = color_suited_selected)
+                selected_range.append('A9s')
+        else: #toggle
+            if 'A9s' in selected_range:
+                buttonA9s.config(bg = color_suited)
+                selected_range.remove('A9s')
+            else:
+                buttonA9s.config(bg = color_suited_selected)
+                selected_range.append('A9s')
 
 def pressA8s(par):
-    if par == 0:
-        if 'A8s' in selected_range:
-            buttonA8s.config(bg = color_suited)
-            selected_range.remove('A8s')
-    elif par == 1:
-        if 'A8s' not in selected_range:
-            buttonA8s.config(bg = color_suited_selected)
-            selected_range.append('A8s')
-    else: #toggle
-        if 'A8s' in selected_range:
-            buttonA8s.config(bg = color_suited)
-            selected_range.remove('A8s')
-        else:
-            buttonA8s.config(bg = color_suited_selected)
-            selected_range.append('A8s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A8s' in selected_range:
+                buttonA8s.config(bg = color_suited)
+                selected_range.remove('A8s')
+        elif par == 1:
+            if 'A8s' not in selected_range:
+                buttonA8s.config(bg = color_suited_selected)
+                selected_range.append('A8s')
+        else: #toggle
+            if 'A8s' in selected_range:
+                buttonA8s.config(bg = color_suited)
+                selected_range.remove('A8s')
+            else:
+                buttonA8s.config(bg = color_suited_selected)
+                selected_range.append('A8s')
 
 def pressA7s(par):
-    if par == 0:
-        if 'A7s' in selected_range:
-            buttonA7s.config(bg = color_suited)
-            selected_range.remove('A7s')
-    elif par == 1:
-        if 'A7s' not in selected_range:
-            buttonA7s.config(bg = color_suited_selected)
-            selected_range.append('A7s')
-    else: #toggle
-        if 'A7s' in selected_range:
-            buttonA7s.config(bg = color_suited)
-            selected_range.remove('A7s')
-        else:
-            buttonA7s.config(bg = color_suited_selected)
-            selected_range.append('A7s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A7s' in selected_range:
+                buttonA7s.config(bg = color_suited)
+                selected_range.remove('A7s')
+        elif par == 1:
+            if 'A7s' not in selected_range:
+                buttonA7s.config(bg = color_suited_selected)
+                selected_range.append('A7s')
+        else: #toggle
+            if 'A7s' in selected_range:
+                buttonA7s.config(bg = color_suited)
+                selected_range.remove('A7s')
+            else:
+                buttonA7s.config(bg = color_suited_selected)
+                selected_range.append('A7s')
 
 def pressA6s(par):
-    if par == 0:
-        if 'A6s' in selected_range:
-            buttonA6s.config(bg = color_suited)
-            selected_range.remove('A6s')
-    elif par == 1:
-        if 'A6s' not in selected_range:
-            buttonA6s.config(bg = color_suited_selected)
-            selected_range.append('A6s')
-    else: #toggle
-        if 'A6s' in selected_range:
-            buttonA6s.config(bg = color_suited)
-            selected_range.remove('A6s')
-        else:
-            buttonA6s.config(bg = color_suited_selected)
-            selected_range.append('A6s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A6s' in selected_range:
+                buttonA6s.config(bg = color_suited)
+                selected_range.remove('A6s')
+        elif par == 1:
+            if 'A6s' not in selected_range:
+                buttonA6s.config(bg = color_suited_selected)
+                selected_range.append('A6s')
+        else: #toggle
+            if 'A6s' in selected_range:
+                buttonA6s.config(bg = color_suited)
+                selected_range.remove('A6s')
+            else:
+                buttonA6s.config(bg = color_suited_selected)
+                selected_range.append('A6s')
 
 def pressA5s(par):
-    if par == 0:
-        if 'A5s' in selected_range:
-            buttonA5s.config(bg = color_suited)
-            selected_range.remove('A5s')
-    elif par == 1:
-        if 'A5s' not in selected_range:
-            buttonA5s.config(bg = color_suited_selected)
-            selected_range.append('A5s')
-    else: #toggle
-        if 'A5s' in selected_range:
-            buttonA5s.config(bg = color_suited)
-            selected_range.remove('A5s')
-        else:
-            buttonA5s.config(bg = color_suited_selected)
-            selected_range.append('A5s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A5s' in selected_range:
+                buttonA5s.config(bg = color_suited)
+                selected_range.remove('A5s')
+        elif par == 1:
+            if 'A5s' not in selected_range:
+                buttonA5s.config(bg = color_suited_selected)
+                selected_range.append('A5s')
+        else: #toggle
+            if 'A5s' in selected_range:
+                buttonA5s.config(bg = color_suited)
+                selected_range.remove('A5s')
+            else:
+                buttonA5s.config(bg = color_suited_selected)
+                selected_range.append('A5s')
 
 def pressA4s(par):
-    if par == 0:
-        if 'A4s' in selected_range:
-            buttonA4s.config(bg = color_suited)
-            selected_range.remove('A4s')
-    elif par == 1:
-        if 'A4s' not in selected_range:
-            buttonA4s.config(bg = color_suited_selected)
-            selected_range.append('A4s')
-    else: #toggle
-        if 'A4s' in selected_range:
-            buttonA4s.config(bg = color_suited)
-            selected_range.remove('A4s')
-        else:
-            buttonA4s.config(bg = color_suited_selected)
-            selected_range.append('A4s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A4s' in selected_range:
+                buttonA4s.config(bg = color_suited)
+                selected_range.remove('A4s')
+        elif par == 1:
+            if 'A4s' not in selected_range:
+                buttonA4s.config(bg = color_suited_selected)
+                selected_range.append('A4s')
+        else: #toggle
+            if 'A4s' in selected_range:
+                buttonA4s.config(bg = color_suited)
+                selected_range.remove('A4s')
+            else:
+                buttonA4s.config(bg = color_suited_selected)
+                selected_range.append('A4s')
 
 def pressA3s(par):
-    if par == 0:
-        if 'A3s' in selected_range:
-            buttonA3s.config(bg = color_suited)
-            selected_range.remove('A3s')
-    elif par == 1:
-        if 'A3s' not in selected_range:
-            buttonA3s.config(bg = color_suited_selected)
-            selected_range.append('A3s')
-    else: #toggle
-        if 'A3s' in selected_range:
-            buttonA3s.config(bg = color_suited)
-            selected_range.remove('A3s')
-        else:
-            buttonA3s.config(bg = color_suited_selected)
-            selected_range.append('A3s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A3s' in selected_range:
+                buttonA3s.config(bg = color_suited)
+                selected_range.remove('A3s')
+        elif par == 1:
+            if 'A3s' not in selected_range:
+                buttonA3s.config(bg = color_suited_selected)
+                selected_range.append('A3s')
+        else: #toggle
+            if 'A3s' in selected_range:
+                buttonA3s.config(bg = color_suited)
+                selected_range.remove('A3s')
+            else:
+                buttonA3s.config(bg = color_suited_selected)
+                selected_range.append('A3s')
 
 def pressA2s(par):
-    if par == 0:
-        if 'A2s' in selected_range:
-            buttonA2s.config(bg = color_suited)
-            selected_range.remove('A2s')
-    elif par == 1:
-        if 'A2s' not in selected_range:
-            buttonA2s.config(bg = color_suited_selected)
-            selected_range.append('A2s')
-    else: #toggle
-        if 'A2s' in selected_range:
-            buttonA2s.config(bg = color_suited)
-            selected_range.remove('A2s')
-        else:
-            buttonA2s.config(bg = color_suited_selected)
-            selected_range.append('A2s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A2s' in selected_range:
+                buttonA2s.config(bg = color_suited)
+                selected_range.remove('A2s')
+        elif par == 1:
+            if 'A2s' not in selected_range:
+                buttonA2s.config(bg = color_suited_selected)
+                selected_range.append('A2s')
+        else: #toggle
+            if 'A2s' in selected_range:
+                buttonA2s.config(bg = color_suited)
+                selected_range.remove('A2s')
+            else:
+                buttonA2s.config(bg = color_suited_selected)
+                selected_range.append('A2s')
 
 #suited handlers K
     
 def pressKQs(par):
-    if par == 0:
-        if 'KQs' in selected_range:
-            buttonKQs.config(bg = color_suited)
-            selected_range.remove('KQs')
-    elif par == 1:
-        if 'KQs' not in selected_range:
-            buttonKQs.config(bg = color_suited_selected)
-            selected_range.append('KQs')
-    else: #toggle
-        if 'KQs' in selected_range:
-            buttonKQs.config(bg = color_suited)
-            selected_range.remove('KQs')
-        else:
-            buttonKQs.config(bg = color_suited_selected)
-            selected_range.append('KQs')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'KQs' in selected_range:
+                buttonKQs.config(bg = color_suited)
+                selected_range.remove('KQs')
+        elif par == 1:
+            if 'KQs' not in selected_range:
+                buttonKQs.config(bg = color_suited_selected)
+                selected_range.append('KQs')
+        else: #toggle
+            if 'KQs' in selected_range:
+                buttonKQs.config(bg = color_suited)
+                selected_range.remove('KQs')
+            else:
+                buttonKQs.config(bg = color_suited_selected)
+                selected_range.append('KQs')
 
 def pressKJs(par):
-    if par == 0:
-        if 'KJs' in selected_range:
-            buttonKJs.config(bg = color_suited)
-            selected_range.remove('KJs')
-    elif par == 1:
-        if 'KJs' not in selected_range:
-            buttonKJs.config(bg = color_suited_selected)
-            selected_range.append('KJs')
-    else: #toggle
-        if 'KJs' in selected_range:
-            buttonKJs.config(bg = color_suited)
-            selected_range.remove('KJs')
-        else:
-            buttonKJs.config(bg = color_suited_selected)
-            selected_range.append('KJs')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'KJs' in selected_range:
+                buttonKJs.config(bg = color_suited)
+                selected_range.remove('KJs')
+        elif par == 1:
+            if 'KJs' not in selected_range:
+                buttonKJs.config(bg = color_suited_selected)
+                selected_range.append('KJs')
+        else: #toggle
+            if 'KJs' in selected_range:
+                buttonKJs.config(bg = color_suited)
+                selected_range.remove('KJs')
+            else:
+                buttonKJs.config(bg = color_suited_selected)
+                selected_range.append('KJs')
 
 def pressKTs(par):
-    if par == 0:
-        if 'KTs' in selected_range:
-            buttonKTs.config(bg = color_suited)
-            selected_range.remove('KTs')
-    elif par == 1:
-        if 'KTs' not in selected_range:
-            buttonKTs.config(bg = color_suited_selected)
-            selected_range.append('KTs')
-    else: #toggle
-        if 'KTs' in selected_range:
-            buttonKTs.config(bg = color_suited)
-            selected_range.remove('KTs')
-        else:
-            buttonKTs.config(bg = color_suited_selected)
-            selected_range.append('KTs')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'KTs' in selected_range:
+                buttonKTs.config(bg = color_suited)
+                selected_range.remove('KTs')
+        elif par == 1:
+            if 'KTs' not in selected_range:
+                buttonKTs.config(bg = color_suited_selected)
+                selected_range.append('KTs')
+        else: #toggle
+            if 'KTs' in selected_range:
+                buttonKTs.config(bg = color_suited)
+                selected_range.remove('KTs')
+            else:
+                buttonKTs.config(bg = color_suited_selected)
+                selected_range.append('KTs')
 
 def pressK9s(par):
-    if par == 0:
-        if 'K9s' in selected_range:
-            buttonK9s.config(bg = color_suited)
-            selected_range.remove('K9s')
-    elif par == 1:
-        if 'K9s' not in selected_range:
-            buttonK9s.config(bg = color_suited_selected)
-            selected_range.append('K9s')
-    else: #toggle
-        if 'K9s' in selected_range:
-            buttonK9s.config(bg = color_suited)
-            selected_range.remove('K9s')
-        else:
-            buttonK9s.config(bg = color_suited_selected)
-            selected_range.append('K9s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K9s' in selected_range:
+                buttonK9s.config(bg = color_suited)
+                selected_range.remove('K9s')
+        elif par == 1:
+            if 'K9s' not in selected_range:
+                buttonK9s.config(bg = color_suited_selected)
+                selected_range.append('K9s')
+        else: #toggle
+            if 'K9s' in selected_range:
+                buttonK9s.config(bg = color_suited)
+                selected_range.remove('K9s')
+            else:
+                buttonK9s.config(bg = color_suited_selected)
+                selected_range.append('K9s')
 
 def pressK8s(par):
-    if par == 0:
-        if 'K8s' in selected_range:
-            buttonK8s.config(bg = color_suited)
-            selected_range.remove('K8s')
-    elif par == 1:
-        if 'K8s' not in selected_range:
-            buttonK8s.config(bg = color_suited_selected)
-            selected_range.append('K8s')
-    else: #toggle
-        if 'K8s' in selected_range:
-            buttonK8s.config(bg = color_suited)
-            selected_range.remove('K8s')
-        else:
-            buttonK8s.config(bg = color_suited_selected)
-            selected_range.append('K8s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K8s' in selected_range:
+                buttonK8s.config(bg = color_suited)
+                selected_range.remove('K8s')
+        elif par == 1:
+            if 'K8s' not in selected_range:
+                buttonK8s.config(bg = color_suited_selected)
+                selected_range.append('K8s')
+        else: #toggle
+            if 'K8s' in selected_range:
+                buttonK8s.config(bg = color_suited)
+                selected_range.remove('K8s')
+            else:
+                buttonK8s.config(bg = color_suited_selected)
+                selected_range.append('K8s')
 
 def pressK7s(par):
-    if par == 0:
-        if 'K7s' in selected_range:
-            buttonK7s.config(bg = color_suited)
-            selected_range.remove('K7s')
-    elif par == 1:
-        if 'K7s' not in selected_range:
-            buttonK7s.config(bg = color_suited_selected)
-            selected_range.append('K7s')
-    else: #toggle
-        if 'K7s' in selected_range:
-            buttonK7s.config(bg = color_suited)
-            selected_range.remove('K7s')
-        else:
-            buttonK7s.config(bg = color_suited_selected)
-            selected_range.append('K7s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K7s' in selected_range:
+                buttonK7s.config(bg = color_suited)
+                selected_range.remove('K7s')
+        elif par == 1:
+            if 'K7s' not in selected_range:
+                buttonK7s.config(bg = color_suited_selected)
+                selected_range.append('K7s')
+        else: #toggle
+            if 'K7s' in selected_range:
+                buttonK7s.config(bg = color_suited)
+                selected_range.remove('K7s')
+            else:
+                buttonK7s.config(bg = color_suited_selected)
+                selected_range.append('K7s')
 
 def pressK6s(par):
-    if par == 0:
-        if 'K6s' in selected_range:
-            buttonK6s.config(bg = color_suited)
-            selected_range.remove('K6s')
-    elif par == 1:
-        if 'K6s' not in selected_range:
-            buttonK6s.config(bg = color_suited_selected)
-            selected_range.append('K6s')
-    else: #toggle
-        if 'K6s' in selected_range:
-            buttonK6s.config(bg = color_suited)
-            selected_range.remove('K6s')
-        else:
-            buttonK6s.config(bg = color_suited_selected)
-            selected_range.append('K6s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K6s' in selected_range:
+                buttonK6s.config(bg = color_suited)
+                selected_range.remove('K6s')
+        elif par == 1:
+            if 'K6s' not in selected_range:
+                buttonK6s.config(bg = color_suited_selected)
+                selected_range.append('K6s')
+        else: #toggle
+            if 'K6s' in selected_range:
+                buttonK6s.config(bg = color_suited)
+                selected_range.remove('K6s')
+            else:
+                buttonK6s.config(bg = color_suited_selected)
+                selected_range.append('K6s')
 
 def pressK5s(par):
-    if par == 0:
-        if 'K5s' in selected_range:
-            buttonK5s.config(bg = color_suited)
-            selected_range.remove('K5s')
-    elif par == 1:
-        if 'K5s' not in selected_range:
-            buttonK5s.config(bg = color_suited_selected)
-            selected_range.append('K5s')
-    else: #toggle
-        if 'K5s' in selected_range:
-            buttonK5s.config(bg = color_suited)
-            selected_range.remove('K5s')
-        else:
-            buttonK5s.config(bg = color_suited_selected)
-            selected_range.append('K5s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K5s' in selected_range:
+                buttonK5s.config(bg = color_suited)
+                selected_range.remove('K5s')
+        elif par == 1:
+            if 'K5s' not in selected_range:
+                buttonK5s.config(bg = color_suited_selected)
+                selected_range.append('K5s')
+        else: #toggle
+            if 'K5s' in selected_range:
+                buttonK5s.config(bg = color_suited)
+                selected_range.remove('K5s')
+            else:
+                buttonK5s.config(bg = color_suited_selected)
+                selected_range.append('K5s')
 
 def pressK4s(par):
-    if par == 0:
-        if 'K4s' in selected_range:
-            buttonK4s.config(bg = color_suited)
-            selected_range.remove('K4s')
-    elif par == 1:
-        if 'K4s' not in selected_range:
-            buttonK4s.config(bg = color_suited_selected)
-            selected_range.append('K4s')
-    else: #toggle
-        if 'K4s' in selected_range:
-            buttonK4s.config(bg = color_suited)
-            selected_range.remove('K4s')
-        else:
-            buttonK4s.config(bg = color_suited_selected)
-            selected_range.append('K4s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K4s' in selected_range:
+                buttonK4s.config(bg = color_suited)
+                selected_range.remove('K4s')
+        elif par == 1:
+            if 'K4s' not in selected_range:
+                buttonK4s.config(bg = color_suited_selected)
+                selected_range.append('K4s')
+        else: #toggle
+            if 'K4s' in selected_range:
+                buttonK4s.config(bg = color_suited)
+                selected_range.remove('K4s')
+            else:
+                buttonK4s.config(bg = color_suited_selected)
+                selected_range.append('K4s')
 
 def pressK3s(par):
-    if par == 0:
-        if 'K3s' in selected_range:
-            buttonK3s.config(bg = color_suited)
-            selected_range.remove('K3s')
-    elif par == 1:
-        if 'K3s' not in selected_range:
-            buttonK3s.config(bg = color_suited_selected)
-            selected_range.append('K3s')
-    else: #toggle
-        if 'K3s' in selected_range:
-            buttonK3s.config(bg = color_suited)
-            selected_range.remove('K3s')
-        else:
-            buttonK3s.config(bg = color_suited_selected)
-            selected_range.append('K3s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K3s' in selected_range:
+                buttonK3s.config(bg = color_suited)
+                selected_range.remove('K3s')
+        elif par == 1:
+            if 'K3s' not in selected_range:
+                buttonK3s.config(bg = color_suited_selected)
+                selected_range.append('K3s')
+        else: #toggle
+            if 'K3s' in selected_range:
+                buttonK3s.config(bg = color_suited)
+                selected_range.remove('K3s')
+            else:
+                buttonK3s.config(bg = color_suited_selected)
+                selected_range.append('K3s')
 
 def pressK2s(par):
-    if par == 0:
-        if 'K2s' in selected_range:
-            buttonK2s.config(bg = color_suited)
-            selected_range.remove('K2s')
-    elif par == 1:
-        if 'K2s' not in selected_range:
-            buttonK2s.config(bg = color_suited_selected)
-            selected_range.append('K2s')
-    else: #toggle
-        if 'K2s' in selected_range:
-            buttonK2s.config(bg = color_suited)
-            selected_range.remove('K2s')
-        else:
-            buttonK2s.config(bg = color_suited_selected)
-            selected_range.append('K2s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K2s' in selected_range:
+                buttonK2s.config(bg = color_suited)
+                selected_range.remove('K2s')
+        elif par == 1:
+            if 'K2s' not in selected_range:
+                buttonK2s.config(bg = color_suited_selected)
+                selected_range.append('K2s')
+        else: #toggle
+            if 'K2s' in selected_range:
+                buttonK2s.config(bg = color_suited)
+                selected_range.remove('K2s')
+            else:
+                buttonK2s.config(bg = color_suited_selected)
+                selected_range.append('K2s')
 
 #suited handlers Q
 
 def pressQJs(par):
-    if par == 0:
-        if 'QJs' in selected_range:
-            buttonQJs.config(bg = color_suited)
-            selected_range.remove('QJs')
-    elif par == 1:
-        if 'QJs' not in selected_range:
-            buttonQJs.config(bg = color_suited_selected)
-            selected_range.append('QJs')
-    else: #toggle
-        if 'QJs' in selected_range:
-            buttonQJs.config(bg = color_suited)
-            selected_range.remove('QJs')
-        else:
-            buttonQJs.config(bg = color_suited_selected)
-            selected_range.append('QJs')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'QJs' in selected_range:
+                buttonQJs.config(bg = color_suited)
+                selected_range.remove('QJs')
+        elif par == 1:
+            if 'QJs' not in selected_range:
+                buttonQJs.config(bg = color_suited_selected)
+                selected_range.append('QJs')
+        else: #toggle
+            if 'QJs' in selected_range:
+                buttonQJs.config(bg = color_suited)
+                selected_range.remove('QJs')
+            else:
+                buttonQJs.config(bg = color_suited_selected)
+                selected_range.append('QJs')
 
 def pressQTs(par):
-    if par == 0:
-        if 'QTs' in selected_range:
-            buttonQTs.config(bg = color_suited)
-            selected_range.remove('QTs')
-    elif par == 1:
-        if 'QTs' not in selected_range:
-            buttonQTs.config(bg = color_suited_selected)
-            selected_range.append('QTs')
-    else: #toggle
-        if 'QTs' in selected_range:
-            buttonQTs.config(bg = color_suited)
-            selected_range.remove('QTs')
-        else:
-            buttonQTs.config(bg = color_suited_selected)
-            selected_range.append('QTs')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'QTs' in selected_range:
+                buttonQTs.config(bg = color_suited)
+                selected_range.remove('QTs')
+        elif par == 1:
+            if 'QTs' not in selected_range:
+                buttonQTs.config(bg = color_suited_selected)
+                selected_range.append('QTs')
+        else: #toggle
+            if 'QTs' in selected_range:
+                buttonQTs.config(bg = color_suited)
+                selected_range.remove('QTs')
+            else:
+                buttonQTs.config(bg = color_suited_selected)
+                selected_range.append('QTs')
 
 def pressQ9s(par):
-    if par == 0:
-        if 'Q9s' in selected_range:
-            buttonQ9s.config(bg = color_suited)
-            selected_range.remove('Q9s')
-    elif par == 1:
-        if 'Q9s' not in selected_range:
-            buttonQ9s.config(bg = color_suited_selected)
-            selected_range.append('Q9s')
-    else: #toggle
-        if 'Q9s' in selected_range:
-            buttonQ9s.config(bg = color_suited)
-            selected_range.remove('Q9s')
-        else:
-            buttonQ9s.config(bg = color_suited_selected)
-            selected_range.append('Q9s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q9s' in selected_range:
+                buttonQ9s.config(bg = color_suited)
+                selected_range.remove('Q9s')
+        elif par == 1:
+            if 'Q9s' not in selected_range:
+                buttonQ9s.config(bg = color_suited_selected)
+                selected_range.append('Q9s')
+        else: #toggle
+            if 'Q9s' in selected_range:
+                buttonQ9s.config(bg = color_suited)
+                selected_range.remove('Q9s')
+            else:
+                buttonQ9s.config(bg = color_suited_selected)
+                selected_range.append('Q9s')
 
 def pressQ8s(par):
-    if par == 0:
-        if 'Q8s' in selected_range:
-            buttonQ8s.config(bg = color_suited)
-            selected_range.remove('Q8s')
-    elif par == 1:
-        if 'Q8s' not in selected_range:
-            buttonQ8s.config(bg = color_suited_selected)
-            selected_range.append('Q8s')
-    else: #toggle
-        if 'Q8s' in selected_range:
-            buttonQ8s.config(bg = color_suited)
-            selected_range.remove('Q8s')
-        else:
-            buttonQ8s.config(bg = color_suited_selected)
-            selected_range.append('Q8s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q8s' in selected_range:
+                buttonQ8s.config(bg = color_suited)
+                selected_range.remove('Q8s')
+        elif par == 1:
+            if 'Q8s' not in selected_range:
+                buttonQ8s.config(bg = color_suited_selected)
+                selected_range.append('Q8s')
+        else: #toggle
+            if 'Q8s' in selected_range:
+                buttonQ8s.config(bg = color_suited)
+                selected_range.remove('Q8s')
+            else:
+                buttonQ8s.config(bg = color_suited_selected)
+                selected_range.append('Q8s')
 
 def pressQ7s(par):
-    if par == 0:
-        if 'Q7s' in selected_range:
-            buttonQ7s.config(bg = color_suited)
-            selected_range.remove('Q7s')
-    elif par == 1:
-        if 'Q7s' not in selected_range:
-            buttonQ7s.config(bg = color_suited_selected)
-            selected_range.append('Q7s')
-    else: #toggle
-        if 'Q7s' in selected_range:
-            buttonQ7s.config(bg = color_suited)
-            selected_range.remove('Q7s')
-        else:
-            buttonQ7s.config(bg = color_suited_selected)
-            selected_range.append('Q7s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q7s' in selected_range:
+                buttonQ7s.config(bg = color_suited)
+                selected_range.remove('Q7s')
+        elif par == 1:
+            if 'Q7s' not in selected_range:
+                buttonQ7s.config(bg = color_suited_selected)
+                selected_range.append('Q7s')
+        else: #toggle
+            if 'Q7s' in selected_range:
+                buttonQ7s.config(bg = color_suited)
+                selected_range.remove('Q7s')
+            else:
+                buttonQ7s.config(bg = color_suited_selected)
+                selected_range.append('Q7s')
 
 def pressQ6s(par):
-    if par == 0:
-        if 'Q6s' in selected_range:
-            buttonQ6s.config(bg = color_suited)
-            selected_range.remove('Q6s')
-    elif par == 1:
-        if 'Q6s' not in selected_range:
-            buttonQ6s.config(bg = color_suited_selected)
-            selected_range.append('Q6s')
-    else: #toggle
-        if 'Q6s' in selected_range:
-            buttonQ6s.config(bg = color_suited)
-            selected_range.remove('Q6s')
-        else:
-            buttonQ6s.config(bg = color_suited_selected)
-            selected_range.append('Q6s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q6s' in selected_range:
+                buttonQ6s.config(bg = color_suited)
+                selected_range.remove('Q6s')
+        elif par == 1:
+            if 'Q6s' not in selected_range:
+                buttonQ6s.config(bg = color_suited_selected)
+                selected_range.append('Q6s')
+        else: #toggle
+            if 'Q6s' in selected_range:
+                buttonQ6s.config(bg = color_suited)
+                selected_range.remove('Q6s')
+            else:
+                buttonQ6s.config(bg = color_suited_selected)
+                selected_range.append('Q6s')
 
 def pressQ5s(par):
-    if par == 0:
-        if 'Q5s' in selected_range:
-            buttonQ5s.config(bg = color_suited)
-            selected_range.remove('Q5s')
-    elif par == 1:
-        if 'Q5s' not in selected_range:
-            buttonQ5s.config(bg = color_suited_selected)
-            selected_range.append('Q5s')
-    else: #toggle
-        if 'Q5s' in selected_range:
-            buttonQ5s.config(bg = color_suited)
-            selected_range.remove('Q5s')
-        else:
-            buttonQ5s.config(bg = color_suited_selected)
-            selected_range.append('Q5s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q5s' in selected_range:
+                buttonQ5s.config(bg = color_suited)
+                selected_range.remove('Q5s')
+        elif par == 1:
+            if 'Q5s' not in selected_range:
+                buttonQ5s.config(bg = color_suited_selected)
+                selected_range.append('Q5s')
+        else: #toggle
+            if 'Q5s' in selected_range:
+                buttonQ5s.config(bg = color_suited)
+                selected_range.remove('Q5s')
+            else:
+                buttonQ5s.config(bg = color_suited_selected)
+                selected_range.append('Q5s')
 
 def pressQ4s(par):
-    if par == 0:
-        if 'Q4s' in selected_range:
-            buttonQ4s.config(bg = color_suited)
-            selected_range.remove('Q4s')
-    elif par == 1:
-        if 'Q4s' not in selected_range:
-            buttonQ4s.config(bg = color_suited_selected)
-            selected_range.append('Q4s')
-    else: #toggle
-        if 'Q4s' in selected_range:
-            buttonQ4s.config(bg = color_suited)
-            selected_range.remove('Q4s')
-        else:
-            buttonQ4s.config(bg = color_suited_selected)
-            selected_range.append('Q4s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q4s' in selected_range:
+                buttonQ4s.config(bg = color_suited)
+                selected_range.remove('Q4s')
+        elif par == 1:
+            if 'Q4s' not in selected_range:
+                buttonQ4s.config(bg = color_suited_selected)
+                selected_range.append('Q4s')
+        else: #toggle
+            if 'Q4s' in selected_range:
+                buttonQ4s.config(bg = color_suited)
+                selected_range.remove('Q4s')
+            else:
+                buttonQ4s.config(bg = color_suited_selected)
+                selected_range.append('Q4s')
 
 def pressQ3s(par):
-    if par == 0:
-        if 'Q3s' in selected_range:
-            buttonQ3s.config(bg = color_suited)
-            selected_range.remove('Q3s')
-    elif par == 1:
-        if 'Q3s' not in selected_range:
-            buttonQ3s.config(bg = color_suited_selected)
-            selected_range.append('Q3s')
-    else: #toggle
-        if 'Q3s' in selected_range:
-            buttonQ3s.config(bg = color_suited)
-            selected_range.remove('Q3s')
-        else:
-            buttonQ3s.config(bg = color_suited_selected)
-            selected_range.append('Q3s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q3s' in selected_range:
+                buttonQ3s.config(bg = color_suited)
+                selected_range.remove('Q3s')
+        elif par == 1:
+            if 'Q3s' not in selected_range:
+                buttonQ3s.config(bg = color_suited_selected)
+                selected_range.append('Q3s')
+        else: #toggle
+            if 'Q3s' in selected_range:
+                buttonQ3s.config(bg = color_suited)
+                selected_range.remove('Q3s')
+            else:
+                buttonQ3s.config(bg = color_suited_selected)
+                selected_range.append('Q3s')
 
 def pressQ2s(par):
-    if par == 0:
-        if 'Q2s' in selected_range:
-            buttonQ2s.config(bg = color_suited)
-            selected_range.remove('Q2s')
-    elif par == 1:
-        if 'Q2s' not in selected_range:
-            buttonQ2s.config(bg = color_suited_selected)
-            selected_range.append('Q2s')
-    else: #toggle
-        if 'Q2s' in selected_range:
-            buttonQ2s.config(bg = color_suited)
-            selected_range.remove('Q2s')
-        else:
-            buttonQ2s.config(bg = color_suited_selected)
-            selected_range.append('Q2s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q2s' in selected_range:
+                buttonQ2s.config(bg = color_suited)
+                selected_range.remove('Q2s')
+        elif par == 1:
+            if 'Q2s' not in selected_range:
+                buttonQ2s.config(bg = color_suited_selected)
+                selected_range.append('Q2s')
+        else: #toggle
+            if 'Q2s' in selected_range:
+                buttonQ2s.config(bg = color_suited)
+                selected_range.remove('Q2s')
+            else:
+                buttonQ2s.config(bg = color_suited_selected)
+                selected_range.append('Q2s')
 
 #suited handlers J
 
 def pressJTs(par):
-    if par == 0:
-        if 'JTs' in selected_range:
-            buttonJTs.config(bg = color_suited)
-            selected_range.remove('JTs')
-    elif par == 1:
-        if 'JTs' not in selected_range:
-            buttonJTs.config(bg = color_suited_selected)
-            selected_range.append('JTs')
-    else: #toggle
-        if 'JTs' in selected_range:
-            buttonJTs.config(bg = color_suited)
-            selected_range.remove('JTs')
-        else:
-            buttonJTs.config(bg = color_suited_selected)
-            selected_range.append('JTs')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'JTs' in selected_range:
+                buttonJTs.config(bg = color_suited)
+                selected_range.remove('JTs')
+        elif par == 1:
+            if 'JTs' not in selected_range:
+                buttonJTs.config(bg = color_suited_selected)
+                selected_range.append('JTs')
+        else: #toggle
+            if 'JTs' in selected_range:
+                buttonJTs.config(bg = color_suited)
+                selected_range.remove('JTs')
+            else:
+                buttonJTs.config(bg = color_suited_selected)
+                selected_range.append('JTs')
 
 def pressJ9s(par):
-    if par == 0:
-        if 'J9s' in selected_range:
-            buttonJ9s.config(bg = color_suited)
-            selected_range.remove('J9s')
-    elif par == 1:
-        if 'J9s' not in selected_range:
-            buttonJ9s.config(bg = color_suited_selected)
-            selected_range.append('J9s')
-    else: #toggle
-        if 'J9s' in selected_range:
-            buttonJ9s.config(bg = color_suited)
-            selected_range.remove('J9s')
-        else:
-            buttonJ9s.config(bg = color_suited_selected)
-            selected_range.append('J9s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J9s' in selected_range:
+                buttonJ9s.config(bg = color_suited)
+                selected_range.remove('J9s')
+        elif par == 1:
+            if 'J9s' not in selected_range:
+                buttonJ9s.config(bg = color_suited_selected)
+                selected_range.append('J9s')
+        else: #toggle
+            if 'J9s' in selected_range:
+                buttonJ9s.config(bg = color_suited)
+                selected_range.remove('J9s')
+            else:
+                buttonJ9s.config(bg = color_suited_selected)
+                selected_range.append('J9s')
 
 def pressJ8s(par):
-    if par == 0:
-        if 'J8s' in selected_range:
-            buttonJ8s.config(bg = color_suited)
-            selected_range.remove('J8s')
-    elif par == 1:
-        if 'J8s' not in selected_range:
-            buttonJ8s.config(bg = color_suited_selected)
-            selected_range.append('J8s')
-    else: #toggle
-        if 'J8s' in selected_range:
-            buttonJ8s.config(bg = color_suited)
-            selected_range.remove('J8s')
-        else:
-            buttonJ8s.config(bg = color_suited_selected)
-            selected_range.append('J8s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J8s' in selected_range:
+                buttonJ8s.config(bg = color_suited)
+                selected_range.remove('J8s')
+        elif par == 1:
+            if 'J8s' not in selected_range:
+                buttonJ8s.config(bg = color_suited_selected)
+                selected_range.append('J8s')
+        else: #toggle
+            if 'J8s' in selected_range:
+                buttonJ8s.config(bg = color_suited)
+                selected_range.remove('J8s')
+            else:
+                buttonJ8s.config(bg = color_suited_selected)
+                selected_range.append('J8s')
 
 def pressJ7s(par):
-    if par == 0:
-        if 'J7s' in selected_range:
-            buttonJ7s.config(bg = color_suited)
-            selected_range.remove('J7s')
-    elif par == 1:
-        if 'J7s' not in selected_range:
-            buttonJ7s.config(bg = color_suited_selected)
-            selected_range.append('J7s')
-    else: #toggle
-        if 'J7s' in selected_range:
-            buttonJ7s.config(bg = color_suited)
-            selected_range.remove('J7s')
-        else:
-            buttonJ7s.config(bg = color_suited_selected)
-            selected_range.append('J7s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J7s' in selected_range:
+                buttonJ7s.config(bg = color_suited)
+                selected_range.remove('J7s')
+        elif par == 1:
+            if 'J7s' not in selected_range:
+                buttonJ7s.config(bg = color_suited_selected)
+                selected_range.append('J7s')
+        else: #toggle
+            if 'J7s' in selected_range:
+                buttonJ7s.config(bg = color_suited)
+                selected_range.remove('J7s')
+            else:
+                buttonJ7s.config(bg = color_suited_selected)
+                selected_range.append('J7s')
 
 def pressJ6s(par):
-    if par == 0:
-        if 'J6s' in selected_range:
-            buttonJ6s.config(bg = color_suited)
-            selected_range.remove('J6s')
-    elif par == 1:
-        if 'J6s' not in selected_range:
-            buttonJ6s.config(bg = color_suited_selected)
-            selected_range.append('J6s')
-    else: #toggle
-        if 'J6s' in selected_range:
-            buttonJ6s.config(bg = color_suited)
-            selected_range.remove('J6s')
-        else:
-            buttonJ6s.config(bg = color_suited_selected)
-            selected_range.append('J6s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J6s' in selected_range:
+                buttonJ6s.config(bg = color_suited)
+                selected_range.remove('J6s')
+        elif par == 1:
+            if 'J6s' not in selected_range:
+                buttonJ6s.config(bg = color_suited_selected)
+                selected_range.append('J6s')
+        else: #toggle
+            if 'J6s' in selected_range:
+                buttonJ6s.config(bg = color_suited)
+                selected_range.remove('J6s')
+            else:
+                buttonJ6s.config(bg = color_suited_selected)
+                selected_range.append('J6s')
 
 def pressJ5s(par):
-    if par == 0:
-        if 'J5s' in selected_range:
-            buttonJ5s.config(bg = color_suited)
-            selected_range.remove('J5s')
-    elif par == 1:
-        if 'J5s' not in selected_range:
-            buttonJ5s.config(bg = color_suited_selected)
-            selected_range.append('J5s')
-    else: #toggle
-        if 'J5s' in selected_range:
-            buttonJ5s.config(bg = color_suited)
-            selected_range.remove('J5s')
-        else:
-            buttonJ5s.config(bg = color_suited_selected)
-            selected_range.append('J5s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J5s' in selected_range:
+                buttonJ5s.config(bg = color_suited)
+                selected_range.remove('J5s')
+        elif par == 1:
+            if 'J5s' not in selected_range:
+                buttonJ5s.config(bg = color_suited_selected)
+                selected_range.append('J5s')
+        else: #toggle
+            if 'J5s' in selected_range:
+                buttonJ5s.config(bg = color_suited)
+                selected_range.remove('J5s')
+            else:
+                buttonJ5s.config(bg = color_suited_selected)
+                selected_range.append('J5s')
 
 def pressJ4s(par):
-    if par == 0:
-        if 'J4s' in selected_range:
-            buttonJ4s.config(bg = color_suited)
-            selected_range.remove('J4s')
-    elif par == 1:
-        if 'J4s' not in selected_range:
-            buttonJ4s.config(bg = color_suited_selected)
-            selected_range.append('J4s')
-    else: #toggle
-        if 'J4s' in selected_range:
-            buttonJ4s.config(bg = color_suited)
-            selected_range.remove('J4s')
-        else:
-            buttonJ4s.config(bg = color_suited_selected)
-            selected_range.append('J4s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J4s' in selected_range:
+                buttonJ4s.config(bg = color_suited)
+                selected_range.remove('J4s')
+        elif par == 1:
+            if 'J4s' not in selected_range:
+                buttonJ4s.config(bg = color_suited_selected)
+                selected_range.append('J4s')
+        else: #toggle
+            if 'J4s' in selected_range:
+                buttonJ4s.config(bg = color_suited)
+                selected_range.remove('J4s')
+            else:
+                buttonJ4s.config(bg = color_suited_selected)
+                selected_range.append('J4s')
 
 def pressJ3s(par):
-    if par == 0:
-        if 'J3s' in selected_range:
-            buttonJ3s.config(bg = color_suited)
-            selected_range.remove('J3s')
-    elif par == 1:
-        if 'J3s' not in selected_range:
-            buttonJ3s.config(bg = color_suited_selected)
-            selected_range.append('J3s')
-    else: #toggle
-        if 'J3s' in selected_range:
-            buttonJ3s.config(bg = color_suited)
-            selected_range.remove('J3s')
-        else:
-            buttonJ3s.config(bg = color_suited_selected)
-            selected_range.append('J3s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J3s' in selected_range:
+                buttonJ3s.config(bg = color_suited)
+                selected_range.remove('J3s')
+        elif par == 1:
+            if 'J3s' not in selected_range:
+                buttonJ3s.config(bg = color_suited_selected)
+                selected_range.append('J3s')
+        else: #toggle
+            if 'J3s' in selected_range:
+                buttonJ3s.config(bg = color_suited)
+                selected_range.remove('J3s')
+            else:
+                buttonJ3s.config(bg = color_suited_selected)
+                selected_range.append('J3s')
 
 def pressJ2s(par):
-    if par == 0:
-        if 'J2s' in selected_range:
-            buttonJ2s.config(bg = color_suited)
-            selected_range.remove('J2s')
-    elif par == 1:
-        if 'J2s' not in selected_range:
-            buttonJ2s.config(bg = color_suited_selected)
-            selected_range.append('J2s')
-    else: #toggle
-        if 'J2s' in selected_range:
-            buttonJ2s.config(bg = color_suited)
-            selected_range.remove('J2s')
-        else:
-            buttonJ2s.config(bg = color_suited_selected)
-            selected_range.append('J2s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J2s' in selected_range:
+                buttonJ2s.config(bg = color_suited)
+                selected_range.remove('J2s')
+        elif par == 1:
+            if 'J2s' not in selected_range:
+                buttonJ2s.config(bg = color_suited_selected)
+                selected_range.append('J2s')
+        else: #toggle
+            if 'J2s' in selected_range:
+                buttonJ2s.config(bg = color_suited)
+                selected_range.remove('J2s')
+            else:
+                buttonJ2s.config(bg = color_suited_selected)
+                selected_range.append('J2s')
 
 #suited handlers T
 
 def pressT9s(par):
-    if par == 0:
-        if 'T9s' in selected_range:
-            buttonT9s.config(bg = color_suited)
-            selected_range.remove('T9s')
-    elif par == 1:
-        if 'T9s' not in selected_range:
-            buttonT9s.config(bg = color_suited_selected)
-            selected_range.append('T9s')
-    else: #toggle
-        if 'T9s' in selected_range:
-            buttonT9s.config(bg = color_suited)
-            selected_range.remove('T9s')
-        else:
-            buttonT9s.config(bg = color_suited_selected)
-            selected_range.append('T9s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T9s' in selected_range:
+                buttonT9s.config(bg = color_suited)
+                selected_range.remove('T9s')
+        elif par == 1:
+            if 'T9s' not in selected_range:
+                buttonT9s.config(bg = color_suited_selected)
+                selected_range.append('T9s')
+        else: #toggle
+            if 'T9s' in selected_range:
+                buttonT9s.config(bg = color_suited)
+                selected_range.remove('T9s')
+            else:
+                buttonT9s.config(bg = color_suited_selected)
+                selected_range.append('T9s')
 
 def pressT8s(par):
-    if par == 0:
-        if 'T8s' in selected_range:
-            buttonT8s.config(bg = color_suited)
-            selected_range.remove('T8s')
-    elif par == 1:
-        if 'T8s' not in selected_range:
-            buttonT8s.config(bg = color_suited_selected)
-            selected_range.append('T8s')
-    else: #toggle
-        if 'T8s' in selected_range:
-            buttonT8s.config(bg = color_suited)
-            selected_range.remove('T8s')
-        else:
-            buttonT8s.config(bg = color_suited_selected)
-            selected_range.append('T8s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T8s' in selected_range:
+                buttonT8s.config(bg = color_suited)
+                selected_range.remove('T8s')
+        elif par == 1:
+            if 'T8s' not in selected_range:
+                buttonT8s.config(bg = color_suited_selected)
+                selected_range.append('T8s')
+        else: #toggle
+            if 'T8s' in selected_range:
+                buttonT8s.config(bg = color_suited)
+                selected_range.remove('T8s')
+            else:
+                buttonT8s.config(bg = color_suited_selected)
+                selected_range.append('T8s')
 
 def pressT7s(par):
-    if par == 0:
-        if 'T7s' in selected_range:
-            buttonT7s.config(bg = color_suited)
-            selected_range.remove('T7s')
-    elif par == 1:
-        if 'T7s' not in selected_range:
-            buttonT7s.config(bg = color_suited_selected)
-            selected_range.append('T7s')
-    else: #toggle
-        if 'T7s' in selected_range:
-            buttonT7s.config(bg = color_suited)
-            selected_range.remove('T7s')
-        else:
-            buttonT7s.config(bg = color_suited_selected)
-            selected_range.append('T7s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T7s' in selected_range:
+                buttonT7s.config(bg = color_suited)
+                selected_range.remove('T7s')
+        elif par == 1:
+            if 'T7s' not in selected_range:
+                buttonT7s.config(bg = color_suited_selected)
+                selected_range.append('T7s')
+        else: #toggle
+            if 'T7s' in selected_range:
+                buttonT7s.config(bg = color_suited)
+                selected_range.remove('T7s')
+            else:
+                buttonT7s.config(bg = color_suited_selected)
+                selected_range.append('T7s')
 
 def pressT6s(par):
-    if par == 0:
-        if 'T6s' in selected_range:
-            buttonT6s.config(bg = color_suited)
-            selected_range.remove('T6s')
-    elif par == 1:
-        if 'T6s' not in selected_range:
-            buttonT6s.config(bg = color_suited_selected)
-            selected_range.append('T6s')
-    else: #toggle
-        if 'T6s' in selected_range:
-            buttonT6s.config(bg = color_suited)
-            selected_range.remove('T6s')
-        else:
-            buttonT6s.config(bg = color_suited_selected)
-            selected_range.append('T6s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T6s' in selected_range:
+                buttonT6s.config(bg = color_suited)
+                selected_range.remove('T6s')
+        elif par == 1:
+            if 'T6s' not in selected_range:
+                buttonT6s.config(bg = color_suited_selected)
+                selected_range.append('T6s')
+        else: #toggle
+            if 'T6s' in selected_range:
+                buttonT6s.config(bg = color_suited)
+                selected_range.remove('T6s')
+            else:
+                buttonT6s.config(bg = color_suited_selected)
+                selected_range.append('T6s')
 
 def pressT5s(par):
-    if par == 0:
-        if 'T5s' in selected_range:
-            buttonT5s.config(bg = color_suited)
-            selected_range.remove('T5s')
-    elif par == 1:
-        if 'T5s' not in selected_range:
-            buttonT5s.config(bg = color_suited_selected)
-            selected_range.append('T5s')
-    else: #toggle
-        if 'T5s' in selected_range:
-            buttonT5s.config(bg = color_suited)
-            selected_range.remove('T5s')
-        else:
-            buttonT5s.config(bg = color_suited_selected)
-            selected_range.append('T5s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T5s' in selected_range:
+                buttonT5s.config(bg = color_suited)
+                selected_range.remove('T5s')
+        elif par == 1:
+            if 'T5s' not in selected_range:
+                buttonT5s.config(bg = color_suited_selected)
+                selected_range.append('T5s')
+        else: #toggle
+            if 'T5s' in selected_range:
+                buttonT5s.config(bg = color_suited)
+                selected_range.remove('T5s')
+            else:
+                buttonT5s.config(bg = color_suited_selected)
+                selected_range.append('T5s')
 
 def pressT4s(par):
-    if par == 0:
-        if 'T4s' in selected_range:
-            buttonT4s.config(bg = color_suited)
-            selected_range.remove('T4s')
-    elif par == 1:
-        if 'T4s' not in selected_range:
-            buttonT4s.config(bg = color_suited_selected)
-            selected_range.append('T4s')
-    else: #toggle
-        if 'T4s' in selected_range:
-            buttonT4s.config(bg = color_suited)
-            selected_range.remove('T4s')
-        else:
-            buttonT4s.config(bg = color_suited_selected)
-            selected_range.append('T4s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T4s' in selected_range:
+                buttonT4s.config(bg = color_suited)
+                selected_range.remove('T4s')
+        elif par == 1:
+            if 'T4s' not in selected_range:
+                buttonT4s.config(bg = color_suited_selected)
+                selected_range.append('T4s')
+        else: #toggle
+            if 'T4s' in selected_range:
+                buttonT4s.config(bg = color_suited)
+                selected_range.remove('T4s')
+            else:
+                buttonT4s.config(bg = color_suited_selected)
+                selected_range.append('T4s')
 
 def pressT3s(par):
-    if par == 0:
-        if 'T3s' in selected_range:
-            buttonT3s.config(bg = color_suited)
-            selected_range.remove('T3s')
-    elif par == 1:
-        if 'T3s' not in selected_range:
-            buttonT3s.config(bg = color_suited_selected)
-            selected_range.append('T3s')
-    else: #toggle
-        if 'T3s' in selected_range:
-            buttonT3s.config(bg = color_suited)
-            selected_range.remove('T3s')
-        else:
-            buttonT3s.config(bg = color_suited_selected)
-            selected_range.append('T3s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T3s' in selected_range:
+                buttonT3s.config(bg = color_suited)
+                selected_range.remove('T3s')
+        elif par == 1:
+            if 'T3s' not in selected_range:
+                buttonT3s.config(bg = color_suited_selected)
+                selected_range.append('T3s')
+        else: #toggle
+            if 'T3s' in selected_range:
+                buttonT3s.config(bg = color_suited)
+                selected_range.remove('T3s')
+            else:
+                buttonT3s.config(bg = color_suited_selected)
+                selected_range.append('T3s')
 
 def pressT2s(par):
-    if par == 0:
-        if 'T2s' in selected_range:
-            buttonT2s.config(bg = color_suited)
-            selected_range.remove('T2s')
-    elif par == 1:
-        if 'T2s' not in selected_range:
-            buttonT2s.config(bg = color_suited_selected)
-            selected_range.append('T2s')
-    else: #toggle
-        if 'T2s' in selected_range:
-            buttonT2s.config(bg = color_suited)
-            selected_range.remove('T2s')
-        else:
-            buttonT2s.config(bg = color_suited_selected)
-            selected_range.append('T2s')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T2s' in selected_range:
+                buttonT2s.config(bg = color_suited)
+                selected_range.remove('T2s')
+        elif par == 1:
+            if 'T2s' not in selected_range:
+                buttonT2s.config(bg = color_suited_selected)
+                selected_range.append('T2s')
+        else: #toggle
+            if 'T2s' in selected_range:
+                buttonT2s.config(bg = color_suited)
+                selected_range.remove('T2s')
+            else:
+                buttonT2s.config(bg = color_suited_selected)
+                selected_range.append('T2s')
 
 #suited handlers 9
 
 def press98s(par):
-    if par == 0:
-        if '98s' in selected_range:
-            button98s.config(bg = color_suited)
-            selected_range.remove('98s')
-    elif par == 1:
-        if '98s' not in selected_range:
-            button98s.config(bg = color_suited_selected)
-            selected_range.append('98s')
-    else: #toggle
-        if '98s' in selected_range:
-            button98s.config(bg = color_suited)
-            selected_range.remove('98s')
-        else:
-            button98s.config(bg = color_suited_selected)
-            selected_range.append('98s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '98s' in selected_range:
+                button98s.config(bg = color_suited)
+                selected_range.remove('98s')
+        elif par == 1:
+            if '98s' not in selected_range:
+                button98s.config(bg = color_suited_selected)
+                selected_range.append('98s')
+        else: #toggle
+            if '98s' in selected_range:
+                button98s.config(bg = color_suited)
+                selected_range.remove('98s')
+            else:
+                button98s.config(bg = color_suited_selected)
+                selected_range.append('98s')
 
 def press97s(par):
-    if par == 0:
-        if '97s' in selected_range:
-            button97s.config(bg = color_suited)
-            selected_range.remove('97s')
-    elif par == 1:
-        if '97s' not in selected_range:
-            button97s.config(bg = color_suited_selected)
-            selected_range.append('97s')
-    else: #toggle
-        if '97s' in selected_range:
-            button97s.config(bg = color_suited)
-            selected_range.remove('97s')
-        else:
-            button97s.config(bg = color_suited_selected)
-            selected_range.append('97s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '97s' in selected_range:
+                button97s.config(bg = color_suited)
+                selected_range.remove('97s')
+        elif par == 1:
+            if '97s' not in selected_range:
+                button97s.config(bg = color_suited_selected)
+                selected_range.append('97s')
+        else: #toggle
+            if '97s' in selected_range:
+                button97s.config(bg = color_suited)
+                selected_range.remove('97s')
+            else:
+                button97s.config(bg = color_suited_selected)
+                selected_range.append('97s')
 
 def press96s(par):
-    if par == 0:
-        if '96s' in selected_range:
-            button96s.config(bg = color_suited)
-            selected_range.remove('96s')
-    elif par == 1:
-        if '96s' not in selected_range:
-            button96s.config(bg = color_suited_selected)
-            selected_range.append('96s')
-    else: #toggle
-        if '96s' in selected_range:
-            button96s.config(bg = color_suited)
-            selected_range.remove('96s')
-        else:
-            button96s.config(bg = color_suited_selected)
-            selected_range.append('96s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '96s' in selected_range:
+                button96s.config(bg = color_suited)
+                selected_range.remove('96s')
+        elif par == 1:
+            if '96s' not in selected_range:
+                button96s.config(bg = color_suited_selected)
+                selected_range.append('96s')
+        else: #toggle
+            if '96s' in selected_range:
+                button96s.config(bg = color_suited)
+                selected_range.remove('96s')
+            else:
+                button96s.config(bg = color_suited_selected)
+                selected_range.append('96s')
 
 def press95s(par):
-    if par == 0:
-        if '95s' in selected_range:
-            button95s.config(bg = color_suited)
-            selected_range.remove('95s')
-    elif par == 1:
-        if '95s' not in selected_range:
-            button95s.config(bg = color_suited_selected)
-            selected_range.append('95s')
-    else: #toggle
-        if '95s' in selected_range:
-            button95s.config(bg = color_suited)
-            selected_range.remove('95s')
-        else:
-            button95s.config(bg = color_suited_selected)
-            selected_range.append('95s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '95s' in selected_range:
+                button95s.config(bg = color_suited)
+                selected_range.remove('95s')
+        elif par == 1:
+            if '95s' not in selected_range:
+                button95s.config(bg = color_suited_selected)
+                selected_range.append('95s')
+        else: #toggle
+            if '95s' in selected_range:
+                button95s.config(bg = color_suited)
+                selected_range.remove('95s')
+            else:
+                button95s.config(bg = color_suited_selected)
+                selected_range.append('95s')
 
 def press94s(par):
-    if par == 0:
-        if '94s' in selected_range:
-            button94s.config(bg = color_suited)
-            selected_range.remove('94s')
-    elif par == 1:
-        if '94s' not in selected_range:
-            button94s.config(bg = color_suited_selected)
-            selected_range.append('94s')
-    else: #toggle
-        if '94s' in selected_range:
-            button94s.config(bg = color_suited)
-            selected_range.remove('94s')
-        else:
-            button94s.config(bg = color_suited_selected)
-            selected_range.append('94s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '94s' in selected_range:
+                button94s.config(bg = color_suited)
+                selected_range.remove('94s')
+        elif par == 1:
+            if '94s' not in selected_range:
+                button94s.config(bg = color_suited_selected)
+                selected_range.append('94s')
+        else: #toggle
+            if '94s' in selected_range:
+                button94s.config(bg = color_suited)
+                selected_range.remove('94s')
+            else:
+                button94s.config(bg = color_suited_selected)
+                selected_range.append('94s')
 
 def press93s(par):
-    if par == 0:
-        if '93s' in selected_range:
-            button93s.config(bg = color_suited)
-            selected_range.remove('93s')
-    elif par == 1:
-        if '93s' not in selected_range:
-            button93s.config(bg = color_suited_selected)
-            selected_range.append('93s')
-    else: #toggle
-        if '93s' in selected_range:
-            button93s.config(bg = color_suited)
-            selected_range.remove('93s')
-        else:
-            button93s.config(bg = color_suited_selected)
-            selected_range.append('93s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '93s' in selected_range:
+                button93s.config(bg = color_suited)
+                selected_range.remove('93s')
+        elif par == 1:
+            if '93s' not in selected_range:
+                button93s.config(bg = color_suited_selected)
+                selected_range.append('93s')
+        else: #toggle
+            if '93s' in selected_range:
+                button93s.config(bg = color_suited)
+                selected_range.remove('93s')
+            else:
+                button93s.config(bg = color_suited_selected)
+                selected_range.append('93s')
 
 def press92s(par):
-    if par == 0:
-        if '92s' in selected_range:
-            button92s.config(bg = color_suited)
-            selected_range.remove('92s')
-    elif par == 1:
-        if '92s' not in selected_range:
-            button92s.config(bg = color_suited_selected)
-            selected_range.append('92s')
-    else: #toggle
-        if '92s' in selected_range:
-            button92s.config(bg = color_suited)
-            selected_range.remove('92s')
-        else:
-            button92s.config(bg = color_suited_selected)
-            selected_range.append('92s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '92s' in selected_range:
+                button92s.config(bg = color_suited)
+                selected_range.remove('92s')
+        elif par == 1:
+            if '92s' not in selected_range:
+                button92s.config(bg = color_suited_selected)
+                selected_range.append('92s')
+        else: #toggle
+            if '92s' in selected_range:
+                button92s.config(bg = color_suited)
+                selected_range.remove('92s')
+            else:
+                button92s.config(bg = color_suited_selected)
+                selected_range.append('92s')
 
 #suited handlers 8
 
 def press87s(par):
-    if par == 0:
-        if '87s' in selected_range:
-            button87s.config(bg = color_suited)
-            selected_range.remove('87s')
-    elif par == 1:
-        if '87s' not in selected_range:
-            button87s.config(bg = color_suited_selected)
-            selected_range.append('87s')
-    else: #toggle
-        if '87s' in selected_range:
-            button87s.config(bg = color_suited)
-            selected_range.remove('87s')
-        else:
-            button87s.config(bg = color_suited_selected)
-            selected_range.append('87s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '87s' in selected_range:
+                button87s.config(bg = color_suited)
+                selected_range.remove('87s')
+        elif par == 1:
+            if '87s' not in selected_range:
+                button87s.config(bg = color_suited_selected)
+                selected_range.append('87s')
+        else: #toggle
+            if '87s' in selected_range:
+                button87s.config(bg = color_suited)
+                selected_range.remove('87s')
+            else:
+                button87s.config(bg = color_suited_selected)
+                selected_range.append('87s')
 
 def press86s(par):
-    if par == 0:
-        if '86s' in selected_range:
-            button86s.config(bg = color_suited)
-            selected_range.remove('86s')
-    elif par == 1:
-        if '86s' not in selected_range:
-            button86s.config(bg = color_suited_selected)
-            selected_range.append('86s')
-    else: #toggle
-        if '86s' in selected_range:
-            button86s.config(bg = color_suited)
-            selected_range.remove('86s')
-        else:
-            button86s.config(bg = color_suited_selected)
-            selected_range.append('86s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '86s' in selected_range:
+                button86s.config(bg = color_suited)
+                selected_range.remove('86s')
+        elif par == 1:
+            if '86s' not in selected_range:
+                button86s.config(bg = color_suited_selected)
+                selected_range.append('86s')
+        else: #toggle
+            if '86s' in selected_range:
+                button86s.config(bg = color_suited)
+                selected_range.remove('86s')
+            else:
+                button86s.config(bg = color_suited_selected)
+                selected_range.append('86s')
 
 def press85s(par):
-    if par == 0:
-        if '85s' in selected_range:
-            button85s.config(bg = color_suited)
-            selected_range.remove('85s')
-    elif par == 1:
-        if '85s' not in selected_range:
-            button85s.config(bg = color_suited_selected)
-            selected_range.append('85s')
-    else: #toggle
-        if '85s' in selected_range:
-            button85s.config(bg = color_suited)
-            selected_range.remove('85s')
-        else:
-            button85s.config(bg = color_suited_selected)
-            selected_range.append('85s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '85s' in selected_range:
+                button85s.config(bg = color_suited)
+                selected_range.remove('85s')
+        elif par == 1:
+            if '85s' not in selected_range:
+                button85s.config(bg = color_suited_selected)
+                selected_range.append('85s')
+        else: #toggle
+            if '85s' in selected_range:
+                button85s.config(bg = color_suited)
+                selected_range.remove('85s')
+            else:
+                button85s.config(bg = color_suited_selected)
+                selected_range.append('85s')
 
 def press84s(par):
-    if par == 0:
-        if '84s' in selected_range:
-            button84s.config(bg = color_suited)
-            selected_range.remove('84s')
-    elif par == 1:
-        if '84s' not in selected_range:
-            button84s.config(bg = color_suited_selected)
-            selected_range.append('84s')
-    else: #toggle
-        if '84s' in selected_range:
-            button84s.config(bg = color_suited)
-            selected_range.remove('84s')
-        else:
-            button84s.config(bg = color_suited_selected)
-            selected_range.append('84s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '84s' in selected_range:
+                button84s.config(bg = color_suited)
+                selected_range.remove('84s')
+        elif par == 1:
+            if '84s' not in selected_range:
+                button84s.config(bg = color_suited_selected)
+                selected_range.append('84s')
+        else: #toggle
+            if '84s' in selected_range:
+                button84s.config(bg = color_suited)
+                selected_range.remove('84s')
+            else:
+                button84s.config(bg = color_suited_selected)
+                selected_range.append('84s')
 
 def press83s(par):
-    if par == 0:
-        if '83s' in selected_range:
-            button83s.config(bg = color_suited)
-            selected_range.remove('83s')
-    elif par == 1:
-        if '83s' not in selected_range:
-            button83s.config(bg = color_suited_selected)
-            selected_range.append('83s')
-    else: #toggle
-        if '83s' in selected_range:
-            button83s.config(bg = color_suited)
-            selected_range.remove('83s')
-        else:
-            button83s.config(bg = color_suited_selected)
-            selected_range.append('83s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '83s' in selected_range:
+                button83s.config(bg = color_suited)
+                selected_range.remove('83s')
+        elif par == 1:
+            if '83s' not in selected_range:
+                button83s.config(bg = color_suited_selected)
+                selected_range.append('83s')
+        else: #toggle
+            if '83s' in selected_range:
+                button83s.config(bg = color_suited)
+                selected_range.remove('83s')
+            else:
+                button83s.config(bg = color_suited_selected)
+                selected_range.append('83s')
 
 def press82s(par):
-    if par == 0:
-        if '82s' in selected_range:
-            button82s.config(bg = color_suited)
-            selected_range.remove('82s')
-    elif par == 1:
-        if '82s' not in selected_range:
-            button82s.config(bg = color_suited_selected)
-            selected_range.append('82s')
-    else: #toggle
-        if '82s' in selected_range:
-            button82s.config(bg = color_suited)
-            selected_range.remove('82s')
-        else:
-            button82s.config(bg = color_suited_selected)
-            selected_range.append('82s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '82s' in selected_range:
+                button82s.config(bg = color_suited)
+                selected_range.remove('82s')
+        elif par == 1:
+            if '82s' not in selected_range:
+                button82s.config(bg = color_suited_selected)
+                selected_range.append('82s')
+        else: #toggle
+            if '82s' in selected_range:
+                button82s.config(bg = color_suited)
+                selected_range.remove('82s')
+            else:
+                button82s.config(bg = color_suited_selected)
+                selected_range.append('82s')
 
 #suited handlers 7
 
 def press76s(par):
-    if par == 0:
-        if '76s' in selected_range:
-            button76s.config(bg = color_suited)
-            selected_range.remove('76s')
-    elif par == 1:
-        if '76s' not in selected_range:
-            button76s.config(bg = color_suited_selected)
-            selected_range.append('76s')
-    else: #toggle
-        if '76s' in selected_range:
-            button76s.config(bg = color_suited)
-            selected_range.remove('76s')
-        else:
-            button76s.config(bg = color_suited_selected)
-            selected_range.append('76s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '76s' in selected_range:
+                button76s.config(bg = color_suited)
+                selected_range.remove('76s')
+        elif par == 1:
+            if '76s' not in selected_range:
+                button76s.config(bg = color_suited_selected)
+                selected_range.append('76s')
+        else: #toggle
+            if '76s' in selected_range:
+                button76s.config(bg = color_suited)
+                selected_range.remove('76s')
+            else:
+                button76s.config(bg = color_suited_selected)
+                selected_range.append('76s')
 
 def press75s(par):
-    if par == 0:
-        if '75s' in selected_range:
-            button75s.config(bg = color_suited)
-            selected_range.remove('75s')
-    elif par == 1:
-        if '75s' not in selected_range:
-            button75s.config(bg = color_suited_selected)
-            selected_range.append('75s')
-    else: #toggle
-        if '75s' in selected_range:
-            button75s.config(bg = color_suited)
-            selected_range.remove('75s')
-        else:
-            button75s.config(bg = color_suited_selected)
-            selected_range.append('75s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '75s' in selected_range:
+                button75s.config(bg = color_suited)
+                selected_range.remove('75s')
+        elif par == 1:
+            if '75s' not in selected_range:
+                button75s.config(bg = color_suited_selected)
+                selected_range.append('75s')
+        else: #toggle
+            if '75s' in selected_range:
+                button75s.config(bg = color_suited)
+                selected_range.remove('75s')
+            else:
+                button75s.config(bg = color_suited_selected)
+                selected_range.append('75s')
 
 def press74s(par):
-    if par == 0:
-        if '74s' in selected_range:
-            button74s.config(bg = color_suited)
-            selected_range.remove('74s')
-    elif par == 1:
-        if '74s' not in selected_range:
-            button74s.config(bg = color_suited_selected)
-            selected_range.append('74s')
-    else: #toggle
-        if '74s' in selected_range:
-            button74s.config(bg = color_suited)
-            selected_range.remove('74s')
-        else:
-            button74s.config(bg = color_suited_selected)
-            selected_range.append('74s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '74s' in selected_range:
+                button74s.config(bg = color_suited)
+                selected_range.remove('74s')
+        elif par == 1:
+            if '74s' not in selected_range:
+                button74s.config(bg = color_suited_selected)
+                selected_range.append('74s')
+        else: #toggle
+            if '74s' in selected_range:
+                button74s.config(bg = color_suited)
+                selected_range.remove('74s')
+            else:
+                button74s.config(bg = color_suited_selected)
+                selected_range.append('74s')
 
 def press73s(par):
-    if par == 0:
-        if '73s' in selected_range:
-            button73s.config(bg = color_suited)
-            selected_range.remove('73s')
-    elif par == 1:
-        if '73s' not in selected_range:
-            button73s.config(bg = color_suited_selected)
-            selected_range.append('73s')
-    else: #toggle
-        if '73s' in selected_range:
-            button73s.config(bg = color_suited)
-            selected_range.remove('73s')
-        else:
-            button73s.config(bg = color_suited_selected)
-            selected_range.append('73s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '73s' in selected_range:
+                button73s.config(bg = color_suited)
+                selected_range.remove('73s')
+        elif par == 1:
+            if '73s' not in selected_range:
+                button73s.config(bg = color_suited_selected)
+                selected_range.append('73s')
+        else: #toggle
+            if '73s' in selected_range:
+                button73s.config(bg = color_suited)
+                selected_range.remove('73s')
+            else:
+                button73s.config(bg = color_suited_selected)
+                selected_range.append('73s')
 
 def press72s(par):
-    if par == 0:
-        if '72s' in selected_range:
-            button72s.config(bg = color_suited)
-            selected_range.remove('72s')
-    elif par == 1:
-        if '72s' not in selected_range:
-            button72s.config(bg = color_suited_selected)
-            selected_range.append('72s')
-    else: #toggle
-        if '72s' in selected_range:
-            button72s.config(bg = color_suited)
-            selected_range.remove('72s')
-        else:
-            button72s.config(bg = color_suited_selected)
-            selected_range.append('72s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '72s' in selected_range:
+                button72s.config(bg = color_suited)
+                selected_range.remove('72s')
+        elif par == 1:
+            if '72s' not in selected_range:
+                button72s.config(bg = color_suited_selected)
+                selected_range.append('72s')
+        else: #toggle
+            if '72s' in selected_range:
+                button72s.config(bg = color_suited)
+                selected_range.remove('72s')
+            else:
+                button72s.config(bg = color_suited_selected)
+                selected_range.append('72s')
 
 #suited handlers 6
 
 def press65s(par):
-    if par == 0:
-        if '65s' in selected_range:
-            button65s.config(bg = color_suited)
-            selected_range.remove('65s')
-    elif par == 1:
-        if '65s' not in selected_range:
-            button65s.config(bg = color_suited_selected)
-            selected_range.append('65s')
-    else: #toggle
-        if '65s' in selected_range:
-            button65s.config(bg = color_suited)
-            selected_range.remove('65s')
-        else:
-            button65s.config(bg = color_suited_selected)
-            selected_range.append('65s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '65s' in selected_range:
+                button65s.config(bg = color_suited)
+                selected_range.remove('65s')
+        elif par == 1:
+            if '65s' not in selected_range:
+                button65s.config(bg = color_suited_selected)
+                selected_range.append('65s')
+        else: #toggle
+            if '65s' in selected_range:
+                button65s.config(bg = color_suited)
+                selected_range.remove('65s')
+            else:
+                button65s.config(bg = color_suited_selected)
+                selected_range.append('65s')
 
 def press64s(par):
-    if par == 0:
-        if '64s' in selected_range:
-            button64s.config(bg = color_suited)
-            selected_range.remove('64s')
-    elif par == 1:
-        if '64s' not in selected_range:
-            button64s.config(bg = color_suited_selected)
-            selected_range.append('64s')
-    else: #toggle
-        if '64s' in selected_range:
-            button64s.config(bg = color_suited)
-            selected_range.remove('64s')
-        else:
-            button64s.config(bg = color_suited_selected)
-            selected_range.append('64s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '64s' in selected_range:
+                button64s.config(bg = color_suited)
+                selected_range.remove('64s')
+        elif par == 1:
+            if '64s' not in selected_range:
+                button64s.config(bg = color_suited_selected)
+                selected_range.append('64s')
+        else: #toggle
+            if '64s' in selected_range:
+                button64s.config(bg = color_suited)
+                selected_range.remove('64s')
+            else:
+                button64s.config(bg = color_suited_selected)
+                selected_range.append('64s')
 
 def press63s(par):
-    if par == 0:
-        if '63s' in selected_range:
-            button63s.config(bg = color_suited)
-            selected_range.remove('63s')
-    elif par == 1:
-        if '63s' not in selected_range:
-            button63s.config(bg = color_suited_selected)
-            selected_range.append('63s')
-    else: #toggle
-        if '63s' in selected_range:
-            button63s.config(bg = color_suited)
-            selected_range.remove('63s')
-        else:
-            button63s.config(bg = color_suited_selected)
-            selected_range.append('63s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '63s' in selected_range:
+                button63s.config(bg = color_suited)
+                selected_range.remove('63s')
+        elif par == 1:
+            if '63s' not in selected_range:
+                button63s.config(bg = color_suited_selected)
+                selected_range.append('63s')
+        else: #toggle
+            if '63s' in selected_range:
+                button63s.config(bg = color_suited)
+                selected_range.remove('63s')
+            else:
+                button63s.config(bg = color_suited_selected)
+                selected_range.append('63s')
 
 def press62s(par):
-    if par == 0:
-        if '62s' in selected_range:
-            button62s.config(bg = color_suited)
-            selected_range.remove('62s')
-    elif par == 1:
-        if '62s' not in selected_range:
-            button62s.config(bg = color_suited_selected)
-            selected_range.append('62s')
-    else: #toggle
-        if '62s' in selected_range:
-            button62s.config(bg = color_suited)
-            selected_range.remove('62s')
-        else:
-            button62s.config(bg = color_suited_selected)
-            selected_range.append('62s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '62s' in selected_range:
+                button62s.config(bg = color_suited)
+                selected_range.remove('62s')
+        elif par == 1:
+            if '62s' not in selected_range:
+                button62s.config(bg = color_suited_selected)
+                selected_range.append('62s')
+        else: #toggle
+            if '62s' in selected_range:
+                button62s.config(bg = color_suited)
+                selected_range.remove('62s')
+            else:
+                button62s.config(bg = color_suited_selected)
+                selected_range.append('62s')
 
 #suited handlers 5
 
 def press54s(par):
-    if par == 0:
-        if '54s' in selected_range:
-            button54s.config(bg = color_suited)
-            selected_range.remove('54s')
-    elif par == 1:
-        if '54s' not in selected_range:
-            button54s.config(bg = color_suited_selected)
-            selected_range.append('54s')
-    else: #toggle
-        if '54s' in selected_range:
-            button54s.config(bg = color_suited)
-            selected_range.remove('54s')
-        else:
-            button54s.config(bg = color_suited_selected)
-            selected_range.append('54s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '54s' in selected_range:
+                button54s.config(bg = color_suited)
+                selected_range.remove('54s')
+        elif par == 1:
+            if '54s' not in selected_range:
+                button54s.config(bg = color_suited_selected)
+                selected_range.append('54s')
+        else: #toggle
+            if '54s' in selected_range:
+                button54s.config(bg = color_suited)
+                selected_range.remove('54s')
+            else:
+                button54s.config(bg = color_suited_selected)
+                selected_range.append('54s')
 
 def press53s(par):
-    if par == 0:
-        if '53s' in selected_range:
-            button53s.config(bg = color_suited)
-            selected_range.remove('53s')
-    elif par == 1:
-        if '53s' not in selected_range:
-            button53s.config(bg = color_suited_selected)
-            selected_range.append('53s')
-    else: #toggle
-        if '53s' in selected_range:
-            button53s.config(bg = color_suited)
-            selected_range.remove('53s')
-        else:
-            button53s.config(bg = color_suited_selected)
-            selected_range.append('53s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '53s' in selected_range:
+                button53s.config(bg = color_suited)
+                selected_range.remove('53s')
+        elif par == 1:
+            if '53s' not in selected_range:
+                button53s.config(bg = color_suited_selected)
+                selected_range.append('53s')
+        else: #toggle
+            if '53s' in selected_range:
+                button53s.config(bg = color_suited)
+                selected_range.remove('53s')
+            else:
+                button53s.config(bg = color_suited_selected)
+                selected_range.append('53s')
 
 def press52s(par):
-    if par == 0:
-        if '52s' in selected_range:
-            button52s.config(bg = color_suited)
-            selected_range.remove('52s')
-    elif par == 1:
-        if '52s' not in selected_range:
-            button52s.config(bg = color_suited_selected)
-            selected_range.append('52s')
-    else: #toggle
-        if '52s' in selected_range:
-            button52s.config(bg = color_suited)
-            selected_range.remove('52s')
-        else:
-            button52s.config(bg = color_suited_selected)
-            selected_range.append('52s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '52s' in selected_range:
+                button52s.config(bg = color_suited)
+                selected_range.remove('52s')
+        elif par == 1:
+            if '52s' not in selected_range:
+                button52s.config(bg = color_suited_selected)
+                selected_range.append('52s')
+        else: #toggle
+            if '52s' in selected_range:
+                button52s.config(bg = color_suited)
+                selected_range.remove('52s')
+            else:
+                button52s.config(bg = color_suited_selected)
+                selected_range.append('52s')
 
 #suited handlers 4
 
 def press43s(par):
-    if par == 0:
-        if '43s' in selected_range:
-            button43s.config(bg = color_suited)
-            selected_range.remove('43s')
-    elif par == 1:
-        if '43s' not in selected_range:
-            button43s.config(bg = color_suited_selected)
-            selected_range.append('43s')
-    else: #toggle
-        if '43s' in selected_range:
-            button43s.config(bg = color_suited)
-            selected_range.remove('43s')
-        else:
-            button43s.config(bg = color_suited_selected)
-            selected_range.append('43s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '43s' in selected_range:
+                button43s.config(bg = color_suited)
+                selected_range.remove('43s')
+        elif par == 1:
+            if '43s' not in selected_range:
+                button43s.config(bg = color_suited_selected)
+                selected_range.append('43s')
+        else: #toggle
+            if '43s' in selected_range:
+                button43s.config(bg = color_suited)
+                selected_range.remove('43s')
+            else:
+                button43s.config(bg = color_suited_selected)
+                selected_range.append('43s')
 
 def press42s(par):
-    if par == 0:
-        if '42s' in selected_range:
-            button42s.config(bg = color_suited)
-            selected_range.remove('42s')
-    elif par == 1:
-        if '42s' not in selected_range:
-            button42s.config(bg = color_suited_selected)
-            selected_range.append('42s')
-    else: #toggle
-        if '42s' in selected_range:
-            button42s.config(bg = color_suited)
-            selected_range.remove('42s')
-        else:
-            button42s.config(bg = color_suited_selected)
-            selected_range.append('42s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '42s' in selected_range:
+                button42s.config(bg = color_suited)
+                selected_range.remove('42s')
+        elif par == 1:
+            if '42s' not in selected_range:
+                button42s.config(bg = color_suited_selected)
+                selected_range.append('42s')
+        else: #toggle
+            if '42s' in selected_range:
+                button42s.config(bg = color_suited)
+                selected_range.remove('42s')
+            else:
+                button42s.config(bg = color_suited_selected)
+                selected_range.append('42s')
 
 #suited handlers 3
 
 def press32s(par):
-    if par == 0:
-        if '32s' in selected_range:
-            button32s.config(bg = color_suited)
-            selected_range.remove('32s')
-    elif par == 1:
-        if '32s' not in selected_range:
-            button32s.config(bg = color_suited_selected)
-            selected_range.append('32s')
-    else: #toggle
-        if '32s' in selected_range:
-            button32s.config(bg = color_suited)
-            selected_range.remove('32s')
-        else:
-            button32s.config(bg = color_suited_selected)
-            selected_range.append('32s')
+    global solved
+    if not solved:
+        if par == 0:
+            if '32s' in selected_range:
+                button32s.config(bg = color_suited)
+                selected_range.remove('32s')
+        elif par == 1:
+            if '32s' not in selected_range:
+                button32s.config(bg = color_suited_selected)
+                selected_range.append('32s')
+        else: #toggle
+            if '32s' in selected_range:
+                button32s.config(bg = color_suited)
+                selected_range.remove('32s')
+            else:
+                button32s.config(bg = color_suited_selected)
+                selected_range.append('32s')
 
 #offsuited handlers
 
 def pressAKo(par):
-    if par == 0:
-        if 'AKo' in selected_range:
-            buttonAKo.config(bg = color_offsuit)
-            selected_range.remove('AKo')
-    elif par == 1:
-        if 'AKo' not in selected_range:
-            buttonAKo.config(bg = color_offsuit_selected)
-            selected_range.append('AKo')
-    else: #toggle
-        if 'AKo' in selected_range:
-            buttonAKo.config(bg = color_offsuit)
-            selected_range.remove('AKo')
-        else:
-            buttonAKo.config(bg = color_offsuit_selected)
-            selected_range.append('AKo')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'AKo' in selected_range:
+                buttonAKo.config(bg = color_offsuit)
+                selected_range.remove('AKo')
+        elif par == 1:
+            if 'AKo' not in selected_range:
+                buttonAKo.config(bg = color_offsuit_selected)
+                selected_range.append('AKo')
+        else: #toggle
+            if 'AKo' in selected_range:
+                buttonAKo.config(bg = color_offsuit)
+                selected_range.remove('AKo')
+            else:
+                buttonAKo.config(bg = color_offsuit_selected)
+                selected_range.append('AKo')
 
 def pressAQo(par):
-    if par == 0:
-        if 'AQo' in selected_range:
-            buttonAQo.config(bg = color_offsuit)
-            selected_range.remove('AQo')
-    elif par == 1:
-        if 'AQo' not in selected_range:
-            buttonAQo.config(bg = color_offsuit_selected)
-            selected_range.append('AQo')
-    else: #toggle
-        if 'AQo' in selected_range:
-            buttonAQo.config(bg = color_offsuit)
-            selected_range.remove('AQo')
-        else:
-            buttonAQo.config(bg = color_offsuit_selected)
-            selected_range.append('AQo')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'AQo' in selected_range:
+                buttonAQo.config(bg = color_offsuit)
+                selected_range.remove('AQo')
+        elif par == 1:
+            if 'AQo' not in selected_range:
+                buttonAQo.config(bg = color_offsuit_selected)
+                selected_range.append('AQo')
+        else: #toggle
+            if 'AQo' in selected_range:
+                buttonAQo.config(bg = color_offsuit)
+                selected_range.remove('AQo')
+            else:
+                buttonAQo.config(bg = color_offsuit_selected)
+                selected_range.append('AQo')
 
 def pressAJo(par):
-    if par == 0:
-        if 'AJo' in selected_range:
-            buttonAJo.config(bg = color_offsuit)
-            selected_range.remove('AJo')
-    elif par == 1:
-        if 'AJo' not in selected_range:
-            buttonAJo.config(bg = color_offsuit_selected)
-            selected_range.append('AJo')
-    else: #toggle
-        if 'AJo' in selected_range:
-            buttonAJo.config(bg = color_offsuit)
-            selected_range.remove('AJo')
-        else:
-            buttonAJo.config(bg = color_offsuit_selected)
-            selected_range.append('AJo')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'AJo' in selected_range:
+                buttonAJo.config(bg = color_offsuit)
+                selected_range.remove('AJo')
+        elif par == 1:
+            if 'AJo' not in selected_range:
+                buttonAJo.config(bg = color_offsuit_selected)
+                selected_range.append('AJo')
+        else: #toggle
+            if 'AJo' in selected_range:
+                buttonAJo.config(bg = color_offsuit)
+                selected_range.remove('AJo')
+            else:
+                buttonAJo.config(bg = color_offsuit_selected)
+                selected_range.append('AJo')
 
 def pressATo(par):
-    if par == 0:
-        if 'ATo' in selected_range:
-            buttonATo.config(bg = color_offsuit)
-            selected_range.remove('ATo')
-    elif par == 1:
-        if 'ATo' not in selected_range:
-            buttonATo.config(bg = color_offsuit_selected)
-            selected_range.append('ATo')
-    else: #toggle
-        if 'ATo' in selected_range:
-            buttonATo.config(bg = color_offsuit)
-            selected_range.remove('ATo')
-        else:
-            buttonATo.config(bg = color_offsuit_selected)
-            selected_range.append('ATo')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'ATo' in selected_range:
+                buttonATo.config(bg = color_offsuit)
+                selected_range.remove('ATo')
+        elif par == 1:
+            if 'ATo' not in selected_range:
+                buttonATo.config(bg = color_offsuit_selected)
+                selected_range.append('ATo')
+        else: #toggle
+            if 'ATo' in selected_range:
+                buttonATo.config(bg = color_offsuit)
+                selected_range.remove('ATo')
+            else:
+                buttonATo.config(bg = color_offsuit_selected)
+                selected_range.append('ATo')
 
 def pressA9o(par):
-    if par == 0:
-        if 'A9o' in selected_range:
-            buttonA9o.config(bg = color_offsuit)
-            selected_range.remove('A9o')
-    elif par == 1:
-        if 'A9o' not in selected_range:
-            buttonA9o.config(bg = color_offsuit_selected)
-            selected_range.append('A9o')
-    else: #toggle
-        if 'A9o' in selected_range:
-            buttonA9o.config(bg = color_offsuit)
-            selected_range.remove('A9o')
-        else:
-            buttonA9o.config(bg = color_offsuit_selected)
-            selected_range.append('A9o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A9o' in selected_range:
+                buttonA9o.config(bg = color_offsuit)
+                selected_range.remove('A9o')
+        elif par == 1:
+            if 'A9o' not in selected_range:
+                buttonA9o.config(bg = color_offsuit_selected)
+                selected_range.append('A9o')
+        else: #toggle
+            if 'A9o' in selected_range:
+                buttonA9o.config(bg = color_offsuit)
+                selected_range.remove('A9o')
+            else:
+                buttonA9o.config(bg = color_offsuit_selected)
+                selected_range.append('A9o')
 
 def pressA8o(par):
-    if par == 0:
-        if 'A8o' in selected_range:
-            buttonA8o.config(bg = color_offsuit)
-            selected_range.remove('A8o')
-    elif par == 1:
-        if 'A8o' not in selected_range:
-            buttonA8o.config(bg = color_offsuit_selected)
-            selected_range.append('A8o')
-    else: #toggle
-        if 'A8o' in selected_range:
-            buttonA8o.config(bg = color_offsuit)
-            selected_range.remove('A8o')
-        else:
-            buttonA8o.config(bg = color_offsuit_selected)
-            selected_range.append('A8o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A8o' in selected_range:
+                buttonA8o.config(bg = color_offsuit)
+                selected_range.remove('A8o')
+        elif par == 1:
+            if 'A8o' not in selected_range:
+                buttonA8o.config(bg = color_offsuit_selected)
+                selected_range.append('A8o')
+        else: #toggle
+            if 'A8o' in selected_range:
+                buttonA8o.config(bg = color_offsuit)
+                selected_range.remove('A8o')
+            else:
+                buttonA8o.config(bg = color_offsuit_selected)
+                selected_range.append('A8o')
 
 def pressA7o(par):
-    if par == 0:
-        if 'A7o' in selected_range:
-            buttonA7o.config(bg = color_offsuit)
-            selected_range.remove('A7o')
-    elif par == 1:
-        if 'A7o' not in selected_range:
-            buttonA7o.config(bg = color_offsuit_selected)
-            selected_range.append('A7o')
-    else: #toggle
-        if 'A7o' in selected_range:
-            buttonA7o.config(bg = color_offsuit)
-            selected_range.remove('A7o')
-        else:
-            buttonA7o.config(bg = color_offsuit_selected)
-            selected_range.append('A7o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A7o' in selected_range:
+                buttonA7o.config(bg = color_offsuit)
+                selected_range.remove('A7o')
+        elif par == 1:
+            if 'A7o' not in selected_range:
+                buttonA7o.config(bg = color_offsuit_selected)
+                selected_range.append('A7o')
+        else: #toggle
+            if 'A7o' in selected_range:
+                buttonA7o.config(bg = color_offsuit)
+                selected_range.remove('A7o')
+            else:
+                buttonA7o.config(bg = color_offsuit_selected)
+                selected_range.append('A7o')
 
 def pressA6o(par):
-    if par == 0:
-        if 'A6o' in selected_range:
-            buttonA6o.config(bg = color_offsuit)
-            selected_range.remove('A6o')
-    elif par == 1:
-        if 'A6o' not in selected_range:
-            buttonA6o.config(bg = color_offsuit_selected)
-            selected_range.append('A6o')
-    else: #toggle
-        if 'A6o' in selected_range:
-            buttonA6o.config(bg = color_offsuit)
-            selected_range.remove('A6o')
-        else:
-            buttonA6o.config(bg = color_offsuit_selected)
-            selected_range.append('A6o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A6o' in selected_range:
+                buttonA6o.config(bg = color_offsuit)
+                selected_range.remove('A6o')
+        elif par == 1:
+            if 'A6o' not in selected_range:
+                buttonA6o.config(bg = color_offsuit_selected)
+                selected_range.append('A6o')
+        else: #toggle
+            if 'A6o' in selected_range:
+                buttonA6o.config(bg = color_offsuit)
+                selected_range.remove('A6o')
+            else:
+                buttonA6o.config(bg = color_offsuit_selected)
+                selected_range.append('A6o')
 
 def pressA5o(par):
-    if par == 0:
-        if 'A5o' in selected_range:
-            buttonA5o.config(bg = color_offsuit)
-            selected_range.remove('A5o')
-    elif par == 1:
-        if 'A5o' not in selected_range:
-            buttonA5o.config(bg = color_offsuit_selected)
-            selected_range.append('A5o')
-    else: #toggle
-        if 'A5o' in selected_range:
-            buttonA5o.config(bg = color_offsuit)
-            selected_range.remove('A5o')
-        else:
-            buttonA5o.config(bg = color_offsuit_selected)
-            selected_range.append('A5o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A5o' in selected_range:
+                buttonA5o.config(bg = color_offsuit)
+                selected_range.remove('A5o')
+        elif par == 1:
+            if 'A5o' not in selected_range:
+                buttonA5o.config(bg = color_offsuit_selected)
+                selected_range.append('A5o')
+        else: #toggle
+            if 'A5o' in selected_range:
+                buttonA5o.config(bg = color_offsuit)
+                selected_range.remove('A5o')
+            else:
+                buttonA5o.config(bg = color_offsuit_selected)
+                selected_range.append('A5o')
 
 def pressA4o(par):
-    if par == 0:
-        if 'A4o' in selected_range:
-            buttonA4o.config(bg = color_offsuit)
-            selected_range.remove('A4o')
-    elif par == 1:
-        if 'A4o' not in selected_range:
-            buttonA4o.config(bg = color_offsuit_selected)
-            selected_range.append('A4o')
-    else: #toggle
-        if 'A4o' in selected_range:
-            buttonA4o.config(bg = color_offsuit)
-            selected_range.remove('A4o')
-        else:
-            buttonA4o.config(bg = color_offsuit_selected)
-            selected_range.append('A4o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A4o' in selected_range:
+                buttonA4o.config(bg = color_offsuit)
+                selected_range.remove('A4o')
+        elif par == 1:
+            if 'A4o' not in selected_range:
+                buttonA4o.config(bg = color_offsuit_selected)
+                selected_range.append('A4o')
+        else: #toggle
+            if 'A4o' in selected_range:
+                buttonA4o.config(bg = color_offsuit)
+                selected_range.remove('A4o')
+            else:
+                buttonA4o.config(bg = color_offsuit_selected)
+                selected_range.append('A4o')
 
 def pressA3o(par):
-    if par == 0:
-        if 'A3o' in selected_range:
-            buttonA3o.config(bg = color_offsuit)
-            selected_range.remove('A3o')
-    elif par == 1:
-        if 'A3o' not in selected_range:
-            buttonA3o.config(bg = color_offsuit_selected)
-            selected_range.append('A3o')
-    else: #toggle
-        if 'A3o' in selected_range:
-            buttonA3o.config(bg = color_offsuit)
-            selected_range.remove('A3o')
-        else:
-            buttonA3o.config(bg = color_offsuit_selected)
-            selected_range.append('A3o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A3o' in selected_range:
+                buttonA3o.config(bg = color_offsuit)
+                selected_range.remove('A3o')
+        elif par == 1:
+            if 'A3o' not in selected_range:
+                buttonA3o.config(bg = color_offsuit_selected)
+                selected_range.append('A3o')
+        else: #toggle
+            if 'A3o' in selected_range:
+                buttonA3o.config(bg = color_offsuit)
+                selected_range.remove('A3o')
+            else:
+                buttonA3o.config(bg = color_offsuit_selected)
+                selected_range.append('A3o')
 
 def pressA2o(par):
-    if par == 0:
-        if 'A2o' in selected_range:
-            buttonA2o.config(bg = color_offsuit)
-            selected_range.remove('A2o')
-    elif par == 1:
-        if 'A2o' not in selected_range:
-            buttonA2o.config(bg = color_offsuit_selected)
-            selected_range.append('A2o')
-    else: #toggle
-        if 'A2o' in selected_range:
-            buttonA2o.config(bg = color_offsuit)
-            selected_range.remove('A2o')
-        else:
-            buttonA2o.config(bg = color_offsuit_selected)
-            selected_range.append('A2o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'A2o' in selected_range:
+                buttonA2o.config(bg = color_offsuit)
+                selected_range.remove('A2o')
+        elif par == 1:
+            if 'A2o' not in selected_range:
+                buttonA2o.config(bg = color_offsuit_selected)
+                selected_range.append('A2o')
+        else: #toggle
+            if 'A2o' in selected_range:
+                buttonA2o.config(bg = color_offsuit)
+                selected_range.remove('A2o')
+            else:
+                buttonA2o.config(bg = color_offsuit_selected)
+                selected_range.append('A2o')
 
 # K
 
 def pressKQo(par):
-    if par == 0:
-        if 'KQo' in selected_range:
-            buttonKQo.config(bg = color_offsuit)
-            selected_range.remove('KQo')
-    elif par == 1:
-        if 'KQo' not in selected_range:
-            buttonKQo.config(bg = color_offsuit_selected)
-            selected_range.append('KQo')
-    else: #toggle
-        if 'KQo' in selected_range:
-            buttonKQo.config(bg = color_offsuit)
-            selected_range.remove('KQo')
-        else:
-            buttonKQo.config(bg = color_offsuit_selected)
-            selected_range.append('KQo')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'KQo' in selected_range:
+                buttonKQo.config(bg = color_offsuit)
+                selected_range.remove('KQo')
+        elif par == 1:
+            if 'KQo' not in selected_range:
+                buttonKQo.config(bg = color_offsuit_selected)
+                selected_range.append('KQo')
+        else: #toggle
+            if 'KQo' in selected_range:
+                buttonKQo.config(bg = color_offsuit)
+                selected_range.remove('KQo')
+            else:
+                buttonKQo.config(bg = color_offsuit_selected)
+                selected_range.append('KQo')
 
 def pressKJo(par):
-    if par == 0:
-        if 'KJo' in selected_range:
-            buttonKJo.config(bg = color_offsuit)
-            selected_range.remove('KJo')
-    elif par == 1:
-        if 'KJo' not in selected_range:
-            buttonKJo.config(bg = color_offsuit_selected)
-            selected_range.append('KJo')
-    else: #toggle
-        if 'KJo' in selected_range:
-            buttonKJo.config(bg = color_offsuit)
-            selected_range.remove('KJo')
-        else:
-            buttonKJo.config(bg = color_offsuit_selected)
-            selected_range.append('KJo')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'KJo' in selected_range:
+                buttonKJo.config(bg = color_offsuit)
+                selected_range.remove('KJo')
+        elif par == 1:
+            if 'KJo' not in selected_range:
+                buttonKJo.config(bg = color_offsuit_selected)
+                selected_range.append('KJo')
+        else: #toggle
+            if 'KJo' in selected_range:
+                buttonKJo.config(bg = color_offsuit)
+                selected_range.remove('KJo')
+            else:
+                buttonKJo.config(bg = color_offsuit_selected)
+                selected_range.append('KJo')
 
 def pressKTo(par):
-    if par == 0:
-        if 'KTo' in selected_range:
-            buttonKTo.config(bg = color_offsuit)
-            selected_range.remove('KTo')
-    elif par == 1:
-        if 'KTo' not in selected_range:
-            buttonKTo.config(bg = color_offsuit_selected)
-            selected_range.append('KTo')
-    else: #toggle
-        if 'KTo' in selected_range:
-            buttonKTo.config(bg = color_offsuit)
-            selected_range.remove('KTo')
-        else:
-            buttonKTo.config(bg = color_offsuit_selected)
-            selected_range.append('KTo')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'KTo' in selected_range:
+                buttonKTo.config(bg = color_offsuit)
+                selected_range.remove('KTo')
+        elif par == 1:
+            if 'KTo' not in selected_range:
+                buttonKTo.config(bg = color_offsuit_selected)
+                selected_range.append('KTo')
+        else: #toggle
+            if 'KTo' in selected_range:
+                buttonKTo.config(bg = color_offsuit)
+                selected_range.remove('KTo')
+            else:
+                buttonKTo.config(bg = color_offsuit_selected)
+                selected_range.append('KTo')
 
 def pressK9o(par):
-    if par == 0:
-        if 'K9o' in selected_range:
-            buttonK9o.config(bg = color_offsuit)
-            selected_range.remove('K9o')
-    elif par == 1:
-        if 'K9o' not in selected_range:
-            buttonK9o.config(bg = color_offsuit_selected)
-            selected_range.append('K9o')
-    else: #toggle
-        if 'K9o' in selected_range:
-            buttonK9o.config(bg = color_offsuit)
-            selected_range.remove('K9o')
-        else:
-            buttonK9o.config(bg = color_offsuit_selected)
-            selected_range.append('K9o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K9o' in selected_range:
+                buttonK9o.config(bg = color_offsuit)
+                selected_range.remove('K9o')
+        elif par == 1:
+            if 'K9o' not in selected_range:
+                buttonK9o.config(bg = color_offsuit_selected)
+                selected_range.append('K9o')
+        else: #toggle
+            if 'K9o' in selected_range:
+                buttonK9o.config(bg = color_offsuit)
+                selected_range.remove('K9o')
+            else:
+                buttonK9o.config(bg = color_offsuit_selected)
+                selected_range.append('K9o')
 
 def pressK8o(par):
-    if par == 0:
-        if 'K8o' in selected_range:
-            buttonK8o.config(bg = color_offsuit)
-            selected_range.remove('K8o')
-    elif par == 1:
-        if 'K8o' not in selected_range:
-            buttonK8o.config(bg = color_offsuit_selected)
-            selected_range.append('K8o')
-    else: #toggle
-        if 'K8o' in selected_range:
-            buttonK8o.config(bg = color_offsuit)
-            selected_range.remove('K8o')
-        else:
-            buttonK8o.config(bg = color_offsuit_selected)
-            selected_range.append('K8o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K8o' in selected_range:
+                buttonK8o.config(bg = color_offsuit)
+                selected_range.remove('K8o')
+        elif par == 1:
+            if 'K8o' not in selected_range:
+                buttonK8o.config(bg = color_offsuit_selected)
+                selected_range.append('K8o')
+        else: #toggle
+            if 'K8o' in selected_range:
+                buttonK8o.config(bg = color_offsuit)
+                selected_range.remove('K8o')
+            else:
+                buttonK8o.config(bg = color_offsuit_selected)
+                selected_range.append('K8o')
 
 def pressK7o(par):
-    if par == 0:
-        if 'K7o' in selected_range:
-            buttonK7o.config(bg = color_offsuit)
-            selected_range.remove('K7o')
-    elif par == 1:
-        if 'K7o' not in selected_range:
-            buttonK7o.config(bg = color_offsuit_selected)
-            selected_range.append('K7o')
-    else: #toggle
-        if 'K7o' in selected_range:
-            buttonK7o.config(bg = color_offsuit)
-            selected_range.remove('K7o')
-        else:
-            buttonK7o.config(bg = color_offsuit_selected)
-            selected_range.append('K7o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K7o' in selected_range:
+                buttonK7o.config(bg = color_offsuit)
+                selected_range.remove('K7o')
+        elif par == 1:
+            if 'K7o' not in selected_range:
+                buttonK7o.config(bg = color_offsuit_selected)
+                selected_range.append('K7o')
+        else: #toggle
+            if 'K7o' in selected_range:
+                buttonK7o.config(bg = color_offsuit)
+                selected_range.remove('K7o')
+            else:
+                buttonK7o.config(bg = color_offsuit_selected)
+                selected_range.append('K7o')
 
 def pressK6o(par):
-    if par == 0:
-        if 'K6o' in selected_range:
-            buttonK6o.config(bg = color_offsuit)
-            selected_range.remove('K6o')
-    elif par == 1:
-        if 'K6o' not in selected_range:
-            buttonK6o.config(bg = color_offsuit_selected)
-            selected_range.append('K6o')
-    else: #toggle
-        if 'K6o' in selected_range:
-            buttonK6o.config(bg = color_offsuit)
-            selected_range.remove('K6o')
-        else:
-            buttonK6o.config(bg = color_offsuit_selected)
-            selected_range.append('K6o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K6o' in selected_range:
+                buttonK6o.config(bg = color_offsuit)
+                selected_range.remove('K6o')
+        elif par == 1:
+            if 'K6o' not in selected_range:
+                buttonK6o.config(bg = color_offsuit_selected)
+                selected_range.append('K6o')
+        else: #toggle
+            if 'K6o' in selected_range:
+                buttonK6o.config(bg = color_offsuit)
+                selected_range.remove('K6o')
+            else:
+                buttonK6o.config(bg = color_offsuit_selected)
+                selected_range.append('K6o')
 
 def pressK5o(par):
-    if par == 0:
-        if 'K5o' in selected_range:
-            buttonK5o.config(bg = color_offsuit)
-            selected_range.remove('K5o')
-    elif par == 1:
-        if 'K5o' not in selected_range:
-            buttonK5o.config(bg = color_offsuit_selected)
-            selected_range.append('K5o')
-    else: #toggle
-        if 'K5o' in selected_range:
-            buttonK5o.config(bg = color_offsuit)
-            selected_range.remove('K5o')
-        else:
-            buttonK5o.config(bg = color_offsuit_selected)
-            selected_range.append('K5o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K5o' in selected_range:
+                buttonK5o.config(bg = color_offsuit)
+                selected_range.remove('K5o')
+        elif par == 1:
+            if 'K5o' not in selected_range:
+                buttonK5o.config(bg = color_offsuit_selected)
+                selected_range.append('K5o')
+        else: #toggle
+            if 'K5o' in selected_range:
+                buttonK5o.config(bg = color_offsuit)
+                selected_range.remove('K5o')
+            else:
+                buttonK5o.config(bg = color_offsuit_selected)
+                selected_range.append('K5o')
 
 def pressK4o(par):
-    if par == 0:
-        if 'K4o' in selected_range:
-            buttonK4o.config(bg = color_offsuit)
-            selected_range.remove('K4o')
-    elif par == 1:
-        if 'K4o' not in selected_range:
-            buttonK4o.config(bg = color_offsuit_selected)
-            selected_range.append('K4o')
-    else: #toggle
-        if 'K4o' in selected_range:
-            buttonK4o.config(bg = color_offsuit)
-            selected_range.remove('K4o')
-        else:
-            buttonK4o.config(bg = color_offsuit_selected)
-            selected_range.append('K4o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K4o' in selected_range:
+                buttonK4o.config(bg = color_offsuit)
+                selected_range.remove('K4o')
+        elif par == 1:
+            if 'K4o' not in selected_range:
+                buttonK4o.config(bg = color_offsuit_selected)
+                selected_range.append('K4o')
+        else: #toggle
+            if 'K4o' in selected_range:
+                buttonK4o.config(bg = color_offsuit)
+                selected_range.remove('K4o')
+            else:
+                buttonK4o.config(bg = color_offsuit_selected)
+                selected_range.append('K4o')
 
 def pressK3o(par):
-    if par == 0:
-        if 'K3o' in selected_range:
-            buttonK3o.config(bg = color_offsuit)
-            selected_range.remove('K3o')
-    elif par == 1:
-        if 'K3o' not in selected_range:
-            buttonK3o.config(bg = color_offsuit_selected)
-            selected_range.append('K3o')
-    else: #toggle
-        if 'K3o' in selected_range:
-            buttonK3o.config(bg = color_offsuit)
-            selected_range.remove('K3o')
-        else:
-            buttonK3o.config(bg = color_offsuit_selected)
-            selected_range.append('K3o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K3o' in selected_range:
+                buttonK3o.config(bg = color_offsuit)
+                selected_range.remove('K3o')
+        elif par == 1:
+            if 'K3o' not in selected_range:
+                buttonK3o.config(bg = color_offsuit_selected)
+                selected_range.append('K3o')
+        else: #toggle
+            if 'K3o' in selected_range:
+                buttonK3o.config(bg = color_offsuit)
+                selected_range.remove('K3o')
+            else:
+                buttonK3o.config(bg = color_offsuit_selected)
+                selected_range.append('K3o')
 
 def pressK2o(par):
-    if par == 0:
-        if 'K2o' in selected_range:
-            buttonK2o.config(bg = color_offsuit)
-            selected_range.remove('K2o')
-    elif par == 1:
-        if 'K2o' not in selected_range:
-            buttonK2o.config(bg = color_offsuit_selected)
-            selected_range.append('K2o')
-    else: #toggle
-        if 'K2o' in selected_range:
-            buttonK2o.config(bg = color_offsuit)
-            selected_range.remove('K2o')
-        else:
-            buttonK2o.config(bg = color_offsuit_selected)
-            selected_range.append('K2o') 
+    global solved
+    if not solved:
+        if par == 0:
+            if 'K2o' in selected_range:
+                buttonK2o.config(bg = color_offsuit)
+                selected_range.remove('K2o')
+        elif par == 1:
+            if 'K2o' not in selected_range:
+                buttonK2o.config(bg = color_offsuit_selected)
+                selected_range.append('K2o')
+        else: #toggle
+            if 'K2o' in selected_range:
+                buttonK2o.config(bg = color_offsuit)
+                selected_range.remove('K2o')
+            else:
+                buttonK2o.config(bg = color_offsuit_selected)
+                selected_range.append('K2o') 
 
 # Q
 
 def pressQJo(par):
-    if par == 0:
-        if 'QJo' in selected_range:
-            buttonQJo.config(bg = color_offsuit)
-            selected_range.remove('QJo')
-    elif par == 1:
-        if 'QJo' not in selected_range:
-            buttonQJo.config(bg = color_offsuit_selected)
-            selected_range.append('QJo')
-    else: #toggle
-        if 'QJo' in selected_range:
-            buttonQJo.config(bg = color_offsuit)
-            selected_range.remove('QJo')
-        else:
-            buttonQJo.config(bg = color_offsuit_selected)
-            selected_range.append('QJo')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'QJo' in selected_range:
+                buttonQJo.config(bg = color_offsuit)
+                selected_range.remove('QJo')
+        elif par == 1:
+            if 'QJo' not in selected_range:
+                buttonQJo.config(bg = color_offsuit_selected)
+                selected_range.append('QJo')
+        else: #toggle
+            if 'QJo' in selected_range:
+                buttonQJo.config(bg = color_offsuit)
+                selected_range.remove('QJo')
+            else:
+                buttonQJo.config(bg = color_offsuit_selected)
+                selected_range.append('QJo')
 
 def pressQTo(par):
-    if par == 0:
-        if 'QTo' in selected_range:
-            buttonQTo.config(bg = color_offsuit)
-            selected_range.remove('QTo')
-    elif par == 1:
-        if 'QTo' not in selected_range:
-            buttonQTo.config(bg = color_offsuit_selected)
-            selected_range.append('QTo')
-    else: #toggle
-        if 'QTo' in selected_range:
-            buttonQTo.config(bg = color_offsuit)
-            selected_range.remove('QTo')
-        else:
-            buttonQTo.config(bg = color_offsuit_selected)
-            selected_range.append('QTo')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'QTo' in selected_range:
+                buttonQTo.config(bg = color_offsuit)
+                selected_range.remove('QTo')
+        elif par == 1:
+            if 'QTo' not in selected_range:
+                buttonQTo.config(bg = color_offsuit_selected)
+                selected_range.append('QTo')
+        else: #toggle
+            if 'QTo' in selected_range:
+                buttonQTo.config(bg = color_offsuit)
+                selected_range.remove('QTo')
+            else:
+                buttonQTo.config(bg = color_offsuit_selected)
+                selected_range.append('QTo')
 
 def pressQ9o(par):
-    if par == 0:
-        if 'Q9o' in selected_range:
-            buttonQ9o.config(bg = color_offsuit)
-            selected_range.remove('Q9o')
-    elif par == 1:
-        if 'Q9o' not in selected_range:
-            buttonQ9o.config(bg = color_offsuit_selected)
-            selected_range.append('Q9o')
-    else: #toggle
-        if 'Q9o' in selected_range:
-            buttonQ9o.config(bg = color_offsuit)
-            selected_range.remove('Q9o')
-        else:
-            buttonQ9o.config(bg = color_offsuit_selected)
-            selected_range.append('Q9o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q9o' in selected_range:
+                buttonQ9o.config(bg = color_offsuit)
+                selected_range.remove('Q9o')
+        elif par == 1:
+            if 'Q9o' not in selected_range:
+                buttonQ9o.config(bg = color_offsuit_selected)
+                selected_range.append('Q9o')
+        else: #toggle
+            if 'Q9o' in selected_range:
+                buttonQ9o.config(bg = color_offsuit)
+                selected_range.remove('Q9o')
+            else:
+                buttonQ9o.config(bg = color_offsuit_selected)
+                selected_range.append('Q9o')
 
 def pressQ8o(par):
-    if par == 0:
-        if 'Q8o' in selected_range:
-            buttonQ8o.config(bg = color_offsuit)
-            selected_range.remove('Q8o')
-    elif par == 1:
-        if 'Q8o' not in selected_range:
-            buttonQ8o.config(bg = color_offsuit_selected)
-            selected_range.append('Q8o')
-    else: #toggle
-        if 'Q8o' in selected_range:
-            buttonQ8o.config(bg = color_offsuit)
-            selected_range.remove('Q8o')
-        else:
-            buttonQ8o.config(bg = color_offsuit_selected)
-            selected_range.append('Q8o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q8o' in selected_range:
+                buttonQ8o.config(bg = color_offsuit)
+                selected_range.remove('Q8o')
+        elif par == 1:
+            if 'Q8o' not in selected_range:
+                buttonQ8o.config(bg = color_offsuit_selected)
+                selected_range.append('Q8o')
+        else: #toggle
+            if 'Q8o' in selected_range:
+                buttonQ8o.config(bg = color_offsuit)
+                selected_range.remove('Q8o')
+            else:
+                buttonQ8o.config(bg = color_offsuit_selected)
+                selected_range.append('Q8o')
 
 def pressQ7o(par):
-    if par == 0:
-        if 'Q7o' in selected_range:
-            buttonQ7o.config(bg = color_offsuit)
-            selected_range.remove('Q7o')
-    elif par == 1:
-        if 'Q7o' not in selected_range:
-            buttonQ7o.config(bg = color_offsuit_selected)
-            selected_range.append('Q7o')
-    else: #toggle
-        if 'Q7o' in selected_range:
-            buttonQ7o.config(bg = color_offsuit)
-            selected_range.remove('Q7o')
-        else:
-            buttonQ7o.config(bg = color_offsuit_selected)
-            selected_range.append('Q7o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q7o' in selected_range:
+                buttonQ7o.config(bg = color_offsuit)
+                selected_range.remove('Q7o')
+        elif par == 1:
+            if 'Q7o' not in selected_range:
+                buttonQ7o.config(bg = color_offsuit_selected)
+                selected_range.append('Q7o')
+        else: #toggle
+            if 'Q7o' in selected_range:
+                buttonQ7o.config(bg = color_offsuit)
+                selected_range.remove('Q7o')
+            else:
+                buttonQ7o.config(bg = color_offsuit_selected)
+                selected_range.append('Q7o')
 
 def pressQ6o(par):
-    if par == 0:
-        if 'Q6o' in selected_range:
-            buttonQ6o.config(bg = color_offsuit)
-            selected_range.remove('Q6o')
-    elif par == 1:
-        if 'Q6o' not in selected_range:
-            buttonQ6o.config(bg = color_offsuit_selected)
-            selected_range.append('Q6o')
-    else: #toggle
-        if 'Q6o' in selected_range:
-            buttonQ6o.config(bg = color_offsuit)
-            selected_range.remove('Q6o')
-        else:
-            buttonQ6o.config(bg = color_offsuit_selected)
-            selected_range.append('Q6o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q6o' in selected_range:
+                buttonQ6o.config(bg = color_offsuit)
+                selected_range.remove('Q6o')
+        elif par == 1:
+            if 'Q6o' not in selected_range:
+                buttonQ6o.config(bg = color_offsuit_selected)
+                selected_range.append('Q6o')
+        else: #toggle
+            if 'Q6o' in selected_range:
+                buttonQ6o.config(bg = color_offsuit)
+                selected_range.remove('Q6o')
+            else:
+                buttonQ6o.config(bg = color_offsuit_selected)
+                selected_range.append('Q6o')
 
 def pressQ5o(par):
-    if par == 0:
-        if 'Q5o' in selected_range:
-            buttonQ5o.config(bg = color_offsuit)
-            selected_range.remove('Q5o')
-    elif par == 1:
-        if 'Q5o' not in selected_range:
-            buttonQ5o.config(bg = color_offsuit_selected)
-            selected_range.append('Q5o')
-    else: #toggle
-        if 'Q5o' in selected_range:
-            buttonQ5o.config(bg = color_offsuit)
-            selected_range.remove('Q5o')
-        else:
-            buttonQ5o.config(bg = color_offsuit_selected)
-            selected_range.append('Q5o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q5o' in selected_range:
+                buttonQ5o.config(bg = color_offsuit)
+                selected_range.remove('Q5o')
+        elif par == 1:
+            if 'Q5o' not in selected_range:
+                buttonQ5o.config(bg = color_offsuit_selected)
+                selected_range.append('Q5o')
+        else: #toggle
+            if 'Q5o' in selected_range:
+                buttonQ5o.config(bg = color_offsuit)
+                selected_range.remove('Q5o')
+            else:
+                buttonQ5o.config(bg = color_offsuit_selected)
+                selected_range.append('Q5o')
 
 def pressQ4o(par):
-    if par == 0:
-        if 'Q4o' in selected_range:
-            buttonQ4o.config(bg = color_offsuit)
-            selected_range.remove('Q4o')
-    elif par == 1:
-        if 'Q4o' not in selected_range:
-            buttonQ4o.config(bg = color_offsuit_selected)
-            selected_range.append('Q4o')
-    else: #toggle
-        if 'Q4o' in selected_range:
-            buttonQ4o.config(bg = color_offsuit)
-            selected_range.remove('Q4o')
-        else:
-            buttonQ4o.config(bg = color_offsuit_selected)
-            selected_range.append('Q4o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q4o' in selected_range:
+                buttonQ4o.config(bg = color_offsuit)
+                selected_range.remove('Q4o')
+        elif par == 1:
+            if 'Q4o' not in selected_range:
+                buttonQ4o.config(bg = color_offsuit_selected)
+                selected_range.append('Q4o')
+        else: #toggle
+            if 'Q4o' in selected_range:
+                buttonQ4o.config(bg = color_offsuit)
+                selected_range.remove('Q4o')
+            else:
+                buttonQ4o.config(bg = color_offsuit_selected)
+                selected_range.append('Q4o')
 
 def pressQ3o(par):
-    if par == 0:
-        if 'Q3o' in selected_range:
-            buttonQ3o.config(bg = color_offsuit)
-            selected_range.remove('Q3o')
-    elif par == 1:
-        if 'Q3o' not in selected_range:
-            buttonQ3o.config(bg = color_offsuit_selected)
-            selected_range.append('Q3o')
-    else: #toggle
-        if 'Q3o' in selected_range:
-            buttonQ3o.config(bg = color_offsuit)
-            selected_range.remove('Q3o')
-        else:
-            buttonQ3o.config(bg = color_offsuit_selected)
-            selected_range.append('Q3o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q3o' in selected_range:
+                buttonQ3o.config(bg = color_offsuit)
+                selected_range.remove('Q3o')
+        elif par == 1:
+            if 'Q3o' not in selected_range:
+                buttonQ3o.config(bg = color_offsuit_selected)
+                selected_range.append('Q3o')
+        else: #toggle
+            if 'Q3o' in selected_range:
+                buttonQ3o.config(bg = color_offsuit)
+                selected_range.remove('Q3o')
+            else:
+                buttonQ3o.config(bg = color_offsuit_selected)
+                selected_range.append('Q3o')
 
 def pressQ2o(par):
-    if par == 0:
-        if 'Q2o' in selected_range:
-            buttonQ2o.config(bg = color_offsuit)
-            selected_range.remove('Q2o')
-    elif par == 1:
-        if 'Q2o' not in selected_range:
-            buttonQ2o.config(bg = color_offsuit_selected)
-            selected_range.append('Q2o')
-    else: #toggle
-        if 'Q2o' in selected_range:
-            buttonQ2o.config(bg = color_offsuit)
-            selected_range.remove('Q2o')
-        else:
-            buttonQ2o.config(bg = color_offsuit_selected)
-            selected_range.append('Q2o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'Q2o' in selected_range:
+                buttonQ2o.config(bg = color_offsuit)
+                selected_range.remove('Q2o')
+        elif par == 1:
+            if 'Q2o' not in selected_range:
+                buttonQ2o.config(bg = color_offsuit_selected)
+                selected_range.append('Q2o')
+        else: #toggle
+            if 'Q2o' in selected_range:
+                buttonQ2o.config(bg = color_offsuit)
+                selected_range.remove('Q2o')
+            else:
+                buttonQ2o.config(bg = color_offsuit_selected)
+                selected_range.append('Q2o')
 
 # J
 
 def pressJTo(par):
-    if par == 0:
-        if 'JTo' in selected_range:
-            buttonJTo.config(bg = color_offsuit)
-            selected_range.remove('JTo')
-    elif par == 1:
-        if 'JTo' not in selected_range:
-            buttonJTo.config(bg = color_offsuit_selected)
-            selected_range.append('JTo')
-    else: #toggle
-        if 'JTo' in selected_range:
-            buttonJTo.config(bg = color_offsuit)
-            selected_range.remove('JTo')
-        else:
-            buttonJTo.config(bg = color_offsuit_selected)
-            selected_range.append('JTo')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'JTo' in selected_range:
+                buttonJTo.config(bg = color_offsuit)
+                selected_range.remove('JTo')
+        elif par == 1:
+            if 'JTo' not in selected_range:
+                buttonJTo.config(bg = color_offsuit_selected)
+                selected_range.append('JTo')
+        else: #toggle
+            if 'JTo' in selected_range:
+                buttonJTo.config(bg = color_offsuit)
+                selected_range.remove('JTo')
+            else:
+                buttonJTo.config(bg = color_offsuit_selected)
+                selected_range.append('JTo')
 
 def pressJ9o(par):
-    if par == 0:
-        if 'J9o' in selected_range:
-            buttonJ9o.config(bg = color_offsuit)
-            selected_range.remove('J9o')
-    elif par == 1:
-        if 'J9o' not in selected_range:
-            buttonJ9o.config(bg = color_offsuit_selected)
-            selected_range.append('J9o')
-    else: #toggle
-        if 'J9o' in selected_range:
-            buttonJ9o.config(bg = color_offsuit)
-            selected_range.remove('J9o')
-        else:
-            buttonJ9o.config(bg = color_offsuit_selected)
-            selected_range.append('J9o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J9o' in selected_range:
+                buttonJ9o.config(bg = color_offsuit)
+                selected_range.remove('J9o')
+        elif par == 1:
+            if 'J9o' not in selected_range:
+                buttonJ9o.config(bg = color_offsuit_selected)
+                selected_range.append('J9o')
+        else: #toggle
+            if 'J9o' in selected_range:
+                buttonJ9o.config(bg = color_offsuit)
+                selected_range.remove('J9o')
+            else:
+                buttonJ9o.config(bg = color_offsuit_selected)
+                selected_range.append('J9o')
 
 def pressJ8o(par):
-    if par == 0:
-        if 'J8o' in selected_range:
-            buttonJ8o.config(bg = color_offsuit)
-            selected_range.remove('J8o')
-    elif par == 1:
-        if 'J8o' not in selected_range:
-            buttonJ8o.config(bg = color_offsuit_selected)
-            selected_range.append('J8o')
-    else: #toggle
-        if 'J8o' in selected_range:
-            buttonJ8o.config(bg = color_offsuit)
-            selected_range.remove('J8o')
-        else:
-            buttonJ8o.config(bg = color_offsuit_selected)
-            selected_range.append('J8o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J8o' in selected_range:
+                buttonJ8o.config(bg = color_offsuit)
+                selected_range.remove('J8o')
+        elif par == 1:
+            if 'J8o' not in selected_range:
+                buttonJ8o.config(bg = color_offsuit_selected)
+                selected_range.append('J8o')
+        else: #toggle
+            if 'J8o' in selected_range:
+                buttonJ8o.config(bg = color_offsuit)
+                selected_range.remove('J8o')
+            else:
+                buttonJ8o.config(bg = color_offsuit_selected)
+                selected_range.append('J8o')
 
 def pressJ7o(par):
-    if par == 0:
-        if 'J7o' in selected_range:
-            buttonJ7o.config(bg = color_offsuit)
-            selected_range.remove('J7o')
-    elif par == 1:
-        if 'J7o' not in selected_range:
-            buttonJ7o.config(bg = color_offsuit_selected)
-            selected_range.append('J7o')
-    else: #toggle
-        if 'J7o' in selected_range:
-            buttonJ7o.config(bg = color_offsuit)
-            selected_range.remove('J7o')
-        else:
-            buttonJ7o.config(bg = color_offsuit_selected)
-            selected_range.append('J7o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J7o' in selected_range:
+                buttonJ7o.config(bg = color_offsuit)
+                selected_range.remove('J7o')
+        elif par == 1:
+            if 'J7o' not in selected_range:
+                buttonJ7o.config(bg = color_offsuit_selected)
+                selected_range.append('J7o')
+        else: #toggle
+            if 'J7o' in selected_range:
+                buttonJ7o.config(bg = color_offsuit)
+                selected_range.remove('J7o')
+            else:
+                buttonJ7o.config(bg = color_offsuit_selected)
+                selected_range.append('J7o')
 
 def pressJ6o(par):
-    if par == 0:
-        if 'J6o' in selected_range:
-            buttonJ6o.config(bg = color_offsuit)
-            selected_range.remove('J6o')
-    elif par == 1:
-        if 'J6o' not in selected_range:
-            buttonJ6o.config(bg = color_offsuit_selected)
-            selected_range.append('J6o')
-    else: #toggle
-        if 'J6o' in selected_range:
-            buttonJ6o.config(bg = color_offsuit)
-            selected_range.remove('J6o')
-        else:
-            buttonJ6o.config(bg = color_offsuit_selected)
-            selected_range.append('J6o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J6o' in selected_range:
+                buttonJ6o.config(bg = color_offsuit)
+                selected_range.remove('J6o')
+        elif par == 1:
+            if 'J6o' not in selected_range:
+                buttonJ6o.config(bg = color_offsuit_selected)
+                selected_range.append('J6o')
+        else: #toggle
+            if 'J6o' in selected_range:
+                buttonJ6o.config(bg = color_offsuit)
+                selected_range.remove('J6o')
+            else:
+                buttonJ6o.config(bg = color_offsuit_selected)
+                selected_range.append('J6o')
 
 def pressJ5o(par):
-    if par == 0:
-        if 'J5o' in selected_range:
-            buttonJ5o.config(bg = color_offsuit)
-            selected_range.remove('J5o')
-    elif par == 1:
-        if 'J5o' not in selected_range:
-            buttonJ5o.config(bg = color_offsuit_selected)
-            selected_range.append('J5o')
-    else: #toggle
-        if 'J5o' in selected_range:
-            buttonJ5o.config(bg = color_offsuit)
-            selected_range.remove('J5o')
-        else:
-            buttonJ5o.config(bg = color_offsuit_selected)
-            selected_range.append('J5o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J5o' in selected_range:
+                buttonJ5o.config(bg = color_offsuit)
+                selected_range.remove('J5o')
+        elif par == 1:
+            if 'J5o' not in selected_range:
+                buttonJ5o.config(bg = color_offsuit_selected)
+                selected_range.append('J5o')
+        else: #toggle
+            if 'J5o' in selected_range:
+                buttonJ5o.config(bg = color_offsuit)
+                selected_range.remove('J5o')
+            else:
+                buttonJ5o.config(bg = color_offsuit_selected)
+                selected_range.append('J5o')
 
 def pressJ4o(par):
-    if par == 0:
-        if 'J4o' in selected_range:
-            buttonJ4o.config(bg = color_offsuit)
-            selected_range.remove('J4o')
-    elif par == 1:
-        if 'J4o' not in selected_range:
-            buttonJ4o.config(bg = color_offsuit_selected)
-            selected_range.append('J4o')
-    else: #toggle
-        if 'J4o' in selected_range:
-            buttonJ4o.config(bg = color_offsuit)
-            selected_range.remove('J4o')
-        else:
-            buttonJ4o.config(bg = color_offsuit_selected)
-            selected_range.append('J4o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J4o' in selected_range:
+                buttonJ4o.config(bg = color_offsuit)
+                selected_range.remove('J4o')
+        elif par == 1:
+            if 'J4o' not in selected_range:
+                buttonJ4o.config(bg = color_offsuit_selected)
+                selected_range.append('J4o')
+        else: #toggle
+            if 'J4o' in selected_range:
+                buttonJ4o.config(bg = color_offsuit)
+                selected_range.remove('J4o')
+            else:
+                buttonJ4o.config(bg = color_offsuit_selected)
+                selected_range.append('J4o')
 
 def pressJ3o(par):
-    if par == 0:
-        if 'J3o' in selected_range:
-            buttonJ3o.config(bg = color_offsuit)
-            selected_range.remove('J3o')
-    elif par == 1:
-        if 'J3o' not in selected_range:
-            buttonJ3o.config(bg = color_offsuit_selected)
-            selected_range.append('J3o')
-    else: #toggle
-        if 'J3o' in selected_range:
-            buttonJ3o.config(bg = color_offsuit)
-            selected_range.remove('J3o')
-        else:
-            buttonJ3o.config(bg = color_offsuit_selected)
-            selected_range.append('J3o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J3o' in selected_range:
+                buttonJ3o.config(bg = color_offsuit)
+                selected_range.remove('J3o')
+        elif par == 1:
+            if 'J3o' not in selected_range:
+                buttonJ3o.config(bg = color_offsuit_selected)
+                selected_range.append('J3o')
+        else: #toggle
+            if 'J3o' in selected_range:
+                buttonJ3o.config(bg = color_offsuit)
+                selected_range.remove('J3o')
+            else:
+                buttonJ3o.config(bg = color_offsuit_selected)
+                selected_range.append('J3o')
 
 def pressJ2o(par):
-    if par == 0:
-        if 'J2o' in selected_range:
-            buttonJ2o.config(bg = color_offsuit)
-            selected_range.remove('J2o')
-    elif par == 1:
-        if 'J2o' not in selected_range:
-            buttonJ2o.config(bg = color_offsuit_selected)
-            selected_range.append('J2o')
-    else: #toggle
-        if 'J2o' in selected_range:
-            buttonJ2o.config(bg = color_offsuit)
-            selected_range.remove('J2o')
-        else:
-            buttonJ2o.config(bg = color_offsuit_selected)
-            selected_range.append('J2o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'J2o' in selected_range:
+                buttonJ2o.config(bg = color_offsuit)
+                selected_range.remove('J2o')
+        elif par == 1:
+            if 'J2o' not in selected_range:
+                buttonJ2o.config(bg = color_offsuit_selected)
+                selected_range.append('J2o')
+        else: #toggle
+            if 'J2o' in selected_range:
+                buttonJ2o.config(bg = color_offsuit)
+                selected_range.remove('J2o')
+            else:
+                buttonJ2o.config(bg = color_offsuit_selected)
+                selected_range.append('J2o')
 
 # T
 
 def pressT9o(par):
-    if par == 0:
-        if 'T9o' in selected_range:
-            buttonT9o.config(bg = color_offsuit)
-            selected_range.remove('T9o')
-    elif par == 1:
-        if 'T9o' not in selected_range:
-            buttonT9o.config(bg = color_offsuit_selected)
-            selected_range.append('T9o')
-    else: #toggle
-        if 'T9o' in selected_range:
-            buttonT9o.config(bg = color_offsuit)
-            selected_range.remove('T9o')
-        else:
-            buttonT9o.config(bg = color_offsuit_selected)
-            selected_range.append('T9o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T9o' in selected_range:
+                buttonT9o.config(bg = color_offsuit)
+                selected_range.remove('T9o')
+        elif par == 1:
+            if 'T9o' not in selected_range:
+                buttonT9o.config(bg = color_offsuit_selected)
+                selected_range.append('T9o')
+        else: #toggle
+            if 'T9o' in selected_range:
+                buttonT9o.config(bg = color_offsuit)
+                selected_range.remove('T9o')
+            else:
+                buttonT9o.config(bg = color_offsuit_selected)
+                selected_range.append('T9o')
 
 def pressT8o(par):
-    if par == 0:
-        if 'T8o' in selected_range:
-            buttonT8o.config(bg = color_offsuit)
-            selected_range.remove('T8o')
-    elif par == 1:
-        if 'T8o' not in selected_range:
-            buttonT8o.config(bg = color_offsuit_selected)
-            selected_range.append('T8o')
-    else: #toggle
-        if 'T8o' in selected_range:
-            buttonT8o.config(bg = color_offsuit)
-            selected_range.remove('T8o')
-        else:
-            buttonT8o.config(bg = color_offsuit_selected)
-            selected_range.append('T8o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T8o' in selected_range:
+                buttonT8o.config(bg = color_offsuit)
+                selected_range.remove('T8o')
+        elif par == 1:
+            if 'T8o' not in selected_range:
+                buttonT8o.config(bg = color_offsuit_selected)
+                selected_range.append('T8o')
+        else: #toggle
+            if 'T8o' in selected_range:
+                buttonT8o.config(bg = color_offsuit)
+                selected_range.remove('T8o')
+            else:
+                buttonT8o.config(bg = color_offsuit_selected)
+                selected_range.append('T8o')
 
 def pressT7o(par):
-    if par == 0:
-        if 'T7o' in selected_range:
-            buttonT7o.config(bg = color_offsuit)
-            selected_range.remove('T7o')
-    elif par == 1:
-        if 'T7o' not in selected_range:
-            buttonT7o.config(bg = color_offsuit_selected)
-            selected_range.append('T7o')
-    else: #toggle
-        if 'T7o' in selected_range:
-            buttonT7o.config(bg = color_offsuit)
-            selected_range.remove('T7o')
-        else:
-            buttonT7o.config(bg = color_offsuit_selected)
-            selected_range.append('T7o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T7o' in selected_range:
+                buttonT7o.config(bg = color_offsuit)
+                selected_range.remove('T7o')
+        elif par == 1:
+            if 'T7o' not in selected_range:
+                buttonT7o.config(bg = color_offsuit_selected)
+                selected_range.append('T7o')
+        else: #toggle
+            if 'T7o' in selected_range:
+                buttonT7o.config(bg = color_offsuit)
+                selected_range.remove('T7o')
+            else:
+                buttonT7o.config(bg = color_offsuit_selected)
+                selected_range.append('T7o')
 
 def pressT6o(par):
-    if par == 0:
-        if 'T6o' in selected_range:
-            buttonT6o.config(bg = color_offsuit)
-            selected_range.remove('T6o')
-    elif par == 1:
-        if 'T6o' not in selected_range:
-            buttonT6o.config(bg = color_offsuit_selected)
-            selected_range.append('T6o')
-    else: #toggle
-        if 'T6o' in selected_range:
-            buttonT6o.config(bg = color_offsuit)
-            selected_range.remove('T6o')
-        else:
-            buttonT6o.config(bg = color_offsuit_selected)
-            selected_range.append('T6o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T6o' in selected_range:
+                buttonT6o.config(bg = color_offsuit)
+                selected_range.remove('T6o')
+        elif par == 1:
+            if 'T6o' not in selected_range:
+                buttonT6o.config(bg = color_offsuit_selected)
+                selected_range.append('T6o')
+        else: #toggle
+            if 'T6o' in selected_range:
+                buttonT6o.config(bg = color_offsuit)
+                selected_range.remove('T6o')
+            else:
+                buttonT6o.config(bg = color_offsuit_selected)
+                selected_range.append('T6o')
 
 def pressT5o(par):
-    if par == 0:
-        if 'T5o' in selected_range:
-            buttonT5o.config(bg = color_offsuit)
-            selected_range.remove('T5o')
-    elif par == 1:
-        if 'T5o' not in selected_range:
-            buttonT5o.config(bg = color_offsuit_selected)
-            selected_range.append('T5o')
-    else: #toggle
-        if 'T5o' in selected_range:
-            buttonT5o.config(bg = color_offsuit)
-            selected_range.remove('T5o')
-        else:
-            buttonT5o.config(bg = color_offsuit_selected)
-            selected_range.append('T5o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T5o' in selected_range:
+                buttonT5o.config(bg = color_offsuit)
+                selected_range.remove('T5o')
+        elif par == 1:
+            if 'T5o' not in selected_range:
+                buttonT5o.config(bg = color_offsuit_selected)
+                selected_range.append('T5o')
+        else: #toggle
+            if 'T5o' in selected_range:
+                buttonT5o.config(bg = color_offsuit)
+                selected_range.remove('T5o')
+            else:
+                buttonT5o.config(bg = color_offsuit_selected)
+                selected_range.append('T5o')
 
 def pressT4o(par):
-    if par == 0:
-        if 'T4o' in selected_range:
-            buttonT4o.config(bg = color_offsuit)
-            selected_range.remove('T4o')
-    elif par == 1:
-        if 'T4o' not in selected_range:
-            buttonT4o.config(bg = color_offsuit_selected)
-            selected_range.append('T4o')
-    else: #toggle
-        if 'T4o' in selected_range:
-            buttonT4o.config(bg = color_offsuit)
-            selected_range.remove('T4o')
-        else:
-            buttonT4o.config(bg = color_offsuit_selected)
-            selected_range.append('T4o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T4o' in selected_range:
+                buttonT4o.config(bg = color_offsuit)
+                selected_range.remove('T4o')
+        elif par == 1:
+            if 'T4o' not in selected_range:
+                buttonT4o.config(bg = color_offsuit_selected)
+                selected_range.append('T4o')
+        else: #toggle
+            if 'T4o' in selected_range:
+                buttonT4o.config(bg = color_offsuit)
+                selected_range.remove('T4o')
+            else:
+                buttonT4o.config(bg = color_offsuit_selected)
+                selected_range.append('T4o')
 
 def pressT3o(par):
-    if par == 0:
-        if 'T3o' in selected_range:
-            buttonT3o.config(bg = color_offsuit)
-            selected_range.remove('T3o')
-    elif par == 1:
-        if 'T3o' not in selected_range:
-            buttonT3o.config(bg = color_offsuit_selected)
-            selected_range.append('T3o')
-    else: #toggle
-        if 'T3o' in selected_range:
-            buttonT3o.config(bg = color_offsuit)
-            selected_range.remove('T3o')
-        else:
-            buttonT3o.config(bg = color_offsuit_selected)
-            selected_range.append('T3o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T3o' in selected_range:
+                buttonT3o.config(bg = color_offsuit)
+                selected_range.remove('T3o')
+        elif par == 1:
+            if 'T3o' not in selected_range:
+                buttonT3o.config(bg = color_offsuit_selected)
+                selected_range.append('T3o')
+        else: #toggle
+            if 'T3o' in selected_range:
+                buttonT3o.config(bg = color_offsuit)
+                selected_range.remove('T3o')
+            else:
+                buttonT3o.config(bg = color_offsuit_selected)
+                selected_range.append('T3o')
 
 def pressT2o(par):
-    if par == 0:
-        if 'T2o' in selected_range:
-            buttonT2o.config(bg = color_offsuit)
-            selected_range.remove('T2o')
-    elif par == 1:
-        if 'T2o' not in selected_range:
-            buttonT2o.config(bg = color_offsuit_selected)
-            selected_range.append('T2o')
-    else: #toggle
-        if 'T2o' in selected_range:
-            buttonT2o.config(bg = color_offsuit)
-            selected_range.remove('T2o')
-        else:
-            buttonT2o.config(bg = color_offsuit_selected)
-            selected_range.append('T2o')
+    global solved
+    if not solved:
+        if par == 0:
+            if 'T2o' in selected_range:
+                buttonT2o.config(bg = color_offsuit)
+                selected_range.remove('T2o')
+        elif par == 1:
+            if 'T2o' not in selected_range:
+                buttonT2o.config(bg = color_offsuit_selected)
+                selected_range.append('T2o')
+        else: #toggle
+            if 'T2o' in selected_range:
+                buttonT2o.config(bg = color_offsuit)
+                selected_range.remove('T2o')
+            else:
+                buttonT2o.config(bg = color_offsuit_selected)
+                selected_range.append('T2o')
 
 # 9
 
 def press98o(par):
-    if par == 0:
-        if '98o' in selected_range:
-            button98o.config(bg = color_offsuit)
-            selected_range.remove('98o')
-    elif par == 1:
-        if '98o' not in selected_range:
-            button98o.config(bg = color_offsuit_selected)
-            selected_range.append('98o')
-    else: #toggle
-        if '98o' in selected_range:
-            button98o.config(bg = color_offsuit)
-            selected_range.remove('98o')
-        else:
-            button98o.config(bg = color_offsuit_selected)
-            selected_range.append('98o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '98o' in selected_range:
+                button98o.config(bg = color_offsuit)
+                selected_range.remove('98o')
+        elif par == 1:
+            if '98o' not in selected_range:
+                button98o.config(bg = color_offsuit_selected)
+                selected_range.append('98o')
+        else: #toggle
+            if '98o' in selected_range:
+                button98o.config(bg = color_offsuit)
+                selected_range.remove('98o')
+            else:
+                button98o.config(bg = color_offsuit_selected)
+                selected_range.append('98o')
 
 def press97o(par):
-    if par == 0:
-        if '97o' in selected_range:
-            button97o.config(bg = color_offsuit)
-            selected_range.remove('97o')
-    elif par == 1:
-        if '97o' not in selected_range:
-            button97o.config(bg = color_offsuit_selected)
-            selected_range.append('97o')
-    else: #toggle
-        if '97o' in selected_range:
-            button97o.config(bg = color_offsuit)
-            selected_range.remove('97o')
-        else:
-            button97o.config(bg = color_offsuit_selected)
-            selected_range.append('97o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '97o' in selected_range:
+                button97o.config(bg = color_offsuit)
+                selected_range.remove('97o')
+        elif par == 1:
+            if '97o' not in selected_range:
+                button97o.config(bg = color_offsuit_selected)
+                selected_range.append('97o')
+        else: #toggle
+            if '97o' in selected_range:
+                button97o.config(bg = color_offsuit)
+                selected_range.remove('97o')
+            else:
+                button97o.config(bg = color_offsuit_selected)
+                selected_range.append('97o')
 
 def press96o(par):
-    if par == 0:
-        if '96o' in selected_range:
-            button96o.config(bg = color_offsuit)
-            selected_range.remove('96o')
-    elif par == 1:
-        if '96o' not in selected_range:
-            button96o.config(bg = color_offsuit_selected)
-            selected_range.append('96o')
-    else: #toggle
-        if '96o' in selected_range:
-            button96o.config(bg = color_offsuit)
-            selected_range.remove('96o')
-        else:
-            button96o.config(bg = color_offsuit_selected)
-            selected_range.append('96o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '96o' in selected_range:
+                button96o.config(bg = color_offsuit)
+                selected_range.remove('96o')
+        elif par == 1:
+            if '96o' not in selected_range:
+                button96o.config(bg = color_offsuit_selected)
+                selected_range.append('96o')
+        else: #toggle
+            if '96o' in selected_range:
+                button96o.config(bg = color_offsuit)
+                selected_range.remove('96o')
+            else:
+                button96o.config(bg = color_offsuit_selected)
+                selected_range.append('96o')
 
 def press95o(par):
-    if par == 0:
-        if '95o' in selected_range:
-            button95o.config(bg = color_offsuit)
-            selected_range.remove('95o')
-    elif par == 1:
-        if '95o' not in selected_range:
-            button95o.config(bg = color_offsuit_selected)
-            selected_range.append('95o')
-    else: #toggle
-        if '95o' in selected_range:
-            button95o.config(bg = color_offsuit)
-            selected_range.remove('95o')
-        else:
-            button95o.config(bg = color_offsuit_selected)
-            selected_range.append('95o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '95o' in selected_range:
+                button95o.config(bg = color_offsuit)
+                selected_range.remove('95o')
+        elif par == 1:
+            if '95o' not in selected_range:
+                button95o.config(bg = color_offsuit_selected)
+                selected_range.append('95o')
+        else: #toggle
+            if '95o' in selected_range:
+                button95o.config(bg = color_offsuit)
+                selected_range.remove('95o')
+            else:
+                button95o.config(bg = color_offsuit_selected)
+                selected_range.append('95o')
 
 def press94o(par):
-    if par == 0:
-        if '94o' in selected_range:
-            button94o.config(bg = color_offsuit)
-            selected_range.remove('94o')
-    elif par == 1:
-        if '94o' not in selected_range:
-            button94o.config(bg = color_offsuit_selected)
-            selected_range.append('94o')
-    else: #toggle
-        if '94o' in selected_range:
-            button94o.config(bg = color_offsuit)
-            selected_range.remove('94o')
-        else:
-            button94o.config(bg = color_offsuit_selected)
-            selected_range.append('94o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '94o' in selected_range:
+                button94o.config(bg = color_offsuit)
+                selected_range.remove('94o')
+        elif par == 1:
+            if '94o' not in selected_range:
+                button94o.config(bg = color_offsuit_selected)
+                selected_range.append('94o')
+        else: #toggle
+            if '94o' in selected_range:
+                button94o.config(bg = color_offsuit)
+                selected_range.remove('94o')
+            else:
+                button94o.config(bg = color_offsuit_selected)
+                selected_range.append('94o')
 
 def press93o(par):
-    if par == 0:
-        if '93o' in selected_range:
-            button93o.config(bg = color_offsuit)
-            selected_range.remove('93o')
-    elif par == 1:
-        if '93o' not in selected_range:
-            button93o.config(bg = color_offsuit_selected)
-            selected_range.append('93o')
-    else: #toggle
-        if '93o' in selected_range:
-            button93o.config(bg = color_offsuit)
-            selected_range.remove('93o')
-        else:
-            button93o.config(bg = color_offsuit_selected)
-            selected_range.append('93o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '93o' in selected_range:
+                button93o.config(bg = color_offsuit)
+                selected_range.remove('93o')
+        elif par == 1:
+            if '93o' not in selected_range:
+                button93o.config(bg = color_offsuit_selected)
+                selected_range.append('93o')
+        else: #toggle
+            if '93o' in selected_range:
+                button93o.config(bg = color_offsuit)
+                selected_range.remove('93o')
+            else:
+                button93o.config(bg = color_offsuit_selected)
+                selected_range.append('93o')
 
 def press92o(par):
-    if par == 0:
-        if '92o' in selected_range:
-            button92o.config(bg = color_offsuit)
-            selected_range.remove('92o')
-    elif par == 1:
-        if '92o' not in selected_range:
-            button92o.config(bg = color_offsuit_selected)
-            selected_range.append('92o')
-    else: #toggle
-        if '92o' in selected_range:
-            button92o.config(bg = color_offsuit)
-            selected_range.remove('92o')
-        else:
-            button92o.config(bg = color_offsuit_selected)
-            selected_range.append('92o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '92o' in selected_range:
+                button92o.config(bg = color_offsuit)
+                selected_range.remove('92o')
+        elif par == 1:
+            if '92o' not in selected_range:
+                button92o.config(bg = color_offsuit_selected)
+                selected_range.append('92o')
+        else: #toggle
+            if '92o' in selected_range:
+                button92o.config(bg = color_offsuit)
+                selected_range.remove('92o')
+            else:
+                button92o.config(bg = color_offsuit_selected)
+                selected_range.append('92o')
 
 # 8
 
 def press87o(par):
-    if par == 0:
-        if '87o' in selected_range:
-            button87o.config(bg = color_offsuit)
-            selected_range.remove('87o')
-    elif par == 1:
-        if '87o' not in selected_range:
-            button87o.config(bg = color_offsuit_selected)
-            selected_range.append('87o')
-    else: #toggle
-        if '87o' in selected_range:
-            button87o.config(bg = color_offsuit)
-            selected_range.remove('87o')
-        else:
-            button87o.config(bg = color_offsuit_selected)
-            selected_range.append('87o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '87o' in selected_range:
+                button87o.config(bg = color_offsuit)
+                selected_range.remove('87o')
+        elif par == 1:
+            if '87o' not in selected_range:
+                button87o.config(bg = color_offsuit_selected)
+                selected_range.append('87o')
+        else: #toggle
+            if '87o' in selected_range:
+                button87o.config(bg = color_offsuit)
+                selected_range.remove('87o')
+            else:
+                button87o.config(bg = color_offsuit_selected)
+                selected_range.append('87o')
 
 def press86o(par):
-    if par == 0:
-        if '86o' in selected_range:
-            button86o.config(bg = color_offsuit)
-            selected_range.remove('86o')
-    elif par == 1:
-        if '86o' not in selected_range:
-            button86o.config(bg = color_offsuit_selected)
-            selected_range.append('86o')
-    else: #toggle
-        if '86o' in selected_range:
-            button86o.config(bg = color_offsuit)
-            selected_range.remove('86o')
-        else:
-            button86o.config(bg = color_offsuit_selected)
-            selected_range.append('86o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '86o' in selected_range:
+                button86o.config(bg = color_offsuit)
+                selected_range.remove('86o')
+        elif par == 1:
+            if '86o' not in selected_range:
+                button86o.config(bg = color_offsuit_selected)
+                selected_range.append('86o')
+        else: #toggle
+            if '86o' in selected_range:
+                button86o.config(bg = color_offsuit)
+                selected_range.remove('86o')
+            else:
+                button86o.config(bg = color_offsuit_selected)
+                selected_range.append('86o')
 
 def press85o(par):
-    if par == 0:
-        if '85o' in selected_range:
-            button85o.config(bg = color_offsuit)
-            selected_range.remove('85o')
-    elif par == 1:
-        if '85o' not in selected_range:
-            button85o.config(bg = color_offsuit_selected)
-            selected_range.append('85o')
-    else: #toggle
-        if '85o' in selected_range:
-            button85o.config(bg = color_offsuit)
-            selected_range.remove('85o')
-        else:
-            button85o.config(bg = color_offsuit_selected)
-            selected_range.append('85o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '85o' in selected_range:
+                button85o.config(bg = color_offsuit)
+                selected_range.remove('85o')
+        elif par == 1:
+            if '85o' not in selected_range:
+                button85o.config(bg = color_offsuit_selected)
+                selected_range.append('85o')
+        else: #toggle
+            if '85o' in selected_range:
+                button85o.config(bg = color_offsuit)
+                selected_range.remove('85o')
+            else:
+                button85o.config(bg = color_offsuit_selected)
+                selected_range.append('85o')
 
 def press84o(par):
-    if par == 0:
-        if '84o' in selected_range:
-            button84o.config(bg = color_offsuit)
-            selected_range.remove('84o')
-    elif par == 1:
-        if '84o' not in selected_range:
-            button84o.config(bg = color_offsuit_selected)
-            selected_range.append('84o')
-    else: #toggle
-        if '84o' in selected_range:
-            button84o.config(bg = color_offsuit)
-            selected_range.remove('84o')
-        else:
-            button84o.config(bg = color_offsuit_selected)
-            selected_range.append('84o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '84o' in selected_range:
+                button84o.config(bg = color_offsuit)
+                selected_range.remove('84o')
+        elif par == 1:
+            if '84o' not in selected_range:
+                button84o.config(bg = color_offsuit_selected)
+                selected_range.append('84o')
+        else: #toggle
+            if '84o' in selected_range:
+                button84o.config(bg = color_offsuit)
+                selected_range.remove('84o')
+            else:
+                button84o.config(bg = color_offsuit_selected)
+                selected_range.append('84o')
 
 def press83o(par):
-    if par == 0:
-        if '83o' in selected_range:
-            button83o.config(bg = color_offsuit)
-            selected_range.remove('83o')
-    elif par == 1:
-        if '83o' not in selected_range:
-            button83o.config(bg = color_offsuit_selected)
-            selected_range.append('83o')
-    else: #toggle
-        if '83o' in selected_range:
-            button83o.config(bg = color_offsuit)
-            selected_range.remove('83o')
-        else:
-            button83o.config(bg = color_offsuit_selected)
-            selected_range.append('83o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '83o' in selected_range:
+                button83o.config(bg = color_offsuit)
+                selected_range.remove('83o')
+        elif par == 1:
+            if '83o' not in selected_range:
+                button83o.config(bg = color_offsuit_selected)
+                selected_range.append('83o')
+        else: #toggle
+            if '83o' in selected_range:
+                button83o.config(bg = color_offsuit)
+                selected_range.remove('83o')
+            else:
+                button83o.config(bg = color_offsuit_selected)
+                selected_range.append('83o')
 
 def press82o(par):
-    if par == 0:
-        if '82o' in selected_range:
-            button82o.config(bg = color_offsuit)
-            selected_range.remove('82o')
-    elif par == 1:
-        if '82o' not in selected_range:
-            button82o.config(bg = color_offsuit_selected)
-            selected_range.append('82o')
-    else: #toggle
-        if '82o' in selected_range:
-            button82o.config(bg = color_offsuit)
-            selected_range.remove('82o')
-        else:
-            button82o.config(bg = color_offsuit_selected)
-            selected_range.append('82o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '82o' in selected_range:
+                button82o.config(bg = color_offsuit)
+                selected_range.remove('82o')
+        elif par == 1:
+            if '82o' not in selected_range:
+                button82o.config(bg = color_offsuit_selected)
+                selected_range.append('82o')
+        else: #toggle
+            if '82o' in selected_range:
+                button82o.config(bg = color_offsuit)
+                selected_range.remove('82o')
+            else:
+                button82o.config(bg = color_offsuit_selected)
+                selected_range.append('82o')
 
 # 7
 def press76o(par):
-    if par == 0:
-        if '76o' in selected_range:
-            button76o.config(bg = color_offsuit)
-            selected_range.remove('76o')
-    elif par == 1:
-        if '76o' not in selected_range:
-            button76o.config(bg = color_offsuit_selected)
-            selected_range.append('76o')
-    else: #toggle
-        if '76o' in selected_range:
-            button76o.config(bg = color_offsuit)
-            selected_range.remove('76o')
-        else:
-            button76o.config(bg = color_offsuit_selected)
-            selected_range.append('76o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '76o' in selected_range:
+                button76o.config(bg = color_offsuit)
+                selected_range.remove('76o')
+        elif par == 1:
+            if '76o' not in selected_range:
+                button76o.config(bg = color_offsuit_selected)
+                selected_range.append('76o')
+        else: #toggle
+            if '76o' in selected_range:
+                button76o.config(bg = color_offsuit)
+                selected_range.remove('76o')
+            else:
+                button76o.config(bg = color_offsuit_selected)
+                selected_range.append('76o')
 
 def press75o(par):
-    if par == 0:
-        if '75o' in selected_range:
-            button75o.config(bg = color_offsuit)
-            selected_range.remove('75o')
-    elif par == 1:
-        if '75o' not in selected_range:
-            button75o.config(bg = color_offsuit_selected)
-            selected_range.append('75o')
-    else: #toggle
-        if '75o' in selected_range:
-            button75o.config(bg = color_offsuit)
-            selected_range.remove('75o')
-        else:
-            button75o.config(bg = color_offsuit_selected)
-            selected_range.append('75o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '75o' in selected_range:
+                button75o.config(bg = color_offsuit)
+                selected_range.remove('75o')
+        elif par == 1:
+            if '75o' not in selected_range:
+                button75o.config(bg = color_offsuit_selected)
+                selected_range.append('75o')
+        else: #toggle
+            if '75o' in selected_range:
+                button75o.config(bg = color_offsuit)
+                selected_range.remove('75o')
+            else:
+                button75o.config(bg = color_offsuit_selected)
+                selected_range.append('75o')
 
 def press74o(par):
-    if par == 0:
-        if '74o' in selected_range:
-            button74o.config(bg = color_offsuit)
-            selected_range.remove('74o')
-    elif par == 1:
-        if '74o' not in selected_range:
-            button74o.config(bg = color_offsuit_selected)
-            selected_range.append('74o')
-    else: #toggle
-        if '74o' in selected_range:
-            button74o.config(bg = color_offsuit)
-            selected_range.remove('74o')
-        else:
-            button74o.config(bg = color_offsuit_selected)
-            selected_range.append('74o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '74o' in selected_range:
+                button74o.config(bg = color_offsuit)
+                selected_range.remove('74o')
+        elif par == 1:
+            if '74o' not in selected_range:
+                button74o.config(bg = color_offsuit_selected)
+                selected_range.append('74o')
+        else: #toggle
+            if '74o' in selected_range:
+                button74o.config(bg = color_offsuit)
+                selected_range.remove('74o')
+            else:
+                button74o.config(bg = color_offsuit_selected)
+                selected_range.append('74o')
 
 def press73o(par):
-    if par == 0:
-        if '73o' in selected_range:
-            button73o.config(bg = color_offsuit)
-            selected_range.remove('73o')
-    elif par == 1:
-        if '73o' not in selected_range:
-            button73o.config(bg = color_offsuit_selected)
-            selected_range.append('73o')
-    else: #toggle
-        if '73o' in selected_range:
-            button73o.config(bg = color_offsuit)
-            selected_range.remove('73o')
-        else:
-            button73o.config(bg = color_offsuit_selected)
-            selected_range.append('73o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '73o' in selected_range:
+                button73o.config(bg = color_offsuit)
+                selected_range.remove('73o')
+        elif par == 1:
+            if '73o' not in selected_range:
+                button73o.config(bg = color_offsuit_selected)
+                selected_range.append('73o')
+        else: #toggle
+            if '73o' in selected_range:
+                button73o.config(bg = color_offsuit)
+                selected_range.remove('73o')
+            else:
+                button73o.config(bg = color_offsuit_selected)
+                selected_range.append('73o')
 
 def press72o(par):
-    if par == 0:
-        if '72o' in selected_range:
-            button72o.config(bg = color_offsuit)
-            selected_range.remove('72o')
-    elif par == 1:
-        if '72o' not in selected_range:
-            button72o.config(bg = color_offsuit_selected)
-            selected_range.append('72o')
-    else: #toggle
-        if '72o' in selected_range:
-            button72o.config(bg = color_offsuit)
-            selected_range.remove('72o')
-        else:
-            button72o.config(bg = color_offsuit_selected)
-            selected_range.append('72o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '72o' in selected_range:
+                button72o.config(bg = color_offsuit)
+                selected_range.remove('72o')
+        elif par == 1:
+            if '72o' not in selected_range:
+                button72o.config(bg = color_offsuit_selected)
+                selected_range.append('72o')
+        else: #toggle
+            if '72o' in selected_range:
+                button72o.config(bg = color_offsuit)
+                selected_range.remove('72o')
+            else:
+                button72o.config(bg = color_offsuit_selected)
+                selected_range.append('72o')
 
 # 6
 def press65o(par):
-    if par == 0:
-        if '65o' in selected_range:
-            button65o.config(bg = color_offsuit)
-            selected_range.remove('65o')
-    elif par == 1:
-        if '65o' not in selected_range:
-            button65o.config(bg = color_offsuit_selected)
-            selected_range.append('65o')
-    else: #toggle
-        if '65o' in selected_range:
-            button65o.config(bg = color_offsuit)
-            selected_range.remove('65o')
-        else:
-            button65o.config(bg = color_offsuit_selected)
-            selected_range.append('65o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '65o' in selected_range:
+                button65o.config(bg = color_offsuit)
+                selected_range.remove('65o')
+        elif par == 1:
+            if '65o' not in selected_range:
+                button65o.config(bg = color_offsuit_selected)
+                selected_range.append('65o')
+        else: #toggle
+            if '65o' in selected_range:
+                button65o.config(bg = color_offsuit)
+                selected_range.remove('65o')
+            else:
+                button65o.config(bg = color_offsuit_selected)
+                selected_range.append('65o')
 
 def press64o(par):
-    if par == 0:
-        if '64o' in selected_range:
-            button64o.config(bg = color_offsuit)
-            selected_range.remove('64o')
-    elif par == 1:
-        if '64o' not in selected_range:
-            button64o.config(bg = color_offsuit_selected)
-            selected_range.append('64o')
-    else: #toggle
-        if '64o' in selected_range:
-            button64o.config(bg = color_offsuit)
-            selected_range.remove('64o')
-        else:
-            button64o.config(bg = color_offsuit_selected)
-            selected_range.append('64o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '64o' in selected_range:
+                button64o.config(bg = color_offsuit)
+                selected_range.remove('64o')
+        elif par == 1:
+            if '64o' not in selected_range:
+                button64o.config(bg = color_offsuit_selected)
+                selected_range.append('64o')
+        else: #toggle
+            if '64o' in selected_range:
+                button64o.config(bg = color_offsuit)
+                selected_range.remove('64o')
+            else:
+                button64o.config(bg = color_offsuit_selected)
+                selected_range.append('64o')
 
 def press63o(par):
-    if par == 0:
-        if '63o' in selected_range:
-            button63o.config(bg = color_offsuit)
-            selected_range.remove('63o')
-    elif par == 1:
-        if '63o' not in selected_range:
-            button63o.config(bg = color_offsuit_selected)
-            selected_range.append('63o')
-    else: #toggle
-        if '63o' in selected_range:
-            button63o.config(bg = color_offsuit)
-            selected_range.remove('63o')
-        else:
-            button63o.config(bg = color_offsuit_selected)
-            selected_range.append('63o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '63o' in selected_range:
+                button63o.config(bg = color_offsuit)
+                selected_range.remove('63o')
+        elif par == 1:
+            if '63o' not in selected_range:
+                button63o.config(bg = color_offsuit_selected)
+                selected_range.append('63o')
+        else: #toggle
+            if '63o' in selected_range:
+                button63o.config(bg = color_offsuit)
+                selected_range.remove('63o')
+            else:
+                button63o.config(bg = color_offsuit_selected)
+                selected_range.append('63o')
 
 def press62o(par):
-    if par == 0:
-        if '62o' in selected_range:
-            button62o.config(bg = color_offsuit)
-            selected_range.remove('62o')
-    elif par == 1:
-        if '62o' not in selected_range:
-            button62o.config(bg = color_offsuit_selected)
-            selected_range.append('62o')
-    else: #toggle
-        if '62o' in selected_range:
-            button62o.config(bg = color_offsuit)
-            selected_range.remove('62o')
-        else:
-            button62o.config(bg = color_offsuit_selected)
-            selected_range.append('62o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '62o' in selected_range:
+                button62o.config(bg = color_offsuit)
+                selected_range.remove('62o')
+        elif par == 1:
+            if '62o' not in selected_range:
+                button62o.config(bg = color_offsuit_selected)
+                selected_range.append('62o')
+        else: #toggle
+            if '62o' in selected_range:
+                button62o.config(bg = color_offsuit)
+                selected_range.remove('62o')
+            else:
+                button62o.config(bg = color_offsuit_selected)
+                selected_range.append('62o')
 
 # 5
 
 def press54o(par):
-    if par == 0:
-        if '54o' in selected_range:
-            button54o.config(bg = color_offsuit)
-            selected_range.remove('54o')
-    elif par == 1:
-        if '54o' not in selected_range:
-            button54o.config(bg = color_offsuit_selected)
-            selected_range.append('54o')
-    else: #toggle
-        if '54o' in selected_range:
-            button54o.config(bg = color_offsuit)
-            selected_range.remove('54o')
-        else:
-            button54o.config(bg = color_offsuit_selected)
-            selected_range.append('54o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '54o' in selected_range:
+                button54o.config(bg = color_offsuit)
+                selected_range.remove('54o')
+        elif par == 1:
+            if '54o' not in selected_range:
+                button54o.config(bg = color_offsuit_selected)
+                selected_range.append('54o')
+        else: #toggle
+            if '54o' in selected_range:
+                button54o.config(bg = color_offsuit)
+                selected_range.remove('54o')
+            else:
+                button54o.config(bg = color_offsuit_selected)
+                selected_range.append('54o')
 
 def press53o(par):
-    if par == 0:
-        if '53o' in selected_range:
-            button53o.config(bg = color_offsuit)
-            selected_range.remove('53o')
-    elif par == 1:
-        if '53o' not in selected_range:
-            button53o.config(bg = color_offsuit_selected)
-            selected_range.append('53o')
-    else: #toggle
-        if '53o' in selected_range:
-            button53o.config(bg = color_offsuit)
-            selected_range.remove('53o')
-        else:
-            button53o.config(bg = color_offsuit_selected)
-            selected_range.append('53o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '53o' in selected_range:
+                button53o.config(bg = color_offsuit)
+                selected_range.remove('53o')
+        elif par == 1:
+            if '53o' not in selected_range:
+                button53o.config(bg = color_offsuit_selected)
+                selected_range.append('53o')
+        else: #toggle
+            if '53o' in selected_range:
+                button53o.config(bg = color_offsuit)
+                selected_range.remove('53o')
+            else:
+                button53o.config(bg = color_offsuit_selected)
+                selected_range.append('53o')
 
 def press52o(par):
-    if par == 0:
-        if '52o' in selected_range:
-            button52o.config(bg = color_offsuit)
-            selected_range.remove('52o')
-    elif par == 1:
-        if '52o' not in selected_range:
-            button52o.config(bg = color_offsuit_selected)
-            selected_range.append('52o')
-    else: #toggle
-        if '52o' in selected_range:
-            button52o.config(bg = color_offsuit)
-            selected_range.remove('52o')
-        else:
-            button52o.config(bg = color_offsuit_selected)
-            selected_range.append('52o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '52o' in selected_range:
+                button52o.config(bg = color_offsuit)
+                selected_range.remove('52o')
+        elif par == 1:
+            if '52o' not in selected_range:
+                button52o.config(bg = color_offsuit_selected)
+                selected_range.append('52o')
+        else: #toggle
+            if '52o' in selected_range:
+                button52o.config(bg = color_offsuit)
+                selected_range.remove('52o')
+            else:
+                button52o.config(bg = color_offsuit_selected)
+                selected_range.append('52o')
 
 # 4
 
 def press43o(par):
-    if par == 0:
-        if '43o' in selected_range:
-            button43o.config(bg = color_offsuit)
-            selected_range.remove('43o')
-    elif par == 1:
-        if '43o' not in selected_range:
-            button43o.config(bg = color_offsuit_selected)
-            selected_range.append('43o')
-    else: #toggle
-        if '43o' in selected_range:
-            button43o.config(bg = color_offsuit)
-            selected_range.remove('43o')
-        else:
-            button43o.config(bg = color_offsuit_selected)
-            selected_range.append('43o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '43o' in selected_range:
+                button43o.config(bg = color_offsuit)
+                selected_range.remove('43o')
+        elif par == 1:
+            if '43o' not in selected_range:
+                button43o.config(bg = color_offsuit_selected)
+                selected_range.append('43o')
+        else: #toggle
+            if '43o' in selected_range:
+                button43o.config(bg = color_offsuit)
+                selected_range.remove('43o')
+            else:
+                button43o.config(bg = color_offsuit_selected)
+                selected_range.append('43o')
 
 def press42o(par):
-    if par == 0:
-        if '42o' in selected_range:
-            button42o.config(bg = color_offsuit)
-            selected_range.remove('42o')
-    elif par == 1:
-        if '42o' not in selected_range:
-            button42o.config(bg = color_offsuit_selected)
-            selected_range.append('42o')
-    else: #toggle
-        if '42o' in selected_range:
-            button42o.config(bg = color_offsuit)
-            selected_range.remove('42o')
-        else:
-            button42o.config(bg = color_offsuit_selected)
-            selected_range.append('42o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '42o' in selected_range:
+                button42o.config(bg = color_offsuit)
+                selected_range.remove('42o')
+        elif par == 1:
+            if '42o' not in selected_range:
+                button42o.config(bg = color_offsuit_selected)
+                selected_range.append('42o')
+        else: #toggle
+            if '42o' in selected_range:
+                button42o.config(bg = color_offsuit)
+                selected_range.remove('42o')
+            else:
+                button42o.config(bg = color_offsuit_selected)
+                selected_range.append('42o')
 
 # 3
 
 def press32o(par):
-    if par == 0:
-        if '32o' in selected_range:
-            button32o.config(bg = color_offsuit)
-            selected_range.remove('32o')
-    elif par == 1:
-        if '32o' not in selected_range:
-            button32o.config(bg = color_offsuit_selected)
-            selected_range.append('32o')
-    else: #toggle
-        if '32o' in selected_range:
-            button32o.config(bg = color_offsuit)
-            selected_range.remove('32o')
-        else:
-            button32o.config(bg = color_offsuit_selected)
-            selected_range.append('32o')
+    global solved
+    if not solved:
+        if par == 0:
+            if '32o' in selected_range:
+                button32o.config(bg = color_offsuit)
+                selected_range.remove('32o')
+        elif par == 1:
+            if '32o' not in selected_range:
+                button32o.config(bg = color_offsuit_selected)
+                selected_range.append('32o')
+        else: #toggle
+            if '32o' in selected_range:
+                button32o.config(bg = color_offsuit)
+                selected_range.remove('32o')
+            else:
+                button32o.config(bg = color_offsuit_selected)
+                selected_range.append('32o')
 
 '''
 def textBox():
