@@ -91,18 +91,18 @@ var = tk.IntVar()
 var.set(1)
 
 #solved game coefficients:
-a = 5.9
-b = 51.1
-c = 52.6
-d = 82.1
-e = 85.0
-f = 93.9
-g = 14.0
-h = 71.9
-j = 79.0
-k = 50.0
-m = 52.6
-n = 89.5
+a = 5.1
+b = 16.0
+c = 17.0
+d = 55.5
+e = 59.5
+f = 91.0
+g = 8.0
+h = 44.3
+j = 50.5
+k = 14.3
+m = 17.0
+n = 75.2
 
 def clear_players_ranges():
     global a_bet_fold
@@ -1138,7 +1138,7 @@ def buttonSolve():
 
     if var.get() == 1:
         #A
-        print("Player OP Acts")
+        #print("Player OP Acts")
         for hh in thanewlist:
             if hh.equx < a:
                 a_bet_fold.append(hh)
@@ -1154,6 +1154,7 @@ def buttonSolve():
                 a_bet_call.append(hh)
             else:
                 a_check_raise.append(hh)
+        
         print("bet-fold:")
         for hh in a_bet_fold:
             print(hh.pohand + " " + str(hh.equx) + " " + board_string)
@@ -1169,15 +1170,56 @@ def buttonSolve():
         print("a_bet_call:")
         for hh in a_bet_call:
             print(hh.pohand + " " + str(hh.equx) + " " + board_string)
+       
 
     elif var.get() == 2:
         #B
-        print("Player OP Bets, Player IP acts")
+        #print("Player OP Bets, Player IP acts")
+        for hh in thanewlist:
+            if hh.equx < k:
+                b_fold.append(hh)
+            elif hh.equx < m:
+                b_raise.append(hh)
+            elif hh.equx < n:
+                b_call.append(hh)
+            else:
+                b_raise.append(hh)
+
+        print("fold: ")
+        for hh in b_fold:
+            print(hh.pohand + " " + str(hh.equx) + " " + board_string)
+        print("call: ")
+        for hh in b_call:
+            print(hh.pohand + " " + str(hh.equx) + " " + board_string)
+        print("raise: ")
+        for hh in b_raise:
+            print(hh.pohand + " " + str(hh.equx) + " " + board_string)
+
     elif var.get() == 3:
         #C
-        print("Player OP Checks, Player IP acts")
+        #print("Player OP Checks, Player IP acts")
+        for hh in thanewlist:
+            if hh.equx < g:
+                c_bet_fold.append(hh)
+            elif hh.equx < h:
+                c_check.append(hh)
+            elif hh.equx < j:
+                c_bet_fold.append(hh)
+            else:
+                c_bet_call.append(hh)
+
+        print("bet_fold: ")
+        for hh in c_bet_fold:
+            print(hh.pohand + " " + str(hh.equx) + " " + board_string)
+        print("check: ")
+        for hh in c_check:
+            print(hh.pohand + " " + str(hh.equx) + " " + board_string)
+        print("bet_call: ")
+        for hh in c_bet_call:
+            print(hh.pohand + " " + str(hh.equx) + " " + board_string)
     else:
-        print("unknown situation")
+        print("unknown situation, we should never get here")
+        dumb = input("]")
 
 
     if showgraph.get():

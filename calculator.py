@@ -367,6 +367,8 @@ def shuffle_deck(hole_cards, board):
     for suit in suits:
         for rank in ranks:
             deck.append(CalculatingCard(rank + suit))
+    
+    '''
     burned_cards = []
     for hole_card in hole_cards:
         for card in hole_card:
@@ -374,9 +376,16 @@ def shuffle_deck(hole_cards, board):
                 burned_cards.append(card)
     if board and len(board) > 0:
         burned_cards.extend(board)
+
+
     for dealt_card in burned_cards:
         try:
             deck.remove(dealt_card)
         except:
-            pass
+            print("dealt_card: " + str(dealt_card))
+            print("deck: ")
+            print(deck)
+            dumb = input("]")
+     '''   
+
     return tuple(deck)
