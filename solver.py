@@ -1230,7 +1230,7 @@ def buttonSolve():
     #Clear Colors to color the solved matrix global solved = 1
     #row1
     buttonAA.config(bg = '#BDBDB7')
-    temporary_range_pp = expander.expandPP('AA')
+    #temporary_range_pp = expander.expandPP('AA')
     print("temporary_range_pp")
     print(temporary_range_pp)
     print("hand: " + hand)
