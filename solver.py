@@ -1230,15 +1230,7 @@ def buttonSolve():
     #Clear Colors to color the solved matrix global solved = 1
     #row1
     buttonAA.config(bg = '#BDBDB7')
-    #temporary_range_pp = expander.expandPP('AA')
-    print("temporary_range_pp")
-    print(temporary_range_pp)
-    print("hand: " + hand)
-
-
-
     if var.get()  == 1:
-
         prio = 0
         for hand in temporary_range_pp:
             for hh in a_check_fold:
@@ -1266,10 +1258,6 @@ def buttonSolve():
                     print("5")
                     if prio < 5:
                         prio = 5
-    
-    
-        #print("prio for AA: " + str(prio))
-        #dumb = input("]")
     if prio == 5:
         buttonAA.config(bg = 'red')
     elif prio == 4:
@@ -1283,8 +1271,6 @@ def buttonSolve():
     else:
         pass
     
-
-
     buttonAKs.config(bg = '#BDBDB7')
     buttonAQs.config(bg = '#BDBDB7')
     buttonAJs.config(bg = '#BDBDB7')
@@ -1300,6 +1286,46 @@ def buttonSolve():
     #row2
     buttonAKo.config(bg = '#BDBDB7')
     buttonKK.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        buttonKK.config(bg = 'red')
+    elif prio == 4:
+        buttonKK.config(bg = 'orange')
+    elif prio == 3:
+        buttonKK.config(bg = 'green')
+    elif prio == 2:
+        buttonKK.config(bg = 'lightblue')
+    elif prio == 1:
+        buttonKK.config(bg = 'blue')
+    else:
+        pass
     buttonKQs.config(bg = '#BDBDB7')
     buttonKJs.config(bg = '#BDBDB7')
     buttonKTs.config(bg = '#BDBDB7')
@@ -1315,6 +1341,46 @@ def buttonSolve():
     buttonAQo.config(bg = '#BDBDB7')
     buttonKQo.config(bg = '#BDBDB7')
     buttonQQ.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        buttonQQ.config(bg = 'red')
+    elif prio == 4:
+        buttonQQ.config(bg = 'orange')
+    elif prio == 3:
+        buttonQQ.config(bg = 'green')
+    elif prio == 2:
+        buttonQQ.config(bg = 'lightblue')
+    elif prio == 1:
+        buttonQQ.config(bg = 'blue')
+    else:
+        pass
     buttonQJs.config(bg = '#BDBDB7')
     buttonQTs.config(bg = '#BDBDB7')
     buttonQ9s.config(bg = '#BDBDB7')
@@ -1330,6 +1396,46 @@ def buttonSolve():
     buttonKJo.config(bg = '#BDBDB7')
     buttonQJo.config(bg = '#BDBDB7')
     buttonJJ.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        buttonJJ.config(bg = 'red')
+    elif prio == 4:
+        buttonJJ.config(bg = 'orange')
+    elif prio == 3:
+        buttonJJ.config(bg = 'green')
+    elif prio == 2:
+        buttonJJ.config(bg = 'lightblue')
+    elif prio == 1:
+        buttonJJ.config(bg = 'blue')
+    else:
+        pass
     buttonJTs.config(bg = '#BDBDB7')
     buttonJ9s.config(bg = '#BDBDB7')
     buttonJ8s.config(bg = '#BDBDB7')
@@ -1345,6 +1451,46 @@ def buttonSolve():
     buttonQTo.config(bg = '#BDBDB7')
     buttonJTo.config(bg = '#BDBDB7')
     buttonTT.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        buttonTT.config(bg = 'red')
+    elif prio == 4:
+        buttonTT.config(bg = 'orange')
+    elif prio == 3:
+        buttonTT.config(bg = 'green')
+    elif prio == 2:
+        buttonTT.config(bg = 'lightblue')
+    elif prio == 1:
+        buttonTT.config(bg = 'blue')
+    else:
+        pass
     buttonT9s.config(bg = '#BDBDB7')
     buttonT8s.config(bg = '#BDBDB7')
     buttonT7s.config(bg = '#BDBDB7')
@@ -1360,6 +1506,46 @@ def buttonSolve():
     buttonJ9o.config(bg = '#BDBDB7')
     buttonT9o.config(bg = '#BDBDB7')
     button99.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        button99.config(bg = 'red')
+    elif prio == 4:
+        button99.config(bg = 'orange')
+    elif prio == 3:
+        button99.config(bg = 'green')
+    elif prio == 2:
+        button99.config(bg = 'lightblue')
+    elif prio == 1:
+        button99.config(bg = 'blue')
+    else:
+        pass
     button98s.config(bg = '#BDBDB7')
     button97s.config(bg = '#BDBDB7')
     button96s.config(bg = '#BDBDB7')
@@ -1375,6 +1561,46 @@ def buttonSolve():
     buttonT8o.config(bg = '#BDBDB7')
     button98o.config(bg = '#BDBDB7')
     button88.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        button88.config(bg = 'red')
+    elif prio == 4:
+        button88.config(bg = 'orange')
+    elif prio == 3:
+        button88.config(bg = 'green')
+    elif prio == 2:
+        button88.config(bg = 'lightblue')
+    elif prio == 1:
+        button88.config(bg = 'blue')
+    else:
+        pass
     button87s.config(bg = '#BDBDB7')
     button86s.config(bg = '#BDBDB7')
     button85s.config(bg = '#BDBDB7')
@@ -1390,6 +1616,46 @@ def buttonSolve():
     button97o.config(bg = '#BDBDB7')
     button87o.config(bg = '#BDBDB7')
     button77.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        button77.config(bg = 'red')
+    elif prio == 4:
+        button77.config(bg = 'orange')
+    elif prio == 3:
+        button77.config(bg = 'green')
+    elif prio == 2:
+        button77.config(bg = 'lightblue')
+    elif prio == 1:
+        button77.config(bg = 'blue')
+    else:
+        pass
     button76s.config(bg = '#BDBDB7')
     button75s.config(bg = '#BDBDB7')
     button74s.config(bg = '#BDBDB7')
@@ -1405,6 +1671,46 @@ def buttonSolve():
     button86o.config(bg = '#BDBDB7')
     button76o.config(bg = '#BDBDB7')
     button66.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        button66.config(bg = 'red')
+    elif prio == 4:
+        button66.config(bg = 'orange')
+    elif prio == 3:
+        button66.config(bg = 'green')
+    elif prio == 2:
+        button66.config(bg = 'lightblue')
+    elif prio == 1:
+        button66.config(bg = 'blue')
+    else:
+        pass
     button65s.config(bg = '#BDBDB7')
     button64s.config(bg = '#BDBDB7')
     button63s.config(bg = '#BDBDB7')
@@ -1420,6 +1726,46 @@ def buttonSolve():
     button75o.config(bg = '#BDBDB7')
     button65o.config(bg = '#BDBDB7')
     button55.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        button55.config(bg = 'red')
+    elif prio == 4:
+        button55.config(bg = 'orange')
+    elif prio == 3:
+        button55.config(bg = 'green')
+    elif prio == 2:
+        button55.config(bg = 'lightblue')
+    elif prio == 1:
+        button55.config(bg = 'blue')
+    else:
+        pass
     button54s.config(bg = '#BDBDB7')
     button53s.config(bg = '#BDBDB7')
     button52s.config(bg = '#BDBDB7')
@@ -1435,6 +1781,46 @@ def buttonSolve():
     button64o.config(bg = '#BDBDB7')
     button54o.config(bg = '#BDBDB7')
     button44.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        button44.config(bg = 'red')
+    elif prio == 4:
+        button44.config(bg = 'orange')
+    elif prio == 3:
+        button44.config(bg = 'green')
+    elif prio == 2:
+        button44.config(bg = 'lightblue')
+    elif prio == 1:
+        button44.config(bg = 'blue')
+    else:
+        pass
     button43s.config(bg = '#BDBDB7')
     button42s.config(bg = '#BDBDB7')
     #row11
@@ -1450,6 +1836,46 @@ def buttonSolve():
     button53o.config(bg = '#BDBDB7')
     button43o.config(bg = '#BDBDB7')
     button33.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        button33.config(bg = 'red')
+    elif prio == 4:
+        button33.config(bg = 'orange')
+    elif prio == 3:
+        button33.config(bg = 'green')
+    elif prio == 2:
+        button33.config(bg = 'lightblue')
+    elif prio == 1:
+        button33.config(bg = 'blue')
+    else:
+        pass
     button32s.config(bg = '#BDBDB7')
     #row12
     buttonA2o.config(bg = '#BDBDB7')
@@ -1465,6 +1891,46 @@ def buttonSolve():
     button42o.config(bg = '#BDBDB7')
     button32o.config(bg = '#BDBDB7')
     button22.config(bg = '#BDBDB7')
+    if var.get()  == 1:
+        prio = 0
+        for hand in temporary_range_pp:
+            for hh in a_check_fold:
+                if hand == hh.pohand:
+                    print("1")
+                    if prio < 1:
+                        prio = 1
+            for hh in a_bet_fold:
+                if hand == hh.pohand:
+                    print("2")
+                    if prio < 2:
+                        prio = 2
+            for hh in a_check_call:
+                if hand == hh.pohand:
+                    print("3")
+                    if prio < 3:
+                        prio = 3
+            for hh in a_bet_call:
+                if hand == hh.pohand:
+                    print("4")
+                    if prio < 4:
+                        prio = 4
+            for hh in a_check_raise:
+                if hand == hh.pohand:
+                    print("5")
+                    if prio < 5:
+                        prio = 5
+    if prio == 5:
+        button22.config(bg = 'red')
+    elif prio == 4:
+        button22.config(bg = 'orange')
+    elif prio == 3:
+        button22.config(bg = 'green')
+    elif prio == 2:
+        button22.config(bg = 'lightblue')
+    elif prio == 1:
+        button22.config(bg = 'blue')
+    else:
+        pass
 
 
     if showgraph.get():
