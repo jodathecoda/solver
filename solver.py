@@ -1597,39 +1597,41 @@ def buttonSolve():
         print("unknown situation, we should never get here")
         dumb = input("]")
 
-    #Clear Colors to color the solved matrix global solved = 1
-    #row1
     buttonAA.config(bg = '#BDBDB7')
     if 'AA' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('AA'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
                         if prio < 1:
                             prio = 1
+                            print("hand: " + hand + " prio: " + str(prio))
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         print("2")
                         if prio < 2:
                             prio = 2
+                            print("hand: " + hand + " prio: " + str(prio))
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         print("3")
                         if prio < 3:
                             prio = 3
+                            print("hand: " + hand + " prio: " + str(prio))
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         print("4")
                         if prio < 4:
                             prio = 4
+                            print("hand: " + hand + " prio: " + str(prio))
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         print(hand + " 5")
                         if prio < 5:
                             prio = 5
-                            print("hand: " + hand + "prio: " + str(prio))
+                            print("hand: " + hand + " prio: " + str(prio))
             if prio == 5:
                 buttonAA.config(bg = 'red')
             elif prio == 4:
@@ -1644,7 +1646,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('AA'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1670,7 +1672,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('AA'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1698,7 +1700,7 @@ def buttonSolve():
     if 'AKs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandPP('AKs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1738,7 +1740,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandPP('AKs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1764,7 +1766,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandPP('AKs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1793,7 +1795,7 @@ def buttonSolve():
     if 'AQs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandPP('AQs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1833,7 +1835,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandPP('AQs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1859,7 +1861,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandPP('AQs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
