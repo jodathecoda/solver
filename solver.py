@@ -1700,7 +1700,7 @@ def buttonSolve():
     if 'AKs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in expander.expandPP('AKs'):
+            for hand in expander.expandSuit('AKs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1740,7 +1740,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in expander.expandPP('AKs'):
+            for hand in expander.expandSuit('AKs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1766,7 +1766,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in expander.expandPP('AKs'):
+            for hand in expander.expandSuit('AKs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1795,7 +1795,7 @@ def buttonSolve():
     if 'AQs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in expander.expandPP('AQs'):
+            for hand in expander.expandSuit('AQs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1835,7 +1835,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in expander.expandPP('AQs'):
+            for hand in expander.expandSuit('AQs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1861,7 +1861,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in expander.expandPP('AQs'):
+            for hand in expander.expandSuit('AQs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1889,7 +1889,7 @@ def buttonSolve():
     if 'AJs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('AJs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1929,7 +1929,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('AJs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1955,7 +1955,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('AJs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -1983,7 +1983,7 @@ def buttonSolve():
     if 'ATs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('ATs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2023,7 +2023,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('ATs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2049,7 +2049,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('ATs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2077,7 +2077,7 @@ def buttonSolve():
     if 'A9s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2117,7 +2117,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2143,7 +2143,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2171,7 +2171,7 @@ def buttonSolve():
     if 'A8s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2211,7 +2211,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2237,7 +2237,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2265,7 +2265,7 @@ def buttonSolve():
     if 'A7s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2305,7 +2305,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2331,7 +2331,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2359,7 +2359,7 @@ def buttonSolve():
     if 'A6s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2399,7 +2399,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2425,7 +2425,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2453,7 +2453,7 @@ def buttonSolve():
     if 'A5s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2493,7 +2493,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2519,7 +2519,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2547,7 +2547,7 @@ def buttonSolve():
     if 'A4s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2587,7 +2587,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2613,7 +2613,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2641,7 +2641,7 @@ def buttonSolve():
     if 'A3s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2681,7 +2681,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2707,7 +2707,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2735,7 +2735,7 @@ def buttonSolve():
     if 'A2s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2775,7 +2775,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2801,7 +2801,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('A2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2831,7 +2831,7 @@ def buttonSolve():
     if 'KK' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('KK'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2871,7 +2871,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('KK'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2897,7 +2897,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('KK'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2925,7 +2925,7 @@ def buttonSolve():
     if 'KQs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('KQs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2965,7 +2965,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('KQs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -2991,7 +2991,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('KQs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3019,7 +3019,7 @@ def buttonSolve():
     if 'KJs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('KJs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3059,7 +3059,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('KJs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3085,7 +3085,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('KJs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3113,7 +3113,7 @@ def buttonSolve():
     if 'KTs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('KTs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3153,7 +3153,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('KTs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3179,7 +3179,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('KTs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3207,7 +3207,7 @@ def buttonSolve():
     if 'K9s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3247,7 +3247,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3273,7 +3273,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3301,7 +3301,7 @@ def buttonSolve():
     if 'K8s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3341,7 +3341,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3367,7 +3367,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3395,7 +3395,7 @@ def buttonSolve():
     if 'K7s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3435,7 +3435,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3461,7 +3461,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3489,7 +3489,7 @@ def buttonSolve():
     if 'K6s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3529,7 +3529,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3555,7 +3555,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3583,7 +3583,7 @@ def buttonSolve():
     if 'K5s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3623,7 +3623,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3649,7 +3649,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3677,7 +3677,7 @@ def buttonSolve():
     if 'K4s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3717,7 +3717,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3743,7 +3743,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3771,7 +3771,7 @@ def buttonSolve():
     if 'K3s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3811,7 +3811,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3837,7 +3837,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3865,7 +3865,7 @@ def buttonSolve():
     if 'K2s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3905,7 +3905,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3931,7 +3931,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('K2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -3962,7 +3962,7 @@ def buttonSolve():
     if 'QQ' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('QQ'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4002,7 +4002,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('QQ'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4028,7 +4028,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('QQ'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4056,7 +4056,7 @@ def buttonSolve():
     if 'QJs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('QJs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4096,7 +4096,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('QJs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4122,7 +4122,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('QJs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4150,7 +4150,7 @@ def buttonSolve():
     if 'QTs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('QTs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4190,7 +4190,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('QTs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4216,7 +4216,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('QTs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4244,7 +4244,7 @@ def buttonSolve():
     if 'Q9s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4284,7 +4284,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4310,7 +4310,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4338,7 +4338,7 @@ def buttonSolve():
     if 'Q8s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4378,7 +4378,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4404,7 +4404,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4432,7 +4432,7 @@ def buttonSolve():
     if 'Q7s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4472,7 +4472,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4498,7 +4498,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4526,7 +4526,7 @@ def buttonSolve():
     if 'Q6s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4566,7 +4566,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4592,7 +4592,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4620,7 +4620,7 @@ def buttonSolve():
     if 'Q5s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4660,7 +4660,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4686,7 +4686,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4714,7 +4714,7 @@ def buttonSolve():
     if 'Q4s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4754,7 +4754,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4780,7 +4780,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4808,7 +4808,7 @@ def buttonSolve():
     if 'Q3s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4848,7 +4848,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4874,7 +4874,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4902,7 +4902,7 @@ def buttonSolve():
     if 'Q2s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4942,7 +4942,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -4968,7 +4968,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('Q2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5000,7 +5000,7 @@ def buttonSolve():
     if 'JJ' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('JJ'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5040,7 +5040,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('JJ'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5066,7 +5066,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('JJ'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5094,7 +5094,7 @@ def buttonSolve():
     if 'JTs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('JTs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5134,7 +5134,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('JTs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5160,7 +5160,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('JTs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5188,7 +5188,7 @@ def buttonSolve():
     if 'J9s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5228,7 +5228,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5254,7 +5254,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5282,7 +5282,7 @@ def buttonSolve():
     if 'J8s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5322,7 +5322,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5348,7 +5348,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5376,7 +5376,7 @@ def buttonSolve():
     if 'J7s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5416,7 +5416,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5442,7 +5442,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5470,7 +5470,7 @@ def buttonSolve():
     if 'J6s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5510,7 +5510,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5536,7 +5536,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5564,7 +5564,7 @@ def buttonSolve():
     if 'J5s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5604,7 +5604,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5630,7 +5630,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5658,7 +5658,7 @@ def buttonSolve():
     if 'J4s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5698,7 +5698,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5724,7 +5724,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5752,7 +5752,7 @@ def buttonSolve():
     if 'J3s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5792,7 +5792,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5818,7 +5818,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5846,7 +5846,7 @@ def buttonSolve():
     if 'J2s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5886,7 +5886,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5912,7 +5912,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('J2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5945,7 +5945,7 @@ def buttonSolve():
     if 'TT' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('TT'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -5985,7 +5985,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('TT'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6011,7 +6011,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('TT'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6039,7 +6039,7 @@ def buttonSolve():
     if 'T9s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6079,7 +6079,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6105,7 +6105,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6133,7 +6133,7 @@ def buttonSolve():
     if 'T8s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6173,7 +6173,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6199,7 +6199,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6227,7 +6227,7 @@ def buttonSolve():
     if 'T7s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6267,7 +6267,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6293,7 +6293,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6321,7 +6321,7 @@ def buttonSolve():
     if 'T6s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6361,7 +6361,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6387,7 +6387,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6415,7 +6415,7 @@ def buttonSolve():
     if 'T5s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6455,7 +6455,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6481,7 +6481,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6509,7 +6509,7 @@ def buttonSolve():
     if 'T4s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6549,7 +6549,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6575,7 +6575,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6603,7 +6603,7 @@ def buttonSolve():
     if 'T3s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6643,7 +6643,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6669,7 +6669,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6697,7 +6697,7 @@ def buttonSolve():
     if 'T2s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6737,7 +6737,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6763,7 +6763,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('T2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6794,7 +6794,7 @@ def buttonSolve():
     buttonJ9o.config(bg = '#BDBDB7')
     buttonT9o.config(bg = '#BDBDB7')
     button99.config(bg = '#BDBDB7')
-    if '99' in selected_range:
+    if '99' in expander.expandPP('99'):
         if var.get()  == 1: #A
             prio = 0
             for hand in temporary_range_pp:
@@ -6837,7 +6837,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('99'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6863,7 +6863,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('99'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6891,7 +6891,7 @@ def buttonSolve():
     if '98s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('98s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6931,7 +6931,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('98s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6957,7 +6957,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('98s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -6985,7 +6985,7 @@ def buttonSolve():
     if '97s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('97s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7025,7 +7025,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('97s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7051,7 +7051,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('97s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7079,7 +7079,7 @@ def buttonSolve():
     if '96s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('96s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7119,7 +7119,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('96s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7145,7 +7145,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('96s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7173,7 +7173,7 @@ def buttonSolve():
     if '95s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('95s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7213,7 +7213,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('95s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7239,7 +7239,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('95s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7267,7 +7267,7 @@ def buttonSolve():
     if '94s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('94s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7307,7 +7307,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('94s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7333,7 +7333,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('94s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7361,7 +7361,7 @@ def buttonSolve():
     if '93s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('93s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7401,7 +7401,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('93s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7427,7 +7427,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('93s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7455,7 +7455,7 @@ def buttonSolve():
     if '92s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('92s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7495,7 +7495,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('92s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7521,7 +7521,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('92s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7556,7 +7556,7 @@ def buttonSolve():
     if '88' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('88'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7596,7 +7596,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('88'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7622,7 +7622,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('88'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7650,7 +7650,7 @@ def buttonSolve():
     if '87s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('87s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7690,7 +7690,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('87s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7716,7 +7716,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('87s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7744,7 +7744,7 @@ def buttonSolve():
     if '86s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('86s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7784,7 +7784,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('86s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7810,7 +7810,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('86s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7838,7 +7838,7 @@ def buttonSolve():
     if '85s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('85s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7878,7 +7878,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('85s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7904,7 +7904,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('85s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7932,7 +7932,7 @@ def buttonSolve():
     if '84s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('84s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7972,7 +7972,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('84s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7998,7 +7998,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('84s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8026,7 +8026,7 @@ def buttonSolve():
     if '83s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('83s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8066,7 +8066,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('83s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8092,7 +8092,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('83s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8120,7 +8120,7 @@ def buttonSolve():
     if '82s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('82s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8160,7 +8160,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('82s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8186,7 +8186,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('82s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8222,7 +8222,7 @@ def buttonSolve():
     if '77' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('77'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8262,7 +8262,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('77'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8288,7 +8288,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('77'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8316,7 +8316,7 @@ def buttonSolve():
     if '76s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('76s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8356,7 +8356,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('76s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8382,7 +8382,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('76s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8410,7 +8410,7 @@ def buttonSolve():
     if '75s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('75s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8450,7 +8450,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('75s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8476,7 +8476,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('75s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8504,7 +8504,7 @@ def buttonSolve():
     if '74s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('74s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8544,7 +8544,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('74s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8570,7 +8570,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('74s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8598,7 +8598,7 @@ def buttonSolve():
     if '73s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('73s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8638,7 +8638,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('73s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8664,7 +8664,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('73s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8692,7 +8692,7 @@ def buttonSolve():
     if '72s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('72s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8732,7 +8732,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('72s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8758,7 +8758,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('72s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8795,7 +8795,7 @@ def buttonSolve():
     if '66' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('66'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8835,7 +8835,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('66'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8861,7 +8861,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('66'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8889,7 +8889,7 @@ def buttonSolve():
     if '65s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('65s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8929,7 +8929,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('65s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8955,7 +8955,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('65s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -8983,7 +8983,7 @@ def buttonSolve():
     if '64s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('64s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9023,7 +9023,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('64s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9049,7 +9049,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('64s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9077,7 +9077,7 @@ def buttonSolve():
     if '63s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('63s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9117,7 +9117,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('63s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9143,7 +9143,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('63s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9171,7 +9171,7 @@ def buttonSolve():
     if '62s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('62s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9211,7 +9211,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('62s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9237,7 +9237,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('62s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9275,7 +9275,7 @@ def buttonSolve():
     if '55' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('55'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9315,7 +9315,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('55'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9341,7 +9341,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('55'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9369,7 +9369,7 @@ def buttonSolve():
     if '54s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('54s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9409,7 +9409,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('54s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9435,7 +9435,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('54s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9463,7 +9463,7 @@ def buttonSolve():
     if '53s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('53s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9503,7 +9503,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('53s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9529,7 +9529,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('53s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9557,7 +9557,7 @@ def buttonSolve():
     if '52s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('52s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9597,7 +9597,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('52s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9623,7 +9623,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('52s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9662,7 +9662,7 @@ def buttonSolve():
     if '44' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('44'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9702,7 +9702,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('44'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9728,7 +9728,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('44'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9756,7 +9756,7 @@ def buttonSolve():
     if '43s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('43s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9796,7 +9796,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('43s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9822,7 +9822,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('43s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9850,7 +9850,7 @@ def buttonSolve():
     if '42s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('42s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9890,7 +9890,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('42s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9916,7 +9916,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('42s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9956,7 +9956,7 @@ def buttonSolve():
     if '33' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('33'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -9996,7 +9996,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('33'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -10022,7 +10022,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('33'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -10050,7 +10050,7 @@ def buttonSolve():
     if '32s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('32s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -10090,7 +10090,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('32s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -10116,7 +10116,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_suit:
+            for hand in expander.expandSuit('32s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -10157,7 +10157,7 @@ def buttonSolve():
     if '22' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('22'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -10197,7 +10197,7 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('22'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -10223,7 +10223,7 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandPP('22'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         print("1")
