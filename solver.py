@@ -2919,16 +2919,1039 @@ def buttonSolve():
             else:
                 pass
     buttonKQs.config(bg = '#BDBDB7')
+    if 'KQs' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonKQs.config(bg = 'red')
+            elif prio == 4:
+                buttonKQs.config(bg = 'orange')
+            elif prio == 3:
+                buttonKQs.config(bg = 'green')
+            elif prio == 2:
+                buttonKQs.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonKQs.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKQs.config(bg = 'red')
+            elif prio == 2:
+                buttonKQs.config(bg = 'yellow')
+            elif prio == 1:
+                buttonKQs.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKQs.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonKQs.config(bg = 'green')
+            elif prio == 1:
+                buttonKQs.config(bg = 'orange')
+            else:
+                pass
     buttonKJs.config(bg = '#BDBDB7')
+    if 'KJs' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonKJs.config(bg = 'red')
+            elif prio == 4:
+                buttonKJs.config(bg = 'orange')
+            elif prio == 3:
+                buttonKJs.config(bg = 'green')
+            elif prio == 2:
+                buttonKJs.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonKJs.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKJs.config(bg = 'red')
+            elif prio == 2:
+                buttonKJs.config(bg = 'yellow')
+            elif prio == 1:
+                buttonKJs.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKJs.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonKJs.config(bg = 'green')
+            elif prio == 1:
+                buttonKJs.config(bg = 'orange')
+            else:
+                pass
     buttonKTs.config(bg = '#BDBDB7')
+    if 'KTs' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonKTs.config(bg = 'red')
+            elif prio == 4:
+                buttonKTs.config(bg = 'orange')
+            elif prio == 3:
+                buttonKTs.config(bg = 'green')
+            elif prio == 2:
+                buttonKTs.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonKTs.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKTs.config(bg = 'red')
+            elif prio == 2:
+                buttonKTs.config(bg = 'yellow')
+            elif prio == 1:
+                buttonKTs.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKTs.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonKTs.config(bg = 'green')
+            elif prio == 1:
+                buttonKTs.config(bg = 'orange')
+            else:
+                pass
     buttonK9s.config(bg = '#BDBDB7')
+    if 'K9s' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK9s.config(bg = 'red')
+            elif prio == 4:
+                buttonK9s.config(bg = 'orange')
+            elif prio == 3:
+                buttonK9s.config(bg = 'green')
+            elif prio == 2:
+                buttonK9s.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK9s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK9s.config(bg = 'red')
+            elif prio == 2:
+                buttonK9s.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK9s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK9s.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK9s.config(bg = 'green')
+            elif prio == 1:
+                buttonK9s.config(bg = 'orange')
+            else:
+                pass
     buttonK8s.config(bg = '#BDBDB7')
+    if 'K8s' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK8s.config(bg = 'red')
+            elif prio == 4:
+                buttonK8s.config(bg = 'orange')
+            elif prio == 3:
+                buttonK8s.config(bg = 'green')
+            elif prio == 2:
+                buttonK8s.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK8s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK8s.config(bg = 'red')
+            elif prio == 2:
+                buttonK8s.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK8s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK8s.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK8s.config(bg = 'green')
+            elif prio == 1:
+                buttonK8s.config(bg = 'orange')
+            else:
+                pass
     buttonK7s.config(bg = '#BDBDB7')
+    if 'K7s' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK7s.config(bg = 'red')
+            elif prio == 4:
+                buttonK7s.config(bg = 'orange')
+            elif prio == 3:
+                buttonK7s.config(bg = 'green')
+            elif prio == 2:
+                buttonK7s.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK7s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK7s.config(bg = 'red')
+            elif prio == 2:
+                buttonK7s.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK7s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK7s.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK7s.config(bg = 'green')
+            elif prio == 1:
+                buttonK7s.config(bg = 'orange')
+            else:
+                pass
     buttonK6s.config(bg = '#BDBDB7')
+    if 'K6s' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK6s.config(bg = 'red')
+            elif prio == 4:
+                buttonK6s.config(bg = 'orange')
+            elif prio == 3:
+                buttonK6s.config(bg = 'green')
+            elif prio == 2:
+                buttonK6s.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK6s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK6s.config(bg = 'red')
+            elif prio == 2:
+                buttonK6s.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK6s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK6s.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK6s.config(bg = 'green')
+            elif prio == 1:
+                buttonK6s.config(bg = 'orange')
+            else:
+                pass
     buttonK5s.config(bg = '#BDBDB7')
+    if 'K5s' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK5s.config(bg = 'red')
+            elif prio == 4:
+                buttonK5s.config(bg = 'orange')
+            elif prio == 3:
+                buttonK5s.config(bg = 'green')
+            elif prio == 2:
+                buttonK5s.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK5s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK5s.config(bg = 'red')
+            elif prio == 2:
+                buttonK5s.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK5s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK5s.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK5s.config(bg = 'green')
+            elif prio == 1:
+                buttonK5s.config(bg = 'orange')
+            else:
+                pass
     buttonK4s.config(bg = '#BDBDB7')
+    if 'K4s' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK4s.config(bg = 'red')
+            elif prio == 4:
+                buttonK4s.config(bg = 'orange')
+            elif prio == 3:
+                buttonK4s.config(bg = 'green')
+            elif prio == 2:
+                buttonK4s.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK4s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK4s.config(bg = 'red')
+            elif prio == 2:
+                buttonK4s.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK4s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK4s.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK4s.config(bg = 'green')
+            elif prio == 1:
+                buttonK4s.config(bg = 'orange')
+            else:
+                pass
     buttonK3s.config(bg = '#BDBDB7')
+    if 'K3s' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK3s.config(bg = 'red')
+            elif prio == 4:
+                buttonK3s.config(bg = 'orange')
+            elif prio == 3:
+                buttonK3s.config(bg = 'green')
+            elif prio == 2:
+                buttonK3s.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK3s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK3s.config(bg = 'red')
+            elif prio == 2:
+                buttonK3s.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK3s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK3s.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK3s.config(bg = 'green')
+            elif prio == 1:
+                buttonK3s.config(bg = 'orange')
+            else:
+                pass
     buttonK2s.config(bg = '#BDBDB7')
+    if 'K2s' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK2s.config(bg = 'red')
+            elif prio == 4:
+                buttonK2s.config(bg = 'orange')
+            elif prio == 3:
+                buttonK2s.config(bg = 'green')
+            elif prio == 2:
+                buttonK2s.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK2s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK2s.config(bg = 'red')
+            elif prio == 2:
+                buttonK2s.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK2s.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in temporary_range_suit:
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK2s.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK2s.config(bg = 'green')
+            elif prio == 1:
+                buttonK2s.config(bg = 'orange')
+            else:
+                pass
     #row3
     buttonAQo.config(bg = '#BDBDB7')
     buttonKQo.config(bg = '#BDBDB7')
