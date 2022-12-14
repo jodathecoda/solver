@@ -2827,6 +2827,99 @@ def buttonSolve():
                 pass
     #row2
     buttonAKo.config(bg = '#BDBDB7')
+    if 'AKo' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('AKo'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonAKo.config(bg = 'red')
+            elif prio == 4:
+                buttonAKo.config(bg = 'orange')
+            elif prio == 3:
+                buttonAKo.config(bg = 'green')
+            elif prio == 2:
+                buttonAKo.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonAKo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('AKo'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonAKo.config(bg = 'red')
+            elif prio == 2:
+                buttonAKo.config(bg = 'yellow')
+            elif prio == 1:
+                buttonAKo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('AKo'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonAKo.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonAKo.config(bg = 'green')
+            elif prio == 1:
+                buttonAKo.config(bg = 'orange')
+            else:
+                pass
     buttonKK.config(bg = '#BDBDB7')
     if 'KK' in selected_range:
         if var.get()  == 1: #A
@@ -3957,7 +4050,193 @@ def buttonSolve():
                 pass
     #row3
     buttonAQo.config(bg = '#BDBDB7')
+    if 'AQo' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('AQo'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonAQo.config(bg = 'red')
+            elif prio == 4:
+                buttonAQo.config(bg = 'orange')
+            elif prio == 3:
+                buttonAQo.config(bg = 'green')
+            elif prio == 2:
+                buttonAQo.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonAQo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('AQo'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonAQo.config(bg = 'red')
+            elif prio == 2:
+                buttonAQo.config(bg = 'yellow')
+            elif prio == 1:
+                buttonAQo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('AQo'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonAQo.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonAQo.config(bg = 'green')
+            elif prio == 1:
+                buttonAQo.config(bg = 'orange')
+            else:
+                pass
     buttonKQo.config(bg = '#BDBDB7')
+    if 'KQo' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('KQo'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonKQo.config(bg = 'red')
+            elif prio == 4:
+                buttonKQo.config(bg = 'orange')
+            elif prio == 3:
+                buttonKQo.config(bg = 'green')
+            elif prio == 2:
+                buttonKQo.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonKQo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('KQo'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKQo.config(bg = 'red')
+            elif prio == 2:
+                buttonKQo.config(bg = 'yellow')
+            elif prio == 1:
+                buttonKQo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('KQo'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKQo.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonKQo.config(bg = 'green')
+            elif prio == 1:
+                buttonKQo.config(bg = 'orange')
+            else:
+                pass
     buttonQQ.config(bg = '#BDBDB7')
     if 'QQ' in selected_range:
         if var.get()  == 1: #A
@@ -4994,8 +5273,287 @@ def buttonSolve():
                 pass
     #row4
     buttonAJo.config(bg = '#BDBDB7')
+    if 'AJo' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('AJo'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonAJo.config(bg = 'red')
+            elif prio == 4:
+                buttonAJo.config(bg = 'orange')
+            elif prio == 3:
+                buttonAJo.config(bg = 'green')
+            elif prio == 2:
+                buttonAJo.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonAJo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('AJo'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonAJo.config(bg = 'red')
+            elif prio == 2:
+                buttonAJo.config(bg = 'yellow')
+            elif prio == 1:
+                buttonAJo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('AJo'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonAJo.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonAJo.config(bg = 'green')
+            elif prio == 1:
+                buttonAJo.config(bg = 'orange')
+            else:
+                pass
     buttonKJo.config(bg = '#BDBDB7')
+    if 'KJo' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('KJo'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonKJo.config(bg = 'red')
+            elif prio == 4:
+                buttonKJo.config(bg = 'orange')
+            elif prio == 3:
+                buttonKJo.config(bg = 'green')
+            elif prio == 2:
+                buttonKJo.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonKJo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('KJo'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKJo.config(bg = 'red')
+            elif prio == 2:
+                buttonKJo.config(bg = 'yellow')
+            elif prio == 1:
+                buttonKJo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('KJo'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKJo.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonKJo.config(bg = 'green')
+            elif prio == 1:
+                buttonKJo.config(bg = 'orange')
+            else:
+                pass
     buttonQJo.config(bg = '#BDBDB7')
+    if 'QJo' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('QJo'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonQJo.config(bg = 'red')
+            elif prio == 4:
+                buttonQJo.config(bg = 'orange')
+            elif prio == 3:
+                buttonQJo.config(bg = 'green')
+            elif prio == 2:
+                buttonQJo.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonQJo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('QJo'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQJo.config(bg = 'red')
+            elif prio == 2:
+                buttonQJo.config(bg = 'yellow')
+            elif prio == 1:
+                buttonQJo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('QJo'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQJo.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonQJo.config(bg = 'green')
+            elif prio == 1:
+                buttonQJo.config(bg = 'orange')
+            else:
+                pass
     buttonJJ.config(bg = '#BDBDB7')
     if 'JJ' in selected_range:
         if var.get()  == 1: #A
@@ -5938,9 +6496,381 @@ def buttonSolve():
                 pass
     #row5
     buttonATo.config(bg = '#BDBDB7')
+    if 'ATo' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('ATo'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonATo.config(bg = 'red')
+            elif prio == 4:
+                buttonATo.config(bg = 'orange')
+            elif prio == 3:
+                buttonATo.config(bg = 'green')
+            elif prio == 2:
+                buttonATo.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonATo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('ATo'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonATo.config(bg = 'red')
+            elif prio == 2:
+                buttonATo.config(bg = 'yellow')
+            elif prio == 1:
+                buttonATo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('ATo'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonATo.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonATo.config(bg = 'green')
+            elif prio == 1:
+                buttonATo.config(bg = 'orange')
+            else:
+                pass
     buttonKTo.config(bg = '#BDBDB7')
+    if 'KTo' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('KTo'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonKTo.config(bg = 'red')
+            elif prio == 4:
+                buttonKTo.config(bg = 'orange')
+            elif prio == 3:
+                buttonKTo.config(bg = 'green')
+            elif prio == 2:
+                buttonKTo.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonKTo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('KTo'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKTo.config(bg = 'red')
+            elif prio == 2:
+                buttonKTo.config(bg = 'yellow')
+            elif prio == 1:
+                buttonKTo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('KTo'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonKTo.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonKTo.config(bg = 'green')
+            elif prio == 1:
+                buttonKTo.config(bg = 'orange')
+            else:
+                pass
     buttonQTo.config(bg = '#BDBDB7')
+    if 'QTo' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('QTo'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonQTo.config(bg = 'red')
+            elif prio == 4:
+                buttonQTo.config(bg = 'orange')
+            elif prio == 3:
+                buttonQTo.config(bg = 'green')
+            elif prio == 2:
+                buttonQTo.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonQTo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('QTo'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQTo.config(bg = 'red')
+            elif prio == 2:
+                buttonQTo.config(bg = 'yellow')
+            elif prio == 1:
+                buttonQTo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('QTo'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQTo.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonQTo.config(bg = 'green')
+            elif prio == 1:
+                buttonQTo.config(bg = 'orange')
+            else:
+                pass
     buttonJTo.config(bg = '#BDBDB7')
+    if 'JTo' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('JTo'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonJTo.config(bg = 'red')
+            elif prio == 4:
+                buttonJTo.config(bg = 'orange')
+            elif prio == 3:
+                buttonJTo.config(bg = 'green')
+            elif prio == 2:
+                buttonJTo.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonJTo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('JTo'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJTo.config(bg = 'red')
+            elif prio == 2:
+                buttonJTo.config(bg = 'yellow')
+            elif prio == 1:
+                buttonJTo.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('JTo'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJTo.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonJTo.config(bg = 'green')
+            elif prio == 1:
+                buttonJTo.config(bg = 'orange')
+            else:
+                pass
     buttonTT.config(bg = '#BDBDB7')
     if 'TT' in selected_range:
         if var.get()  == 1: #A
@@ -6789,15 +7719,480 @@ def buttonSolve():
                 pass
     #row6
     buttonA9o.config(bg = '#BDBDB7')
-    buttonK9o.config(bg = '#BDBDB7')
-    buttonQ9o.config(bg = '#BDBDB7')
-    buttonJ9o.config(bg = '#BDBDB7')
-    buttonT9o.config(bg = '#BDBDB7')
-    button99.config(bg = '#BDBDB7')
-    if '99' in expander.expandPP('99'):
+    if 'A9o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            for hand in temporary_range_pp:
+            for hand in expander.expandOffsuit('A9o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonA9o.config(bg = 'red')
+            elif prio == 4:
+                buttonA9o.config(bg = 'orange')
+            elif prio == 3:
+                buttonA9o.config(bg = 'green')
+            elif prio == 2:
+                buttonA9o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonA9o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('A9o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA9o.config(bg = 'red')
+            elif prio == 2:
+                buttonA9o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonA9o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('A9o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA9o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonA9o.config(bg = 'green')
+            elif prio == 1:
+                buttonA9o.config(bg = 'orange')
+            else:
+                pass
+    buttonK9o.config(bg = '#BDBDB7')
+    if 'K9o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('K9o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK9o.config(bg = 'red')
+            elif prio == 4:
+                buttonK9o.config(bg = 'orange')
+            elif prio == 3:
+                buttonK9o.config(bg = 'green')
+            elif prio == 2:
+                buttonK9o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK9o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('K9o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK9o.config(bg = 'red')
+            elif prio == 2:
+                buttonK9o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK9o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('K9o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK9o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK9o.config(bg = 'green')
+            elif prio == 1:
+                buttonK9o.config(bg = 'orange')
+            else:
+                pass
+    buttonQ9o.config(bg = '#BDBDB7')
+    if 'Q9o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('Q9o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonQ9o.config(bg = 'red')
+            elif prio == 4:
+                buttonQ9o.config(bg = 'orange')
+            elif prio == 3:
+                buttonQ9o.config(bg = 'green')
+            elif prio == 2:
+                buttonQ9o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonQ9o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('Q9o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ9o.config(bg = 'red')
+            elif prio == 2:
+                buttonQ9o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonQ9o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('Q9o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ9o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonQ9o.config(bg = 'green')
+            elif prio == 1:
+                buttonQ9o.config(bg = 'orange')
+            else:
+                pass
+    buttonJ9o.config(bg = '#BDBDB7')
+    if 'J9o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('J9o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonJ9o.config(bg = 'red')
+            elif prio == 4:
+                buttonJ9o.config(bg = 'orange')
+            elif prio == 3:
+                buttonJ9o.config(bg = 'green')
+            elif prio == 2:
+                buttonJ9o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonJ9o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('J9o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ9o.config(bg = 'red')
+            elif prio == 2:
+                buttonJ9o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonJ9o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('J9o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ9o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonJ9o.config(bg = 'green')
+            elif prio == 1:
+                buttonJ9o.config(bg = 'orange')
+            else:
+                pass
+    buttonT9o.config(bg = '#BDBDB7')
+    if 'T9o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('T9o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonT9o.config(bg = 'red')
+            elif prio == 4:
+                buttonT9o.config(bg = 'orange')
+            elif prio == 3:
+                buttonT9o.config(bg = 'green')
+            elif prio == 2:
+                buttonT9o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonT9o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('T9o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT9o.config(bg = 'red')
+            elif prio == 2:
+                buttonT9o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonT9o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('T9o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT9o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonT9o.config(bg = 'green')
+            elif prio == 1:
+                buttonT9o.config(bg = 'orange')
+            else:
+                pass
+    button99.config(bg = '#BDBDB7')
+    if '99' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandPP('99'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         print("1")
@@ -7547,11 +8942,569 @@ def buttonSolve():
                 pass
     #row7
     buttonA8o.config(bg = '#BDBDB7')
+    if 'A8o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('A8o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonA8o.config(bg = 'red')
+            elif prio == 4:
+                buttonA8o.config(bg = 'orange')
+            elif prio == 3:
+                buttonA8o.config(bg = 'green')
+            elif prio == 2:
+                buttonA8o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonA8o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('A8o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA8o.config(bg = 'red')
+            elif prio == 2:
+                buttonA8o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonA8o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('A8o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA8o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonA8o.config(bg = 'green')
+            elif prio == 1:
+                buttonA8o.config(bg = 'orange')
+            else:
+                pass
     buttonK8o.config(bg = '#BDBDB7')
+    if 'K8o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('K8o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK8o.config(bg = 'red')
+            elif prio == 4:
+                buttonK8o.config(bg = 'orange')
+            elif prio == 3:
+                buttonK8o.config(bg = 'green')
+            elif prio == 2:
+                buttonK8o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK8o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('K8o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK8o.config(bg = 'red')
+            elif prio == 2:
+                buttonK8o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK8o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('K8o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK8o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK8o.config(bg = 'green')
+            elif prio == 1:
+                buttonK8o.config(bg = 'orange')
+            else:
+                pass
     buttonQ8o.config(bg = '#BDBDB7')
+    if 'Q8o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('Q8o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonQ8o.config(bg = 'red')
+            elif prio == 4:
+                buttonQ8o.config(bg = 'orange')
+            elif prio == 3:
+                buttonQ8o.config(bg = 'green')
+            elif prio == 2:
+                buttonQ8o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonQ8o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('Q8o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ8o.config(bg = 'red')
+            elif prio == 2:
+                buttonQ8o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonQ8o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('Q8o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ8o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonQ8o.config(bg = 'green')
+            elif prio == 1:
+                buttonQ8o.config(bg = 'orange')
+            else:
+                pass
     buttonJ8o.config(bg = '#BDBDB7')
+    if 'J8o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('J8o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonJ8o.config(bg = 'red')
+            elif prio == 4:
+                buttonJ8o.config(bg = 'orange')
+            elif prio == 3:
+                buttonJ8o.config(bg = 'green')
+            elif prio == 2:
+                buttonJ8o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonJ8o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('J8o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ8o.config(bg = 'red')
+            elif prio == 2:
+                buttonJ8o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonJ8o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('J8o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ8o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonJ8o.config(bg = 'green')
+            elif prio == 1:
+                buttonJ8o.config(bg = 'orange')
+            else:
+                pass
     buttonT8o.config(bg = '#BDBDB7')
+    if 'T8o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('T8o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonT8o.config(bg = 'red')
+            elif prio == 4:
+                buttonT8o.config(bg = 'orange')
+            elif prio == 3:
+                buttonT8o.config(bg = 'green')
+            elif prio == 2:
+                buttonT8o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonT8o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('T8o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT8o.config(bg = 'red')
+            elif prio == 2:
+                buttonT8o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonT8o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('T8o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT8o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonT8o.config(bg = 'green')
+            elif prio == 1:
+                buttonT8o.config(bg = 'orange')
+            else:
+                pass
     button98o.config(bg = '#BDBDB7')
+    if '98o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('98o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button98o.config(bg = 'red')
+            elif prio == 4:
+                button98o.config(bg = 'orange')
+            elif prio == 3:
+                button98o.config(bg = 'green')
+            elif prio == 2:
+                button98o.config(bg = 'lightblue')
+            elif prio == 1:
+                button98o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('98o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button98o.config(bg = 'red')
+            elif prio == 2:
+                button98o.config(bg = 'yellow')
+            elif prio == 1:
+                button98o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('98o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button98o.config(bg = 'lightblue')
+            elif prio == 2:
+                button98o.config(bg = 'green')
+            elif prio == 1:
+                button98o.config(bg = 'orange')
+            else:
+                pass
     button88.config(bg = '#BDBDB7')
     if '88' in selected_range:
         if var.get()  == 1: #A
@@ -8212,12 +10165,663 @@ def buttonSolve():
                 pass
     #row8
     buttonA7o.config(bg = '#BDBDB7')
+    if 'A7o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('A7o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonA7o.config(bg = 'red')
+            elif prio == 4:
+                buttonA7o.config(bg = 'orange')
+            elif prio == 3:
+                buttonA7o.config(bg = 'green')
+            elif prio == 2:
+                buttonA7o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonA7o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('A7o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA7o.config(bg = 'red')
+            elif prio == 2:
+                buttonA7o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonA7o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('A7o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA7o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonA7o.config(bg = 'green')
+            elif prio == 1:
+                buttonA7o.config(bg = 'orange')
+            else:
+                pass
     buttonK7o.config(bg = '#BDBDB7')
+    if 'K7o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('K7o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK7o.config(bg = 'red')
+            elif prio == 4:
+                buttonK7o.config(bg = 'orange')
+            elif prio == 3:
+                buttonK7o.config(bg = 'green')
+            elif prio == 2:
+                buttonK7o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK7o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('K7o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK7o.config(bg = 'red')
+            elif prio == 2:
+                buttonK7o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK7o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('K7o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK7o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK7o.config(bg = 'green')
+            elif prio == 1:
+                buttonK7o.config(bg = 'orange')
+            else:
+                pass
     buttonQ7o.config(bg = '#BDBDB7')
+    if 'Q7o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('Q7o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonQ7o.config(bg = 'red')
+            elif prio == 4:
+                buttonQ7o.config(bg = 'orange')
+            elif prio == 3:
+                buttonQ7o.config(bg = 'green')
+            elif prio == 2:
+                buttonQ7o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonQ7o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('Q7o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ7o.config(bg = 'red')
+            elif prio == 2:
+                buttonQ7o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonQ7o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('Q7o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ7o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonQ7o.config(bg = 'green')
+            elif prio == 1:
+                buttonQ7o.config(bg = 'orange')
+            else:
+                pass
     buttonJ7o.config(bg = '#BDBDB7')
+    if 'J7o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('J7o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonJ7o.config(bg = 'red')
+            elif prio == 4:
+                buttonJ7o.config(bg = 'orange')
+            elif prio == 3:
+                buttonJ7o.config(bg = 'green')
+            elif prio == 2:
+                buttonJ7o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonJ7o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('J7o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ7o.config(bg = 'red')
+            elif prio == 2:
+                buttonJ7o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonJ7o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('J7o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ7o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonJ7o.config(bg = 'green')
+            elif prio == 1:
+                buttonJ7o.config(bg = 'orange')
+            else:
+                pass
     buttonT7o.config(bg = '#BDBDB7')
+    if 'T7o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('T7o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonT7o.config(bg = 'red')
+            elif prio == 4:
+                buttonT7o.config(bg = 'orange')
+            elif prio == 3:
+                buttonT7o.config(bg = 'green')
+            elif prio == 2:
+                buttonT7o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonT7o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('T7o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT7o.config(bg = 'red')
+            elif prio == 2:
+                buttonT7o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonT7o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('T7o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT7o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonT7o.config(bg = 'green')
+            elif prio == 1:
+                buttonT7o.config(bg = 'orange')
+            else:
+                pass
     button97o.config(bg = '#BDBDB7')
+    if '97o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('97o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button97o.config(bg = 'red')
+            elif prio == 4:
+                button97o.config(bg = 'orange')
+            elif prio == 3:
+                button97o.config(bg = 'green')
+            elif prio == 2:
+                button97o.config(bg = 'lightblue')
+            elif prio == 1:
+                button97o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('97o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button97o.config(bg = 'red')
+            elif prio == 2:
+                button97o.config(bg = 'yellow')
+            elif prio == 1:
+                button97o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('97o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button97o.config(bg = 'lightblue')
+            elif prio == 2:
+                button97o.config(bg = 'green')
+            elif prio == 1:
+                button97o.config(bg = 'orange')
+            else:
+                pass
     button87o.config(bg = '#BDBDB7')
+    if '87o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('87o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button87o.config(bg = 'red')
+            elif prio == 4:
+                button87o.config(bg = 'orange')
+            elif prio == 3:
+                button87o.config(bg = 'green')
+            elif prio == 2:
+                button87o.config(bg = 'lightblue')
+            elif prio == 1:
+                button87o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('87o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button87o.config(bg = 'red')
+            elif prio == 2:
+                button87o.config(bg = 'yellow')
+            elif prio == 1:
+                button87o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('87o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button87o.config(bg = 'lightblue')
+            elif prio == 2:
+                button87o.config(bg = 'green')
+            elif prio == 1:
+                button87o.config(bg = 'orange')
+            else:
+                pass
     button77.config(bg = '#BDBDB7')
     if '77' in selected_range:
         if var.get()  == 1: #A
@@ -8784,13 +11388,757 @@ def buttonSolve():
                 pass
     #row9
     buttonA6o.config(bg = '#BDBDB7')
+    if 'A6o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('A6o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonA6o.config(bg = 'red')
+            elif prio == 4:
+                buttonA6o.config(bg = 'orange')
+            elif prio == 3:
+                buttonA6o.config(bg = 'green')
+            elif prio == 2:
+                buttonA6o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonA6o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('A6o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA6o.config(bg = 'red')
+            elif prio == 2:
+                buttonA6o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonA6o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('A6o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA6o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonA6o.config(bg = 'green')
+            elif prio == 1:
+                buttonA6o.config(bg = 'orange')
+            else:
+                pass
     buttonK6o.config(bg = '#BDBDB7')
+    if 'K6o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('K6o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK6o.config(bg = 'red')
+            elif prio == 4:
+                buttonK6o.config(bg = 'orange')
+            elif prio == 3:
+                buttonK6o.config(bg = 'green')
+            elif prio == 2:
+                buttonK6o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK6o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('K6o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK6o.config(bg = 'red')
+            elif prio == 2:
+                buttonK6o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK6o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('K6o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK6o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK6o.config(bg = 'green')
+            elif prio == 1:
+                buttonK6o.config(bg = 'orange')
+            else:
+                pass
     buttonQ6o.config(bg = '#BDBDB7')
+    if 'Q6o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('Q6o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonQ6o.config(bg = 'red')
+            elif prio == 4:
+                buttonQ6o.config(bg = 'orange')
+            elif prio == 3:
+                buttonQ6o.config(bg = 'green')
+            elif prio == 2:
+                buttonQ6o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonQ6o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('Q6o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ6o.config(bg = 'red')
+            elif prio == 2:
+                buttonQ6o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonQ6o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('Q6o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ6o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonQ6o.config(bg = 'green')
+            elif prio == 1:
+                buttonQ6o.config(bg = 'orange')
+            else:
+                pass
     buttonJ6o.config(bg = '#BDBDB7')
+    if 'J6o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('J6o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonJ6o.config(bg = 'red')
+            elif prio == 4:
+                buttonJ6o.config(bg = 'orange')
+            elif prio == 3:
+                buttonJ6o.config(bg = 'green')
+            elif prio == 2:
+                buttonJ6o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonJ6o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('J6o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ6o.config(bg = 'red')
+            elif prio == 2:
+                buttonJ6o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonJ6o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('J6o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ6o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonJ6o.config(bg = 'green')
+            elif prio == 1:
+                buttonJ6o.config(bg = 'orange')
+            else:
+                pass
     buttonT6o.config(bg = '#BDBDB7')
+    if 'T6o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('T6o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonT6o.config(bg = 'red')
+            elif prio == 4:
+                buttonT6o.config(bg = 'orange')
+            elif prio == 3:
+                buttonT6o.config(bg = 'green')
+            elif prio == 2:
+                buttonT6o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonT6o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('T6o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT6o.config(bg = 'red')
+            elif prio == 2:
+                buttonT6o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonT6o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('T6o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT6o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonT6o.config(bg = 'green')
+            elif prio == 1:
+                buttonT6o.config(bg = 'orange')
+            else:
+                pass
     button96o.config(bg = '#BDBDB7')
+    if '96o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('96o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button96o.config(bg = 'red')
+            elif prio == 4:
+                button96o.config(bg = 'orange')
+            elif prio == 3:
+                button96o.config(bg = 'green')
+            elif prio == 2:
+                button96o.config(bg = 'lightblue')
+            elif prio == 1:
+                button96o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('96o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button96o.config(bg = 'red')
+            elif prio == 2:
+                button96o.config(bg = 'yellow')
+            elif prio == 1:
+                button96o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('96o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button96o.config(bg = 'lightblue')
+            elif prio == 2:
+                button96o.config(bg = 'green')
+            elif prio == 1:
+                button96o.config(bg = 'orange')
+            else:
+                pass
     button86o.config(bg = '#BDBDB7')
+    if '86o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('86o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button86o.config(bg = 'red')
+            elif prio == 4:
+                button86o.config(bg = 'orange')
+            elif prio == 3:
+                button86o.config(bg = 'green')
+            elif prio == 2:
+                button86o.config(bg = 'lightblue')
+            elif prio == 1:
+                button86o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('86o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button86o.config(bg = 'red')
+            elif prio == 2:
+                button86o.config(bg = 'yellow')
+            elif prio == 1:
+                button86o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('86o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button86o.config(bg = 'lightblue')
+            elif prio == 2:
+                button86o.config(bg = 'green')
+            elif prio == 1:
+                button86o.config(bg = 'orange')
+            else:
+                pass
     button76o.config(bg = '#BDBDB7')
+    if '76o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('76o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button76o.config(bg = 'red')
+            elif prio == 4:
+                button76o.config(bg = 'orange')
+            elif prio == 3:
+                button76o.config(bg = 'green')
+            elif prio == 2:
+                button76o.config(bg = 'lightblue')
+            elif prio == 1:
+                button76o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('76o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button76o.config(bg = 'red')
+            elif prio == 2:
+                button76o.config(bg = 'yellow')
+            elif prio == 1:
+                button76o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('76o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button76o.config(bg = 'lightblue')
+            elif prio == 2:
+                button76o.config(bg = 'green')
+            elif prio == 1:
+                button76o.config(bg = 'orange')
+            else:
+                pass
     button66.config(bg = '#BDBDB7')
     if '66' in selected_range:
         if var.get()  == 1: #A
@@ -9263,14 +12611,851 @@ def buttonSolve():
                 pass
     #row10
     buttonA5o.config(bg = '#BDBDB7')
+    if 'A5o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('A5o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonA5o.config(bg = 'red')
+            elif prio == 4:
+                buttonA5o.config(bg = 'orange')
+            elif prio == 3:
+                buttonA5o.config(bg = 'green')
+            elif prio == 2:
+                buttonA5o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonA5o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('A5o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA5o.config(bg = 'red')
+            elif prio == 2:
+                buttonA5o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonA5o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('A5o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA5o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonA5o.config(bg = 'green')
+            elif prio == 1:
+                buttonA5o.config(bg = 'orange')
+            else:
+                pass
     buttonK5o.config(bg = '#BDBDB7')
+    if 'K5o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('K5o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK5o.config(bg = 'red')
+            elif prio == 4:
+                buttonK5o.config(bg = 'orange')
+            elif prio == 3:
+                buttonK5o.config(bg = 'green')
+            elif prio == 2:
+                buttonK5o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK5o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('K5o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK5o.config(bg = 'red')
+            elif prio == 2:
+                buttonK5o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK5o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('K5o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK5o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK5o.config(bg = 'green')
+            elif prio == 1:
+                buttonK5o.config(bg = 'orange')
+            else:
+                pass
     buttonQ5o.config(bg = '#BDBDB7')
+    if 'Q5o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('Q5o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonQ5o.config(bg = 'red')
+            elif prio == 4:
+                buttonQ5o.config(bg = 'orange')
+            elif prio == 3:
+                buttonQ5o.config(bg = 'green')
+            elif prio == 2:
+                buttonQ5o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonQ5o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('Q5o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ5o.config(bg = 'red')
+            elif prio == 2:
+                buttonQ5o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonQ5o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('Q5o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ5o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonQ5o.config(bg = 'green')
+            elif prio == 1:
+                buttonQ5o.config(bg = 'orange')
+            else:
+                pass
     buttonJ5o.config(bg = '#BDBDB7')
+    if 'J5o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('J5o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonJ5o.config(bg = 'red')
+            elif prio == 4:
+                buttonJ5o.config(bg = 'orange')
+            elif prio == 3:
+                buttonJ5o.config(bg = 'green')
+            elif prio == 2:
+                buttonJ5o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonJ5o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('J5o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ5o.config(bg = 'red')
+            elif prio == 2:
+                buttonJ5o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonJ5o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('J5o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ5o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonJ5o.config(bg = 'green')
+            elif prio == 1:
+                buttonJ5o.config(bg = 'orange')
+            else:
+                pass
     buttonT5o.config(bg = '#BDBDB7')
+    if 'T5o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('T5o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonT5o.config(bg = 'red')
+            elif prio == 4:
+                buttonT5o.config(bg = 'orange')
+            elif prio == 3:
+                buttonT5o.config(bg = 'green')
+            elif prio == 2:
+                buttonT5o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonT5o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('T5o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT5o.config(bg = 'red')
+            elif prio == 2:
+                buttonT5o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonT5o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('T5o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT5o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonT5o.config(bg = 'green')
+            elif prio == 1:
+                buttonT5o.config(bg = 'orange')
+            else:
+                pass
     button95o.config(bg = '#BDBDB7')
+    if '95o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('95o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button95o.config(bg = 'red')
+            elif prio == 4:
+                button95o.config(bg = 'orange')
+            elif prio == 3:
+                button95o.config(bg = 'green')
+            elif prio == 2:
+                button95o.config(bg = 'lightblue')
+            elif prio == 1:
+                button95o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('95o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button95o.config(bg = 'red')
+            elif prio == 2:
+                button95o.config(bg = 'yellow')
+            elif prio == 1:
+                button95o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('95o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button95o.config(bg = 'lightblue')
+            elif prio == 2:
+                button95o.config(bg = 'green')
+            elif prio == 1:
+                button95o.config(bg = 'orange')
+            else:
+                pass
     button85o.config(bg = '#BDBDB7')
+    if '85o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('85o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button85o.config(bg = 'red')
+            elif prio == 4:
+                button85o.config(bg = 'orange')
+            elif prio == 3:
+                button85o.config(bg = 'green')
+            elif prio == 2:
+                button85o.config(bg = 'lightblue')
+            elif prio == 1:
+                button85o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('85o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button85o.config(bg = 'red')
+            elif prio == 2:
+                button85o.config(bg = 'yellow')
+            elif prio == 1:
+                button85o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('85o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button85o.config(bg = 'lightblue')
+            elif prio == 2:
+                button85o.config(bg = 'green')
+            elif prio == 1:
+                button85o.config(bg = 'orange')
+            else:
+                pass
     button75o.config(bg = '#BDBDB7')
+    if '75o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('75o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button75o.config(bg = 'red')
+            elif prio == 4:
+                button75o.config(bg = 'orange')
+            elif prio == 3:
+                button75o.config(bg = 'green')
+            elif prio == 2:
+                button75o.config(bg = 'lightblue')
+            elif prio == 1:
+                button75o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('75o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button75o.config(bg = 'red')
+            elif prio == 2:
+                button75o.config(bg = 'yellow')
+            elif prio == 1:
+                button75o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('75o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button75o.config(bg = 'lightblue')
+            elif prio == 2:
+                button75o.config(bg = 'green')
+            elif prio == 1:
+                button75o.config(bg = 'orange')
+            else:
+                pass
     button65o.config(bg = '#BDBDB7')
+    if '65o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('65o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button65o.config(bg = 'red')
+            elif prio == 4:
+                button65o.config(bg = 'orange')
+            elif prio == 3:
+                button65o.config(bg = 'green')
+            elif prio == 2:
+                button65o.config(bg = 'lightblue')
+            elif prio == 1:
+                button65o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('65o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button65o.config(bg = 'red')
+            elif prio == 2:
+                button65o.config(bg = 'yellow')
+            elif prio == 1:
+                button65o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('65o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button65o.config(bg = 'lightblue')
+            elif prio == 2:
+                button65o.config(bg = 'green')
+            elif prio == 1:
+                button65o.config(bg = 'orange')
+            else:
+                pass
     button55.config(bg = '#BDBDB7')
     if '55' in selected_range:
         if var.get()  == 1: #A
@@ -9649,15 +13834,945 @@ def buttonSolve():
                 pass
     #row10
     buttonA4o.config(bg = '#BDBDB7')
+    if 'A4o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('A4o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonA4o.config(bg = 'red')
+            elif prio == 4:
+                buttonA4o.config(bg = 'orange')
+            elif prio == 3:
+                buttonA4o.config(bg = 'green')
+            elif prio == 2:
+                buttonA4o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonA4o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('A4o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA4o.config(bg = 'red')
+            elif prio == 2:
+                buttonA4o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonA4o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('A4o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA4o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonA4o.config(bg = 'green')
+            elif prio == 1:
+                buttonA4o.config(bg = 'orange')
+            else:
+                pass
     buttonK4o.config(bg = '#BDBDB7')
+    if 'K4o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('K4o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK4o.config(bg = 'red')
+            elif prio == 4:
+                buttonK4o.config(bg = 'orange')
+            elif prio == 3:
+                buttonK4o.config(bg = 'green')
+            elif prio == 2:
+                buttonK4o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK4o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('K4o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK4o.config(bg = 'red')
+            elif prio == 2:
+                buttonK4o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK4o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('K4o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK4o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK4o.config(bg = 'green')
+            elif prio == 1:
+                buttonK4o.config(bg = 'orange')
+            else:
+                pass
     buttonQ4o.config(bg = '#BDBDB7')
+    if 'Q4o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('Q4o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonQ4o.config(bg = 'red')
+            elif prio == 4:
+                buttonQ4o.config(bg = 'orange')
+            elif prio == 3:
+                buttonQ4o.config(bg = 'green')
+            elif prio == 2:
+                buttonQ4o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonQ4o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('Q4o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ4o.config(bg = 'red')
+            elif prio == 2:
+                buttonQ4o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonQ4o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('Q4o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ4o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonQ4o.config(bg = 'green')
+            elif prio == 1:
+                buttonQ4o.config(bg = 'orange')
+            else:
+                pass
     buttonJ4o.config(bg = '#BDBDB7')
+    if 'J4o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('J4o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonJ4o.config(bg = 'red')
+            elif prio == 4:
+                buttonJ4o.config(bg = 'orange')
+            elif prio == 3:
+                buttonJ4o.config(bg = 'green')
+            elif prio == 2:
+                buttonJ4o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonJ4o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('J4o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ4o.config(bg = 'red')
+            elif prio == 2:
+                buttonJ4o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonJ4o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('J4o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ4o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonJ4o.config(bg = 'green')
+            elif prio == 1:
+                buttonJ4o.config(bg = 'orange')
+            else:
+                pass
     buttonT4o.config(bg = '#BDBDB7')
+    if 'T4o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('T4o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonT4o.config(bg = 'red')
+            elif prio == 4:
+                buttonT4o.config(bg = 'orange')
+            elif prio == 3:
+                buttonT4o.config(bg = 'green')
+            elif prio == 2:
+                buttonT4o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonT4o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('T4o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT4o.config(bg = 'red')
+            elif prio == 2:
+                buttonT4o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonT4o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('T4o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT4o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonT4o.config(bg = 'green')
+            elif prio == 1:
+                buttonT4o.config(bg = 'orange')
+            else:
+                pass
     button94o.config(bg = '#BDBDB7')
+    if '94o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('94o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button94o.config(bg = 'red')
+            elif prio == 4:
+                button94o.config(bg = 'orange')
+            elif prio == 3:
+                button94o.config(bg = 'green')
+            elif prio == 2:
+                button94o.config(bg = 'lightblue')
+            elif prio == 1:
+                button94o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('94o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button94o.config(bg = 'red')
+            elif prio == 2:
+                button94o.config(bg = 'yellow')
+            elif prio == 1:
+                button94o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('94o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button94o.config(bg = 'lightblue')
+            elif prio == 2:
+                button94o.config(bg = 'green')
+            elif prio == 1:
+                button94o.config(bg = 'orange')
+            else:
+                pass
     button84o.config(bg = '#BDBDB7')
+    if '84o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('84o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button84o.config(bg = 'red')
+            elif prio == 4:
+                button84o.config(bg = 'orange')
+            elif prio == 3:
+                button84o.config(bg = 'green')
+            elif prio == 2:
+                button84o.config(bg = 'lightblue')
+            elif prio == 1:
+                button84o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('84o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button84o.config(bg = 'red')
+            elif prio == 2:
+                button84o.config(bg = 'yellow')
+            elif prio == 1:
+                button84o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('84o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button84o.config(bg = 'lightblue')
+            elif prio == 2:
+                button84o.config(bg = 'green')
+            elif prio == 1:
+                button84o.config(bg = 'orange')
+            else:
+                pass
     button74o.config(bg = '#BDBDB7')
+    if '74o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('74o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button74o.config(bg = 'red')
+            elif prio == 4:
+                button74o.config(bg = 'orange')
+            elif prio == 3:
+                button74o.config(bg = 'green')
+            elif prio == 2:
+                button74o.config(bg = 'lightblue')
+            elif prio == 1:
+                button74o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('74o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button74o.config(bg = 'red')
+            elif prio == 2:
+                button74o.config(bg = 'yellow')
+            elif prio == 1:
+                button74o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('74o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button74o.config(bg = 'lightblue')
+            elif prio == 2:
+                button74o.config(bg = 'green')
+            elif prio == 1:
+                button74o.config(bg = 'orange')
+            else:
+                pass
     button64o.config(bg = '#BDBDB7')
+    if '64o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('64o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button64o.config(bg = 'red')
+            elif prio == 4:
+                button64o.config(bg = 'orange')
+            elif prio == 3:
+                button64o.config(bg = 'green')
+            elif prio == 2:
+                button64o.config(bg = 'lightblue')
+            elif prio == 1:
+                button64o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('64o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button64o.config(bg = 'red')
+            elif prio == 2:
+                button64o.config(bg = 'yellow')
+            elif prio == 1:
+                button64o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('64o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button64o.config(bg = 'lightblue')
+            elif prio == 2:
+                button64o.config(bg = 'green')
+            elif prio == 1:
+                button64o.config(bg = 'orange')
+            else:
+                pass
     button54o.config(bg = '#BDBDB7')
+    if '54o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('54o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button54o.config(bg = 'red')
+            elif prio == 4:
+                button54o.config(bg = 'orange')
+            elif prio == 3:
+                button54o.config(bg = 'green')
+            elif prio == 2:
+                button54o.config(bg = 'lightblue')
+            elif prio == 1:
+                button54o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('54o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button54o.config(bg = 'red')
+            elif prio == 2:
+                button54o.config(bg = 'yellow')
+            elif prio == 1:
+                button54o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('54o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button54o.config(bg = 'lightblue')
+            elif prio == 2:
+                button54o.config(bg = 'green')
+            elif prio == 1:
+                button54o.config(bg = 'orange')
+            else:
+                pass
     button44.config(bg = '#BDBDB7')
     if '44' in selected_range:
         if var.get()  == 1: #A
@@ -9942,16 +15057,1039 @@ def buttonSolve():
                 pass
     #row11
     buttonA3o.config(bg = '#BDBDB7')
+    if 'A3o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('A3o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonA3o.config(bg = 'red')
+            elif prio == 4:
+                buttonA3o.config(bg = 'orange')
+            elif prio == 3:
+                buttonA3o.config(bg = 'green')
+            elif prio == 2:
+                buttonA3o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonA3o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('A3o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA3o.config(bg = 'red')
+            elif prio == 2:
+                buttonA3o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonA3o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('A3o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA3o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonA3o.config(bg = 'green')
+            elif prio == 1:
+                buttonA3o.config(bg = 'orange')
+            else:
+                pass
     buttonK3o.config(bg = '#BDBDB7')
+    if 'K3o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('K3o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK3o.config(bg = 'red')
+            elif prio == 4:
+                buttonK3o.config(bg = 'orange')
+            elif prio == 3:
+                buttonK3o.config(bg = 'green')
+            elif prio == 2:
+                buttonK3o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK3o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('K3o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK3o.config(bg = 'red')
+            elif prio == 2:
+                buttonK3o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK3o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('K3o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK3o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK3o.config(bg = 'green')
+            elif prio == 1:
+                buttonK3o.config(bg = 'orange')
+            else:
+                pass
     buttonQ3o.config(bg = '#BDBDB7')
+    if 'Q3o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('Q3o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonQ3o.config(bg = 'red')
+            elif prio == 4:
+                buttonQ3o.config(bg = 'orange')
+            elif prio == 3:
+                buttonQ3o.config(bg = 'green')
+            elif prio == 2:
+                buttonQ3o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonQ3o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('Q3o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ3o.config(bg = 'red')
+            elif prio == 2:
+                buttonQ3o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonQ3o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('Q3o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ3o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonQ3o.config(bg = 'green')
+            elif prio == 1:
+                buttonQ3o.config(bg = 'orange')
+            else:
+                pass
     buttonJ3o.config(bg = '#BDBDB7')
+    if 'J3o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('J3o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonJ3o.config(bg = 'red')
+            elif prio == 4:
+                buttonJ3o.config(bg = 'orange')
+            elif prio == 3:
+                buttonJ3o.config(bg = 'green')
+            elif prio == 2:
+                buttonJ3o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonJ3o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('J3o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ3o.config(bg = 'red')
+            elif prio == 2:
+                buttonJ3o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonJ3o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('J3o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ3o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonJ3o.config(bg = 'green')
+            elif prio == 1:
+                buttonJ3o.config(bg = 'orange')
+            else:
+                pass
     buttonT3o.config(bg = '#BDBDB7')
+    if 'T3o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('T3o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonT3o.config(bg = 'red')
+            elif prio == 4:
+                buttonT3o.config(bg = 'orange')
+            elif prio == 3:
+                buttonT3o.config(bg = 'green')
+            elif prio == 2:
+                buttonT3o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonT3o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('T3o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT3o.config(bg = 'red')
+            elif prio == 2:
+                buttonT3o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonT3o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('T3o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT3o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonT3o.config(bg = 'green')
+            elif prio == 1:
+                buttonT3o.config(bg = 'orange')
+            else:
+                pass
     button93o.config(bg = '#BDBDB7')
+    if '93o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('93o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button93o.config(bg = 'red')
+            elif prio == 4:
+                button93o.config(bg = 'orange')
+            elif prio == 3:
+                button93o.config(bg = 'green')
+            elif prio == 2:
+                button93o.config(bg = 'lightblue')
+            elif prio == 1:
+                button93o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('93o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button93o.config(bg = 'red')
+            elif prio == 2:
+                button93o.config(bg = 'yellow')
+            elif prio == 1:
+                button93o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('93o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button93o.config(bg = 'lightblue')
+            elif prio == 2:
+                button93o.config(bg = 'green')
+            elif prio == 1:
+                button93o.config(bg = 'orange')
+            else:
+                pass
     button83o.config(bg = '#BDBDB7')
+    if '83o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('83o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button83o.config(bg = 'red')
+            elif prio == 4:
+                button83o.config(bg = 'orange')
+            elif prio == 3:
+                button83o.config(bg = 'green')
+            elif prio == 2:
+                button83o.config(bg = 'lightblue')
+            elif prio == 1:
+                button83o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('83o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button83o.config(bg = 'red')
+            elif prio == 2:
+                button83o.config(bg = 'yellow')
+            elif prio == 1:
+                button83o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('83o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button83o.config(bg = 'lightblue')
+            elif prio == 2:
+                button83o.config(bg = 'green')
+            elif prio == 1:
+                button83o.config(bg = 'orange')
+            else:
+                pass
     button73o.config(bg = '#BDBDB7')
+    if '73o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('73o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button73o.config(bg = 'red')
+            elif prio == 4:
+                button73o.config(bg = 'orange')
+            elif prio == 3:
+                button73o.config(bg = 'green')
+            elif prio == 2:
+                button73o.config(bg = 'lightblue')
+            elif prio == 1:
+                button73o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('73o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button73o.config(bg = 'red')
+            elif prio == 2:
+                button73o.config(bg = 'yellow')
+            elif prio == 1:
+                button73o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('73o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button73o.config(bg = 'lightblue')
+            elif prio == 2:
+                button73o.config(bg = 'green')
+            elif prio == 1:
+                button73o.config(bg = 'orange')
+            else:
+                pass
     button63o.config(bg = '#BDBDB7')
+    if '63o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('63o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button63o.config(bg = 'red')
+            elif prio == 4:
+                button63o.config(bg = 'orange')
+            elif prio == 3:
+                button63o.config(bg = 'green')
+            elif prio == 2:
+                button63o.config(bg = 'lightblue')
+            elif prio == 1:
+                button63o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('63o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button63o.config(bg = 'red')
+            elif prio == 2:
+                button63o.config(bg = 'yellow')
+            elif prio == 1:
+                button63o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('63o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button63o.config(bg = 'lightblue')
+            elif prio == 2:
+                button63o.config(bg = 'green')
+            elif prio == 1:
+                button63o.config(bg = 'orange')
+            else:
+                pass
     button53o.config(bg = '#BDBDB7')
+    if '53o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('53o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button53o.config(bg = 'red')
+            elif prio == 4:
+                button53o.config(bg = 'orange')
+            elif prio == 3:
+                button53o.config(bg = 'green')
+            elif prio == 2:
+                button53o.config(bg = 'lightblue')
+            elif prio == 1:
+                button53o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('53o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button53o.config(bg = 'red')
+            elif prio == 2:
+                button53o.config(bg = 'yellow')
+            elif prio == 1:
+                button53o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('53o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button53o.config(bg = 'lightblue')
+            elif prio == 2:
+                button53o.config(bg = 'green')
+            elif prio == 1:
+                button53o.config(bg = 'orange')
+            else:
+                pass
     button43o.config(bg = '#BDBDB7')
+    if '43o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('43o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button43o.config(bg = 'red')
+            elif prio == 4:
+                button43o.config(bg = 'orange')
+            elif prio == 3:
+                button43o.config(bg = 'green')
+            elif prio == 2:
+                button43o.config(bg = 'lightblue')
+            elif prio == 1:
+                button43o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('43o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button43o.config(bg = 'red')
+            elif prio == 2:
+                button43o.config(bg = 'yellow')
+            elif prio == 1:
+                button43o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('43o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button43o.config(bg = 'lightblue')
+            elif prio == 2:
+                button43o.config(bg = 'green')
+            elif prio == 1:
+                button43o.config(bg = 'orange')
+            else:
+                pass
     button33.config(bg = '#BDBDB7')
     if '33' in selected_range:
         if var.get()  == 1: #A
@@ -10142,17 +16280,1133 @@ def buttonSolve():
                 pass
     #row12
     buttonA2o.config(bg = '#BDBDB7')
+    if 'A2o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('A2o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonA2o.config(bg = 'red')
+            elif prio == 4:
+                buttonA2o.config(bg = 'orange')
+            elif prio == 3:
+                buttonA2o.config(bg = 'green')
+            elif prio == 2:
+                buttonA2o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonA2o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('A2o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA2o.config(bg = 'red')
+            elif prio == 2:
+                buttonA2o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonA2o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('A2o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonA2o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonA2o.config(bg = 'green')
+            elif prio == 1:
+                buttonA2o.config(bg = 'orange')
+            else:
+                pass
     buttonK2o.config(bg = '#BDBDB7')
+    if 'K2o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('K2o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonK2o.config(bg = 'red')
+            elif prio == 4:
+                buttonK2o.config(bg = 'orange')
+            elif prio == 3:
+                buttonK2o.config(bg = 'green')
+            elif prio == 2:
+                buttonK2o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonK2o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('K2o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK2o.config(bg = 'red')
+            elif prio == 2:
+                buttonK2o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonK2o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('K2o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonK2o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonK2o.config(bg = 'green')
+            elif prio == 1:
+                buttonK2o.config(bg = 'orange')
+            else:
+                pass
     buttonQ2o.config(bg = '#BDBDB7')
+    if 'Q2o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('Q2o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonQ2o.config(bg = 'red')
+            elif prio == 4:
+                buttonQ2o.config(bg = 'orange')
+            elif prio == 3:
+                buttonQ2o.config(bg = 'green')
+            elif prio == 2:
+                buttonQ2o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonQ2o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('Q2o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ2o.config(bg = 'red')
+            elif prio == 2:
+                buttonQ2o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonQ2o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('Q2o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonQ2o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonQ2o.config(bg = 'green')
+            elif prio == 1:
+                buttonQ2o.config(bg = 'orange')
+            else:
+                pass
     buttonJ2o.config(bg = '#BDBDB7')
+    if 'J2o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('J2o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonJ2o.config(bg = 'red')
+            elif prio == 4:
+                buttonJ2o.config(bg = 'orange')
+            elif prio == 3:
+                buttonJ2o.config(bg = 'green')
+            elif prio == 2:
+                buttonJ2o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonJ2o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('J2o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ2o.config(bg = 'red')
+            elif prio == 2:
+                buttonJ2o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonJ2o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('J2o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonJ2o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonJ2o.config(bg = 'green')
+            elif prio == 1:
+                buttonJ2o.config(bg = 'orange')
+            else:
+                pass
     buttonT2o.config(bg = '#BDBDB7')
+    if 'T2o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('T2o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                buttonT2o.config(bg = 'red')
+            elif prio == 4:
+                buttonT2o.config(bg = 'orange')
+            elif prio == 3:
+                buttonT2o.config(bg = 'green')
+            elif prio == 2:
+                buttonT2o.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonT2o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('T2o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT2o.config(bg = 'red')
+            elif prio == 2:
+                buttonT2o.config(bg = 'yellow')
+            elif prio == 1:
+                buttonT2o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('T2o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                buttonT2o.config(bg = 'lightblue')
+            elif prio == 2:
+                buttonT2o.config(bg = 'green')
+            elif prio == 1:
+                buttonT2o.config(bg = 'orange')
+            else:
+                pass
     button92o.config(bg = '#BDBDB7')
+    if '92o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('92o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button92o.config(bg = 'red')
+            elif prio == 4:
+                button92o.config(bg = 'orange')
+            elif prio == 3:
+                button92o.config(bg = 'green')
+            elif prio == 2:
+                button92o.config(bg = 'lightblue')
+            elif prio == 1:
+                button92o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('92o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button92o.config(bg = 'red')
+            elif prio == 2:
+                button92o.config(bg = 'yellow')
+            elif prio == 1:
+                button92o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('92o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button92o.config(bg = 'lightblue')
+            elif prio == 2:
+                button92o.config(bg = 'green')
+            elif prio == 1:
+                button92o.config(bg = 'orange')
+            else:
+                pass
     button82o.config(bg = '#BDBDB7')
+    if '82o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('82o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button82o.config(bg = 'red')
+            elif prio == 4:
+                button82o.config(bg = 'orange')
+            elif prio == 3:
+                button82o.config(bg = 'green')
+            elif prio == 2:
+                button82o.config(bg = 'lightblue')
+            elif prio == 1:
+                button82o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('82o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button82o.config(bg = 'red')
+            elif prio == 2:
+                button82o.config(bg = 'yellow')
+            elif prio == 1:
+                button82o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('82o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button82o.config(bg = 'lightblue')
+            elif prio == 2:
+                button82o.config(bg = 'green')
+            elif prio == 1:
+                button82o.config(bg = 'orange')
+            else:
+                pass
     button72o.config(bg = '#BDBDB7')
+    if '72o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('72o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button72o.config(bg = 'red')
+            elif prio == 4:
+                button72o.config(bg = 'orange')
+            elif prio == 3:
+                button72o.config(bg = 'green')
+            elif prio == 2:
+                button72o.config(bg = 'lightblue')
+            elif prio == 1:
+                button72o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('72o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button72o.config(bg = 'red')
+            elif prio == 2:
+                button72o.config(bg = 'yellow')
+            elif prio == 1:
+                button72o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('72o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button72o.config(bg = 'lightblue')
+            elif prio == 2:
+                button72o.config(bg = 'green')
+            elif prio == 1:
+                button72o.config(bg = 'orange')
+            else:
+                pass
     button62o.config(bg = '#BDBDB7')
+    if '62o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('62o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button62o.config(bg = 'red')
+            elif prio == 4:
+                button62o.config(bg = 'orange')
+            elif prio == 3:
+                button62o.config(bg = 'green')
+            elif prio == 2:
+                button62o.config(bg = 'lightblue')
+            elif prio == 1:
+                button62o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('62o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button62o.config(bg = 'red')
+            elif prio == 2:
+                button62o.config(bg = 'yellow')
+            elif prio == 1:
+                button62o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('62o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button62o.config(bg = 'lightblue')
+            elif prio == 2:
+                button62o.config(bg = 'green')
+            elif prio == 1:
+                button62o.config(bg = 'orange')
+            else:
+                pass
     button52o.config(bg = '#BDBDB7')
+    if '52o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('52o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button52o.config(bg = 'red')
+            elif prio == 4:
+                button52o.config(bg = 'orange')
+            elif prio == 3:
+                button52o.config(bg = 'green')
+            elif prio == 2:
+                button52o.config(bg = 'lightblue')
+            elif prio == 1:
+                button52o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('52o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button52o.config(bg = 'red')
+            elif prio == 2:
+                button52o.config(bg = 'yellow')
+            elif prio == 1:
+                button52o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('52o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button52o.config(bg = 'lightblue')
+            elif prio == 2:
+                button52o.config(bg = 'green')
+            elif prio == 1:
+                button52o.config(bg = 'orange')
+            else:
+                pass
     button42o.config(bg = '#BDBDB7')
+    if '42o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('42o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button42o.config(bg = 'red')
+            elif prio == 4:
+                button42o.config(bg = 'orange')
+            elif prio == 3:
+                button42o.config(bg = 'green')
+            elif prio == 2:
+                button42o.config(bg = 'lightblue')
+            elif prio == 1:
+                button42o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('42o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button42o.config(bg = 'red')
+            elif prio == 2:
+                button42o.config(bg = 'yellow')
+            elif prio == 1:
+                button42o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('42o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button42o.config(bg = 'lightblue')
+            elif prio == 2:
+                button42o.config(bg = 'green')
+            elif prio == 1:
+                button42o.config(bg = 'orange')
+            else:
+                pass
     button32o.config(bg = '#BDBDB7')
+    if '32o' in selected_range:
+        if var.get()  == 1: #A
+            prio = 0
+            for hand in expander.expandOffsuit('32o'):
+                for hh in a_check_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in a_bet_fold:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in a_check_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+                for hh in a_bet_call:
+                    if hand == hh.pohand:
+                        print("4")
+                        if prio < 4:
+                            prio = 4
+                for hh in a_check_raise:
+                    if hand == hh.pohand:
+                        print("5")
+                        if prio < 5:
+                            prio = 5
+            if prio == 5:
+                button32o.config(bg = 'red')
+            elif prio == 4:
+                button32o.config(bg = 'orange')
+            elif prio == 3:
+                button32o.config(bg = 'green')
+            elif prio == 2:
+                button32o.config(bg = 'lightblue')
+            elif prio == 1:
+                button32o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 2: #B
+            prio = 0
+            for hand in expander.expandOffsuit('32o'):
+                for hh in b_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in b_call:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in b_raise:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button32o.config(bg = 'red')
+            elif prio == 2:
+                button32o.config(bg = 'yellow')
+            elif prio == 1:
+                button32o.config(bg = 'blue')
+            else:
+                pass
+        elif var.get() == 3: #C
+            prio = 0
+            for hand in expander.expandOffsuit('32o'):
+                for hh in c_bet_fold:
+                    if hand == hh.pohand:
+                        print("1")
+                        if prio < 1:
+                            prio = 1
+                for hh in c_check:
+                    if hand == hh.pohand:
+                        print("2")
+                        if prio < 2:
+                            prio = 2
+                for hh in c_bet_call:
+                    if hand == hh.pohand:
+                        print("3")
+                        if prio < 3:
+                            prio = 3
+            if prio == 3:
+                button32o.config(bg = 'lightblue')
+            elif prio == 2:
+                button32o.config(bg = 'green')
+            elif prio == 1:
+                button32o.config(bg = 'orange')
+            else:
+                pass
     button22.config(bg = '#BDBDB7')
     if '22' in selected_range:
         if var.get()  == 1: #A
