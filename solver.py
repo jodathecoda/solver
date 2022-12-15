@@ -768,7 +768,7 @@ def open_solutionPP(ha):
         color_but1 = 'white'
         color_but2 = 'white'
         color3 = 'white'
-        label3 = "dont_know"
+        label3 = "Not in Range"
         #color1
         if 's' in str(range_pp[i][:2]):
             color_but1 = color_spade
@@ -794,7 +794,7 @@ def open_solutionPP(ha):
         #color3
         for hande in a_bet_fold:
             if str(range_pp[i]) in hande.pohand:
-                label3 = 'BET=FOLD'
+                label3 = 'BET-FOLD'
                 color3 = 'lightblue'
         for hande in a_check_fold:
             if str(range_pp[i]) in hande.pohand:
