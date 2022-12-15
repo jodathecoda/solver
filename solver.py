@@ -746,13 +746,36 @@ def open_solutionPP(ha):
     xcoord = 20
     ycoord = 20
     for i in range(len(range_pp)):
-        text_formatted = format_beauty_cards(str(range_pp[i]))
-        #text_formatted = str(range_pp[i]).replace("s", suit_spade)
-        #text_formatted = str(range_pp[i]).replace("h", suit_heart)
-        #text_formatted = text_formatted.replace("d", suit_diamond)
-        #text_formatted = text_formatted.replace("c", suit_club)
-        newButton = tk.Button(secondary_window, text=str(range_pp[i]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club))
-        newButton.place(x = xcoord, y = ycoord)
+        color_but1 = 'white'
+        color_but2 = 'white'
+        #color1
+        if 's' in str(range_pp[i][:2]):
+            color_but1 = color_spade
+        elif 'h' in str(range_pp[i][:2]):
+            color_but1 = color_heart
+        elif 'd' in str(range_pp[i][:2]):
+            color_but1 = color_diamond
+        elif 'c' in str(range_pp[i][:2]):
+            color_but1 = color_club
+        else:
+            pass
+        #color2
+        if 's' in str(range_pp[i][2:]):
+            color_but2 = color_spade
+        elif 'h' in str(range_pp[i][2:]):
+            color_but2 = color_heart
+        elif 'd' in str(range_pp[i][2:]):
+            color_but2 = color_diamond
+        elif 'c' in str(range_pp[i][2:]):
+            color_but2 = color_club
+        else:
+            pass
+
+        #make two buttons out of string next to each other and colur them!!!
+        newButton1 = tk.Button(secondary_window, text=str(range_pp[i][:2]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but1)
+        newButton1.place(x = xcoord, y = ycoord)
+        newButton1 = tk.Button(secondary_window, text=str(range_pp[i][2:]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but2)
+        newButton1.place(x = xcoord + 30, y = ycoord)
         ycoord += 30
 
         
