@@ -817,7 +817,7 @@ def open_solutionPP(ha):
         for hande in b_fold:
             if str(range_pp[i]) in hande.pohand:
                 label3 = 'FOLD'
-                color3 = 'lightblue'
+                color3 = 'blue'
         for hande in b_raise:
             if str(range_pp[i]) in hande.pohand:
                 label3 = 'RAISE'
@@ -934,7 +934,7 @@ def open_solutionSuit(ha):
         for hande in b_fold:
             if str(range_pp[i]) in hande.pohand:
                 label3 = 'FOLD'
-                color3 = 'lightblue'
+                color3 = 'blue'
         for hande in b_raise:
             if str(range_pp[i]) in hande.pohand:
                 label3 = 'RAISE'
@@ -1051,7 +1051,7 @@ def open_solutionOffsuit(ha):
         for hande in b_fold:
             if str(range_pp[i]) in hande.pohand:
                 label3 = 'FOLD'
-                color3 = 'lightblue'
+                color3 = 'blue'
         for hande in b_raise:
             if str(range_pp[i]) in hande.pohand:
                 label3 = 'RAISE'
@@ -1978,12 +1978,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonAA.config(bg = 'red')
@@ -2072,12 +2072,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonAKs.config(bg = 'red')
@@ -2167,12 +2167,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonAQs.config(bg = 'red')
@@ -2261,12 +2261,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonAJs.config(bg = 'red')
@@ -2355,12 +2355,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonATs.config(bg = 'red')
@@ -2449,12 +2449,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA9s.config(bg = 'red')
@@ -2543,12 +2543,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA8s.config(bg = 'red')
@@ -2637,12 +2637,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA7s.config(bg = 'red')
@@ -2731,12 +2731,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA6s.config(bg = 'red')
@@ -2825,12 +2825,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA5s.config(bg = 'red')
@@ -2919,12 +2919,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA4s.config(bg = 'red')
@@ -3013,12 +3013,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA3s.config(bg = 'red')
@@ -3107,12 +3107,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA2s.config(bg = 'red')
@@ -3202,12 +3202,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonAKo.config(bg = 'red')
@@ -3296,12 +3296,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonKK.config(bg = 'red')
@@ -3390,12 +3390,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonKQs.config(bg = 'red')
@@ -3484,12 +3484,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonKJs.config(bg = 'red')
@@ -3578,12 +3578,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonKTs.config(bg = 'red')
@@ -3672,12 +3672,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK9s.config(bg = 'red')
@@ -3766,12 +3766,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK8s.config(bg = 'red')
@@ -3860,12 +3860,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK7s.config(bg = 'red')
@@ -3954,12 +3954,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK6s.config(bg = 'red')
@@ -4048,12 +4048,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK5s.config(bg = 'red')
@@ -4142,12 +4142,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK4s.config(bg = 'red')
@@ -4236,12 +4236,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK3s.config(bg = 'red')
@@ -4330,12 +4330,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK2s.config(bg = 'red')
@@ -4425,12 +4425,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonAQo.config(bg = 'red')
@@ -4519,12 +4519,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonKQo.config(bg = 'red')
@@ -4613,12 +4613,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQQ.config(bg = 'red')
@@ -4707,12 +4707,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQJs.config(bg = 'red')
@@ -4801,12 +4801,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQTs.config(bg = 'red')
@@ -4895,12 +4895,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ9s.config(bg = 'red')
@@ -4989,12 +4989,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ8s.config(bg = 'red')
@@ -5083,12 +5083,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ7s.config(bg = 'red')
@@ -5177,12 +5177,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ6s.config(bg = 'red')
@@ -5271,12 +5271,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ5s.config(bg = 'red')
@@ -5365,12 +5365,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ4s.config(bg = 'red')
@@ -5459,12 +5459,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ3s.config(bg = 'red')
@@ -5553,12 +5553,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ2s.config(bg = 'red')
@@ -5648,12 +5648,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonAJo.config(bg = 'red')
@@ -5742,12 +5742,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonKJo.config(bg = 'red')
@@ -5836,12 +5836,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQJo.config(bg = 'red')
@@ -5930,12 +5930,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJJ.config(bg = 'red')
@@ -6024,12 +6024,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJTs.config(bg = 'red')
@@ -6118,12 +6118,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ9s.config(bg = 'red')
@@ -6212,12 +6212,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ8s.config(bg = 'red')
@@ -6306,12 +6306,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ7s.config(bg = 'red')
@@ -6400,12 +6400,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ6s.config(bg = 'red')
@@ -6494,12 +6494,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ5s.config(bg = 'red')
@@ -6588,12 +6588,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ4s.config(bg = 'red')
@@ -6682,12 +6682,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ3s.config(bg = 'red')
@@ -6776,12 +6776,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ2s.config(bg = 'red')
@@ -6871,12 +6871,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonATo.config(bg = 'red')
@@ -6965,12 +6965,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonKTo.config(bg = 'red')
@@ -7059,12 +7059,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQTo.config(bg = 'red')
@@ -7153,12 +7153,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJTo.config(bg = 'red')
@@ -7247,12 +7247,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonTT.config(bg = 'red')
@@ -7341,12 +7341,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT9s.config(bg = 'red')
@@ -7435,12 +7435,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT8s.config(bg = 'red')
@@ -7529,12 +7529,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT7s.config(bg = 'red')
@@ -7623,12 +7623,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT6s.config(bg = 'red')
@@ -7717,12 +7717,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT5s.config(bg = 'red')
@@ -7811,12 +7811,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT4s.config(bg = 'red')
@@ -7905,12 +7905,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT3s.config(bg = 'red')
@@ -7999,12 +7999,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT2s.config(bg = 'red')
@@ -8094,12 +8094,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA9o.config(bg = 'red')
@@ -8188,12 +8188,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK9o.config(bg = 'red')
@@ -8282,12 +8282,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ9o.config(bg = 'red')
@@ -8376,12 +8376,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ9o.config(bg = 'red')
@@ -8470,12 +8470,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT9o.config(bg = 'red')
@@ -8564,12 +8564,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button99.config(bg = 'red')
@@ -8658,12 +8658,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button98s.config(bg = 'red')
@@ -8752,12 +8752,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button97s.config(bg = 'red')
@@ -8846,12 +8846,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button96s.config(bg = 'red')
@@ -8940,12 +8940,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button95s.config(bg = 'red')
@@ -9034,12 +9034,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button94s.config(bg = 'red')
@@ -9128,12 +9128,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button93s.config(bg = 'red')
@@ -9222,12 +9222,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button92s.config(bg = 'red')
@@ -9317,12 +9317,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA8o.config(bg = 'red')
@@ -9411,12 +9411,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK8o.config(bg = 'red')
@@ -9505,12 +9505,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ8o.config(bg = 'red')
@@ -9599,12 +9599,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ8o.config(bg = 'red')
@@ -9693,12 +9693,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT8o.config(bg = 'red')
@@ -9787,12 +9787,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button98o.config(bg = 'red')
@@ -9881,12 +9881,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button88.config(bg = 'red')
@@ -9975,12 +9975,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button87s.config(bg = 'red')
@@ -10069,12 +10069,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button86s.config(bg = 'red')
@@ -10163,12 +10163,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button85s.config(bg = 'red')
@@ -10257,12 +10257,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button84s.config(bg = 'red')
@@ -10351,12 +10351,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button83s.config(bg = 'red')
@@ -10445,12 +10445,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button82s.config(bg = 'red')
@@ -10540,12 +10540,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA7o.config(bg = 'red')
@@ -10634,12 +10634,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK7o.config(bg = 'red')
@@ -10728,12 +10728,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ7o.config(bg = 'red')
@@ -10822,12 +10822,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ7o.config(bg = 'red')
@@ -10916,12 +10916,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT7o.config(bg = 'red')
@@ -11010,12 +11010,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button97o.config(bg = 'red')
@@ -11104,12 +11104,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button87o.config(bg = 'red')
@@ -11198,12 +11198,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button77.config(bg = 'red')
@@ -11292,12 +11292,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button76s.config(bg = 'red')
@@ -11386,12 +11386,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button75s.config(bg = 'red')
@@ -11480,12 +11480,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button74s.config(bg = 'red')
@@ -11574,12 +11574,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button73s.config(bg = 'red')
@@ -11668,12 +11668,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button72s.config(bg = 'red')
@@ -11763,12 +11763,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA6o.config(bg = 'red')
@@ -11857,12 +11857,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK6o.config(bg = 'red')
@@ -11951,12 +11951,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ6o.config(bg = 'red')
@@ -12045,12 +12045,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ6o.config(bg = 'red')
@@ -12139,12 +12139,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT6o.config(bg = 'red')
@@ -12233,12 +12233,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button96o.config(bg = 'red')
@@ -12327,12 +12327,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button86o.config(bg = 'red')
@@ -12421,12 +12421,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button76o.config(bg = 'red')
@@ -12515,12 +12515,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button66.config(bg = 'red')
@@ -12609,12 +12609,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button65s.config(bg = 'red')
@@ -12703,12 +12703,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button64s.config(bg = 'red')
@@ -12797,12 +12797,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button63s.config(bg = 'red')
@@ -12891,12 +12891,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button62s.config(bg = 'red')
@@ -12986,12 +12986,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA5o.config(bg = 'red')
@@ -13080,12 +13080,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK5o.config(bg = 'red')
@@ -13174,12 +13174,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ5o.config(bg = 'red')
@@ -13268,12 +13268,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ5o.config(bg = 'red')
@@ -13362,12 +13362,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT5o.config(bg = 'red')
@@ -13456,12 +13456,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button95o.config(bg = 'red')
@@ -13550,12 +13550,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button85o.config(bg = 'red')
@@ -13644,12 +13644,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button75o.config(bg = 'red')
@@ -13738,12 +13738,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button65o.config(bg = 'red')
@@ -13832,12 +13832,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button55.config(bg = 'red')
@@ -13926,12 +13926,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button54s.config(bg = 'red')
@@ -14020,12 +14020,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button53s.config(bg = 'red')
@@ -14114,12 +14114,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button52s.config(bg = 'red')
@@ -14209,12 +14209,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA4o.config(bg = 'red')
@@ -14303,12 +14303,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK4o.config(bg = 'red')
@@ -14397,12 +14397,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ4o.config(bg = 'red')
@@ -14491,12 +14491,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ4o.config(bg = 'red')
@@ -14585,12 +14585,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT4o.config(bg = 'red')
@@ -14679,12 +14679,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button94o.config(bg = 'red')
@@ -14773,12 +14773,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button84o.config(bg = 'red')
@@ -14867,12 +14867,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button74o.config(bg = 'red')
@@ -14961,12 +14961,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button64o.config(bg = 'red')
@@ -15055,12 +15055,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button54o.config(bg = 'red')
@@ -15149,12 +15149,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button44.config(bg = 'red')
@@ -15243,12 +15243,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button43s.config(bg = 'red')
@@ -15337,12 +15337,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button42s.config(bg = 'red')
@@ -15432,12 +15432,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA3o.config(bg = 'red')
@@ -15526,12 +15526,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK3o.config(bg = 'red')
@@ -15620,12 +15620,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ3o.config(bg = 'red')
@@ -15714,12 +15714,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ3o.config(bg = 'red')
@@ -15808,12 +15808,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT3o.config(bg = 'red')
@@ -15902,12 +15902,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button93o.config(bg = 'red')
@@ -15996,12 +15996,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button83o.config(bg = 'red')
@@ -16090,12 +16090,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button73o.config(bg = 'red')
@@ -16184,12 +16184,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button63o.config(bg = 'red')
@@ -16278,12 +16278,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button53o.config(bg = 'red')
@@ -16372,12 +16372,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button43o.config(bg = 'red')
@@ -16466,12 +16466,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button33.config(bg = 'red')
@@ -16560,12 +16560,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button32s.config(bg = 'red')
@@ -16655,12 +16655,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonA2o.config(bg = 'red')
@@ -16749,12 +16749,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonK2o.config(bg = 'red')
@@ -16843,12 +16843,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonQ2o.config(bg = 'red')
@@ -16937,12 +16937,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonJ2o.config(bg = 'red')
@@ -17031,12 +17031,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 buttonT2o.config(bg = 'red')
@@ -17125,12 +17125,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button92o.config(bg = 'red')
@@ -17219,12 +17219,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button82o.config(bg = 'red')
@@ -17313,12 +17313,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button72o.config(bg = 'red')
@@ -17407,12 +17407,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button62o.config(bg = 'red')
@@ -17501,12 +17501,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button52o.config(bg = 'red')
@@ -17595,12 +17595,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button42o.config(bg = 'red')
@@ -17689,12 +17689,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button32o.config(bg = 'red')
@@ -17783,12 +17783,12 @@ def buttonSolve():
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
-                        if prio < 2:
+                        if prio < 1:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
                         ###print("3")
-                        if prio < 3:
+                        if prio < 1:
                             prio = 3
             if prio == 3:
                 button22.config(bg = 'red')
