@@ -974,6 +974,123 @@ def open_solutionSuit(ha):
         newButton3.place(x = xcoord + 60, y = ycoord)
         ycoord += 30
 
+def open_solutionOffsuit(ha):
+    global a_bet_fold
+    global a_check_fold
+    global a_check_raise
+    global a_check_call
+    global a_bet_call
+
+    global b_fold
+    global b_raise
+    global b_call
+
+    global c_bet_fold
+    global c_check
+    global c_bet_call
+
+    board_string
+
+    # Create secondary (or popup) window.
+    secondary_window = tk.Toplevel()
+    secondary_window.title(ha)
+    secondary_window.config(width=200, height=400)
+    range_pp = expander.expandOffsuit(ha)
+    xcoord = 20
+    ycoord = 20
+    for i in range(len(range_pp)):
+        color_but1 = 'white'
+        color_but2 = 'white'
+        color3 = 'white'
+        label3 = "Not in Range"
+        #color1
+        if 's' in str(range_pp[i][:2]):
+            color_but1 = color_spade
+        elif 'h' in str(range_pp[i][:2]):
+            color_but1 = color_heart
+        elif 'd' in str(range_pp[i][:2]):
+            color_but1 = color_diamond
+        elif 'c' in str(range_pp[i][:2]):
+            color_but1 = color_club
+        else:
+            pass
+        #color2
+        if 's' in str(range_pp[i][2:]):
+            color_but2 = color_spade
+        elif 'h' in str(range_pp[i][2:]):
+            color_but2 = color_heart
+        elif 'd' in str(range_pp[i][2:]):
+            color_but2 = color_diamond
+        elif 'c' in str(range_pp[i][2:]):
+            color_but2 = color_club
+        else:
+            pass
+        #color3
+        #A
+        for hande in a_bet_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET-FOLD'
+                color3 = 'lightblue'
+        for hande in a_check_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK-FOLD'
+                color3 = 'blue'
+        for hande in a_check_raise:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK-RAISE'
+                color3 = 'red'
+        for hande in a_check_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK-CALL'
+                color3 = 'green'
+        for hande in a_bet_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET-CALL'
+                color3 = 'orange'
+        #B
+        for hande in b_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'FOLD'
+                color3 = 'lightblue'
+        for hande in b_raise:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'RAISE'
+                color3 = 'red'
+        for hande in b_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CALL'
+                color3 = 'yellow'
+
+        #C
+        for hande in c_bet_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET-FOLD'
+                color3 = 'lightblue'
+        for hande in c_check:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK'
+                color3 = 'green'
+        for hande in c_bet_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET-CALL'
+                color3 = 'orange'
+
+        #D -ead Man's Hand        
+        if str(range_pp[i][:2]) in board_string or str(range_pp[i][2:]) in board_string:
+            label3 = 'DEAD HAND'
+            color3 = 'grey'
+        #print(board_string)
+
+
+        #make two buttons out of string next to each other and colur them!!!
+        newButton1 = tk.Button(secondary_window, text=str(range_pp[i][:2]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but1)
+        newButton1.place(x = xcoord, y = ycoord)
+        newButton2 = tk.Button(secondary_window, text=str(range_pp[i][2:]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but2)
+        newButton2.place(x = xcoord + 30, y = ycoord)
+        newButton3 = tk.Button(secondary_window, text=label3, bg=color3)
+        newButton3.place(x = xcoord + 60, y = ycoord)
+        ycoord += 30
+
 
 def open_secondary_window(ha):
     # Create secondary (or popup) window.
@@ -19745,6 +19862,8 @@ def pressAKo(par):
             else:
                 buttonAKo.config(bg = color_offsuit_selected)
                 selected_range.append('AKo')
+    else:
+        open_solutionOffsuit('AKo')
 
 def pressAQo(par):
     global solved
@@ -19764,6 +19883,8 @@ def pressAQo(par):
             else:
                 buttonAQo.config(bg = color_offsuit_selected)
                 selected_range.append('AQo')
+    else:
+        open_solutionOffsuit('AQo')
 
 def pressAJo(par):
     global solved
@@ -19783,6 +19904,8 @@ def pressAJo(par):
             else:
                 buttonAJo.config(bg = color_offsuit_selected)
                 selected_range.append('AJo')
+    else:
+        open_solutionOffsuit('AJo')
 
 def pressATo(par):
     global solved
@@ -19799,9 +19922,9 @@ def pressATo(par):
             if 'ATo' in selected_range:
                 buttonATo.config(bg = color_offsuit)
                 selected_range.remove('ATo')
-            else:
-                buttonATo.config(bg = color_offsuit_selected)
-                selected_range.append('ATo')
+    else:
+        open_solutionOffsuit('ATo')
+    
 
 def pressA9o(par):
     global solved
@@ -19821,6 +19944,8 @@ def pressA9o(par):
             else:
                 buttonA9o.config(bg = color_offsuit_selected)
                 selected_range.append('A9o')
+    else:
+        open_solutionOffsuit('A9o')
 
 def pressA8o(par):
     global solved
@@ -19840,6 +19965,8 @@ def pressA8o(par):
             else:
                 buttonA8o.config(bg = color_offsuit_selected)
                 selected_range.append('A8o')
+    else:
+        open_solutionOffsuit('A8o')
 
 def pressA7o(par):
     global solved
@@ -19859,6 +19986,8 @@ def pressA7o(par):
             else:
                 buttonA7o.config(bg = color_offsuit_selected)
                 selected_range.append('A7o')
+    else:
+        open_solutionOffsuit('A7o')
 
 def pressA6o(par):
     global solved
@@ -19878,6 +20007,8 @@ def pressA6o(par):
             else:
                 buttonA6o.config(bg = color_offsuit_selected)
                 selected_range.append('A6o')
+    else:
+        open_solutionOffsuit('A6o')
 
 def pressA5o(par):
     global solved
@@ -19897,6 +20028,8 @@ def pressA5o(par):
             else:
                 buttonA5o.config(bg = color_offsuit_selected)
                 selected_range.append('A5o')
+    else:
+        open_solutionOffsuit('A5o')
 
 def pressA4o(par):
     global solved
@@ -19916,6 +20049,8 @@ def pressA4o(par):
             else:
                 buttonA4o.config(bg = color_offsuit_selected)
                 selected_range.append('A4o')
+    else:
+        open_solutionOffsuit('A4o')
 
 def pressA3o(par):
     global solved
@@ -19935,6 +20070,8 @@ def pressA3o(par):
             else:
                 buttonA3o.config(bg = color_offsuit_selected)
                 selected_range.append('A3o')
+    else:
+        open_solutionOffsuit('A3o')
 
 def pressA2o(par):
     global solved
@@ -19954,6 +20091,8 @@ def pressA2o(par):
             else:
                 buttonA2o.config(bg = color_offsuit_selected)
                 selected_range.append('A2o')
+    else:
+        open_solutionOffsuit('A2o')
 
 # K
 
@@ -19975,6 +20114,8 @@ def pressKQo(par):
             else:
                 buttonKQo.config(bg = color_offsuit_selected)
                 selected_range.append('KQo')
+    else:
+        open_solutionOffsuit('KQo')
 
 def pressKJo(par):
     global solved
@@ -19994,6 +20135,8 @@ def pressKJo(par):
             else:
                 buttonKJo.config(bg = color_offsuit_selected)
                 selected_range.append('KJo')
+    else:
+        open_solutionOffsuit('KJo')
 
 def pressKTo(par):
     global solved
@@ -20013,6 +20156,8 @@ def pressKTo(par):
             else:
                 buttonKTo.config(bg = color_offsuit_selected)
                 selected_range.append('KTo')
+    else:
+        open_solutionOffsuit('KTo')
 
 def pressK9o(par):
     global solved
@@ -20032,6 +20177,8 @@ def pressK9o(par):
             else:
                 buttonK9o.config(bg = color_offsuit_selected)
                 selected_range.append('K9o')
+    else:
+        open_solutionOffsuit('K9o')
 
 def pressK8o(par):
     global solved
@@ -20051,6 +20198,8 @@ def pressK8o(par):
             else:
                 buttonK8o.config(bg = color_offsuit_selected)
                 selected_range.append('K8o')
+    else:
+        open_solutionOffsuit('K8o')
 
 def pressK7o(par):
     global solved
@@ -20070,6 +20219,8 @@ def pressK7o(par):
             else:
                 buttonK7o.config(bg = color_offsuit_selected)
                 selected_range.append('K7o')
+    else:
+        open_solutionOffsuit('K7o')
 
 def pressK6o(par):
     global solved
@@ -20089,6 +20240,8 @@ def pressK6o(par):
             else:
                 buttonK6o.config(bg = color_offsuit_selected)
                 selected_range.append('K6o')
+    else:
+        open_solutionOffsuit('K6o')
 
 def pressK5o(par):
     global solved
@@ -20108,6 +20261,8 @@ def pressK5o(par):
             else:
                 buttonK5o.config(bg = color_offsuit_selected)
                 selected_range.append('K5o')
+    else:
+        open_solutionOffsuit('K5o')
 
 def pressK4o(par):
     global solved
@@ -20127,6 +20282,8 @@ def pressK4o(par):
             else:
                 buttonK4o.config(bg = color_offsuit_selected)
                 selected_range.append('K4o')
+    else:
+        open_solutionOffsuit('K4o')
 
 def pressK3o(par):
     global solved
@@ -20146,6 +20303,8 @@ def pressK3o(par):
             else:
                 buttonK3o.config(bg = color_offsuit_selected)
                 selected_range.append('K3o')
+    else:
+        open_solutionOffsuit('K3o')
 
 def pressK2o(par):
     global solved
@@ -20164,7 +20323,9 @@ def pressK2o(par):
                 selected_range.remove('K2o')
             else:
                 buttonK2o.config(bg = color_offsuit_selected)
-                selected_range.append('K2o') 
+                selected_range.append('K2o')
+    else:
+        open_solutionOffsuit('K2o')
 
 # Q
 
@@ -20186,6 +20347,8 @@ def pressQJo(par):
             else:
                 buttonQJo.config(bg = color_offsuit_selected)
                 selected_range.append('QJo')
+    else:
+        open_solutionOffsuit('QJo')
 
 def pressQTo(par):
     global solved
@@ -20205,6 +20368,8 @@ def pressQTo(par):
             else:
                 buttonQTo.config(bg = color_offsuit_selected)
                 selected_range.append('QTo')
+    else:
+        open_solutionOffsuit('QTo')
 
 def pressQ9o(par):
     global solved
@@ -20224,6 +20389,8 @@ def pressQ9o(par):
             else:
                 buttonQ9o.config(bg = color_offsuit_selected)
                 selected_range.append('Q9o')
+    else:
+        open_solutionOffsuit('Q9o')
 
 def pressQ8o(par):
     global solved
@@ -20243,6 +20410,8 @@ def pressQ8o(par):
             else:
                 buttonQ8o.config(bg = color_offsuit_selected)
                 selected_range.append('Q8o')
+    else:
+        open_solutionOffsuit('Q8o')
 
 def pressQ7o(par):
     global solved
@@ -20262,6 +20431,8 @@ def pressQ7o(par):
             else:
                 buttonQ7o.config(bg = color_offsuit_selected)
                 selected_range.append('Q7o')
+    else:
+        open_solutionOffsuit('Q7o')
 
 def pressQ6o(par):
     global solved
@@ -20281,6 +20452,8 @@ def pressQ6o(par):
             else:
                 buttonQ6o.config(bg = color_offsuit_selected)
                 selected_range.append('Q6o')
+    else:
+        open_solutionOffsuit('Q6o')
 
 def pressQ5o(par):
     global solved
@@ -20300,6 +20473,8 @@ def pressQ5o(par):
             else:
                 buttonQ5o.config(bg = color_offsuit_selected)
                 selected_range.append('Q5o')
+    else:
+        open_solutionOffsuit('Q5o')
 
 def pressQ4o(par):
     global solved
@@ -20319,6 +20494,8 @@ def pressQ4o(par):
             else:
                 buttonQ4o.config(bg = color_offsuit_selected)
                 selected_range.append('Q4o')
+    else:
+        open_solutionOffsuit('Q4o')
 
 def pressQ3o(par):
     global solved
@@ -20338,6 +20515,8 @@ def pressQ3o(par):
             else:
                 buttonQ3o.config(bg = color_offsuit_selected)
                 selected_range.append('Q3o')
+    else:
+        open_solutionOffsuit('Q3o')
 
 def pressQ2o(par):
     global solved
@@ -20357,6 +20536,8 @@ def pressQ2o(par):
             else:
                 buttonQ2o.config(bg = color_offsuit_selected)
                 selected_range.append('Q2o')
+    else:
+        open_solutionOffsuit('Q2o')
 
 # J
 
@@ -20378,6 +20559,8 @@ def pressJTo(par):
             else:
                 buttonJTo.config(bg = color_offsuit_selected)
                 selected_range.append('JTo')
+    else:
+        open_solutionOffsuit('JTo')
 
 def pressJ9o(par):
     global solved
@@ -20397,6 +20580,8 @@ def pressJ9o(par):
             else:
                 buttonJ9o.config(bg = color_offsuit_selected)
                 selected_range.append('J9o')
+    else:
+        open_solutionOffsuit('J9o')
 
 def pressJ8o(par):
     global solved
@@ -20416,6 +20601,8 @@ def pressJ8o(par):
             else:
                 buttonJ8o.config(bg = color_offsuit_selected)
                 selected_range.append('J8o')
+    else:
+        open_solutionOffsuit('J8o')
 
 def pressJ7o(par):
     global solved
@@ -20435,6 +20622,8 @@ def pressJ7o(par):
             else:
                 buttonJ7o.config(bg = color_offsuit_selected)
                 selected_range.append('J7o')
+    else:
+        open_solutionOffsuit('J7o')
 
 def pressJ6o(par):
     global solved
@@ -20454,6 +20643,8 @@ def pressJ6o(par):
             else:
                 buttonJ6o.config(bg = color_offsuit_selected)
                 selected_range.append('J6o')
+    else:
+        open_solutionOffsuit('J6o')
 
 def pressJ5o(par):
     global solved
@@ -20473,6 +20664,8 @@ def pressJ5o(par):
             else:
                 buttonJ5o.config(bg = color_offsuit_selected)
                 selected_range.append('J5o')
+    else:
+        open_solutionOffsuit('J5o')
 
 def pressJ4o(par):
     global solved
@@ -20492,6 +20685,8 @@ def pressJ4o(par):
             else:
                 buttonJ4o.config(bg = color_offsuit_selected)
                 selected_range.append('J4o')
+    else:
+        open_solutionOffsuit('J4o')
 
 def pressJ3o(par):
     global solved
@@ -20511,6 +20706,8 @@ def pressJ3o(par):
             else:
                 buttonJ3o.config(bg = color_offsuit_selected)
                 selected_range.append('J3o')
+    else:
+        open_solutionOffsuit('J3o')
 
 def pressJ2o(par):
     global solved
@@ -20530,6 +20727,8 @@ def pressJ2o(par):
             else:
                 buttonJ2o.config(bg = color_offsuit_selected)
                 selected_range.append('J2o')
+    else:
+        open_solutionOffsuit('J2o')
 
 # T
 
@@ -20551,6 +20750,8 @@ def pressT9o(par):
             else:
                 buttonT9o.config(bg = color_offsuit_selected)
                 selected_range.append('T9o')
+    else:
+        open_solutionOffsuit('T9o')
 
 def pressT8o(par):
     global solved
@@ -20570,6 +20771,8 @@ def pressT8o(par):
             else:
                 buttonT8o.config(bg = color_offsuit_selected)
                 selected_range.append('T8o')
+    else:
+        open_solutionOffsuit('T8o')
 
 def pressT7o(par):
     global solved
@@ -20589,6 +20792,8 @@ def pressT7o(par):
             else:
                 buttonT7o.config(bg = color_offsuit_selected)
                 selected_range.append('T7o')
+    else:
+        open_solutionOffsuit('T7o')
 
 def pressT6o(par):
     global solved
@@ -20608,6 +20813,8 @@ def pressT6o(par):
             else:
                 buttonT6o.config(bg = color_offsuit_selected)
                 selected_range.append('T6o')
+    else:
+        open_solutionOffsuit('T6o')
 
 def pressT5o(par):
     global solved
@@ -20627,6 +20834,8 @@ def pressT5o(par):
             else:
                 buttonT5o.config(bg = color_offsuit_selected)
                 selected_range.append('T5o')
+    else:
+        open_solutionOffsuit('T5o')
 
 def pressT4o(par):
     global solved
@@ -20646,6 +20855,8 @@ def pressT4o(par):
             else:
                 buttonT4o.config(bg = color_offsuit_selected)
                 selected_range.append('T4o')
+    else:
+        open_solutionOffsuit('T4o')
 
 def pressT3o(par):
     global solved
@@ -20665,6 +20876,8 @@ def pressT3o(par):
             else:
                 buttonT3o.config(bg = color_offsuit_selected)
                 selected_range.append('T3o')
+    else:
+        open_solutionOffsuit('T3o')
 
 def pressT2o(par):
     global solved
@@ -20684,6 +20897,8 @@ def pressT2o(par):
             else:
                 buttonT2o.config(bg = color_offsuit_selected)
                 selected_range.append('T2o')
+    else:
+        open_solutionOffsuit('T2o')
 
 # 9
 
@@ -20705,6 +20920,8 @@ def press98o(par):
             else:
                 button98o.config(bg = color_offsuit_selected)
                 selected_range.append('98o')
+    else:
+        open_solutionOffsuit('98o')
 
 def press97o(par):
     global solved
@@ -20724,6 +20941,8 @@ def press97o(par):
             else:
                 button97o.config(bg = color_offsuit_selected)
                 selected_range.append('97o')
+    else:
+        open_solutionOffsuit('97o')
 
 def press96o(par):
     global solved
@@ -20743,6 +20962,8 @@ def press96o(par):
             else:
                 button96o.config(bg = color_offsuit_selected)
                 selected_range.append('96o')
+    else:
+        open_solutionOffsuit('96o')
 
 def press95o(par):
     global solved
@@ -20762,6 +20983,8 @@ def press95o(par):
             else:
                 button95o.config(bg = color_offsuit_selected)
                 selected_range.append('95o')
+    else:
+        open_solutionOffsuit('95o')
 
 def press94o(par):
     global solved
@@ -20781,6 +21004,8 @@ def press94o(par):
             else:
                 button94o.config(bg = color_offsuit_selected)
                 selected_range.append('94o')
+    else:
+        open_solutionOffsuit('94o')
 
 def press93o(par):
     global solved
@@ -20800,6 +21025,8 @@ def press93o(par):
             else:
                 button93o.config(bg = color_offsuit_selected)
                 selected_range.append('93o')
+    else:
+        open_solutionOffsuit('93o')
 
 def press92o(par):
     global solved
@@ -20819,6 +21046,8 @@ def press92o(par):
             else:
                 button92o.config(bg = color_offsuit_selected)
                 selected_range.append('92o')
+    else:
+        open_solutionOffsuit('92o')
 
 # 8
 
@@ -20840,6 +21069,8 @@ def press87o(par):
             else:
                 button87o.config(bg = color_offsuit_selected)
                 selected_range.append('87o')
+    else:
+        open_solutionOffsuit('87o')
 
 def press86o(par):
     global solved
@@ -20859,6 +21090,8 @@ def press86o(par):
             else:
                 button86o.config(bg = color_offsuit_selected)
                 selected_range.append('86o')
+    else:
+        open_solutionOffsuit('86o')
 
 def press85o(par):
     global solved
@@ -20878,6 +21111,8 @@ def press85o(par):
             else:
                 button85o.config(bg = color_offsuit_selected)
                 selected_range.append('85o')
+    else:
+        open_solutionOffsuit('85o')
 
 def press84o(par):
     global solved
@@ -20897,6 +21132,8 @@ def press84o(par):
             else:
                 button84o.config(bg = color_offsuit_selected)
                 selected_range.append('84o')
+    else:
+        open_solutionOffsuit('84o')
 
 def press83o(par):
     global solved
@@ -20916,6 +21153,8 @@ def press83o(par):
             else:
                 button83o.config(bg = color_offsuit_selected)
                 selected_range.append('83o')
+    else:
+        open_solutionOffsuit('83o')
 
 def press82o(par):
     global solved
@@ -20935,6 +21174,8 @@ def press82o(par):
             else:
                 button82o.config(bg = color_offsuit_selected)
                 selected_range.append('82o')
+    else:
+        open_solutionOffsuit('82o')
 
 # 7
 def press76o(par):
@@ -20955,6 +21196,8 @@ def press76o(par):
             else:
                 button76o.config(bg = color_offsuit_selected)
                 selected_range.append('76o')
+    else:
+        open_solutionOffsuit('76o')
 
 def press75o(par):
     global solved
@@ -20974,6 +21217,8 @@ def press75o(par):
             else:
                 button75o.config(bg = color_offsuit_selected)
                 selected_range.append('75o')
+    else:
+        open_solutionOffsuit('75o')
 
 def press74o(par):
     global solved
@@ -20993,6 +21238,8 @@ def press74o(par):
             else:
                 button74o.config(bg = color_offsuit_selected)
                 selected_range.append('74o')
+    else:
+        open_solutionOffsuit('74o')
 
 def press73o(par):
     global solved
@@ -21012,6 +21259,8 @@ def press73o(par):
             else:
                 button73o.config(bg = color_offsuit_selected)
                 selected_range.append('73o')
+    else:
+        open_solutionOffsuit('73o')
 
 def press72o(par):
     global solved
@@ -21031,6 +21280,8 @@ def press72o(par):
             else:
                 button72o.config(bg = color_offsuit_selected)
                 selected_range.append('72o')
+    else:
+        open_solutionOffsuit('72o')
 
 # 6
 def press65o(par):
@@ -21051,6 +21302,8 @@ def press65o(par):
             else:
                 button65o.config(bg = color_offsuit_selected)
                 selected_range.append('65o')
+    else:
+        open_solutionOffsuit('65o')
 
 def press64o(par):
     global solved
@@ -21070,6 +21323,8 @@ def press64o(par):
             else:
                 button64o.config(bg = color_offsuit_selected)
                 selected_range.append('64o')
+    else:
+        open_solutionOffsuit('64o')
 
 def press63o(par):
     global solved
@@ -21089,6 +21344,8 @@ def press63o(par):
             else:
                 button63o.config(bg = color_offsuit_selected)
                 selected_range.append('63o')
+    else:
+        open_solutionOffsuit('63o')
 
 def press62o(par):
     global solved
@@ -21108,6 +21365,8 @@ def press62o(par):
             else:
                 button62o.config(bg = color_offsuit_selected)
                 selected_range.append('62o')
+    else:
+        open_solutionOffsuit('62o')
 
 # 5
 
@@ -21129,6 +21388,8 @@ def press54o(par):
             else:
                 button54o.config(bg = color_offsuit_selected)
                 selected_range.append('54o')
+    else:
+        open_solutionOffsuit('54o')
 
 def press53o(par):
     global solved
@@ -21148,6 +21409,8 @@ def press53o(par):
             else:
                 button53o.config(bg = color_offsuit_selected)
                 selected_range.append('53o')
+    else:
+        open_solutionOffsuit('53o')
 
 def press52o(par):
     global solved
@@ -21167,6 +21430,8 @@ def press52o(par):
             else:
                 button52o.config(bg = color_offsuit_selected)
                 selected_range.append('52o')
+    else:
+        open_solutionOffsuit('52o')
 
 # 4
 
@@ -21188,6 +21453,8 @@ def press43o(par):
             else:
                 button43o.config(bg = color_offsuit_selected)
                 selected_range.append('43o')
+    else:
+        open_solutionOffsuit('43o')
 
 def press42o(par):
     global solved
@@ -21207,6 +21474,8 @@ def press42o(par):
             else:
                 button42o.config(bg = color_offsuit_selected)
                 selected_range.append('42o')
+    else:
+        open_solutionOffsuit('42o')
 
 # 3
 
@@ -21228,6 +21497,8 @@ def press32o(par):
             else:
                 button32o.config(bg = color_offsuit_selected)
                 selected_range.append('32o')
+    else:
+        open_solutionOffsuit('32o')
 
 '''
 def textBox():
