@@ -738,6 +738,19 @@ def press2c():
 
 
 def open_solutionPP(ha):
+    global a_bet_fold
+    global a_check_fold
+    global a_check_raise
+    global a_check_call
+    global a_bet_call
+
+    global b_fold
+    global b_raise
+    global b_call
+
+    global c_bet_fold
+    global c_check
+    global c_bet_call
     # Create secondary (or popup) window.
     secondary_window = tk.Toplevel()
     secondary_window.title(ha)
@@ -745,9 +758,18 @@ def open_solutionPP(ha):
     range_pp = expander.expandPP(ha)
     xcoord = 20
     ycoord = 20
+    print("--------------------")
+    print(str(len(a_bet_fold)))
+    print(str(len(a_check_fold)))
+    print(str(len(a_check_raise)))
+    print(str(len(a_check_call)))
+    print(str(len(a_bet_call)))
+    print("--------------------")
     for i in range(len(range_pp)):
         color_but1 = 'white'
         color_but2 = 'white'
+        color3 = 'white'
+        label3 = "dont_know"
         #color1
         if 's' in str(range_pp[i][:2]):
             color_but1 = color_spade
@@ -770,12 +792,32 @@ def open_solutionPP(ha):
             color_but2 = color_club
         else:
             pass
+        #color3
+        if str(range_pp[i]) in a_bet_fold:
+            label3 = 'a_bet_fold'
+            color3 = 'lightblue'
+        elif str(range_pp[i]) in a_check_fold:
+            label3 = 'a_check_fold'
+            color3 = 'blue'
+        elif str(range_pp[i]) in a_check_raise:
+            label3 = 'a_check_raise'
+            color3 = 'red'
+        elif str(range_pp[i]) in a_check_call:
+            label3 = 'a_check_call'
+            color3 = 'green'
+        elif str(range_pp[i]) in a_bet_call:
+            label3 = 'a_bet_call'
+            color3 = 'orange'
+        else:
+            pass
 
         #make two buttons out of string next to each other and colur them!!!
         newButton1 = tk.Button(secondary_window, text=str(range_pp[i][:2]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but1)
         newButton1.place(x = xcoord, y = ycoord)
-        newButton1 = tk.Button(secondary_window, text=str(range_pp[i][2:]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but2)
-        newButton1.place(x = xcoord + 30, y = ycoord)
+        newButton2 = tk.Button(secondary_window, text=str(range_pp[i][2:]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but2)
+        newButton2.place(x = xcoord + 30, y = ycoord)
+        newButton3 = tk.Button(secondary_window, text=label3, bg=color3)
+        newButton3.place(x = xcoord + 60, y = ycoord)
         ycoord += 30
 
         
