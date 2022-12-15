@@ -857,16 +857,122 @@ def open_solutionPP(ha):
         newButton3.place(x = xcoord + 60, y = ycoord)
         ycoord += 30
 
-        
-    '''
-    # Create a button to close (destroy) this window.
-    button_close = tk.Button(
-        secondary_window,
-        text=ha,
-        command=secondary_window.destroy
-    )
-    button_close.place(x=20, y=20)
-    '''
+def open_solutionSuit(ha):
+    global a_bet_fold
+    global a_check_fold
+    global a_check_raise
+    global a_check_call
+    global a_bet_call
+
+    global b_fold
+    global b_raise
+    global b_call
+
+    global c_bet_fold
+    global c_check
+    global c_bet_call
+
+    board_string
+
+    # Create secondary (or popup) window.
+    secondary_window = tk.Toplevel()
+    secondary_window.title(ha)
+    secondary_window.config(width=200, height=150)
+    range_pp = expander.expandSuit(ha)
+    xcoord = 20
+    ycoord = 20
+    for i in range(len(range_pp)):
+        color_but1 = 'white'
+        color_but2 = 'white'
+        color3 = 'white'
+        label3 = "Not in Range"
+        #color1
+        if 's' in str(range_pp[i][:2]):
+            color_but1 = color_spade
+        elif 'h' in str(range_pp[i][:2]):
+            color_but1 = color_heart
+        elif 'd' in str(range_pp[i][:2]):
+            color_but1 = color_diamond
+        elif 'c' in str(range_pp[i][:2]):
+            color_but1 = color_club
+        else:
+            pass
+        #color2
+        if 's' in str(range_pp[i][2:]):
+            color_but2 = color_spade
+        elif 'h' in str(range_pp[i][2:]):
+            color_but2 = color_heart
+        elif 'd' in str(range_pp[i][2:]):
+            color_but2 = color_diamond
+        elif 'c' in str(range_pp[i][2:]):
+            color_but2 = color_club
+        else:
+            pass
+        #color3
+        #A
+        for hande in a_bet_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET-FOLD'
+                color3 = 'lightblue'
+        for hande in a_check_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK-FOLD'
+                color3 = 'blue'
+        for hande in a_check_raise:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK-RAISE'
+                color3 = 'red'
+        for hande in a_check_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK-CALL'
+                color3 = 'green'
+        for hande in a_bet_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET-CALL'
+                color3 = 'orange'
+        #B
+        for hande in b_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'FOLD'
+                color3 = 'lightblue'
+        for hande in b_raise:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'RAISE'
+                color3 = 'red'
+        for hande in b_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CALL'
+                color3 = 'yellow'
+
+        #C
+        for hande in c_bet_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET-FOLD'
+                color3 = 'lightblue'
+        for hande in c_check:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK'
+                color3 = 'green'
+        for hande in c_bet_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET-CALL'
+                color3 = 'orange'
+
+        #D -ead Man's Hand        
+        if str(range_pp[i][:2]) in board_string or str(range_pp[i][2:]) in board_string:
+            label3 = 'DEAD HAND'
+            color3 = 'grey'
+        #print(board_string)
+
+
+        #make two buttons out of string next to each other and colur them!!!
+        newButton1 = tk.Button(secondary_window, text=str(range_pp[i][:2]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but1)
+        newButton1.place(x = xcoord, y = ycoord)
+        newButton2 = tk.Button(secondary_window, text=str(range_pp[i][2:]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but2)
+        newButton2.place(x = xcoord + 30, y = ycoord)
+        newButton3 = tk.Button(secondary_window, text=label3, bg=color3)
+        newButton3.place(x = xcoord + 60, y = ycoord)
+        ycoord += 30
 
 
 def open_secondary_window(ha):
@@ -17976,7 +18082,9 @@ def pressAKs(par):
                 selected_range.remove('AKs')
             else:
                 buttonAKs.config(bg = color_suited_selected)
-                selected_range.append('AKs')       
+                selected_range.append('AKs')
+    else:
+        open_solutionSuit('AKs')       
 
 def pressAQs(par):
     global solved
@@ -17996,6 +18104,8 @@ def pressAQs(par):
             else:
                 buttonAQs.config(bg = color_suited_selected)
                 selected_range.append('AQs')
+    else:
+        open_solutionSuit('AQs') 
 
 def pressAJs(par):
     global solved
@@ -18015,6 +18125,8 @@ def pressAJs(par):
             else:
                 buttonAJs.config(bg = color_suited_selected)
                 selected_range.append('AJs')
+    else:
+        open_solutionSuit('AJs') 
 
 def pressATs(par):
     global solved
@@ -18034,6 +18146,8 @@ def pressATs(par):
             else:
                 buttonATs.config(bg = color_suited_selected)
                 selected_range.append('ATs')
+    else:
+        open_solutionSuit('ATs') 
 
 def pressA9s(par):
     global solved
@@ -18053,6 +18167,8 @@ def pressA9s(par):
             else:
                 buttonA9s.config(bg = color_suited_selected)
                 selected_range.append('A9s')
+    else:
+        open_solutionSuit('A9s') 
 
 def pressA8s(par):
     global solved
@@ -18072,6 +18188,8 @@ def pressA8s(par):
             else:
                 buttonA8s.config(bg = color_suited_selected)
                 selected_range.append('A8s')
+    else:
+        open_solutionSuit('A8s') 
 
 def pressA7s(par):
     global solved
@@ -18091,6 +18209,8 @@ def pressA7s(par):
             else:
                 buttonA7s.config(bg = color_suited_selected)
                 selected_range.append('A7s')
+    else:
+        open_solutionSuit('A7s') 
 
 def pressA6s(par):
     global solved
@@ -18110,6 +18230,8 @@ def pressA6s(par):
             else:
                 buttonA6s.config(bg = color_suited_selected)
                 selected_range.append('A6s')
+    else:
+        open_solutionSuit('A6s') 
 
 def pressA5s(par):
     global solved
@@ -18129,6 +18251,8 @@ def pressA5s(par):
             else:
                 buttonA5s.config(bg = color_suited_selected)
                 selected_range.append('A5s')
+    else:
+        open_solutionSuit('A5s') 
 
 def pressA4s(par):
     global solved
@@ -18148,6 +18272,8 @@ def pressA4s(par):
             else:
                 buttonA4s.config(bg = color_suited_selected)
                 selected_range.append('A4s')
+    else:
+        open_solutionSuit('A4s') 
 
 def pressA3s(par):
     global solved
@@ -18167,6 +18293,8 @@ def pressA3s(par):
             else:
                 buttonA3s.config(bg = color_suited_selected)
                 selected_range.append('A3s')
+    else:
+        open_solutionSuit('A3s') 
 
 def pressA2s(par):
     global solved
@@ -18186,6 +18314,8 @@ def pressA2s(par):
             else:
                 buttonA2s.config(bg = color_suited_selected)
                 selected_range.append('A2s')
+    else:
+        open_solutionSuit('A2s') 
 
 #suited handlers K
     
@@ -18207,6 +18337,8 @@ def pressKQs(par):
             else:
                 buttonKQs.config(bg = color_suited_selected)
                 selected_range.append('KQs')
+    else:
+        open_solutionSuit('KQs') 
 
 def pressKJs(par):
     global solved
@@ -18226,6 +18358,8 @@ def pressKJs(par):
             else:
                 buttonKJs.config(bg = color_suited_selected)
                 selected_range.append('KJs')
+    else:
+        open_solutionSuit('KJs') 
 
 def pressKTs(par):
     global solved
@@ -18245,6 +18379,8 @@ def pressKTs(par):
             else:
                 buttonKTs.config(bg = color_suited_selected)
                 selected_range.append('KTs')
+    else:
+        open_solutionSuit('KTs') 
 
 def pressK9s(par):
     global solved
@@ -18264,6 +18400,8 @@ def pressK9s(par):
             else:
                 buttonK9s.config(bg = color_suited_selected)
                 selected_range.append('K9s')
+    else:
+        open_solutionSuit('K9s') 
 
 def pressK8s(par):
     global solved
@@ -18283,6 +18421,8 @@ def pressK8s(par):
             else:
                 buttonK8s.config(bg = color_suited_selected)
                 selected_range.append('K8s')
+    else:
+        open_solutionSuit('K8s') 
 
 def pressK7s(par):
     global solved
@@ -18302,6 +18442,8 @@ def pressK7s(par):
             else:
                 buttonK7s.config(bg = color_suited_selected)
                 selected_range.append('K7s')
+    else:
+        open_solutionSuit('K7s') 
 
 def pressK6s(par):
     global solved
@@ -18321,6 +18463,8 @@ def pressK6s(par):
             else:
                 buttonK6s.config(bg = color_suited_selected)
                 selected_range.append('K6s')
+    else:
+        open_solutionSuit('K6s') 
 
 def pressK5s(par):
     global solved
@@ -18340,6 +18484,8 @@ def pressK5s(par):
             else:
                 buttonK5s.config(bg = color_suited_selected)
                 selected_range.append('K5s')
+    else:
+        open_solutionSuit('K5s') 
 
 def pressK4s(par):
     global solved
@@ -18359,6 +18505,8 @@ def pressK4s(par):
             else:
                 buttonK4s.config(bg = color_suited_selected)
                 selected_range.append('K4s')
+    else:
+        open_solutionSuit('K4s') 
 
 def pressK3s(par):
     global solved
@@ -18378,6 +18526,8 @@ def pressK3s(par):
             else:
                 buttonK3s.config(bg = color_suited_selected)
                 selected_range.append('K3s')
+    else:
+        open_solutionSuit('K3s') 
 
 def pressK2s(par):
     global solved
@@ -18397,6 +18547,8 @@ def pressK2s(par):
             else:
                 buttonK2s.config(bg = color_suited_selected)
                 selected_range.append('K2s')
+    else:
+        open_solutionSuit('K2s') 
 
 #suited handlers Q
 
@@ -18418,6 +18570,8 @@ def pressQJs(par):
             else:
                 buttonQJs.config(bg = color_suited_selected)
                 selected_range.append('QJs')
+    else:
+        open_solutionSuit('QJs') 
 
 def pressQTs(par):
     global solved
@@ -18437,6 +18591,8 @@ def pressQTs(par):
             else:
                 buttonQTs.config(bg = color_suited_selected)
                 selected_range.append('QTs')
+    else:
+        open_solutionSuit('QTs') 
 
 def pressQ9s(par):
     global solved
@@ -18456,6 +18612,8 @@ def pressQ9s(par):
             else:
                 buttonQ9s.config(bg = color_suited_selected)
                 selected_range.append('Q9s')
+    else:
+        open_solutionSuit('Q9s') 
 
 def pressQ8s(par):
     global solved
@@ -18475,6 +18633,8 @@ def pressQ8s(par):
             else:
                 buttonQ8s.config(bg = color_suited_selected)
                 selected_range.append('Q8s')
+    else:
+        open_solutionSuit('Q8s') 
 
 def pressQ7s(par):
     global solved
@@ -18494,6 +18654,8 @@ def pressQ7s(par):
             else:
                 buttonQ7s.config(bg = color_suited_selected)
                 selected_range.append('Q7s')
+    else:
+        open_solutionSuit('Q7s') 
 
 def pressQ6s(par):
     global solved
@@ -18513,6 +18675,8 @@ def pressQ6s(par):
             else:
                 buttonQ6s.config(bg = color_suited_selected)
                 selected_range.append('Q6s')
+    else:
+        open_solutionSuit('Q6s') 
 
 def pressQ5s(par):
     global solved
@@ -18532,6 +18696,8 @@ def pressQ5s(par):
             else:
                 buttonQ5s.config(bg = color_suited_selected)
                 selected_range.append('Q5s')
+    else:
+        open_solutionSuit('Q5s') 
 
 def pressQ4s(par):
     global solved
@@ -18551,6 +18717,8 @@ def pressQ4s(par):
             else:
                 buttonQ4s.config(bg = color_suited_selected)
                 selected_range.append('Q4s')
+    else:
+        open_solutionSuit('Q4s') 
 
 def pressQ3s(par):
     global solved
@@ -18570,6 +18738,8 @@ def pressQ3s(par):
             else:
                 buttonQ3s.config(bg = color_suited_selected)
                 selected_range.append('Q3s')
+    else:
+        open_solutionSuit('Q3s') 
 
 def pressQ2s(par):
     global solved
@@ -18589,6 +18759,8 @@ def pressQ2s(par):
             else:
                 buttonQ2s.config(bg = color_suited_selected)
                 selected_range.append('Q2s')
+    else:
+        open_solutionSuit('Q2s') 
 
 #suited handlers J
 
@@ -18610,6 +18782,8 @@ def pressJTs(par):
             else:
                 buttonJTs.config(bg = color_suited_selected)
                 selected_range.append('JTs')
+    else:
+        open_solutionSuit('JTs') 
 
 def pressJ9s(par):
     global solved
@@ -18629,6 +18803,8 @@ def pressJ9s(par):
             else:
                 buttonJ9s.config(bg = color_suited_selected)
                 selected_range.append('J9s')
+    else:
+        open_solutionSuit('J9s') 
 
 def pressJ8s(par):
     global solved
@@ -18648,6 +18824,8 @@ def pressJ8s(par):
             else:
                 buttonJ8s.config(bg = color_suited_selected)
                 selected_range.append('J8s')
+    else:
+        open_solutionSuit('J8s') 
 
 def pressJ7s(par):
     global solved
@@ -18667,6 +18845,8 @@ def pressJ7s(par):
             else:
                 buttonJ7s.config(bg = color_suited_selected)
                 selected_range.append('J7s')
+    else:
+        open_solutionSuit('J7s') 
 
 def pressJ6s(par):
     global solved
@@ -18686,6 +18866,8 @@ def pressJ6s(par):
             else:
                 buttonJ6s.config(bg = color_suited_selected)
                 selected_range.append('J6s')
+    else:
+        open_solutionSuit('J6s') 
 
 def pressJ5s(par):
     global solved
@@ -18705,6 +18887,8 @@ def pressJ5s(par):
             else:
                 buttonJ5s.config(bg = color_suited_selected)
                 selected_range.append('J5s')
+    else:
+        open_solutionSuit('J5s') 
 
 def pressJ4s(par):
     global solved
@@ -18724,6 +18908,8 @@ def pressJ4s(par):
             else:
                 buttonJ4s.config(bg = color_suited_selected)
                 selected_range.append('J4s')
+    else:
+        open_solutionSuit('J4s') 
 
 def pressJ3s(par):
     global solved
@@ -18743,6 +18929,8 @@ def pressJ3s(par):
             else:
                 buttonJ3s.config(bg = color_suited_selected)
                 selected_range.append('J3s')
+    else:
+        open_solutionSuit('J3s') 
 
 def pressJ2s(par):
     global solved
@@ -18762,6 +18950,8 @@ def pressJ2s(par):
             else:
                 buttonJ2s.config(bg = color_suited_selected)
                 selected_range.append('J2s')
+    else:
+        open_solutionSuit('J2s') 
 
 #suited handlers T
 
@@ -18783,6 +18973,8 @@ def pressT9s(par):
             else:
                 buttonT9s.config(bg = color_suited_selected)
                 selected_range.append('T9s')
+    else:
+        open_solutionSuit('T9s') 
 
 def pressT8s(par):
     global solved
@@ -18802,6 +18994,8 @@ def pressT8s(par):
             else:
                 buttonT8s.config(bg = color_suited_selected)
                 selected_range.append('T8s')
+    else:
+        open_solutionSuit('T8s')
 
 def pressT7s(par):
     global solved
@@ -18821,6 +19015,8 @@ def pressT7s(par):
             else:
                 buttonT7s.config(bg = color_suited_selected)
                 selected_range.append('T7s')
+    else:
+        open_solutionSuit('T7s')
 
 def pressT6s(par):
     global solved
@@ -18840,6 +19036,8 @@ def pressT6s(par):
             else:
                 buttonT6s.config(bg = color_suited_selected)
                 selected_range.append('T6s')
+    else:
+        open_solutionSuit('T6s')
 
 def pressT5s(par):
     global solved
@@ -18859,6 +19057,8 @@ def pressT5s(par):
             else:
                 buttonT5s.config(bg = color_suited_selected)
                 selected_range.append('T5s')
+    else:
+        open_solutionSuit('T5s')
 
 def pressT4s(par):
     global solved
@@ -18878,6 +19078,8 @@ def pressT4s(par):
             else:
                 buttonT4s.config(bg = color_suited_selected)
                 selected_range.append('T4s')
+    else:
+        open_solutionSuit('T4s')
 
 def pressT3s(par):
     global solved
@@ -18897,6 +19099,8 @@ def pressT3s(par):
             else:
                 buttonT3s.config(bg = color_suited_selected)
                 selected_range.append('T3s')
+    else:
+        open_solutionSuit('T3s')
 
 def pressT2s(par):
     global solved
@@ -18916,6 +19120,8 @@ def pressT2s(par):
             else:
                 buttonT2s.config(bg = color_suited_selected)
                 selected_range.append('T2s')
+    else:
+        open_solutionSuit('T2s')
 
 #suited handlers 9
 
@@ -18937,6 +19143,8 @@ def press98s(par):
             else:
                 button98s.config(bg = color_suited_selected)
                 selected_range.append('98s')
+    else:
+        open_solutionSuit('98s')
 
 def press97s(par):
     global solved
@@ -18956,6 +19164,8 @@ def press97s(par):
             else:
                 button97s.config(bg = color_suited_selected)
                 selected_range.append('97s')
+    else:
+        open_solutionSuit('97s')
 
 def press96s(par):
     global solved
@@ -18975,6 +19185,8 @@ def press96s(par):
             else:
                 button96s.config(bg = color_suited_selected)
                 selected_range.append('96s')
+    else:
+        open_solutionSuit('96s')
 
 def press95s(par):
     global solved
@@ -18994,6 +19206,8 @@ def press95s(par):
             else:
                 button95s.config(bg = color_suited_selected)
                 selected_range.append('95s')
+    else:
+        open_solutionSuit('95s')
 
 def press94s(par):
     global solved
@@ -19013,6 +19227,8 @@ def press94s(par):
             else:
                 button94s.config(bg = color_suited_selected)
                 selected_range.append('94s')
+    else:
+        open_solutionSuit('94s')
 
 def press93s(par):
     global solved
@@ -19032,6 +19248,8 @@ def press93s(par):
             else:
                 button93s.config(bg = color_suited_selected)
                 selected_range.append('93s')
+    else:
+        open_solutionSuit('93s')
 
 def press92s(par):
     global solved
@@ -19051,6 +19269,8 @@ def press92s(par):
             else:
                 button92s.config(bg = color_suited_selected)
                 selected_range.append('92s')
+    else:
+        open_solutionSuit('92s')
 
 #suited handlers 8
 
@@ -19072,6 +19292,8 @@ def press87s(par):
             else:
                 button87s.config(bg = color_suited_selected)
                 selected_range.append('87s')
+    else:
+        open_solutionSuit('87s')
 
 def press86s(par):
     global solved
@@ -19091,6 +19313,8 @@ def press86s(par):
             else:
                 button86s.config(bg = color_suited_selected)
                 selected_range.append('86s')
+    else:
+        open_solutionSuit('86s')
 
 def press85s(par):
     global solved
@@ -19110,6 +19334,8 @@ def press85s(par):
             else:
                 button85s.config(bg = color_suited_selected)
                 selected_range.append('85s')
+    else:
+        open_solutionSuit('85s')
 
 def press84s(par):
     global solved
@@ -19129,6 +19355,8 @@ def press84s(par):
             else:
                 button84s.config(bg = color_suited_selected)
                 selected_range.append('84s')
+    else:
+        open_solutionSuit('84s')
 
 def press83s(par):
     global solved
@@ -19148,6 +19376,8 @@ def press83s(par):
             else:
                 button83s.config(bg = color_suited_selected)
                 selected_range.append('83s')
+    else:
+        open_solutionSuit('83s')
 
 def press82s(par):
     global solved
@@ -19167,6 +19397,8 @@ def press82s(par):
             else:
                 button82s.config(bg = color_suited_selected)
                 selected_range.append('82s')
+    else:
+        open_solutionSuit('82s')
 
 #suited handlers 7
 
@@ -19188,6 +19420,8 @@ def press76s(par):
             else:
                 button76s.config(bg = color_suited_selected)
                 selected_range.append('76s')
+    else:
+        open_solutionSuit('76s')
 
 def press75s(par):
     global solved
@@ -19207,6 +19441,8 @@ def press75s(par):
             else:
                 button75s.config(bg = color_suited_selected)
                 selected_range.append('75s')
+    else:
+        open_solutionSuit('75s')
 
 def press74s(par):
     global solved
@@ -19226,6 +19462,8 @@ def press74s(par):
             else:
                 button74s.config(bg = color_suited_selected)
                 selected_range.append('74s')
+    else:
+        open_solutionSuit('74s')
 
 def press73s(par):
     global solved
@@ -19245,6 +19483,8 @@ def press73s(par):
             else:
                 button73s.config(bg = color_suited_selected)
                 selected_range.append('73s')
+    else:
+        open_solutionSuit('73s')
 
 def press72s(par):
     global solved
@@ -19264,6 +19504,8 @@ def press72s(par):
             else:
                 button72s.config(bg = color_suited_selected)
                 selected_range.append('72s')
+    else:
+        open_solutionSuit('72s')
 
 #suited handlers 6
 
@@ -19285,6 +19527,8 @@ def press65s(par):
             else:
                 button65s.config(bg = color_suited_selected)
                 selected_range.append('65s')
+    else:
+        open_solutionSuit('65s')
 
 def press64s(par):
     global solved
@@ -19304,6 +19548,8 @@ def press64s(par):
             else:
                 button64s.config(bg = color_suited_selected)
                 selected_range.append('64s')
+    else:
+        open_solutionSuit('64s')
 
 def press63s(par):
     global solved
@@ -19323,6 +19569,8 @@ def press63s(par):
             else:
                 button63s.config(bg = color_suited_selected)
                 selected_range.append('63s')
+    else:
+        open_solutionSuit('63s')
 
 def press62s(par):
     global solved
@@ -19342,6 +19590,8 @@ def press62s(par):
             else:
                 button62s.config(bg = color_suited_selected)
                 selected_range.append('62s')
+    else:
+        open_solutionSuit('62s')
 
 #suited handlers 5
 
@@ -19363,6 +19613,8 @@ def press54s(par):
             else:
                 button54s.config(bg = color_suited_selected)
                 selected_range.append('54s')
+    else:
+        open_solutionSuit('54s')
 
 def press53s(par):
     global solved
@@ -19382,6 +19634,8 @@ def press53s(par):
             else:
                 button53s.config(bg = color_suited_selected)
                 selected_range.append('53s')
+    else:
+        open_solutionSuit('53s')
 
 def press52s(par):
     global solved
@@ -19401,6 +19655,8 @@ def press52s(par):
             else:
                 button52s.config(bg = color_suited_selected)
                 selected_range.append('52s')
+    else:
+        open_solutionSuit('52s')
 
 #suited handlers 4
 
@@ -19422,6 +19678,8 @@ def press43s(par):
             else:
                 button43s.config(bg = color_suited_selected)
                 selected_range.append('43s')
+    else:
+        open_solutionSuit('43s')
 
 def press42s(par):
     global solved
@@ -19441,6 +19699,8 @@ def press42s(par):
             else:
                 button42s.config(bg = color_suited_selected)
                 selected_range.append('42s')
+    else:
+        open_solutionSuit('42s')
 
 #suited handlers 3
 
@@ -19462,6 +19722,8 @@ def press32s(par):
             else:
                 button32s.config(bg = color_suited_selected)
                 selected_range.append('32s')
+    else:
+        open_solutionSuit('43s')
 
 #offsuited handlers
 
