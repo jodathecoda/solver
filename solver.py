@@ -139,6 +139,13 @@ def clear_players_ranges():
     c_check        = []      # g-h
     c_bet_call     = []      # g-1
 
+def format_beauty_cards(stringer):
+           stringer.replace("s", GREY + suit_spade + RESET)
+           stringer.replace("h", RED + suit_heart + RESET)
+           stringer.replace("d", BLUE + suit_spade + RESET)
+           stringer.replace("c", GREEN + suit_spade + RESET)
+           return stringer
+
 def sel():
    selection = "You selected the option " + str(var.get())
    #print(selection)
@@ -739,7 +746,12 @@ def open_solutionPP(ha):
     xcoord = 20
     ycoord = 20
     for i in range(len(range_pp)):
-        newButton = tk.Button(secondary_window, text=str(range_pp[i]))
+        text_formatted = format_beauty_cards(str(range_pp[i]))
+        #text_formatted = str(range_pp[i]).replace("s", suit_spade)
+        #text_formatted = str(range_pp[i]).replace("h", suit_heart)
+        #text_formatted = text_formatted.replace("d", suit_diamond)
+        #text_formatted = text_formatted.replace("c", suit_club)
+        newButton = tk.Button(secondary_window, text=str(range_pp[i]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club))
         newButton.place(x = xcoord, y = ycoord)
         ycoord += 30
 
@@ -17547,13 +17559,6 @@ def buttonSolve():
                 
                 fig.canvas.draw()
                 time.sleep(0.1)
-
-        def format__beauty_cards(stringer):
-           stringer.replace("s", GREY + suit_spade + RESET)
-           stringer.replace("h", RED + suit_heart + RESET)
-           stringer.replace("d", BLUE + suit_spade + RESET)
-           stringer.replace("c", GREEN + suit_spade + RESET)
-           return stringer
 
         fig.canvas.mpl_connect('motion_notify_event', on_mouse_move)
         fig.canvas.mpl_connect('button_press_event', onclick)
