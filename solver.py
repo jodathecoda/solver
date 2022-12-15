@@ -730,16 +730,40 @@ def press2c():
             button2c.config(bg=color_club_selected, fg=color_club)
 
 
-
-def open_secondary_window():
+def open_solutionPP(ha):
     # Create secondary (or popup) window.
     secondary_window = tk.Toplevel()
-    secondary_window.title("Secondary Window")
+    secondary_window.title(ha)
+    secondary_window.config(width=200, height=200)
+    range_pp = expander.expandPP(ha)
+    xcoord = 20
+    ycoord = 20
+    for i in range(len(range_pp)):
+        newButton = tk.Button(secondary_window, text=str(range_pp[i]))
+        newButton.place(x = xcoord, y = ycoord)
+        ycoord += 30
+
+        
+    '''
+    # Create a button to close (destroy) this window.
+    button_close = tk.Button(
+        secondary_window,
+        text=ha,
+        command=secondary_window.destroy
+    )
+    button_close.place(x=20, y=20)
+    '''
+
+
+def open_secondary_window(ha):
+    # Create secondary (or popup) window.
+    secondary_window = tk.Toplevel()
+    secondary_window.title(ha)
     secondary_window.config(width=200, height=200)
     # Create a button to close (destroy) this window.
     button_close = tk.Button(
         secondary_window,
-        text="Close window",
+        text=ha,
         command=secondary_window.destroy
     )
     button_close.place(x=20, y=20)
@@ -1417,9 +1441,7 @@ def buttonSolve():
     temporary_range_pp = []
     #open_secondary_window()
 
-    #Suited
-    #print("selected range: ")
-    #print(selected_range)
+
     
     for hand in selected_range:
         if 's' in hand:
@@ -17568,6 +17590,8 @@ def pressAA(par):
             else:
                 selected_range.append('AA')
                 buttonAA.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('AA')
 
 def pressKK(par):
     global solved
