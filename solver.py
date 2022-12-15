@@ -68,6 +68,9 @@ global c_bet_call
 global solved
 solved = 0
 
+global board_string
+board_string = ""
+
 #Player OP ranges var = 1   A:                       priority:
 a_bet_fold     = []       # 0-a; d-e     lightblue       2
 a_check_fold   = []       # a-b          blue            1
@@ -751,6 +754,9 @@ def open_solutionPP(ha):
     global c_bet_fold
     global c_check
     global c_bet_call
+
+    board_string
+
     # Create secondary (or popup) window.
     secondary_window = tk.Toplevel()
     secondary_window.title(ha)
@@ -758,13 +764,6 @@ def open_solutionPP(ha):
     range_pp = expander.expandPP(ha)
     xcoord = 20
     ycoord = 20
-    print("--------------------")
-    print(str(len(a_bet_fold)))
-    print(str(len(a_check_fold)))
-    print(str(len(a_check_raise)))
-    print(str(len(a_check_call)))
-    print(str(len(a_bet_call)))
-    print("--------------------")
     for i in range(len(range_pp)):
         color_but1 = 'white'
         color_but2 = 'white'
@@ -793,23 +792,31 @@ def open_solutionPP(ha):
         else:
             pass
         #color3
-        if str(range_pp[i]) in a_bet_fold:
-            label3 = 'a_bet_fold'
-            color3 = 'lightblue'
-        elif str(range_pp[i]) in a_check_fold:
-            label3 = 'a_check_fold'
-            color3 = 'blue'
-        elif str(range_pp[i]) in a_check_raise:
-            label3 = 'a_check_raise'
-            color3 = 'red'
-        elif str(range_pp[i]) in a_check_call:
-            label3 = 'a_check_call'
-            color3 = 'green'
-        elif str(range_pp[i]) in a_bet_call:
-            label3 = 'a_bet_call'
-            color3 = 'orange'
-        else:
-            pass
+        for hande in a_bet_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET=FOLD'
+                color3 = 'lightblue'
+        for hande in a_check_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK-FOLD'
+                color3 = 'blue'
+        for hande in a_check_raise:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK-RAISE'
+                color3 = 'red'
+        for hande in a_check_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK-CALL'
+                color3 = 'green'
+        for hande in a_bet_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET-CALL'
+                color3 = 'orange'
+        if str(range_pp[i][:2]) in board_string or str(range_pp[i][2:]) in board_string:
+            label3 = 'DEAD HAND'
+            color3 = 'grey'
+        #print(board_string)
+
 
         #make two buttons out of string next to each other and colur them!!!
         newButton1 = tk.Button(secondary_window, text=str(range_pp[i][:2]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but1)
@@ -1501,6 +1508,8 @@ def buttonSolve():
     global c_bet_fold
     global c_check
     global c_bet_call
+
+    global board_string
 
     global solved
     solved = 1
@@ -17682,6 +17691,8 @@ def pressKK(par):
             else:
                 selected_range.append('KK')
                 buttonKK.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('KK')
 
 def pressQQ(par):
     global solved
@@ -17702,6 +17713,8 @@ def pressQQ(par):
             else:
                 selected_range.append('QQ')
                 buttonQQ.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('QQ')
 
 def pressJJ(par):
     global solved
@@ -17722,6 +17735,8 @@ def pressJJ(par):
             else:
                 selected_range.append('JJ')
                 buttonJJ.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('JJ')
 
 def pressTT(par):
     global solved
@@ -17742,6 +17757,8 @@ def pressTT(par):
             else:
                 selected_range.append('TT')
                 buttonTT.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('TT')
 
 def press99(par):
     global solved
@@ -17761,6 +17778,8 @@ def press99(par):
             else:
                 selected_range.append('99')
                 button99.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('99')
 
 def press88(par):
     global solved
@@ -17780,6 +17799,8 @@ def press88(par):
             else:
                 selected_range.append('88')
                 button88.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('88')
 
 def press77(par):
     global solved
@@ -17799,6 +17820,8 @@ def press77(par):
             else:
                 selected_range.append('77')
                 button77.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('77')
 
 def press66(par):
     global solved
@@ -17818,6 +17841,8 @@ def press66(par):
             else:
                 selected_range.append('66')
                 button66.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('66')
 
 def press55(par):
     global solved
@@ -17837,6 +17862,8 @@ def press55(par):
             else:
                 selected_range.append('55')
                 button55.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('55')
 
 def press44(par):
     global solved
@@ -17856,6 +17883,8 @@ def press44(par):
             else:
                 selected_range.append('44')
                 button44.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('44')
 
 def press33(par):
     global solved
@@ -17875,6 +17904,8 @@ def press33(par):
             else:
                 selected_range.append('33')
                 button33.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('33')
 
 def press22(par):
     global solved
@@ -17894,6 +17925,8 @@ def press22(par):
             else:
                 selected_range.append('22')
                 button22.config(bg = color_pp_selected)
+    else:
+        open_solutionPP('22')
 
 #suited handlers A
 def pressAKs(par):
