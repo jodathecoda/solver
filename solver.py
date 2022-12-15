@@ -760,7 +760,7 @@ def open_solutionPP(ha):
     # Create secondary (or popup) window.
     secondary_window = tk.Toplevel()
     secondary_window.title(ha)
-    secondary_window.config(width=200, height=200)
+    secondary_window.config(width=150, height=200)
     range_pp = expander.expandPP(ha)
     xcoord = 20
     ycoord = 20
@@ -843,7 +843,7 @@ def open_solutionPP(ha):
 
         #D -ead Man's Hand        
         if str(range_pp[i][:2]) in board_string or str(range_pp[i][2:]) in board_string:
-            label3 = 'DEAD HAND'
+            label3 = 'DEAD'
             color3 = 'grey'
         #print(board_string)
 
@@ -877,7 +877,7 @@ def open_solutionSuit(ha):
     # Create secondary (or popup) window.
     secondary_window = tk.Toplevel()
     secondary_window.title(ha)
-    secondary_window.config(width=200, height=150)
+    secondary_window.config(width=150, height=150)
     range_pp = expander.expandSuit(ha)
     xcoord = 20
     ycoord = 20
@@ -960,7 +960,7 @@ def open_solutionSuit(ha):
 
         #D -ead Man's Hand        
         if str(range_pp[i][:2]) in board_string or str(range_pp[i][2:]) in board_string:
-            label3 = 'DEAD HAND'
+            label3 = 'DEAD'
             color3 = 'grey'
         #print(board_string)
 
@@ -994,7 +994,7 @@ def open_solutionOffsuit(ha):
     # Create secondary (or popup) window.
     secondary_window = tk.Toplevel()
     secondary_window.title(ha)
-    secondary_window.config(width=200, height=400)
+    secondary_window.config(width=150, height=400)
     range_pp = expander.expandOffsuit(ha)
     xcoord = 20
     ycoord = 20
@@ -1077,7 +1077,7 @@ def open_solutionOffsuit(ha):
 
         #D -ead Man's Hand        
         if str(range_pp[i][:2]) in board_string or str(range_pp[i][2:]) in board_string:
-            label3 = 'DEAD HAND'
+            label3 = 'DEAD'
             color3 = 'grey'
         #print(board_string)
 
@@ -1965,25 +1965,25 @@ def buttonSolve():
             for hand in expander.expandPP('AA'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                             print("hand: " + hand + " prio: " + str(prio))
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                             print("hand: " + hand + " prio: " + str(prio))
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                             print("hand: " + hand + " prio: " + str(prio))
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                             print("hand: " + hand + " prio: " + str(prio))
@@ -2010,17 +2010,17 @@ def buttonSolve():
             for hand in expander.expandPP('AA'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2036,17 +2036,17 @@ def buttonSolve():
             for hand in expander.expandPP('AA'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2064,27 +2064,27 @@ def buttonSolve():
             for hand in expander.expandSuit('AKs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -2104,17 +2104,17 @@ def buttonSolve():
             for hand in expander.expandSuit('AKs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2130,17 +2130,17 @@ def buttonSolve():
             for hand in expander.expandSuit('AKs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2159,27 +2159,27 @@ def buttonSolve():
             for hand in expander.expandSuit('AQs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -2199,17 +2199,17 @@ def buttonSolve():
             for hand in expander.expandSuit('AQs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2225,17 +2225,17 @@ def buttonSolve():
             for hand in expander.expandSuit('AQs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2253,27 +2253,27 @@ def buttonSolve():
             for hand in expander.expandSuit('AJs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -2293,17 +2293,17 @@ def buttonSolve():
             for hand in expander.expandSuit('AJs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2319,17 +2319,17 @@ def buttonSolve():
             for hand in expander.expandSuit('AJs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2347,27 +2347,27 @@ def buttonSolve():
             for hand in expander.expandSuit('ATs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -2387,17 +2387,17 @@ def buttonSolve():
             for hand in expander.expandSuit('ATs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2413,17 +2413,17 @@ def buttonSolve():
             for hand in expander.expandSuit('ATs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2441,27 +2441,27 @@ def buttonSolve():
             for hand in expander.expandSuit('A9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -2481,17 +2481,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2507,17 +2507,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2535,27 +2535,27 @@ def buttonSolve():
             for hand in expander.expandSuit('A8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -2575,17 +2575,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2601,17 +2601,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2629,27 +2629,27 @@ def buttonSolve():
             for hand in expander.expandSuit('A7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -2669,17 +2669,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2695,17 +2695,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2723,27 +2723,27 @@ def buttonSolve():
             for hand in expander.expandSuit('A6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -2763,17 +2763,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2789,17 +2789,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2817,27 +2817,27 @@ def buttonSolve():
             for hand in expander.expandSuit('A5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -2857,17 +2857,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2883,17 +2883,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2911,27 +2911,27 @@ def buttonSolve():
             for hand in expander.expandSuit('A4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -2951,17 +2951,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -2977,17 +2977,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3005,27 +3005,27 @@ def buttonSolve():
             for hand in expander.expandSuit('A3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -3045,17 +3045,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3071,17 +3071,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3099,27 +3099,27 @@ def buttonSolve():
             for hand in expander.expandSuit('A2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -3139,17 +3139,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3165,17 +3165,17 @@ def buttonSolve():
             for hand in expander.expandSuit('A2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3194,27 +3194,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('AKo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -3234,17 +3234,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('AKo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3260,17 +3260,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('AKo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3288,27 +3288,27 @@ def buttonSolve():
             for hand in expander.expandPP('KK'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -3328,17 +3328,17 @@ def buttonSolve():
             for hand in expander.expandPP('KK'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3354,17 +3354,17 @@ def buttonSolve():
             for hand in expander.expandPP('KK'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3382,27 +3382,27 @@ def buttonSolve():
             for hand in expander.expandSuit('KQs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -3422,17 +3422,17 @@ def buttonSolve():
             for hand in expander.expandSuit('KQs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3448,17 +3448,17 @@ def buttonSolve():
             for hand in expander.expandSuit('KQs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3476,27 +3476,27 @@ def buttonSolve():
             for hand in expander.expandSuit('KJs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -3516,17 +3516,17 @@ def buttonSolve():
             for hand in expander.expandSuit('KJs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3542,17 +3542,17 @@ def buttonSolve():
             for hand in expander.expandSuit('KJs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3570,27 +3570,27 @@ def buttonSolve():
             for hand in expander.expandSuit('KTs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -3610,17 +3610,17 @@ def buttonSolve():
             for hand in expander.expandSuit('KTs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3636,17 +3636,17 @@ def buttonSolve():
             for hand in expander.expandSuit('KTs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3664,27 +3664,27 @@ def buttonSolve():
             for hand in expander.expandSuit('K9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -3704,17 +3704,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3730,17 +3730,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3758,27 +3758,27 @@ def buttonSolve():
             for hand in expander.expandSuit('K8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -3798,17 +3798,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3824,17 +3824,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3852,27 +3852,27 @@ def buttonSolve():
             for hand in expander.expandSuit('K7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -3892,17 +3892,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3918,17 +3918,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -3946,27 +3946,27 @@ def buttonSolve():
             for hand in expander.expandSuit('K6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -3986,17 +3986,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4012,17 +4012,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4040,27 +4040,27 @@ def buttonSolve():
             for hand in expander.expandSuit('K5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -4080,17 +4080,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4106,17 +4106,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4134,27 +4134,27 @@ def buttonSolve():
             for hand in expander.expandSuit('K4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -4174,17 +4174,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4200,17 +4200,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4228,27 +4228,27 @@ def buttonSolve():
             for hand in expander.expandSuit('K3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -4268,17 +4268,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4294,17 +4294,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4322,27 +4322,27 @@ def buttonSolve():
             for hand in expander.expandSuit('K2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -4362,17 +4362,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4388,17 +4388,17 @@ def buttonSolve():
             for hand in expander.expandSuit('K2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4417,27 +4417,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('AQo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -4457,17 +4457,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('AQo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4483,17 +4483,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('AQo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4511,27 +4511,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('KQo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -4551,17 +4551,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('KQo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4577,17 +4577,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('KQo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4605,27 +4605,27 @@ def buttonSolve():
             for hand in expander.expandPP('QQ'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -4645,17 +4645,17 @@ def buttonSolve():
             for hand in expander.expandPP('QQ'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4671,17 +4671,17 @@ def buttonSolve():
             for hand in expander.expandPP('QQ'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4699,27 +4699,27 @@ def buttonSolve():
             for hand in expander.expandSuit('QJs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -4739,17 +4739,17 @@ def buttonSolve():
             for hand in expander.expandSuit('QJs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4765,17 +4765,17 @@ def buttonSolve():
             for hand in expander.expandSuit('QJs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4793,27 +4793,27 @@ def buttonSolve():
             for hand in expander.expandSuit('QTs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -4833,17 +4833,17 @@ def buttonSolve():
             for hand in expander.expandSuit('QTs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4859,17 +4859,17 @@ def buttonSolve():
             for hand in expander.expandSuit('QTs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4887,27 +4887,27 @@ def buttonSolve():
             for hand in expander.expandSuit('Q9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -4927,17 +4927,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4953,17 +4953,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -4981,27 +4981,27 @@ def buttonSolve():
             for hand in expander.expandSuit('Q8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -5021,17 +5021,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5047,17 +5047,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5075,27 +5075,27 @@ def buttonSolve():
             for hand in expander.expandSuit('Q7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -5115,17 +5115,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5141,17 +5141,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5169,27 +5169,27 @@ def buttonSolve():
             for hand in expander.expandSuit('Q6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -5209,17 +5209,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5235,17 +5235,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5263,27 +5263,27 @@ def buttonSolve():
             for hand in expander.expandSuit('Q5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -5303,17 +5303,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5329,17 +5329,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5357,27 +5357,27 @@ def buttonSolve():
             for hand in expander.expandSuit('Q4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -5397,17 +5397,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5423,17 +5423,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5451,27 +5451,27 @@ def buttonSolve():
             for hand in expander.expandSuit('Q3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -5491,17 +5491,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5517,17 +5517,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5545,27 +5545,27 @@ def buttonSolve():
             for hand in expander.expandSuit('Q2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -5585,17 +5585,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5611,17 +5611,17 @@ def buttonSolve():
             for hand in expander.expandSuit('Q2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5640,27 +5640,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('AJo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -5680,17 +5680,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('AJo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5706,17 +5706,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('AJo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5734,27 +5734,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('KJo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -5774,17 +5774,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('KJo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5800,17 +5800,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('KJo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5828,27 +5828,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('QJo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -5868,17 +5868,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('QJo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5894,17 +5894,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('QJo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5922,27 +5922,27 @@ def buttonSolve():
             for hand in expander.expandPP('JJ'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -5962,17 +5962,17 @@ def buttonSolve():
             for hand in expander.expandPP('JJ'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -5988,17 +5988,17 @@ def buttonSolve():
             for hand in expander.expandPP('JJ'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6016,27 +6016,27 @@ def buttonSolve():
             for hand in expander.expandSuit('JTs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -6056,17 +6056,17 @@ def buttonSolve():
             for hand in expander.expandSuit('JTs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6082,17 +6082,17 @@ def buttonSolve():
             for hand in expander.expandSuit('JTs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6110,27 +6110,27 @@ def buttonSolve():
             for hand in expander.expandSuit('J9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -6150,17 +6150,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6176,17 +6176,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6204,27 +6204,27 @@ def buttonSolve():
             for hand in expander.expandSuit('J8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -6244,17 +6244,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6270,17 +6270,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6298,27 +6298,27 @@ def buttonSolve():
             for hand in expander.expandSuit('J7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -6338,17 +6338,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6364,17 +6364,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6392,27 +6392,27 @@ def buttonSolve():
             for hand in expander.expandSuit('J6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -6432,17 +6432,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6458,17 +6458,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6486,27 +6486,27 @@ def buttonSolve():
             for hand in expander.expandSuit('J5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -6526,17 +6526,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6552,17 +6552,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6580,27 +6580,27 @@ def buttonSolve():
             for hand in expander.expandSuit('J4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -6620,17 +6620,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6646,17 +6646,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6674,27 +6674,27 @@ def buttonSolve():
             for hand in expander.expandSuit('J3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -6714,17 +6714,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6740,17 +6740,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6768,27 +6768,27 @@ def buttonSolve():
             for hand in expander.expandSuit('J2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -6808,17 +6808,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6834,17 +6834,17 @@ def buttonSolve():
             for hand in expander.expandSuit('J2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6863,27 +6863,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('ATo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -6903,17 +6903,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('ATo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6929,17 +6929,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('ATo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -6957,27 +6957,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('KTo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -6997,17 +6997,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('KTo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7023,17 +7023,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('KTo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7051,27 +7051,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('QTo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -7091,17 +7091,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('QTo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7117,17 +7117,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('QTo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7145,27 +7145,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('JTo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -7185,17 +7185,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('JTo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7211,17 +7211,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('JTo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7239,27 +7239,27 @@ def buttonSolve():
             for hand in expander.expandPP('TT'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -7279,17 +7279,17 @@ def buttonSolve():
             for hand in expander.expandPP('TT'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7305,17 +7305,17 @@ def buttonSolve():
             for hand in expander.expandPP('TT'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7333,27 +7333,27 @@ def buttonSolve():
             for hand in expander.expandSuit('T9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -7373,17 +7373,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7399,17 +7399,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7427,27 +7427,27 @@ def buttonSolve():
             for hand in expander.expandSuit('T8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -7467,17 +7467,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7493,17 +7493,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7521,27 +7521,27 @@ def buttonSolve():
             for hand in expander.expandSuit('T7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -7561,17 +7561,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7587,17 +7587,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7615,27 +7615,27 @@ def buttonSolve():
             for hand in expander.expandSuit('T6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -7655,17 +7655,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7681,17 +7681,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7709,27 +7709,27 @@ def buttonSolve():
             for hand in expander.expandSuit('T5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -7749,17 +7749,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7775,17 +7775,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7803,27 +7803,27 @@ def buttonSolve():
             for hand in expander.expandSuit('T4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -7843,17 +7843,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7869,17 +7869,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7897,27 +7897,27 @@ def buttonSolve():
             for hand in expander.expandSuit('T3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -7937,17 +7937,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7963,17 +7963,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -7991,27 +7991,27 @@ def buttonSolve():
             for hand in expander.expandSuit('T2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -8031,17 +8031,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8057,17 +8057,17 @@ def buttonSolve():
             for hand in expander.expandSuit('T2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8086,27 +8086,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A9o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -8126,17 +8126,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A9o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8152,17 +8152,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A9o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8180,27 +8180,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K9o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -8220,17 +8220,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K9o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8246,17 +8246,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K9o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8274,27 +8274,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q9o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -8314,17 +8314,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q9o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8340,17 +8340,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q9o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8368,27 +8368,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J9o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -8408,17 +8408,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J9o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8434,17 +8434,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J9o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8462,27 +8462,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T9o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -8502,17 +8502,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T9o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8528,17 +8528,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T9o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8556,27 +8556,27 @@ def buttonSolve():
             for hand in expander.expandPP('99'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -8596,17 +8596,17 @@ def buttonSolve():
             for hand in expander.expandPP('99'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8622,17 +8622,17 @@ def buttonSolve():
             for hand in expander.expandPP('99'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8650,27 +8650,27 @@ def buttonSolve():
             for hand in expander.expandSuit('98s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -8690,17 +8690,17 @@ def buttonSolve():
             for hand in expander.expandSuit('98s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8716,17 +8716,17 @@ def buttonSolve():
             for hand in expander.expandSuit('98s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8744,27 +8744,27 @@ def buttonSolve():
             for hand in expander.expandSuit('97s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -8784,17 +8784,17 @@ def buttonSolve():
             for hand in expander.expandSuit('97s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8810,17 +8810,17 @@ def buttonSolve():
             for hand in expander.expandSuit('97s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8838,27 +8838,27 @@ def buttonSolve():
             for hand in expander.expandSuit('96s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -8878,17 +8878,17 @@ def buttonSolve():
             for hand in expander.expandSuit('96s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8904,17 +8904,17 @@ def buttonSolve():
             for hand in expander.expandSuit('96s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8932,27 +8932,27 @@ def buttonSolve():
             for hand in expander.expandSuit('95s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -8972,17 +8972,17 @@ def buttonSolve():
             for hand in expander.expandSuit('95s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -8998,17 +8998,17 @@ def buttonSolve():
             for hand in expander.expandSuit('95s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9026,27 +9026,27 @@ def buttonSolve():
             for hand in expander.expandSuit('94s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -9066,17 +9066,17 @@ def buttonSolve():
             for hand in expander.expandSuit('94s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9092,17 +9092,17 @@ def buttonSolve():
             for hand in expander.expandSuit('94s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9120,27 +9120,27 @@ def buttonSolve():
             for hand in expander.expandSuit('93s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -9160,17 +9160,17 @@ def buttonSolve():
             for hand in expander.expandSuit('93s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9186,17 +9186,17 @@ def buttonSolve():
             for hand in expander.expandSuit('93s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9214,27 +9214,27 @@ def buttonSolve():
             for hand in expander.expandSuit('92s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -9254,17 +9254,17 @@ def buttonSolve():
             for hand in expander.expandSuit('92s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9280,17 +9280,17 @@ def buttonSolve():
             for hand in expander.expandSuit('92s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9309,27 +9309,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A8o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -9349,17 +9349,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A8o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9375,17 +9375,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A8o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9403,27 +9403,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K8o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -9443,17 +9443,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K8o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9469,17 +9469,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K8o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9497,27 +9497,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q8o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -9537,17 +9537,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q8o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9563,17 +9563,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q8o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9591,27 +9591,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J8o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -9631,17 +9631,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J8o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9657,17 +9657,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J8o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9685,27 +9685,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T8o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -9725,17 +9725,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T8o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9751,17 +9751,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T8o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9779,27 +9779,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('98o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -9819,17 +9819,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('98o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9845,17 +9845,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('98o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9873,27 +9873,27 @@ def buttonSolve():
             for hand in expander.expandPP('88'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -9913,17 +9913,17 @@ def buttonSolve():
             for hand in expander.expandPP('88'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9939,17 +9939,17 @@ def buttonSolve():
             for hand in expander.expandPP('88'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -9967,27 +9967,27 @@ def buttonSolve():
             for hand in expander.expandSuit('87s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -10007,17 +10007,17 @@ def buttonSolve():
             for hand in expander.expandSuit('87s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10033,17 +10033,17 @@ def buttonSolve():
             for hand in expander.expandSuit('87s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10061,27 +10061,27 @@ def buttonSolve():
             for hand in expander.expandSuit('86s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -10101,17 +10101,17 @@ def buttonSolve():
             for hand in expander.expandSuit('86s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10127,17 +10127,17 @@ def buttonSolve():
             for hand in expander.expandSuit('86s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10155,27 +10155,27 @@ def buttonSolve():
             for hand in expander.expandSuit('85s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -10195,17 +10195,17 @@ def buttonSolve():
             for hand in expander.expandSuit('85s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10221,17 +10221,17 @@ def buttonSolve():
             for hand in expander.expandSuit('85s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10249,27 +10249,27 @@ def buttonSolve():
             for hand in expander.expandSuit('84s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -10289,17 +10289,17 @@ def buttonSolve():
             for hand in expander.expandSuit('84s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10315,17 +10315,17 @@ def buttonSolve():
             for hand in expander.expandSuit('84s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10343,27 +10343,27 @@ def buttonSolve():
             for hand in expander.expandSuit('83s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -10383,17 +10383,17 @@ def buttonSolve():
             for hand in expander.expandSuit('83s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10409,17 +10409,17 @@ def buttonSolve():
             for hand in expander.expandSuit('83s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10437,27 +10437,27 @@ def buttonSolve():
             for hand in expander.expandSuit('82s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -10477,17 +10477,17 @@ def buttonSolve():
             for hand in expander.expandSuit('82s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10503,17 +10503,17 @@ def buttonSolve():
             for hand in expander.expandSuit('82s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10532,27 +10532,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A7o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -10572,17 +10572,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A7o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10598,17 +10598,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A7o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10626,27 +10626,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K7o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -10666,17 +10666,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K7o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10692,17 +10692,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K7o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10720,27 +10720,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q7o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -10760,17 +10760,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q7o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10786,17 +10786,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q7o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10814,27 +10814,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J7o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -10854,17 +10854,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J7o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10880,17 +10880,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J7o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10908,27 +10908,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T7o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -10948,17 +10948,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T7o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -10974,17 +10974,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T7o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11002,27 +11002,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('97o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -11042,17 +11042,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('97o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11068,17 +11068,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('97o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11096,27 +11096,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('87o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -11136,17 +11136,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('87o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11162,17 +11162,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('87o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11190,27 +11190,27 @@ def buttonSolve():
             for hand in expander.expandPP('77'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -11230,17 +11230,17 @@ def buttonSolve():
             for hand in expander.expandPP('77'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11256,17 +11256,17 @@ def buttonSolve():
             for hand in expander.expandPP('77'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11284,27 +11284,27 @@ def buttonSolve():
             for hand in expander.expandSuit('76s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -11324,17 +11324,17 @@ def buttonSolve():
             for hand in expander.expandSuit('76s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11350,17 +11350,17 @@ def buttonSolve():
             for hand in expander.expandSuit('76s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11378,27 +11378,27 @@ def buttonSolve():
             for hand in expander.expandSuit('75s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -11418,17 +11418,17 @@ def buttonSolve():
             for hand in expander.expandSuit('75s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11444,17 +11444,17 @@ def buttonSolve():
             for hand in expander.expandSuit('75s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11472,27 +11472,27 @@ def buttonSolve():
             for hand in expander.expandSuit('74s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -11512,17 +11512,17 @@ def buttonSolve():
             for hand in expander.expandSuit('74s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11538,17 +11538,17 @@ def buttonSolve():
             for hand in expander.expandSuit('74s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11566,27 +11566,27 @@ def buttonSolve():
             for hand in expander.expandSuit('73s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -11606,17 +11606,17 @@ def buttonSolve():
             for hand in expander.expandSuit('73s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11632,17 +11632,17 @@ def buttonSolve():
             for hand in expander.expandSuit('73s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11660,27 +11660,27 @@ def buttonSolve():
             for hand in expander.expandSuit('72s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -11700,17 +11700,17 @@ def buttonSolve():
             for hand in expander.expandSuit('72s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11726,17 +11726,17 @@ def buttonSolve():
             for hand in expander.expandSuit('72s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11755,27 +11755,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A6o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -11795,17 +11795,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A6o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11821,17 +11821,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A6o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11849,27 +11849,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K6o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -11889,17 +11889,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K6o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11915,17 +11915,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K6o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -11943,27 +11943,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q6o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -11983,17 +11983,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q6o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12009,17 +12009,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q6o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12037,27 +12037,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J6o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -12077,17 +12077,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J6o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12103,17 +12103,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J6o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12131,27 +12131,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T6o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -12171,17 +12171,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T6o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12197,17 +12197,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T6o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12225,27 +12225,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('96o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -12265,17 +12265,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('96o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12291,17 +12291,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('96o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12319,27 +12319,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('86o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -12359,17 +12359,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('86o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12385,17 +12385,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('86o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12413,27 +12413,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('76o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -12453,17 +12453,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('76o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12479,17 +12479,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('76o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12507,27 +12507,27 @@ def buttonSolve():
             for hand in expander.expandPP('66'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -12547,17 +12547,17 @@ def buttonSolve():
             for hand in expander.expandPP('66'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12573,17 +12573,17 @@ def buttonSolve():
             for hand in expander.expandPP('66'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12601,27 +12601,27 @@ def buttonSolve():
             for hand in expander.expandSuit('65s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -12641,17 +12641,17 @@ def buttonSolve():
             for hand in expander.expandSuit('65s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12667,17 +12667,17 @@ def buttonSolve():
             for hand in expander.expandSuit('65s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12695,27 +12695,27 @@ def buttonSolve():
             for hand in expander.expandSuit('64s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -12735,17 +12735,17 @@ def buttonSolve():
             for hand in expander.expandSuit('64s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12761,17 +12761,17 @@ def buttonSolve():
             for hand in expander.expandSuit('64s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12789,27 +12789,27 @@ def buttonSolve():
             for hand in expander.expandSuit('63s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -12829,17 +12829,17 @@ def buttonSolve():
             for hand in expander.expandSuit('63s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12855,17 +12855,17 @@ def buttonSolve():
             for hand in expander.expandSuit('63s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12883,27 +12883,27 @@ def buttonSolve():
             for hand in expander.expandSuit('62s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -12923,17 +12923,17 @@ def buttonSolve():
             for hand in expander.expandSuit('62s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12949,17 +12949,17 @@ def buttonSolve():
             for hand in expander.expandSuit('62s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -12978,27 +12978,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A5o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -13018,17 +13018,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A5o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13044,17 +13044,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A5o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13072,27 +13072,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K5o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -13112,17 +13112,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K5o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13138,17 +13138,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K5o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13166,27 +13166,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q5o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -13206,17 +13206,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q5o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13232,17 +13232,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q5o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13260,27 +13260,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J5o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -13300,17 +13300,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J5o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13326,17 +13326,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J5o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13354,27 +13354,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T5o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -13394,17 +13394,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T5o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13420,17 +13420,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T5o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13448,27 +13448,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('95o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -13488,17 +13488,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('95o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13514,17 +13514,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('95o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13542,27 +13542,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('85o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -13582,17 +13582,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('85o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13608,17 +13608,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('85o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13636,27 +13636,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('75o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -13676,17 +13676,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('75o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13702,17 +13702,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('75o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13730,27 +13730,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('65o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -13770,17 +13770,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('65o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13796,17 +13796,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('65o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13824,27 +13824,27 @@ def buttonSolve():
             for hand in expander.expandPP('55'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -13864,17 +13864,17 @@ def buttonSolve():
             for hand in expander.expandPP('55'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13890,17 +13890,17 @@ def buttonSolve():
             for hand in expander.expandPP('55'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13918,27 +13918,27 @@ def buttonSolve():
             for hand in expander.expandSuit('54s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -13958,17 +13958,17 @@ def buttonSolve():
             for hand in expander.expandSuit('54s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -13984,17 +13984,17 @@ def buttonSolve():
             for hand in expander.expandSuit('54s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14012,27 +14012,27 @@ def buttonSolve():
             for hand in expander.expandSuit('53s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -14052,17 +14052,17 @@ def buttonSolve():
             for hand in expander.expandSuit('53s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14078,17 +14078,17 @@ def buttonSolve():
             for hand in expander.expandSuit('53s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14106,27 +14106,27 @@ def buttonSolve():
             for hand in expander.expandSuit('52s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -14146,17 +14146,17 @@ def buttonSolve():
             for hand in expander.expandSuit('52s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14172,17 +14172,17 @@ def buttonSolve():
             for hand in expander.expandSuit('52s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14201,27 +14201,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A4o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -14241,17 +14241,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A4o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14267,17 +14267,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A4o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14295,27 +14295,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K4o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -14335,17 +14335,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K4o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14361,17 +14361,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K4o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14389,27 +14389,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q4o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -14429,17 +14429,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q4o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14455,17 +14455,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q4o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14483,27 +14483,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J4o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -14523,17 +14523,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J4o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14549,17 +14549,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J4o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14577,27 +14577,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T4o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -14617,17 +14617,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T4o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14643,17 +14643,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T4o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14671,27 +14671,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('94o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -14711,17 +14711,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('94o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14737,17 +14737,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('94o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14765,27 +14765,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('84o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -14805,17 +14805,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('84o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14831,17 +14831,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('84o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14859,27 +14859,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('74o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -14899,17 +14899,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('74o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14925,17 +14925,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('74o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -14953,27 +14953,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('64o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -14993,17 +14993,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('64o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15019,17 +15019,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('64o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15047,27 +15047,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('54o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -15087,17 +15087,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('54o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15113,17 +15113,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('54o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15141,27 +15141,27 @@ def buttonSolve():
             for hand in expander.expandPP('44'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -15181,17 +15181,17 @@ def buttonSolve():
             for hand in expander.expandPP('44'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15207,17 +15207,17 @@ def buttonSolve():
             for hand in expander.expandPP('44'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15235,27 +15235,27 @@ def buttonSolve():
             for hand in expander.expandSuit('43s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -15275,17 +15275,17 @@ def buttonSolve():
             for hand in expander.expandSuit('43s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15301,17 +15301,17 @@ def buttonSolve():
             for hand in expander.expandSuit('43s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15329,27 +15329,27 @@ def buttonSolve():
             for hand in expander.expandSuit('42s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -15369,17 +15369,17 @@ def buttonSolve():
             for hand in expander.expandSuit('42s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15395,17 +15395,17 @@ def buttonSolve():
             for hand in expander.expandSuit('42s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15424,27 +15424,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A3o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -15464,17 +15464,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A3o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15490,17 +15490,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A3o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15518,27 +15518,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K3o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -15558,17 +15558,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K3o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15584,17 +15584,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K3o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15612,27 +15612,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q3o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -15652,17 +15652,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q3o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15678,17 +15678,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q3o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15706,27 +15706,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J3o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -15746,17 +15746,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J3o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15772,17 +15772,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J3o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15800,27 +15800,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T3o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -15840,17 +15840,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T3o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15866,17 +15866,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T3o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15894,27 +15894,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('93o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -15934,17 +15934,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('93o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15960,17 +15960,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('93o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -15988,27 +15988,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('83o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -16028,17 +16028,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('83o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16054,17 +16054,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('83o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16082,27 +16082,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('73o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -16122,17 +16122,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('73o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16148,17 +16148,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('73o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16176,27 +16176,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('63o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -16216,17 +16216,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('63o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16242,17 +16242,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('63o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16270,27 +16270,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('53o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -16310,17 +16310,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('53o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16336,17 +16336,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('53o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16364,27 +16364,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('43o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -16404,17 +16404,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('43o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16430,17 +16430,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('43o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16458,27 +16458,27 @@ def buttonSolve():
             for hand in expander.expandPP('33'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -16498,17 +16498,17 @@ def buttonSolve():
             for hand in expander.expandPP('33'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16524,17 +16524,17 @@ def buttonSolve():
             for hand in expander.expandPP('33'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16552,27 +16552,27 @@ def buttonSolve():
             for hand in expander.expandSuit('32s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -16592,17 +16592,17 @@ def buttonSolve():
             for hand in expander.expandSuit('32s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16618,17 +16618,17 @@ def buttonSolve():
             for hand in expander.expandSuit('32s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16647,27 +16647,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A2o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -16687,17 +16687,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A2o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16713,17 +16713,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('A2o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16741,27 +16741,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K2o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -16781,17 +16781,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K2o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16807,17 +16807,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('K2o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16835,27 +16835,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q2o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -16875,17 +16875,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q2o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16901,17 +16901,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('Q2o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16929,27 +16929,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J2o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -16969,17 +16969,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J2o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -16995,17 +16995,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('J2o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17023,27 +17023,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T2o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -17063,17 +17063,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T2o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17089,17 +17089,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('T2o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17117,27 +17117,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('92o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -17157,17 +17157,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('92o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17183,17 +17183,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('92o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17211,27 +17211,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('82o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -17251,17 +17251,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('82o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17277,17 +17277,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('82o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17305,27 +17305,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('72o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -17345,17 +17345,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('72o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17371,17 +17371,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('72o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17399,27 +17399,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('62o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -17439,17 +17439,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('62o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17465,17 +17465,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('62o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17493,27 +17493,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('52o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -17533,17 +17533,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('52o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17559,17 +17559,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('52o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17587,27 +17587,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('42o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -17627,17 +17627,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('42o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17653,17 +17653,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('42o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17681,27 +17681,27 @@ def buttonSolve():
             for hand in expander.expandOffsuit('32o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -17721,17 +17721,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('32o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17747,17 +17747,17 @@ def buttonSolve():
             for hand in expander.expandOffsuit('32o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17775,27 +17775,27 @@ def buttonSolve():
             for hand in expander.expandPP('22'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        print("4")
+                        #print("4")
                         if prio < 4:
                             prio = 4
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        print("5")
+                        #print("5")
                         if prio < 5:
                             prio = 5
             if prio == 5:
@@ -17815,17 +17815,17 @@ def buttonSolve():
             for hand in expander.expandPP('22'):
                 for hh in b_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in b_call:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in b_raise:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
@@ -17841,17 +17841,17 @@ def buttonSolve():
             for hand in expander.expandPP('22'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
-                        print("1--------------" + hand)
+                        #print("1--------------" + hand)
                         if prio < 1:
                             prio = 1
                 for hh in c_check:
                     if hand == hh.pohand:
-                        print("2")
+                        #print("2")
                         if prio < 2:
                             prio = 2
                 for hh in c_bet_call:
                     if hand == hh.pohand:
-                        print("3")
+                        #print("3")
                         if prio < 3:
                             prio = 3
             if prio == 3:
