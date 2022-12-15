@@ -792,6 +792,7 @@ def open_solutionPP(ha):
         else:
             pass
         #color3
+        #A
         for hande in a_bet_fold:
             if str(range_pp[i]) in hande.pohand:
                 label3 = 'BET-FOLD'
@@ -812,6 +813,35 @@ def open_solutionPP(ha):
             if str(range_pp[i]) in hande.pohand:
                 label3 = 'BET-CALL'
                 color3 = 'orange'
+        #B
+        for hande in b_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'FOLD'
+                color3 = 'lightblue'
+        for hande in b_raise:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'RAISE'
+                color3 = 'red'
+        for hande in b_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CALL'
+                color3 = 'yellow'
+
+        #C
+        for hande in c_bet_fold:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET-FOLD'
+                color3 = 'lightblue'
+        for hande in c_check:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'CHECK'
+                color3 = 'green'
+        for hande in c_bet_call:
+            if str(range_pp[i]) in hande.pohand:
+                label3 = 'BET-CALL'
+                color3 = 'orange'
+
+        #D -ead Man's Hand        
         if str(range_pp[i][:2]) in board_string or str(range_pp[i][2:]) in board_string:
             label3 = 'DEAD HAND'
             color3 = 'grey'
@@ -1797,11 +1827,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonAA.config(bg = 'lightblue')
+                buttonAA.config(bg = 'orange')
             elif prio == 2:
                 buttonAA.config(bg = 'green')
             elif prio == 1:
-                buttonAA.config(bg = 'orange')
+                buttonAA.config(bg = 'lightblue')
             else:
                 pass
     buttonAKs.config(bg = '#BDBDB7')
@@ -1891,11 +1921,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonAKs.config(bg = 'lightblue')
+                buttonAKs.config(bg = 'orange')
             elif prio == 2:
                 buttonAKs.config(bg = 'green')
             elif prio == 1:
-                buttonAKs.config(bg = 'orange')
+                buttonAKs.config(bg = 'lightblue')
             else:
                 pass
 
@@ -1986,11 +2016,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonAQs.config(bg = 'lightblue')
+                buttonAQs.config(bg = 'orange')
             elif prio == 2:
                 buttonAQs.config(bg = 'green')
             elif prio == 1:
-                buttonAQs.config(bg = 'orange')
+                buttonAQs.config(bg = 'lightblue')
             else:
                 pass
     buttonAJs.config(bg = '#BDBDB7')
@@ -2080,11 +2110,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonAJs.config(bg = 'lightblue')
+                buttonAJs.config(bg = 'orange')
             elif prio == 2:
                 buttonAJs.config(bg = 'green')
             elif prio == 1:
-                buttonAJs.config(bg = 'orange')
+                buttonAJs.config(bg = 'lightblue')
             else:
                 pass
     buttonATs.config(bg = '#BDBDB7')
@@ -2174,11 +2204,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonATs.config(bg = 'lightblue')
+                buttonATs.config(bg = 'orange')
             elif prio == 2:
                 buttonATs.config(bg = 'green')
             elif prio == 1:
-                buttonATs.config(bg = 'orange')
+                buttonATs.config(bg = 'lightblue')
             else:
                 pass
     buttonA9s.config(bg = '#BDBDB7')
@@ -2268,11 +2298,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA9s.config(bg = 'lightblue')
+                buttonA9s.config(bg = 'orange')
             elif prio == 2:
                 buttonA9s.config(bg = 'green')
             elif prio == 1:
-                buttonA9s.config(bg = 'orange')
+                buttonA9s.config(bg = 'lightblue')
             else:
                 pass
     buttonA8s.config(bg = '#BDBDB7')
@@ -2362,11 +2392,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA8s.config(bg = 'lightblue')
+                buttonA8s.config(bg = 'orange')
             elif prio == 2:
                 buttonA8s.config(bg = 'green')
             elif prio == 1:
-                buttonA8s.config(bg = 'orange')
+                buttonA8s.config(bg = 'lightblue')
             else:
                 pass
     buttonA7s.config(bg = '#BDBDB7')
@@ -2456,11 +2486,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA7s.config(bg = 'lightblue')
+                buttonA7s.config(bg = 'orange')
             elif prio == 2:
                 buttonA7s.config(bg = 'green')
             elif prio == 1:
-                buttonA7s.config(bg = 'orange')
+                buttonA7s.config(bg = 'lightblue')
             else:
                 pass
     buttonA6s.config(bg = '#BDBDB7')
@@ -2550,11 +2580,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA6s.config(bg = 'lightblue')
+                buttonA6s.config(bg = 'orange')
             elif prio == 2:
                 buttonA6s.config(bg = 'green')
             elif prio == 1:
-                buttonA6s.config(bg = 'orange')
+                buttonA6s.config(bg = 'lightblue')
             else:
                 pass
     buttonA5s.config(bg = '#BDBDB7')
@@ -2644,11 +2674,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA5s.config(bg = 'lightblue')
+                buttonA5s.config(bg = 'orange')
             elif prio == 2:
                 buttonA5s.config(bg = 'green')
             elif prio == 1:
-                buttonA5s.config(bg = 'orange')
+                buttonA5s.config(bg = 'lightblue')
             else:
                 pass
     buttonA4s.config(bg = '#BDBDB7')
@@ -2738,11 +2768,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA4s.config(bg = 'lightblue')
+                buttonA4s.config(bg = 'orange')
             elif prio == 2:
                 buttonA4s.config(bg = 'green')
             elif prio == 1:
-                buttonA4s.config(bg = 'orange')
+                buttonA4s.config(bg = 'lightblue')
             else:
                 pass
     buttonA3s.config(bg = '#BDBDB7')
@@ -2832,11 +2862,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA3s.config(bg = 'lightblue')
+                buttonA3s.config(bg = 'orange')
             elif prio == 2:
                 buttonA3s.config(bg = 'green')
             elif prio == 1:
-                buttonA3s.config(bg = 'orange')
+                buttonA3s.config(bg = 'lightblue')
             else:
                 pass
     buttonA2s.config(bg = '#BDBDB7')
@@ -2926,11 +2956,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA2s.config(bg = 'lightblue')
+                buttonA2s.config(bg = 'orange')
             elif prio == 2:
                 buttonA2s.config(bg = 'green')
             elif prio == 1:
-                buttonA2s.config(bg = 'orange')
+                buttonA2s.config(bg = 'lightblue')
             else:
                 pass
     #row2
@@ -3021,11 +3051,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonAKo.config(bg = 'lightblue')
+                buttonAKo.config(bg = 'orange')
             elif prio == 2:
                 buttonAKo.config(bg = 'green')
             elif prio == 1:
-                buttonAKo.config(bg = 'orange')
+                buttonAKo.config(bg = 'lightblue')
             else:
                 pass
     buttonKK.config(bg = '#BDBDB7')
@@ -3115,11 +3145,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonKK.config(bg = 'lightblue')
+                buttonKK.config(bg = 'orange')
             elif prio == 2:
                 buttonKK.config(bg = 'green')
             elif prio == 1:
-                buttonKK.config(bg = 'orange')
+                buttonKK.config(bg = 'lightblue')
             else:
                 pass
     buttonKQs.config(bg = '#BDBDB7')
@@ -3209,11 +3239,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonKQs.config(bg = 'lightblue')
+                buttonKQs.config(bg = 'orange')
             elif prio == 2:
                 buttonKQs.config(bg = 'green')
             elif prio == 1:
-                buttonKQs.config(bg = 'orange')
+                buttonKQs.config(bg = 'lightblue')
             else:
                 pass
     buttonKJs.config(bg = '#BDBDB7')
@@ -3303,11 +3333,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonKJs.config(bg = 'lightblue')
+                buttonKJs.config(bg = 'orange')
             elif prio == 2:
                 buttonKJs.config(bg = 'green')
             elif prio == 1:
-                buttonKJs.config(bg = 'orange')
+                buttonKJs.config(bg = 'lightblue')
             else:
                 pass
     buttonKTs.config(bg = '#BDBDB7')
@@ -3397,11 +3427,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonKTs.config(bg = 'lightblue')
+                buttonKTs.config(bg = 'orange')
             elif prio == 2:
                 buttonKTs.config(bg = 'green')
             elif prio == 1:
-                buttonKTs.config(bg = 'orange')
+                buttonKTs.config(bg = 'lightblue')
             else:
                 pass
     buttonK9s.config(bg = '#BDBDB7')
@@ -3491,11 +3521,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK9s.config(bg = 'lightblue')
+                buttonK9s.config(bg = 'orange')
             elif prio == 2:
                 buttonK9s.config(bg = 'green')
             elif prio == 1:
-                buttonK9s.config(bg = 'orange')
+                buttonK9s.config(bg = 'lightblue')
             else:
                 pass
     buttonK8s.config(bg = '#BDBDB7')
@@ -3585,11 +3615,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK8s.config(bg = 'lightblue')
+                buttonK8s.config(bg = 'orange')
             elif prio == 2:
                 buttonK8s.config(bg = 'green')
             elif prio == 1:
-                buttonK8s.config(bg = 'orange')
+                buttonK8s.config(bg = 'lightblue')
             else:
                 pass
     buttonK7s.config(bg = '#BDBDB7')
@@ -3679,11 +3709,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK7s.config(bg = 'lightblue')
+                buttonK7s.config(bg = 'orange')
             elif prio == 2:
                 buttonK7s.config(bg = 'green')
             elif prio == 1:
-                buttonK7s.config(bg = 'orange')
+                buttonK7s.config(bg = 'lightblue')
             else:
                 pass
     buttonK6s.config(bg = '#BDBDB7')
@@ -3773,11 +3803,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK6s.config(bg = 'lightblue')
+                buttonK6s.config(bg = 'orange')
             elif prio == 2:
                 buttonK6s.config(bg = 'green')
             elif prio == 1:
-                buttonK6s.config(bg = 'orange')
+                buttonK6s.config(bg = 'lightblue')
             else:
                 pass
     buttonK5s.config(bg = '#BDBDB7')
@@ -3867,11 +3897,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK5s.config(bg = 'lightblue')
+                buttonK5s.config(bg = 'orange')
             elif prio == 2:
                 buttonK5s.config(bg = 'green')
             elif prio == 1:
-                buttonK5s.config(bg = 'orange')
+                buttonK5s.config(bg = 'lightblue')
             else:
                 pass
     buttonK4s.config(bg = '#BDBDB7')
@@ -3961,11 +3991,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK4s.config(bg = 'lightblue')
+                buttonK4s.config(bg = 'orange')
             elif prio == 2:
                 buttonK4s.config(bg = 'green')
             elif prio == 1:
-                buttonK4s.config(bg = 'orange')
+                buttonK4s.config(bg = 'lightblue')
             else:
                 pass
     buttonK3s.config(bg = '#BDBDB7')
@@ -4055,11 +4085,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK3s.config(bg = 'lightblue')
+                buttonK3s.config(bg = 'orange')
             elif prio == 2:
                 buttonK3s.config(bg = 'green')
             elif prio == 1:
-                buttonK3s.config(bg = 'orange')
+                buttonK3s.config(bg = 'lightblue')
             else:
                 pass
     buttonK2s.config(bg = '#BDBDB7')
@@ -4149,11 +4179,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK2s.config(bg = 'lightblue')
+                buttonK2s.config(bg = 'orange')
             elif prio == 2:
                 buttonK2s.config(bg = 'green')
             elif prio == 1:
-                buttonK2s.config(bg = 'orange')
+                buttonK2s.config(bg = 'lightblue')
             else:
                 pass
     #row3
@@ -4244,11 +4274,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonAQo.config(bg = 'lightblue')
+                buttonAQo.config(bg = 'orange')
             elif prio == 2:
                 buttonAQo.config(bg = 'green')
             elif prio == 1:
-                buttonAQo.config(bg = 'orange')
+                buttonAQo.config(bg = 'lightblue')
             else:
                 pass
     buttonKQo.config(bg = '#BDBDB7')
@@ -4338,11 +4368,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonKQo.config(bg = 'lightblue')
+                buttonKQo.config(bg = 'orange')
             elif prio == 2:
                 buttonKQo.config(bg = 'green')
             elif prio == 1:
-                buttonKQo.config(bg = 'orange')
+                buttonKQo.config(bg = 'lightblue')
             else:
                 pass
     buttonQQ.config(bg = '#BDBDB7')
@@ -4432,11 +4462,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQQ.config(bg = 'lightblue')
+                buttonQQ.config(bg = 'orange')
             elif prio == 2:
                 buttonQQ.config(bg = 'green')
             elif prio == 1:
-                buttonQQ.config(bg = 'orange')
+                buttonQQ.config(bg = 'lightblue')
             else:
                 pass
     buttonQJs.config(bg = '#BDBDB7')
@@ -4526,11 +4556,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQJs.config(bg = 'lightblue')
+                buttonQJs.config(bg = 'orange')
             elif prio == 2:
                 buttonQJs.config(bg = 'green')
             elif prio == 1:
-                buttonQJs.config(bg = 'orange')
+                buttonQJs.config(bg = 'lightblue')
             else:
                 pass
     buttonQTs.config(bg = '#BDBDB7')
@@ -4620,11 +4650,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQTs.config(bg = 'lightblue')
+                buttonQTs.config(bg = 'orange')
             elif prio == 2:
                 buttonQTs.config(bg = 'green')
             elif prio == 1:
-                buttonQTs.config(bg = 'orange')
+                buttonQTs.config(bg = 'lightblue')
             else:
                 pass
     buttonQ9s.config(bg = '#BDBDB7')
@@ -4714,11 +4744,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ9s.config(bg = 'lightblue')
+                buttonQ9s.config(bg = 'orange')
             elif prio == 2:
                 buttonQ9s.config(bg = 'green')
             elif prio == 1:
-                buttonQ9s.config(bg = 'orange')
+                buttonQ9s.config(bg = 'lightblue')
             else:
                 pass
     buttonQ8s.config(bg = '#BDBDB7')
@@ -4808,11 +4838,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ8s.config(bg = 'lightblue')
+                buttonQ8s.config(bg = 'orange')
             elif prio == 2:
                 buttonQ8s.config(bg = 'green')
             elif prio == 1:
-                buttonQ8s.config(bg = 'orange')
+                buttonQ8s.config(bg = 'lightblue')
             else:
                 pass
     buttonQ7s.config(bg = '#BDBDB7')
@@ -4902,11 +4932,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ7s.config(bg = 'lightblue')
+                buttonQ7s.config(bg = 'orange')
             elif prio == 2:
                 buttonQ7s.config(bg = 'green')
             elif prio == 1:
-                buttonQ7s.config(bg = 'orange')
+                buttonQ7s.config(bg = 'lightblue')
             else:
                 pass
     buttonQ6s.config(bg = '#BDBDB7')
@@ -4996,11 +5026,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ6s.config(bg = 'lightblue')
+                buttonQ6s.config(bg = 'orange')
             elif prio == 2:
                 buttonQ6s.config(bg = 'green')
             elif prio == 1:
-                buttonQ6s.config(bg = 'orange')
+                buttonQ6s.config(bg = 'lightblue')
             else:
                 pass
     buttonQ5s.config(bg = '#BDBDB7')
@@ -5090,11 +5120,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ5s.config(bg = 'lightblue')
+                buttonQ5s.config(bg = 'orange')
             elif prio == 2:
                 buttonQ5s.config(bg = 'green')
             elif prio == 1:
-                buttonQ5s.config(bg = 'orange')
+                buttonQ5s.config(bg = 'lightblue')
             else:
                 pass
     buttonQ4s.config(bg = '#BDBDB7')
@@ -5184,11 +5214,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ4s.config(bg = 'lightblue')
+                buttonQ4s.config(bg = 'orange')
             elif prio == 2:
                 buttonQ4s.config(bg = 'green')
             elif prio == 1:
-                buttonQ4s.config(bg = 'orange')
+                buttonQ4s.config(bg = 'lightblue')
             else:
                 pass
     buttonQ3s.config(bg = '#BDBDB7')
@@ -5278,11 +5308,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ3s.config(bg = 'lightblue')
+                buttonQ3s.config(bg = 'orange')
             elif prio == 2:
                 buttonQ3s.config(bg = 'green')
             elif prio == 1:
-                buttonQ3s.config(bg = 'orange')
+                buttonQ3s.config(bg = 'lightblue')
             else:
                 pass
     buttonQ2s.config(bg = '#BDBDB7')
@@ -5372,11 +5402,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ2s.config(bg = 'lightblue')
+                buttonQ2s.config(bg = 'orange')
             elif prio == 2:
                 buttonQ2s.config(bg = 'green')
             elif prio == 1:
-                buttonQ2s.config(bg = 'orange')
+                buttonQ2s.config(bg = 'lightblue')
             else:
                 pass
     #row4
@@ -5467,11 +5497,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonAJo.config(bg = 'lightblue')
+                buttonAJo.config(bg = 'orange')
             elif prio == 2:
                 buttonAJo.config(bg = 'green')
             elif prio == 1:
-                buttonAJo.config(bg = 'orange')
+                buttonAJo.config(bg = 'lightblue')
             else:
                 pass
     buttonKJo.config(bg = '#BDBDB7')
@@ -5561,11 +5591,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonKJo.config(bg = 'lightblue')
+                buttonKJo.config(bg = 'orange')
             elif prio == 2:
                 buttonKJo.config(bg = 'green')
             elif prio == 1:
-                buttonKJo.config(bg = 'orange')
+                buttonKJo.config(bg = 'lightblue')
             else:
                 pass
     buttonQJo.config(bg = '#BDBDB7')
@@ -5655,11 +5685,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQJo.config(bg = 'lightblue')
+                buttonQJo.config(bg = 'orange')
             elif prio == 2:
                 buttonQJo.config(bg = 'green')
             elif prio == 1:
-                buttonQJo.config(bg = 'orange')
+                buttonQJo.config(bg = 'lightblue')
             else:
                 pass
     buttonJJ.config(bg = '#BDBDB7')
@@ -5749,11 +5779,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJJ.config(bg = 'lightblue')
+                buttonJJ.config(bg = 'orange')
             elif prio == 2:
                 buttonJJ.config(bg = 'green')
             elif prio == 1:
-                buttonJJ.config(bg = 'orange')
+                buttonJJ.config(bg = 'lightblue')
             else:
                 pass
     buttonJTs.config(bg = '#BDBDB7')
@@ -5843,11 +5873,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJTs.config(bg = 'lightblue')
+                buttonJTs.config(bg = 'orange')
             elif prio == 2:
                 buttonJTs.config(bg = 'green')
             elif prio == 1:
-                buttonJTs.config(bg = 'orange')
+                buttonJTs.config(bg = 'lightblue')
             else:
                 pass
     buttonJ9s.config(bg = '#BDBDB7')
@@ -5937,11 +5967,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ9s.config(bg = 'lightblue')
+                buttonJ9s.config(bg = 'orange')
             elif prio == 2:
                 buttonJ9s.config(bg = 'green')
             elif prio == 1:
-                buttonJ9s.config(bg = 'orange')
+                buttonJ9s.config(bg = 'lightblue')
             else:
                 pass
     buttonJ8s.config(bg = '#BDBDB7')
@@ -6031,11 +6061,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ8s.config(bg = 'lightblue')
+                buttonJ8s.config(bg = 'orange')
             elif prio == 2:
                 buttonJ8s.config(bg = 'green')
             elif prio == 1:
-                buttonJ8s.config(bg = 'orange')
+                buttonJ8s.config(bg = 'lightblue')
             else:
                 pass
     buttonJ7s.config(bg = '#BDBDB7')
@@ -6125,11 +6155,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ7s.config(bg = 'lightblue')
+                buttonJ7s.config(bg = 'orange')
             elif prio == 2:
                 buttonJ7s.config(bg = 'green')
             elif prio == 1:
-                buttonJ7s.config(bg = 'orange')
+                buttonJ7s.config(bg = 'lightblue')
             else:
                 pass
     buttonJ6s.config(bg = '#BDBDB7')
@@ -6219,11 +6249,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ6s.config(bg = 'lightblue')
+                buttonJ6s.config(bg = 'orange')
             elif prio == 2:
                 buttonJ6s.config(bg = 'green')
             elif prio == 1:
-                buttonJ6s.config(bg = 'orange')
+                buttonJ6s.config(bg = 'lightblue')
             else:
                 pass
     buttonJ5s.config(bg = '#BDBDB7')
@@ -6313,11 +6343,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ5s.config(bg = 'lightblue')
+                buttonJ5s.config(bg = 'orange')
             elif prio == 2:
                 buttonJ5s.config(bg = 'green')
             elif prio == 1:
-                buttonJ5s.config(bg = 'orange')
+                buttonJ5s.config(bg = 'lightblue')
             else:
                 pass
     buttonJ4s.config(bg = '#BDBDB7')
@@ -6407,11 +6437,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ4s.config(bg = 'lightblue')
+                buttonJ4s.config(bg = 'orange')
             elif prio == 2:
                 buttonJ4s.config(bg = 'green')
             elif prio == 1:
-                buttonJ4s.config(bg = 'orange')
+                buttonJ4s.config(bg = 'lightblue')
             else:
                 pass
     buttonJ3s.config(bg = '#BDBDB7')
@@ -6501,11 +6531,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ3s.config(bg = 'lightblue')
+                buttonJ3s.config(bg = 'orange')
             elif prio == 2:
                 buttonJ3s.config(bg = 'green')
             elif prio == 1:
-                buttonJ3s.config(bg = 'orange')
+                buttonJ3s.config(bg = 'lightblue')
             else:
                 pass
     buttonJ2s.config(bg = '#BDBDB7')
@@ -6595,11 +6625,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ2s.config(bg = 'lightblue')
+                buttonJ2s.config(bg = 'orange')
             elif prio == 2:
                 buttonJ2s.config(bg = 'green')
             elif prio == 1:
-                buttonJ2s.config(bg = 'orange')
+                buttonJ2s.config(bg = 'lightblue')
             else:
                 pass
     #row5
@@ -6690,11 +6720,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonATo.config(bg = 'lightblue')
+                buttonATo.config(bg = 'orange')
             elif prio == 2:
                 buttonATo.config(bg = 'green')
             elif prio == 1:
-                buttonATo.config(bg = 'orange')
+                buttonATo.config(bg = 'lightblue')
             else:
                 pass
     buttonKTo.config(bg = '#BDBDB7')
@@ -6784,11 +6814,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonKTo.config(bg = 'lightblue')
+                buttonKTo.config(bg = 'orange')
             elif prio == 2:
                 buttonKTo.config(bg = 'green')
             elif prio == 1:
-                buttonKTo.config(bg = 'orange')
+                buttonKTo.config(bg = 'lightblue')
             else:
                 pass
     buttonQTo.config(bg = '#BDBDB7')
@@ -6878,11 +6908,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQTo.config(bg = 'lightblue')
+                buttonQTo.config(bg = 'orange')
             elif prio == 2:
                 buttonQTo.config(bg = 'green')
             elif prio == 1:
-                buttonQTo.config(bg = 'orange')
+                buttonQTo.config(bg = 'lightblue')
             else:
                 pass
     buttonJTo.config(bg = '#BDBDB7')
@@ -6972,11 +7002,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJTo.config(bg = 'lightblue')
+                buttonJTo.config(bg = 'orange')
             elif prio == 2:
                 buttonJTo.config(bg = 'green')
             elif prio == 1:
-                buttonJTo.config(bg = 'orange')
+                buttonJTo.config(bg = 'lightblue')
             else:
                 pass
     buttonTT.config(bg = '#BDBDB7')
@@ -7066,11 +7096,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonTT.config(bg = 'lightblue')
+                buttonTT.config(bg = 'orange')
             elif prio == 2:
                 buttonTT.config(bg = 'green')
             elif prio == 1:
-                buttonTT.config(bg = 'orange')
+                buttonTT.config(bg = 'lightblue')
             else:
                 pass
     buttonT9s.config(bg = '#BDBDB7')
@@ -7160,11 +7190,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT9s.config(bg = 'lightblue')
+                buttonT9s.config(bg = 'orange')
             elif prio == 2:
                 buttonT9s.config(bg = 'green')
             elif prio == 1:
-                buttonT9s.config(bg = 'orange')
+                buttonT9s.config(bg = 'lightblue')
             else:
                 pass
     buttonT8s.config(bg = '#BDBDB7')
@@ -7254,11 +7284,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT8s.config(bg = 'lightblue')
+                buttonT8s.config(bg = 'orange')
             elif prio == 2:
                 buttonT8s.config(bg = 'green')
             elif prio == 1:
-                buttonT8s.config(bg = 'orange')
+                buttonT8s.config(bg = 'lightblue')
             else:
                 pass
     buttonT7s.config(bg = '#BDBDB7')
@@ -7348,11 +7378,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT7s.config(bg = 'lightblue')
+                buttonT7s.config(bg = 'orange')
             elif prio == 2:
                 buttonT7s.config(bg = 'green')
             elif prio == 1:
-                buttonT7s.config(bg = 'orange')
+                buttonT7s.config(bg = 'lightblue')
             else:
                 pass
     buttonT6s.config(bg = '#BDBDB7')
@@ -7442,11 +7472,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT6s.config(bg = 'lightblue')
+                buttonT6s.config(bg = 'orange')
             elif prio == 2:
                 buttonT6s.config(bg = 'green')
             elif prio == 1:
-                buttonT6s.config(bg = 'orange')
+                buttonT6s.config(bg = 'lightblue')
             else:
                 pass
     buttonT5s.config(bg = '#BDBDB7')
@@ -7536,11 +7566,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT5s.config(bg = 'lightblue')
+                buttonT5s.config(bg = 'orange')
             elif prio == 2:
                 buttonT5s.config(bg = 'green')
             elif prio == 1:
-                buttonT5s.config(bg = 'orange')
+                buttonT5s.config(bg = 'lightblue')
             else:
                 pass
     buttonT4s.config(bg = '#BDBDB7')
@@ -7630,11 +7660,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT4s.config(bg = 'lightblue')
+                buttonT4s.config(bg = 'orange')
             elif prio == 2:
                 buttonT4s.config(bg = 'green')
             elif prio == 1:
-                buttonT4s.config(bg = 'orange')
+                buttonT4s.config(bg = 'lightblue')
             else:
                 pass
     buttonT3s.config(bg = '#BDBDB7')
@@ -7724,11 +7754,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT3s.config(bg = 'lightblue')
+                buttonT3s.config(bg = 'orange')
             elif prio == 2:
                 buttonT3s.config(bg = 'green')
             elif prio == 1:
-                buttonT3s.config(bg = 'orange')
+                buttonT3s.config(bg = 'lightblue')
             else:
                 pass
     buttonT2s.config(bg = '#BDBDB7')
@@ -7818,11 +7848,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT2s.config(bg = 'lightblue')
+                buttonT2s.config(bg = 'orange')
             elif prio == 2:
                 buttonT2s.config(bg = 'green')
             elif prio == 1:
-                buttonT2s.config(bg = 'orange')
+                buttonT2s.config(bg = 'lightblue')
             else:
                 pass
     #row6
@@ -7913,11 +7943,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA9o.config(bg = 'lightblue')
+                buttonA9o.config(bg = 'orange')
             elif prio == 2:
                 buttonA9o.config(bg = 'green')
             elif prio == 1:
-                buttonA9o.config(bg = 'orange')
+                buttonA9o.config(bg = 'lightblue')
             else:
                 pass
     buttonK9o.config(bg = '#BDBDB7')
@@ -8007,11 +8037,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK9o.config(bg = 'lightblue')
+                buttonK9o.config(bg = 'orange')
             elif prio == 2:
                 buttonK9o.config(bg = 'green')
             elif prio == 1:
-                buttonK9o.config(bg = 'orange')
+                buttonK9o.config(bg = 'lightblue')
             else:
                 pass
     buttonQ9o.config(bg = '#BDBDB7')
@@ -8101,11 +8131,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ9o.config(bg = 'lightblue')
+                buttonQ9o.config(bg = 'orange')
             elif prio == 2:
                 buttonQ9o.config(bg = 'green')
             elif prio == 1:
-                buttonQ9o.config(bg = 'orange')
+                buttonQ9o.config(bg = 'lightblue')
             else:
                 pass
     buttonJ9o.config(bg = '#BDBDB7')
@@ -8195,11 +8225,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ9o.config(bg = 'lightblue')
+                buttonJ9o.config(bg = 'orange')
             elif prio == 2:
                 buttonJ9o.config(bg = 'green')
             elif prio == 1:
-                buttonJ9o.config(bg = 'orange')
+                buttonJ9o.config(bg = 'lightblue')
             else:
                 pass
     buttonT9o.config(bg = '#BDBDB7')
@@ -8289,11 +8319,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT9o.config(bg = 'lightblue')
+                buttonT9o.config(bg = 'orange')
             elif prio == 2:
                 buttonT9o.config(bg = 'green')
             elif prio == 1:
-                buttonT9o.config(bg = 'orange')
+                buttonT9o.config(bg = 'lightblue')
             else:
                 pass
     button99.config(bg = '#BDBDB7')
@@ -8383,11 +8413,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button99.config(bg = 'lightblue')
+                button99.config(bg = 'orange')
             elif prio == 2:
                 button99.config(bg = 'green')
             elif prio == 1:
-                button99.config(bg = 'orange')
+                button99.config(bg = 'lightblue')
             else:
                 pass
     button98s.config(bg = '#BDBDB7')
@@ -8477,11 +8507,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button98s.config(bg = 'lightblue')
+                button98s.config(bg = 'orange')
             elif prio == 2:
                 button98s.config(bg = 'green')
             elif prio == 1:
-                button98s.config(bg = 'orange')
+                button98s.config(bg = 'lightblue')
             else:
                 pass
     button97s.config(bg = '#BDBDB7')
@@ -8571,11 +8601,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button97s.config(bg = 'lightblue')
+                button97s.config(bg = 'orange')
             elif prio == 2:
                 button97s.config(bg = 'green')
             elif prio == 1:
-                button97s.config(bg = 'orange')
+                button97s.config(bg = 'lightblue')
             else:
                 pass
     button96s.config(bg = '#BDBDB7')
@@ -8665,11 +8695,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button96s.config(bg = 'lightblue')
+                button96s.config(bg = 'orange')
             elif prio == 2:
                 button96s.config(bg = 'green')
             elif prio == 1:
-                button96s.config(bg = 'orange')
+                button96s.config(bg = 'lightblue')
             else:
                 pass
     button95s.config(bg = '#BDBDB7')
@@ -8759,11 +8789,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button95s.config(bg = 'lightblue')
+                button95s.config(bg = 'orange')
             elif prio == 2:
                 button95s.config(bg = 'green')
             elif prio == 1:
-                button95s.config(bg = 'orange')
+                button95s.config(bg = 'lightblue')
             else:
                 pass
     button94s.config(bg = '#BDBDB7')
@@ -8853,11 +8883,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button94s.config(bg = 'lightblue')
+                button94s.config(bg = 'orange')
             elif prio == 2:
                 button94s.config(bg = 'green')
             elif prio == 1:
-                button94s.config(bg = 'orange')
+                button94s.config(bg = 'lightblue')
             else:
                 pass
     button93s.config(bg = '#BDBDB7')
@@ -8947,11 +8977,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button93s.config(bg = 'lightblue')
+                button93s.config(bg = 'orange')
             elif prio == 2:
                 button93s.config(bg = 'green')
             elif prio == 1:
-                button93s.config(bg = 'orange')
+                button93s.config(bg = 'lightblue')
             else:
                 pass
     button92s.config(bg = '#BDBDB7')
@@ -9041,11 +9071,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button92s.config(bg = 'lightblue')
+                button92s.config(bg = 'orange')
             elif prio == 2:
                 button92s.config(bg = 'green')
             elif prio == 1:
-                button92s.config(bg = 'orange')
+                button92s.config(bg = 'lightblue')
             else:
                 pass
     #row7
@@ -9136,11 +9166,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA8o.config(bg = 'lightblue')
+                buttonA8o.config(bg = 'orange')
             elif prio == 2:
                 buttonA8o.config(bg = 'green')
             elif prio == 1:
-                buttonA8o.config(bg = 'orange')
+                buttonA8o.config(bg = 'lightblue')
             else:
                 pass
     buttonK8o.config(bg = '#BDBDB7')
@@ -9230,11 +9260,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK8o.config(bg = 'lightblue')
+                buttonK8o.config(bg = 'orange')
             elif prio == 2:
                 buttonK8o.config(bg = 'green')
             elif prio == 1:
-                buttonK8o.config(bg = 'orange')
+                buttonK8o.config(bg = 'lightblue')
             else:
                 pass
     buttonQ8o.config(bg = '#BDBDB7')
@@ -9324,11 +9354,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ8o.config(bg = 'lightblue')
+                buttonQ8o.config(bg = 'orange')
             elif prio == 2:
                 buttonQ8o.config(bg = 'green')
             elif prio == 1:
-                buttonQ8o.config(bg = 'orange')
+                buttonQ8o.config(bg = 'lightblue')
             else:
                 pass
     buttonJ8o.config(bg = '#BDBDB7')
@@ -9418,11 +9448,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ8o.config(bg = 'lightblue')
+                buttonJ8o.config(bg = 'orange')
             elif prio == 2:
                 buttonJ8o.config(bg = 'green')
             elif prio == 1:
-                buttonJ8o.config(bg = 'orange')
+                buttonJ8o.config(bg = 'lightblue')
             else:
                 pass
     buttonT8o.config(bg = '#BDBDB7')
@@ -9512,11 +9542,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT8o.config(bg = 'lightblue')
+                buttonT8o.config(bg = 'orange')
             elif prio == 2:
                 buttonT8o.config(bg = 'green')
             elif prio == 1:
-                buttonT8o.config(bg = 'orange')
+                buttonT8o.config(bg = 'lightblue')
             else:
                 pass
     button98o.config(bg = '#BDBDB7')
@@ -9606,11 +9636,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button98o.config(bg = 'lightblue')
+                button98o.config(bg = 'orange')
             elif prio == 2:
                 button98o.config(bg = 'green')
             elif prio == 1:
-                button98o.config(bg = 'orange')
+                button98o.config(bg = 'lightblue')
             else:
                 pass
     button88.config(bg = '#BDBDB7')
@@ -9700,11 +9730,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button88.config(bg = 'lightblue')
+                button88.config(bg = 'orange')
             elif prio == 2:
                 button88.config(bg = 'green')
             elif prio == 1:
-                button88.config(bg = 'orange')
+                button88.config(bg = 'lightblue')
             else:
                 pass
     button87s.config(bg = '#BDBDB7')
@@ -9794,11 +9824,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button87s.config(bg = 'lightblue')
+                button87s.config(bg = 'orange')
             elif prio == 2:
                 button87s.config(bg = 'green')
             elif prio == 1:
-                button87s.config(bg = 'orange')
+                button87s.config(bg = 'lightblue')
             else:
                 pass
     button86s.config(bg = '#BDBDB7')
@@ -9888,11 +9918,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button86s.config(bg = 'lightblue')
+                button86s.config(bg = 'orange')
             elif prio == 2:
                 button86s.config(bg = 'green')
             elif prio == 1:
-                button86s.config(bg = 'orange')
+                button86s.config(bg = 'lightblue')
             else:
                 pass
     button85s.config(bg = '#BDBDB7')
@@ -9982,11 +10012,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button85s.config(bg = 'lightblue')
+                button85s.config(bg = 'orange')
             elif prio == 2:
                 button85s.config(bg = 'green')
             elif prio == 1:
-                button85s.config(bg = 'orange')
+                button85s.config(bg = 'lightblue')
             else:
                 pass
     button84s.config(bg = '#BDBDB7')
@@ -10076,11 +10106,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button84s.config(bg = 'lightblue')
+                button84s.config(bg = 'orange')
             elif prio == 2:
                 button84s.config(bg = 'green')
             elif prio == 1:
-                button84s.config(bg = 'orange')
+                button84s.config(bg = 'lightblue')
             else:
                 pass
     button83s.config(bg = '#BDBDB7')
@@ -10170,11 +10200,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button83s.config(bg = 'lightblue')
+                button83s.config(bg = 'orange')
             elif prio == 2:
                 button83s.config(bg = 'green')
             elif prio == 1:
-                button83s.config(bg = 'orange')
+                button83s.config(bg = 'lightblue')
             else:
                 pass
     button82s.config(bg = '#BDBDB7')
@@ -10264,11 +10294,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button82s.config(bg = 'lightblue')
+                button82s.config(bg = 'orange')
             elif prio == 2:
                 button82s.config(bg = 'green')
             elif prio == 1:
-                button82s.config(bg = 'orange')
+                button82s.config(bg = 'lightblue')
             else:
                 pass
     #row8
@@ -10359,11 +10389,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA7o.config(bg = 'lightblue')
+                buttonA7o.config(bg = 'orange')
             elif prio == 2:
                 buttonA7o.config(bg = 'green')
             elif prio == 1:
-                buttonA7o.config(bg = 'orange')
+                buttonA7o.config(bg = 'lightblue')
             else:
                 pass
     buttonK7o.config(bg = '#BDBDB7')
@@ -10453,11 +10483,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK7o.config(bg = 'lightblue')
+                buttonK7o.config(bg = 'orange')
             elif prio == 2:
                 buttonK7o.config(bg = 'green')
             elif prio == 1:
-                buttonK7o.config(bg = 'orange')
+                buttonK7o.config(bg = 'lightblue')
             else:
                 pass
     buttonQ7o.config(bg = '#BDBDB7')
@@ -10547,11 +10577,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ7o.config(bg = 'lightblue')
+                buttonQ7o.config(bg = 'orange')
             elif prio == 2:
                 buttonQ7o.config(bg = 'green')
             elif prio == 1:
-                buttonQ7o.config(bg = 'orange')
+                buttonQ7o.config(bg = 'lightblue')
             else:
                 pass
     buttonJ7o.config(bg = '#BDBDB7')
@@ -10641,11 +10671,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ7o.config(bg = 'lightblue')
+                buttonJ7o.config(bg = 'orange')
             elif prio == 2:
                 buttonJ7o.config(bg = 'green')
             elif prio == 1:
-                buttonJ7o.config(bg = 'orange')
+                buttonJ7o.config(bg = 'lightblue')
             else:
                 pass
     buttonT7o.config(bg = '#BDBDB7')
@@ -10735,11 +10765,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT7o.config(bg = 'lightblue')
+                buttonT7o.config(bg = 'orange')
             elif prio == 2:
                 buttonT7o.config(bg = 'green')
             elif prio == 1:
-                buttonT7o.config(bg = 'orange')
+                buttonT7o.config(bg = 'lightblue')
             else:
                 pass
     button97o.config(bg = '#BDBDB7')
@@ -10829,11 +10859,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button97o.config(bg = 'lightblue')
+                button97o.config(bg = 'orange')
             elif prio == 2:
                 button97o.config(bg = 'green')
             elif prio == 1:
-                button97o.config(bg = 'orange')
+                button97o.config(bg = 'lightblue')
             else:
                 pass
     button87o.config(bg = '#BDBDB7')
@@ -10923,11 +10953,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button87o.config(bg = 'lightblue')
+                button87o.config(bg = 'orange')
             elif prio == 2:
                 button87o.config(bg = 'green')
             elif prio == 1:
-                button87o.config(bg = 'orange')
+                button87o.config(bg = 'lightblue')
             else:
                 pass
     button77.config(bg = '#BDBDB7')
@@ -11017,11 +11047,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button77.config(bg = 'lightblue')
+                button77.config(bg = 'orange')
             elif prio == 2:
                 button77.config(bg = 'green')
             elif prio == 1:
-                button77.config(bg = 'orange')
+                button77.config(bg = 'lightblue')
             else:
                 pass
     button76s.config(bg = '#BDBDB7')
@@ -11111,11 +11141,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button76s.config(bg = 'lightblue')
+                button76s.config(bg = 'orange')
             elif prio == 2:
                 button76s.config(bg = 'green')
             elif prio == 1:
-                button76s.config(bg = 'orange')
+                button76s.config(bg = 'lightblue')
             else:
                 pass
     button75s.config(bg = '#BDBDB7')
@@ -11205,11 +11235,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button75s.config(bg = 'lightblue')
+                button75s.config(bg = 'orange')
             elif prio == 2:
                 button75s.config(bg = 'green')
             elif prio == 1:
-                button75s.config(bg = 'orange')
+                button75s.config(bg = 'lightblue')
             else:
                 pass
     button74s.config(bg = '#BDBDB7')
@@ -11299,11 +11329,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button74s.config(bg = 'lightblue')
+                button74s.config(bg = 'orange')
             elif prio == 2:
                 button74s.config(bg = 'green')
             elif prio == 1:
-                button74s.config(bg = 'orange')
+                button74s.config(bg = 'lightblue')
             else:
                 pass
     button73s.config(bg = '#BDBDB7')
@@ -11393,11 +11423,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button73s.config(bg = 'lightblue')
+                button73s.config(bg = 'orange')
             elif prio == 2:
                 button73s.config(bg = 'green')
             elif prio == 1:
-                button73s.config(bg = 'orange')
+                button73s.config(bg = 'lightblue')
             else:
                 pass
     button72s.config(bg = '#BDBDB7')
@@ -11487,11 +11517,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button72s.config(bg = 'lightblue')
+                button72s.config(bg = 'orange')
             elif prio == 2:
                 button72s.config(bg = 'green')
             elif prio == 1:
-                button72s.config(bg = 'orange')
+                button72s.config(bg = 'lightblue')
             else:
                 pass
     #row9
@@ -11582,11 +11612,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA6o.config(bg = 'lightblue')
+                buttonA6o.config(bg = 'orange')
             elif prio == 2:
                 buttonA6o.config(bg = 'green')
             elif prio == 1:
-                buttonA6o.config(bg = 'orange')
+                buttonA6o.config(bg = 'lightblue')
             else:
                 pass
     buttonK6o.config(bg = '#BDBDB7')
@@ -11676,11 +11706,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK6o.config(bg = 'lightblue')
+                buttonK6o.config(bg = 'orange')
             elif prio == 2:
                 buttonK6o.config(bg = 'green')
             elif prio == 1:
-                buttonK6o.config(bg = 'orange')
+                buttonK6o.config(bg = 'lightblue')
             else:
                 pass
     buttonQ6o.config(bg = '#BDBDB7')
@@ -11770,11 +11800,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ6o.config(bg = 'lightblue')
+                buttonQ6o.config(bg = 'orange')
             elif prio == 2:
                 buttonQ6o.config(bg = 'green')
             elif prio == 1:
-                buttonQ6o.config(bg = 'orange')
+                buttonQ6o.config(bg = 'lightblue')
             else:
                 pass
     buttonJ6o.config(bg = '#BDBDB7')
@@ -11864,11 +11894,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ6o.config(bg = 'lightblue')
+                buttonJ6o.config(bg = 'orange')
             elif prio == 2:
                 buttonJ6o.config(bg = 'green')
             elif prio == 1:
-                buttonJ6o.config(bg = 'orange')
+                buttonJ6o.config(bg = 'lightblue')
             else:
                 pass
     buttonT6o.config(bg = '#BDBDB7')
@@ -11958,11 +11988,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT6o.config(bg = 'lightblue')
+                buttonT6o.config(bg = 'orange')
             elif prio == 2:
                 buttonT6o.config(bg = 'green')
             elif prio == 1:
-                buttonT6o.config(bg = 'orange')
+                buttonT6o.config(bg = 'lightblue')
             else:
                 pass
     button96o.config(bg = '#BDBDB7')
@@ -12052,11 +12082,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button96o.config(bg = 'lightblue')
+                button96o.config(bg = 'orange')
             elif prio == 2:
                 button96o.config(bg = 'green')
             elif prio == 1:
-                button96o.config(bg = 'orange')
+                button96o.config(bg = 'lightblue')
             else:
                 pass
     button86o.config(bg = '#BDBDB7')
@@ -12146,11 +12176,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button86o.config(bg = 'lightblue')
+                button86o.config(bg = 'orange')
             elif prio == 2:
                 button86o.config(bg = 'green')
             elif prio == 1:
-                button86o.config(bg = 'orange')
+                button86o.config(bg = 'lightblue')
             else:
                 pass
     button76o.config(bg = '#BDBDB7')
@@ -12240,11 +12270,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button76o.config(bg = 'lightblue')
+                button76o.config(bg = 'orange')
             elif prio == 2:
                 button76o.config(bg = 'green')
             elif prio == 1:
-                button76o.config(bg = 'orange')
+                button76o.config(bg = 'lightblue')
             else:
                 pass
     button66.config(bg = '#BDBDB7')
@@ -12334,11 +12364,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button66.config(bg = 'lightblue')
+                button66.config(bg = 'orange')
             elif prio == 2:
                 button66.config(bg = 'green')
             elif prio == 1:
-                button66.config(bg = 'orange')
+                button66.config(bg = 'lightblue')
             else:
                 pass
     button65s.config(bg = '#BDBDB7')
@@ -12428,11 +12458,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button65s.config(bg = 'lightblue')
+                button65s.config(bg = 'orange')
             elif prio == 2:
                 button65s.config(bg = 'green')
             elif prio == 1:
-                button65s.config(bg = 'orange')
+                button65s.config(bg = 'lightblue')
             else:
                 pass
     button64s.config(bg = '#BDBDB7')
@@ -12522,11 +12552,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button64s.config(bg = 'lightblue')
+                button64s.config(bg = 'orange')
             elif prio == 2:
                 button64s.config(bg = 'green')
             elif prio == 1:
-                button64s.config(bg = 'orange')
+                button64s.config(bg = 'lightblue')
             else:
                 pass
     button63s.config(bg = '#BDBDB7')
@@ -12616,11 +12646,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button63s.config(bg = 'lightblue')
+                button63s.config(bg = 'orange')
             elif prio == 2:
                 button63s.config(bg = 'green')
             elif prio == 1:
-                button63s.config(bg = 'orange')
+                button63s.config(bg = 'lightblue')
             else:
                 pass
     button62s.config(bg = '#BDBDB7')
@@ -12710,11 +12740,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button62s.config(bg = 'lightblue')
+                button62s.config(bg = 'orange')
             elif prio == 2:
                 button62s.config(bg = 'green')
             elif prio == 1:
-                button62s.config(bg = 'orange')
+                button62s.config(bg = 'lightblue')
             else:
                 pass
     #row10
@@ -12805,11 +12835,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA5o.config(bg = 'lightblue')
+                buttonA5o.config(bg = 'orange')
             elif prio == 2:
                 buttonA5o.config(bg = 'green')
             elif prio == 1:
-                buttonA5o.config(bg = 'orange')
+                buttonA5o.config(bg = 'lightblue')
             else:
                 pass
     buttonK5o.config(bg = '#BDBDB7')
@@ -12899,11 +12929,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK5o.config(bg = 'lightblue')
+                buttonK5o.config(bg = 'orange')
             elif prio == 2:
                 buttonK5o.config(bg = 'green')
             elif prio == 1:
-                buttonK5o.config(bg = 'orange')
+                buttonK5o.config(bg = 'lightblue')
             else:
                 pass
     buttonQ5o.config(bg = '#BDBDB7')
@@ -12993,11 +13023,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ5o.config(bg = 'lightblue')
+                buttonQ5o.config(bg = 'orange')
             elif prio == 2:
                 buttonQ5o.config(bg = 'green')
             elif prio == 1:
-                buttonQ5o.config(bg = 'orange')
+                buttonQ5o.config(bg = 'lightblue')
             else:
                 pass
     buttonJ5o.config(bg = '#BDBDB7')
@@ -13087,11 +13117,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ5o.config(bg = 'lightblue')
+                buttonJ5o.config(bg = 'orange')
             elif prio == 2:
                 buttonJ5o.config(bg = 'green')
             elif prio == 1:
-                buttonJ5o.config(bg = 'orange')
+                buttonJ5o.config(bg = 'lightblue')
             else:
                 pass
     buttonT5o.config(bg = '#BDBDB7')
@@ -13181,11 +13211,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT5o.config(bg = 'lightblue')
+                buttonT5o.config(bg = 'orange')
             elif prio == 2:
                 buttonT5o.config(bg = 'green')
             elif prio == 1:
-                buttonT5o.config(bg = 'orange')
+                buttonT5o.config(bg = 'lightblue')
             else:
                 pass
     button95o.config(bg = '#BDBDB7')
@@ -13275,11 +13305,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button95o.config(bg = 'lightblue')
+                button95o.config(bg = 'orange')
             elif prio == 2:
                 button95o.config(bg = 'green')
             elif prio == 1:
-                button95o.config(bg = 'orange')
+                button95o.config(bg = 'lightblue')
             else:
                 pass
     button85o.config(bg = '#BDBDB7')
@@ -13369,11 +13399,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button85o.config(bg = 'lightblue')
+                button85o.config(bg = 'orange')
             elif prio == 2:
                 button85o.config(bg = 'green')
             elif prio == 1:
-                button85o.config(bg = 'orange')
+                button85o.config(bg = 'lightblue')
             else:
                 pass
     button75o.config(bg = '#BDBDB7')
@@ -13463,11 +13493,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button75o.config(bg = 'lightblue')
+                button75o.config(bg = 'orange')
             elif prio == 2:
                 button75o.config(bg = 'green')
             elif prio == 1:
-                button75o.config(bg = 'orange')
+                button75o.config(bg = 'lightblue')
             else:
                 pass
     button65o.config(bg = '#BDBDB7')
@@ -13557,11 +13587,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button65o.config(bg = 'lightblue')
+                button65o.config(bg = 'orange')
             elif prio == 2:
                 button65o.config(bg = 'green')
             elif prio == 1:
-                button65o.config(bg = 'orange')
+                button65o.config(bg = 'lightblue')
             else:
                 pass
     button55.config(bg = '#BDBDB7')
@@ -13651,11 +13681,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button55.config(bg = 'lightblue')
+                button55.config(bg = 'orange')
             elif prio == 2:
                 button55.config(bg = 'green')
             elif prio == 1:
-                button55.config(bg = 'orange')
+                button55.config(bg = 'lightblue')
             else:
                 pass
     button54s.config(bg = '#BDBDB7')
@@ -13745,11 +13775,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button54s.config(bg = 'lightblue')
+                button54s.config(bg = 'orange')
             elif prio == 2:
                 button54s.config(bg = 'green')
             elif prio == 1:
-                button54s.config(bg = 'orange')
+                button54s.config(bg = 'lightblue')
             else:
                 pass
     button53s.config(bg = '#BDBDB7')
@@ -13839,11 +13869,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button53s.config(bg = 'lightblue')
+                button53s.config(bg = 'orange')
             elif prio == 2:
                 button53s.config(bg = 'green')
             elif prio == 1:
-                button53s.config(bg = 'orange')
+                button53s.config(bg = 'lightblue')
             else:
                 pass
     button52s.config(bg = '#BDBDB7')
@@ -13933,11 +13963,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button52s.config(bg = 'lightblue')
+                button52s.config(bg = 'orange')
             elif prio == 2:
                 button52s.config(bg = 'green')
             elif prio == 1:
-                button52s.config(bg = 'orange')
+                button52s.config(bg = 'lightblue')
             else:
                 pass
     #row10
@@ -14028,11 +14058,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA4o.config(bg = 'lightblue')
+                buttonA4o.config(bg = 'orange')
             elif prio == 2:
                 buttonA4o.config(bg = 'green')
             elif prio == 1:
-                buttonA4o.config(bg = 'orange')
+                buttonA4o.config(bg = 'lightblue')
             else:
                 pass
     buttonK4o.config(bg = '#BDBDB7')
@@ -14122,11 +14152,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK4o.config(bg = 'lightblue')
+                buttonK4o.config(bg = 'orange')
             elif prio == 2:
                 buttonK4o.config(bg = 'green')
             elif prio == 1:
-                buttonK4o.config(bg = 'orange')
+                buttonK4o.config(bg = 'lightblue')
             else:
                 pass
     buttonQ4o.config(bg = '#BDBDB7')
@@ -14216,11 +14246,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ4o.config(bg = 'lightblue')
+                buttonQ4o.config(bg = 'orange')
             elif prio == 2:
                 buttonQ4o.config(bg = 'green')
             elif prio == 1:
-                buttonQ4o.config(bg = 'orange')
+                buttonQ4o.config(bg = 'lightblue')
             else:
                 pass
     buttonJ4o.config(bg = '#BDBDB7')
@@ -14310,11 +14340,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ4o.config(bg = 'lightblue')
+                buttonJ4o.config(bg = 'orange')
             elif prio == 2:
                 buttonJ4o.config(bg = 'green')
             elif prio == 1:
-                buttonJ4o.config(bg = 'orange')
+                buttonJ4o.config(bg = 'lightblue')
             else:
                 pass
     buttonT4o.config(bg = '#BDBDB7')
@@ -14404,11 +14434,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT4o.config(bg = 'lightblue')
+                buttonT4o.config(bg = 'orange')
             elif prio == 2:
                 buttonT4o.config(bg = 'green')
             elif prio == 1:
-                buttonT4o.config(bg = 'orange')
+                buttonT4o.config(bg = 'lightblue')
             else:
                 pass
     button94o.config(bg = '#BDBDB7')
@@ -14498,11 +14528,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button94o.config(bg = 'lightblue')
+                button94o.config(bg = 'orange')
             elif prio == 2:
                 button94o.config(bg = 'green')
             elif prio == 1:
-                button94o.config(bg = 'orange')
+                button94o.config(bg = 'lightblue')
             else:
                 pass
     button84o.config(bg = '#BDBDB7')
@@ -14592,11 +14622,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button84o.config(bg = 'lightblue')
+                button84o.config(bg = 'orange')
             elif prio == 2:
                 button84o.config(bg = 'green')
             elif prio == 1:
-                button84o.config(bg = 'orange')
+                button84o.config(bg = 'lightblue')
             else:
                 pass
     button74o.config(bg = '#BDBDB7')
@@ -14686,11 +14716,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button74o.config(bg = 'lightblue')
+                button74o.config(bg = 'orange')
             elif prio == 2:
                 button74o.config(bg = 'green')
             elif prio == 1:
-                button74o.config(bg = 'orange')
+                button74o.config(bg = 'lightblue')
             else:
                 pass
     button64o.config(bg = '#BDBDB7')
@@ -14780,11 +14810,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button64o.config(bg = 'lightblue')
+                button64o.config(bg = 'orange')
             elif prio == 2:
                 button64o.config(bg = 'green')
             elif prio == 1:
-                button64o.config(bg = 'orange')
+                button64o.config(bg = 'lightblue')
             else:
                 pass
     button54o.config(bg = '#BDBDB7')
@@ -14874,11 +14904,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button54o.config(bg = 'lightblue')
+                button54o.config(bg = 'orange')
             elif prio == 2:
                 button54o.config(bg = 'green')
             elif prio == 1:
-                button54o.config(bg = 'orange')
+                button54o.config(bg = 'lightblue')
             else:
                 pass
     button44.config(bg = '#BDBDB7')
@@ -14968,11 +14998,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button44.config(bg = 'lightblue')
+                button44.config(bg = 'orange')
             elif prio == 2:
                 button44.config(bg = 'green')
             elif prio == 1:
-                button44.config(bg = 'orange')
+                button44.config(bg = 'lightblue')
             else:
                 pass
     button43s.config(bg = '#BDBDB7')
@@ -15062,11 +15092,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button43s.config(bg = 'lightblue')
+                button43s.config(bg = 'orange')
             elif prio == 2:
                 button43s.config(bg = 'green')
             elif prio == 1:
-                button43s.config(bg = 'orange')
+                button43s.config(bg = 'lightblue')
             else:
                 pass
     button42s.config(bg = '#BDBDB7')
@@ -15156,11 +15186,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button42s.config(bg = 'lightblue')
+                button42s.config(bg = 'orange')
             elif prio == 2:
                 button42s.config(bg = 'green')
             elif prio == 1:
-                button42s.config(bg = 'orange')
+                button42s.config(bg = 'lightblue')
             else:
                 pass
     #row11
@@ -15251,11 +15281,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA3o.config(bg = 'lightblue')
+                buttonA3o.config(bg = 'orange')
             elif prio == 2:
                 buttonA3o.config(bg = 'green')
             elif prio == 1:
-                buttonA3o.config(bg = 'orange')
+                buttonA3o.config(bg = 'lightblue')
             else:
                 pass
     buttonK3o.config(bg = '#BDBDB7')
@@ -15345,11 +15375,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK3o.config(bg = 'lightblue')
+                buttonK3o.config(bg = 'orange')
             elif prio == 2:
                 buttonK3o.config(bg = 'green')
             elif prio == 1:
-                buttonK3o.config(bg = 'orange')
+                buttonK3o.config(bg = 'lightblue')
             else:
                 pass
     buttonQ3o.config(bg = '#BDBDB7')
@@ -15439,11 +15469,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ3o.config(bg = 'lightblue')
+                buttonQ3o.config(bg = 'orange')
             elif prio == 2:
                 buttonQ3o.config(bg = 'green')
             elif prio == 1:
-                buttonQ3o.config(bg = 'orange')
+                buttonQ3o.config(bg = 'lightblue')
             else:
                 pass
     buttonJ3o.config(bg = '#BDBDB7')
@@ -15533,11 +15563,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ3o.config(bg = 'lightblue')
+                buttonJ3o.config(bg = 'orange')
             elif prio == 2:
                 buttonJ3o.config(bg = 'green')
             elif prio == 1:
-                buttonJ3o.config(bg = 'orange')
+                buttonJ3o.config(bg = 'lightblue')
             else:
                 pass
     buttonT3o.config(bg = '#BDBDB7')
@@ -15627,11 +15657,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT3o.config(bg = 'lightblue')
+                buttonT3o.config(bg = 'orange')
             elif prio == 2:
                 buttonT3o.config(bg = 'green')
             elif prio == 1:
-                buttonT3o.config(bg = 'orange')
+                buttonT3o.config(bg = 'lightblue')
             else:
                 pass
     button93o.config(bg = '#BDBDB7')
@@ -15721,11 +15751,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button93o.config(bg = 'lightblue')
+                button93o.config(bg = 'orange')
             elif prio == 2:
                 button93o.config(bg = 'green')
             elif prio == 1:
-                button93o.config(bg = 'orange')
+                button93o.config(bg = 'lightblue')
             else:
                 pass
     button83o.config(bg = '#BDBDB7')
@@ -15815,11 +15845,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button83o.config(bg = 'lightblue')
+                button83o.config(bg = 'orange')
             elif prio == 2:
                 button83o.config(bg = 'green')
             elif prio == 1:
-                button83o.config(bg = 'orange')
+                button83o.config(bg = 'lightblue')
             else:
                 pass
     button73o.config(bg = '#BDBDB7')
@@ -15909,11 +15939,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button73o.config(bg = 'lightblue')
+                button73o.config(bg = 'orange')
             elif prio == 2:
                 button73o.config(bg = 'green')
             elif prio == 1:
-                button73o.config(bg = 'orange')
+                button73o.config(bg = 'lightblue')
             else:
                 pass
     button63o.config(bg = '#BDBDB7')
@@ -16003,11 +16033,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button63o.config(bg = 'lightblue')
+                button63o.config(bg = 'orange')
             elif prio == 2:
                 button63o.config(bg = 'green')
             elif prio == 1:
-                button63o.config(bg = 'orange')
+                button63o.config(bg = 'lightblue')
             else:
                 pass
     button53o.config(bg = '#BDBDB7')
@@ -16097,11 +16127,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button53o.config(bg = 'lightblue')
+                button53o.config(bg = 'orange')
             elif prio == 2:
                 button53o.config(bg = 'green')
             elif prio == 1:
-                button53o.config(bg = 'orange')
+                button53o.config(bg = 'lightblue')
             else:
                 pass
     button43o.config(bg = '#BDBDB7')
@@ -16191,11 +16221,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button43o.config(bg = 'lightblue')
+                button43o.config(bg = 'orange')
             elif prio == 2:
                 button43o.config(bg = 'green')
             elif prio == 1:
-                button43o.config(bg = 'orange')
+                button43o.config(bg = 'lightblue')
             else:
                 pass
     button33.config(bg = '#BDBDB7')
@@ -16285,11 +16315,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button33.config(bg = 'lightblue')
+                button33.config(bg = 'orange')
             elif prio == 2:
                 button33.config(bg = 'green')
             elif prio == 1:
-                button33.config(bg = 'orange')
+                button33.config(bg = 'lightblue')
             else:
                 pass
     button32s.config(bg = '#BDBDB7')
@@ -16379,11 +16409,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button32s.config(bg = 'lightblue')
+                button32s.config(bg = 'orange')
             elif prio == 2:
                 button32s.config(bg = 'green')
             elif prio == 1:
-                button32s.config(bg = 'orange')
+                button32s.config(bg = 'lightblue')
             else:
                 pass
     #row12
@@ -16474,11 +16504,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonA2o.config(bg = 'lightblue')
+                buttonA2o.config(bg = 'orange')
             elif prio == 2:
                 buttonA2o.config(bg = 'green')
             elif prio == 1:
-                buttonA2o.config(bg = 'orange')
+                buttonA2o.config(bg = 'lightblue')
             else:
                 pass
     buttonK2o.config(bg = '#BDBDB7')
@@ -16568,11 +16598,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonK2o.config(bg = 'lightblue')
+                buttonK2o.config(bg = 'orange')
             elif prio == 2:
                 buttonK2o.config(bg = 'green')
             elif prio == 1:
-                buttonK2o.config(bg = 'orange')
+                buttonK2o.config(bg = 'lightblue')
             else:
                 pass
     buttonQ2o.config(bg = '#BDBDB7')
@@ -16662,11 +16692,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonQ2o.config(bg = 'lightblue')
+                buttonQ2o.config(bg = 'orange')
             elif prio == 2:
                 buttonQ2o.config(bg = 'green')
             elif prio == 1:
-                buttonQ2o.config(bg = 'orange')
+                buttonQ2o.config(bg = 'lightblue')
             else:
                 pass
     buttonJ2o.config(bg = '#BDBDB7')
@@ -16756,11 +16786,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonJ2o.config(bg = 'lightblue')
+                buttonJ2o.config(bg = 'orange')
             elif prio == 2:
                 buttonJ2o.config(bg = 'green')
             elif prio == 1:
-                buttonJ2o.config(bg = 'orange')
+                buttonJ2o.config(bg = 'lightblue')
             else:
                 pass
     buttonT2o.config(bg = '#BDBDB7')
@@ -16850,11 +16880,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                buttonT2o.config(bg = 'lightblue')
+                buttonT2o.config(bg = 'orange')
             elif prio == 2:
                 buttonT2o.config(bg = 'green')
             elif prio == 1:
-                buttonT2o.config(bg = 'orange')
+                buttonT2o.config(bg = 'lightblue')
             else:
                 pass
     button92o.config(bg = '#BDBDB7')
@@ -16944,11 +16974,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button92o.config(bg = 'lightblue')
+                button92o.config(bg = 'orange')
             elif prio == 2:
                 button92o.config(bg = 'green')
             elif prio == 1:
-                button92o.config(bg = 'orange')
+                button92o.config(bg = 'lightblue')
             else:
                 pass
     button82o.config(bg = '#BDBDB7')
@@ -17038,11 +17068,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button82o.config(bg = 'lightblue')
+                button82o.config(bg = 'orange')
             elif prio == 2:
                 button82o.config(bg = 'green')
             elif prio == 1:
-                button82o.config(bg = 'orange')
+                button82o.config(bg = 'lightblue')
             else:
                 pass
     button72o.config(bg = '#BDBDB7')
@@ -17132,11 +17162,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button72o.config(bg = 'lightblue')
+                button72o.config(bg = 'orange')
             elif prio == 2:
                 button72o.config(bg = 'green')
             elif prio == 1:
-                button72o.config(bg = 'orange')
+                button72o.config(bg = 'lightblue')
             else:
                 pass
     button62o.config(bg = '#BDBDB7')
@@ -17226,11 +17256,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button62o.config(bg = 'lightblue')
+                button62o.config(bg = 'orange')
             elif prio == 2:
                 button62o.config(bg = 'green')
             elif prio == 1:
-                button62o.config(bg = 'orange')
+                button62o.config(bg = 'lightblue')
             else:
                 pass
     button52o.config(bg = '#BDBDB7')
@@ -17320,11 +17350,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button52o.config(bg = 'lightblue')
+                button52o.config(bg = 'orange')
             elif prio == 2:
                 button52o.config(bg = 'green')
             elif prio == 1:
-                button52o.config(bg = 'orange')
+                button52o.config(bg = 'lightblue')
             else:
                 pass
     button42o.config(bg = '#BDBDB7')
@@ -17414,11 +17444,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button42o.config(bg = 'lightblue')
+                button42o.config(bg = 'orange')
             elif prio == 2:
                 button42o.config(bg = 'green')
             elif prio == 1:
-                button42o.config(bg = 'orange')
+                button42o.config(bg = 'lightblue')
             else:
                 pass
     button32o.config(bg = '#BDBDB7')
@@ -17508,11 +17538,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button32o.config(bg = 'lightblue')
+                button32o.config(bg = 'orange')
             elif prio == 2:
                 button32o.config(bg = 'green')
             elif prio == 1:
-                button32o.config(bg = 'orange')
+                button32o.config(bg = 'lightblue')
             else:
                 pass
     button22.config(bg = '#BDBDB7')
@@ -17602,11 +17632,11 @@ def buttonSolve():
                         if prio < 3:
                             prio = 3
             if prio == 3:
-                button22.config(bg = 'lightblue')
+                button22.config(bg = 'orange')
             elif prio == 2:
                 button22.config(bg = 'green')
             elif prio == 1:
-                button22.config(bg = 'orange')
+                button22.config(bg = 'lightblue')
             else:
                 pass
 
