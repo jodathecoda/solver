@@ -99,15 +99,18 @@ var = tk.IntVar()
 var.set(1)
 
 #solved game coefficients:
+#A
 a = 5.1
-b = 16.0
-c = 17.0
+b = 27          #16.0
+c = 30          #17.0
 d = 55.5
 e = 59.5
 f = 91.0
+#C
 g = 8.0
 h = 44.3
 j = 50.5
+#B
 k = 14.3
 m = 17.0
 n = 75.2
@@ -653,10 +656,7 @@ def open_solutionPP(ha):
     global c_check
     global c_bet_call
 
-
-    print("a_bet_fold (0-a): a = " + str(a))
-    for folt in a_bet_fold:
-        print(folt.pohand + " " + str(folt.equx))
+    #print("0   a_bet_fold  " + str(a) + " a_check_fold " + str(b) + " a_check_raise " + str(c) + " a_check_call " + str(d) + " a_bet_fold " + str(e) + " a_bet_call " + str(f) + " a_check-raise 1" )
 
     board_string
 
@@ -1735,7 +1735,7 @@ def buttonSolve():
 
         resultlist = []
         resultlist = calculator.find_equx(card1, card2, boardd)
-        equx = round(float(resultlist[1]), 5)*100
+        equx = float(resultlist[1])*100
         handzArr[counter_hands_range].equx = round(equx, 5)
         handzArr[counter_hands_range].x = counter_hands_range
         counter_hands_range += 1
@@ -1774,6 +1774,12 @@ def buttonSolve():
     for hh in thanewlist:
         hh.x = newcounter
         newcounter += 1
+
+
+    print("sorted thanewlist: " + str(len(thanewlist)))
+    for h in thanewlist:
+        print(h.pohand + " " + str(h.equx))
+
 
     if var.get() == 1:
         #A
