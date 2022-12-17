@@ -653,6 +653,11 @@ def open_solutionPP(ha):
     global c_check
     global c_bet_call
 
+
+    print("a_bet_fold (0-a): a = " + str(a))
+    for folt in a_bet_fold:
+        print(folt.pohand + " " + str(folt.equx))
+
     board_string
 
     # Create secondary (or popup) window.
@@ -1677,6 +1682,11 @@ def buttonSolve():
         else:
             print("unknown hand")
             dumb = input("]Error at line 1442")
+        
+    print("expanded_range: ")
+    print(expanded_range)
+    print("---------------------")
+
     
     for card in board_cards:
         for hand in expanded_range:
