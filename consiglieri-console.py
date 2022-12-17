@@ -1693,6 +1693,10 @@ def buttonSolve():
             if card in hand:
                 expanded_range.remove(hand)
 
+    print("expanded_range after removing board cards: ")
+    print(expanded_range)
+    print("---------------------")
+
     #PocketPairs
     fillrange = round(len(expanded_range)*100/1326,2)
     Slider.set(round(fillrange))
@@ -1740,6 +1744,22 @@ def buttonSolve():
         ypoints = np.append(old_ypoints, equx)
         xpoints = np.append(old_xpoints, counter)
         counter += 1
+
+
+    handzArr2 = []
+    for h in handzArr:
+        handzArr2.append(h)
+
+    handzArr = []
+
+    for h in handzArr2:
+        if h.equx > -1:
+            handzArr.append(h)
+
+    print("handzArr: " + str(len(handzArr)))
+    for h in handzArr:
+            print(h.pohand + " " + str(h.equx))
+    print("============================")
 
 
     sortedlist = sorted(handzArr, key=lambda x: x.equx, reverse=True)
