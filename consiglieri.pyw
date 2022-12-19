@@ -98,18 +98,21 @@ showgraph = tk.IntVar()
 var = tk.IntVar()
 var.set(1)
 
-#solved game coefficients:
+#solved game coefficients: zz
+#A
 a = 5.1
-b = 16.0
-c = 17.0
-d = 55.5
-e = 59.5
+b = 40         #16.0
+c = 45          #17.0
+d = 50
+e = 55
 f = 91.0
+#C
 g = 8.0
-h = 44.3
-j = 50.5
-k = 14.3
-m = 17.0
+h = 55.3
+j = 60.5
+#B
+k = 33.3
+m = 36.0
 n = 75.2
 
 def clear_players_ranges():
