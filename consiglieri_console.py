@@ -99,15 +99,12 @@ var = tk.IntVar()
 var.set(1)
 
 #solved game coefficients:
-#A
 a = 5.1
-b = 40         #16.0
-c = 45          #17.0
-d = 50
-e = 55
+b = 16.0
+c = 17.0
+d = 55.5
+e = 59.5
 f = 91.0
-
-
 g = 8.0
 h = 44.3
 j = 50.5
@@ -1916,60 +1913,64 @@ def buttonSolve():
     if 'AA' in selected_range:
         if var.get()  == 1: #A
             prio = 0
-            counter_lightblue = 0
-            counter_blue = 0
-            counter_red = 0
-            counter_green = 0
-            counter_orange = 0
-            counter_yellow = 0
+            prio_counter = 0
             for hand in expander.expandPP('AA'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
-                        counter_blue += 1
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
-                        counter_lightblue += 1
+                        ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
+                            ##print("hand: " + hand + " prio: " + str(prio))
                 for hh in a_check_call:
                     if hand == hh.pohand:
-                        counter_green += 1
+                        ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+                            ##print("hand: " + hand + " prio: " + str(prio))
                 for hh in a_bet_call:
                     if hand == hh.pohand:
-                        counter_orange += 1
+                        ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
+                            ##print("hand: " + hand + " prio: " + str(prio))
                 for hh in a_check_raise:
                     if hand == hh.pohand:
-                        counter_red += 1
+                        ##print(hand + " 5")
                         if prio < 5:
-                            prio = 5
-            colorlist = []
-            colorlist.append(counter_blue)
-            colorlist.append(counter_lightblue)
-            colorlist.append(counter_green)
-            colorlist.append(counter_orange)
-            colorlist.append(counter_red)
-
-            colorlist.sort(reverse=True)
-            if colorlist[0] > colorlist[1]:
-                #color the button with the most common action occurence,
-                #if two are equal, color it purple
-                buttonAA.config(bg = colorlist[0])
+                            prio += 5
+                            prio_counter += 1
+                            ##print("hand: " + hand + " prio: " + str(prio))
+            prio = int(prio/prio_counter)
+            if prio == 5:
+                buttonAA.config(bg = 'red')
+            elif prio == 4:
+                buttonAA.config(bg = 'orange')
+            elif prio == 3:
+                buttonAA.config(bg = 'green')
+            elif prio == 2:
+                buttonAA.config(bg = 'lightblue')
+            elif prio == 1:
+                buttonAA.config(bg = 'blue')
             else:
-                buttonAA.config(bg ='purple')
+                pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('AA'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -1980,6 +1981,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAA.config(bg = 'red')
             elif prio == 2:
@@ -1990,22 +1992,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('AA'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAA.config(bg = 'orange')
             elif prio == 2:
@@ -2018,32 +2025,39 @@ def buttonSolve():
     if 'AKs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('AKs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonAKs.config(bg = 'red')
             elif prio == 4:
@@ -2058,12 +2072,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('AKs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -2074,6 +2090,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAKs.config(bg = 'red')
             elif prio == 2:
@@ -2084,22 +2101,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('AKs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAKs.config(bg = 'orange')
             elif prio == 2:
@@ -2113,32 +2135,39 @@ def buttonSolve():
     if 'AQs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('AQs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonAQs.config(bg = 'red')
             elif prio == 4:
@@ -2153,12 +2182,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('AQs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -2169,6 +2200,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAQs.config(bg = 'red')
             elif prio == 2:
@@ -2179,22 +2211,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('AQs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAQs.config(bg = 'orange')
             elif prio == 2:
@@ -2207,32 +2244,39 @@ def buttonSolve():
     if 'AJs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('AJs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonAJs.config(bg = 'red')
             elif prio == 4:
@@ -2247,12 +2291,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('AJs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -2263,6 +2309,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAJs.config(bg = 'red')
             elif prio == 2:
@@ -2273,22 +2320,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('AJs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAJs.config(bg = 'orange')
             elif prio == 2:
@@ -2301,32 +2353,39 @@ def buttonSolve():
     if 'ATs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('ATs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonATs.config(bg = 'red')
             elif prio == 4:
@@ -2341,12 +2400,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('ATs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -2357,6 +2418,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonATs.config(bg = 'red')
             elif prio == 2:
@@ -2367,22 +2429,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('ATs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonATs.config(bg = 'orange')
             elif prio == 2:
@@ -2395,32 +2462,39 @@ def buttonSolve():
     if 'A9s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA9s.config(bg = 'red')
             elif prio == 4:
@@ -2435,12 +2509,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -2451,6 +2527,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA9s.config(bg = 'red')
             elif prio == 2:
@@ -2461,22 +2538,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA9s.config(bg = 'orange')
             elif prio == 2:
@@ -2489,32 +2571,39 @@ def buttonSolve():
     if 'A8s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA8s.config(bg = 'red')
             elif prio == 4:
@@ -2529,12 +2618,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -2545,6 +2636,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA8s.config(bg = 'red')
             elif prio == 2:
@@ -2555,22 +2647,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA8s.config(bg = 'orange')
             elif prio == 2:
@@ -2583,32 +2680,39 @@ def buttonSolve():
     if 'A7s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA7s.config(bg = 'red')
             elif prio == 4:
@@ -2623,12 +2727,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -2639,6 +2745,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA7s.config(bg = 'red')
             elif prio == 2:
@@ -2649,22 +2756,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA7s.config(bg = 'orange')
             elif prio == 2:
@@ -2677,32 +2789,39 @@ def buttonSolve():
     if 'A6s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA6s.config(bg = 'red')
             elif prio == 4:
@@ -2717,12 +2836,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -2733,6 +2854,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA6s.config(bg = 'red')
             elif prio == 2:
@@ -2743,22 +2865,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA6s.config(bg = 'orange')
             elif prio == 2:
@@ -2771,32 +2898,39 @@ def buttonSolve():
     if 'A5s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA5s.config(bg = 'red')
             elif prio == 4:
@@ -2811,12 +2945,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -2827,6 +2963,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA5s.config(bg = 'red')
             elif prio == 2:
@@ -2837,22 +2974,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA5s.config(bg = 'orange')
             elif prio == 2:
@@ -2865,32 +3007,39 @@ def buttonSolve():
     if 'A4s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA4s.config(bg = 'red')
             elif prio == 4:
@@ -2905,12 +3054,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -2921,6 +3072,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA4s.config(bg = 'red')
             elif prio == 2:
@@ -2931,22 +3083,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA4s.config(bg = 'orange')
             elif prio == 2:
@@ -2959,32 +3116,39 @@ def buttonSolve():
     if 'A3s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA3s.config(bg = 'red')
             elif prio == 4:
@@ -2999,12 +3163,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -3015,6 +3181,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA3s.config(bg = 'red')
             elif prio == 2:
@@ -3025,22 +3192,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA3s.config(bg = 'orange')
             elif prio == 2:
@@ -3053,32 +3225,39 @@ def buttonSolve():
     if 'A2s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA2s.config(bg = 'red')
             elif prio == 4:
@@ -3093,12 +3272,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -3109,6 +3290,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA2s.config(bg = 'red')
             elif prio == 2:
@@ -3119,22 +3301,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('A2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA2s.config(bg = 'orange')
             elif prio == 2:
@@ -3148,32 +3335,39 @@ def buttonSolve():
     if 'AKo' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('AKo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonAKo.config(bg = 'red')
             elif prio == 4:
@@ -3188,12 +3382,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('AKo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -3204,6 +3400,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAKo.config(bg = 'red')
             elif prio == 2:
@@ -3214,22 +3411,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('AKo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAKo.config(bg = 'orange')
             elif prio == 2:
@@ -3242,32 +3444,39 @@ def buttonSolve():
     if 'KK' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('KK'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonKK.config(bg = 'red')
             elif prio == 4:
@@ -3282,12 +3491,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('KK'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -3298,6 +3509,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKK.config(bg = 'red')
             elif prio == 2:
@@ -3308,22 +3520,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('KK'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKK.config(bg = 'orange')
             elif prio == 2:
@@ -3336,32 +3553,39 @@ def buttonSolve():
     if 'KQs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('KQs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonKQs.config(bg = 'red')
             elif prio == 4:
@@ -3376,12 +3600,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('KQs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -3392,6 +3618,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKQs.config(bg = 'red')
             elif prio == 2:
@@ -3402,22 +3629,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('KQs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKQs.config(bg = 'orange')
             elif prio == 2:
@@ -3430,32 +3662,39 @@ def buttonSolve():
     if 'KJs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('KJs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonKJs.config(bg = 'red')
             elif prio == 4:
@@ -3470,12 +3709,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('KJs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -3486,6 +3727,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKJs.config(bg = 'red')
             elif prio == 2:
@@ -3496,22 +3738,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('KJs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKJs.config(bg = 'orange')
             elif prio == 2:
@@ -3524,32 +3771,39 @@ def buttonSolve():
     if 'KTs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('KTs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonKTs.config(bg = 'red')
             elif prio == 4:
@@ -3564,12 +3818,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('KTs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -3580,6 +3836,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKTs.config(bg = 'red')
             elif prio == 2:
@@ -3590,22 +3847,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('KTs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKTs.config(bg = 'orange')
             elif prio == 2:
@@ -3618,32 +3880,39 @@ def buttonSolve():
     if 'K9s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK9s.config(bg = 'red')
             elif prio == 4:
@@ -3658,12 +3927,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -3674,6 +3945,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK9s.config(bg = 'red')
             elif prio == 2:
@@ -3684,22 +3956,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK9s.config(bg = 'orange')
             elif prio == 2:
@@ -3712,32 +3989,39 @@ def buttonSolve():
     if 'K8s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK8s.config(bg = 'red')
             elif prio == 4:
@@ -3752,12 +4036,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -3768,6 +4054,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK8s.config(bg = 'red')
             elif prio == 2:
@@ -3778,22 +4065,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK8s.config(bg = 'orange')
             elif prio == 2:
@@ -3806,32 +4098,39 @@ def buttonSolve():
     if 'K7s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK7s.config(bg = 'red')
             elif prio == 4:
@@ -3846,12 +4145,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -3862,6 +4163,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK7s.config(bg = 'red')
             elif prio == 2:
@@ -3872,22 +4174,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK7s.config(bg = 'orange')
             elif prio == 2:
@@ -3900,32 +4207,39 @@ def buttonSolve():
     if 'K6s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK6s.config(bg = 'red')
             elif prio == 4:
@@ -3940,12 +4254,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -3956,6 +4272,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK6s.config(bg = 'red')
             elif prio == 2:
@@ -3966,22 +4283,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK6s.config(bg = 'orange')
             elif prio == 2:
@@ -3994,32 +4316,39 @@ def buttonSolve():
     if 'K5s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK5s.config(bg = 'red')
             elif prio == 4:
@@ -4034,12 +4363,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -4050,6 +4381,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK5s.config(bg = 'red')
             elif prio == 2:
@@ -4060,22 +4392,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK5s.config(bg = 'orange')
             elif prio == 2:
@@ -4088,32 +4425,39 @@ def buttonSolve():
     if 'K4s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK4s.config(bg = 'red')
             elif prio == 4:
@@ -4128,12 +4472,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -4144,6 +4490,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK4s.config(bg = 'red')
             elif prio == 2:
@@ -4154,22 +4501,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK4s.config(bg = 'orange')
             elif prio == 2:
@@ -4182,32 +4534,39 @@ def buttonSolve():
     if 'K3s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK3s.config(bg = 'red')
             elif prio == 4:
@@ -4222,12 +4581,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -4238,6 +4599,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK3s.config(bg = 'red')
             elif prio == 2:
@@ -4248,22 +4610,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK3s.config(bg = 'orange')
             elif prio == 2:
@@ -4276,32 +4643,39 @@ def buttonSolve():
     if 'K2s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK2s.config(bg = 'red')
             elif prio == 4:
@@ -4316,12 +4690,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -4332,6 +4708,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK2s.config(bg = 'red')
             elif prio == 2:
@@ -4342,22 +4719,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('K2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK2s.config(bg = 'orange')
             elif prio == 2:
@@ -4371,32 +4753,39 @@ def buttonSolve():
     if 'AQo' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('AQo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonAQo.config(bg = 'red')
             elif prio == 4:
@@ -4411,12 +4800,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('AQo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -4427,6 +4818,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAQo.config(bg = 'red')
             elif prio == 2:
@@ -4437,22 +4829,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('AQo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAQo.config(bg = 'orange')
             elif prio == 2:
@@ -4465,32 +4862,39 @@ def buttonSolve():
     if 'KQo' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('KQo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonKQo.config(bg = 'red')
             elif prio == 4:
@@ -4505,12 +4909,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('KQo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -4521,6 +4927,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKQo.config(bg = 'red')
             elif prio == 2:
@@ -4531,22 +4938,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('KQo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKQo.config(bg = 'orange')
             elif prio == 2:
@@ -4559,32 +4971,39 @@ def buttonSolve():
     if 'QQ' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('QQ'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQQ.config(bg = 'red')
             elif prio == 4:
@@ -4599,12 +5018,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('QQ'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -4615,6 +5036,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQQ.config(bg = 'red')
             elif prio == 2:
@@ -4625,22 +5047,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('QQ'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQQ.config(bg = 'orange')
             elif prio == 2:
@@ -4653,32 +5080,39 @@ def buttonSolve():
     if 'QJs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('QJs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQJs.config(bg = 'red')
             elif prio == 4:
@@ -4693,12 +5127,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('QJs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -4709,6 +5145,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQJs.config(bg = 'red')
             elif prio == 2:
@@ -4719,22 +5156,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('QJs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQJs.config(bg = 'orange')
             elif prio == 2:
@@ -4747,32 +5189,39 @@ def buttonSolve():
     if 'QTs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('QTs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQTs.config(bg = 'red')
             elif prio == 4:
@@ -4787,12 +5236,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('QTs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -4803,6 +5254,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQTs.config(bg = 'red')
             elif prio == 2:
@@ -4813,22 +5265,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('QTs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQTs.config(bg = 'orange')
             elif prio == 2:
@@ -4841,32 +5298,39 @@ def buttonSolve():
     if 'Q9s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ9s.config(bg = 'red')
             elif prio == 4:
@@ -4881,12 +5345,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -4897,6 +5363,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ9s.config(bg = 'red')
             elif prio == 2:
@@ -4907,22 +5374,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ9s.config(bg = 'orange')
             elif prio == 2:
@@ -4935,32 +5407,39 @@ def buttonSolve():
     if 'Q8s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ8s.config(bg = 'red')
             elif prio == 4:
@@ -4975,12 +5454,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -4991,6 +5472,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ8s.config(bg = 'red')
             elif prio == 2:
@@ -5001,22 +5483,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ8s.config(bg = 'orange')
             elif prio == 2:
@@ -5029,32 +5516,39 @@ def buttonSolve():
     if 'Q7s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ7s.config(bg = 'red')
             elif prio == 4:
@@ -5069,12 +5563,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -5085,6 +5581,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ7s.config(bg = 'red')
             elif prio == 2:
@@ -5095,22 +5592,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ7s.config(bg = 'orange')
             elif prio == 2:
@@ -5123,32 +5625,39 @@ def buttonSolve():
     if 'Q6s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ6s.config(bg = 'red')
             elif prio == 4:
@@ -5163,12 +5672,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -5179,6 +5690,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ6s.config(bg = 'red')
             elif prio == 2:
@@ -5189,22 +5701,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ6s.config(bg = 'orange')
             elif prio == 2:
@@ -5217,32 +5734,39 @@ def buttonSolve():
     if 'Q5s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ5s.config(bg = 'red')
             elif prio == 4:
@@ -5257,12 +5781,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -5273,6 +5799,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ5s.config(bg = 'red')
             elif prio == 2:
@@ -5283,22 +5810,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ5s.config(bg = 'orange')
             elif prio == 2:
@@ -5311,32 +5843,39 @@ def buttonSolve():
     if 'Q4s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ4s.config(bg = 'red')
             elif prio == 4:
@@ -5351,12 +5890,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -5367,6 +5908,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ4s.config(bg = 'red')
             elif prio == 2:
@@ -5377,22 +5919,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ4s.config(bg = 'orange')
             elif prio == 2:
@@ -5405,32 +5952,39 @@ def buttonSolve():
     if 'Q3s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ3s.config(bg = 'red')
             elif prio == 4:
@@ -5445,12 +5999,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -5461,6 +6017,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ3s.config(bg = 'red')
             elif prio == 2:
@@ -5471,22 +6028,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ3s.config(bg = 'orange')
             elif prio == 2:
@@ -5499,32 +6061,39 @@ def buttonSolve():
     if 'Q2s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ2s.config(bg = 'red')
             elif prio == 4:
@@ -5539,12 +6108,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -5555,6 +6126,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ2s.config(bg = 'red')
             elif prio == 2:
@@ -5565,22 +6137,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('Q2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ2s.config(bg = 'orange')
             elif prio == 2:
@@ -5594,32 +6171,39 @@ def buttonSolve():
     if 'AJo' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('AJo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonAJo.config(bg = 'red')
             elif prio == 4:
@@ -5634,12 +6218,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('AJo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -5650,6 +6236,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAJo.config(bg = 'red')
             elif prio == 2:
@@ -5660,22 +6247,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('AJo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonAJo.config(bg = 'orange')
             elif prio == 2:
@@ -5688,32 +6280,39 @@ def buttonSolve():
     if 'KJo' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('KJo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonKJo.config(bg = 'red')
             elif prio == 4:
@@ -5728,12 +6327,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('KJo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -5744,6 +6345,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKJo.config(bg = 'red')
             elif prio == 2:
@@ -5754,22 +6356,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('KJo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKJo.config(bg = 'orange')
             elif prio == 2:
@@ -5782,32 +6389,39 @@ def buttonSolve():
     if 'QJo' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('QJo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQJo.config(bg = 'red')
             elif prio == 4:
@@ -5822,12 +6436,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('QJo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -5838,6 +6454,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQJo.config(bg = 'red')
             elif prio == 2:
@@ -5848,22 +6465,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('QJo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQJo.config(bg = 'orange')
             elif prio == 2:
@@ -5876,32 +6498,39 @@ def buttonSolve():
     if 'JJ' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('JJ'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJJ.config(bg = 'red')
             elif prio == 4:
@@ -5916,12 +6545,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('JJ'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -5932,6 +6563,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJJ.config(bg = 'red')
             elif prio == 2:
@@ -5942,22 +6574,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('JJ'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJJ.config(bg = 'orange')
             elif prio == 2:
@@ -5970,32 +6607,39 @@ def buttonSolve():
     if 'JTs' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('JTs'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJTs.config(bg = 'red')
             elif prio == 4:
@@ -6010,12 +6654,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('JTs'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -6026,6 +6672,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJTs.config(bg = 'red')
             elif prio == 2:
@@ -6036,22 +6683,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('JTs'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJTs.config(bg = 'orange')
             elif prio == 2:
@@ -6064,32 +6716,39 @@ def buttonSolve():
     if 'J9s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ9s.config(bg = 'red')
             elif prio == 4:
@@ -6104,12 +6763,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -6120,6 +6781,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ9s.config(bg = 'red')
             elif prio == 2:
@@ -6130,22 +6792,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ9s.config(bg = 'orange')
             elif prio == 2:
@@ -6158,32 +6825,39 @@ def buttonSolve():
     if 'J8s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ8s.config(bg = 'red')
             elif prio == 4:
@@ -6198,12 +6872,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -6214,6 +6890,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ8s.config(bg = 'red')
             elif prio == 2:
@@ -6224,22 +6901,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ8s.config(bg = 'orange')
             elif prio == 2:
@@ -6252,32 +6934,39 @@ def buttonSolve():
     if 'J7s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ7s.config(bg = 'red')
             elif prio == 4:
@@ -6292,12 +6981,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -6308,6 +6999,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ7s.config(bg = 'red')
             elif prio == 2:
@@ -6318,22 +7010,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ7s.config(bg = 'orange')
             elif prio == 2:
@@ -6346,32 +7043,39 @@ def buttonSolve():
     if 'J6s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ6s.config(bg = 'red')
             elif prio == 4:
@@ -6386,12 +7090,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -6402,6 +7108,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ6s.config(bg = 'red')
             elif prio == 2:
@@ -6412,22 +7119,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ6s.config(bg = 'orange')
             elif prio == 2:
@@ -6440,32 +7152,39 @@ def buttonSolve():
     if 'J5s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ5s.config(bg = 'red')
             elif prio == 4:
@@ -6480,12 +7199,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -6496,6 +7217,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ5s.config(bg = 'red')
             elif prio == 2:
@@ -6506,22 +7228,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ5s.config(bg = 'orange')
             elif prio == 2:
@@ -6534,32 +7261,39 @@ def buttonSolve():
     if 'J4s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ4s.config(bg = 'red')
             elif prio == 4:
@@ -6574,12 +7308,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -6590,6 +7326,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ4s.config(bg = 'red')
             elif prio == 2:
@@ -6600,22 +7337,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ4s.config(bg = 'orange')
             elif prio == 2:
@@ -6628,32 +7370,39 @@ def buttonSolve():
     if 'J3s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ3s.config(bg = 'red')
             elif prio == 4:
@@ -6668,12 +7417,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -6684,6 +7435,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ3s.config(bg = 'red')
             elif prio == 2:
@@ -6694,22 +7446,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ3s.config(bg = 'orange')
             elif prio == 2:
@@ -6722,32 +7479,39 @@ def buttonSolve():
     if 'J2s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ2s.config(bg = 'red')
             elif prio == 4:
@@ -6762,12 +7526,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -6778,6 +7544,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ2s.config(bg = 'red')
             elif prio == 2:
@@ -6788,22 +7555,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('J2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ2s.config(bg = 'orange')
             elif prio == 2:
@@ -6817,32 +7589,39 @@ def buttonSolve():
     if 'ATo' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('ATo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonATo.config(bg = 'red')
             elif prio == 4:
@@ -6857,12 +7636,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('ATo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -6873,6 +7654,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonATo.config(bg = 'red')
             elif prio == 2:
@@ -6883,22 +7665,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('ATo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonATo.config(bg = 'orange')
             elif prio == 2:
@@ -6911,32 +7698,39 @@ def buttonSolve():
     if 'KTo' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('KTo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonKTo.config(bg = 'red')
             elif prio == 4:
@@ -6951,12 +7745,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('KTo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -6967,6 +7763,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKTo.config(bg = 'red')
             elif prio == 2:
@@ -6977,22 +7774,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('KTo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonKTo.config(bg = 'orange')
             elif prio == 2:
@@ -7005,32 +7807,39 @@ def buttonSolve():
     if 'QTo' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('QTo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQTo.config(bg = 'red')
             elif prio == 4:
@@ -7045,12 +7854,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('QTo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -7061,6 +7872,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQTo.config(bg = 'red')
             elif prio == 2:
@@ -7071,22 +7883,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('QTo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQTo.config(bg = 'orange')
             elif prio == 2:
@@ -7099,32 +7916,39 @@ def buttonSolve():
     if 'JTo' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('JTo'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJTo.config(bg = 'red')
             elif prio == 4:
@@ -7139,12 +7963,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('JTo'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -7155,6 +7981,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJTo.config(bg = 'red')
             elif prio == 2:
@@ -7165,22 +7992,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('JTo'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJTo.config(bg = 'orange')
             elif prio == 2:
@@ -7193,32 +8025,39 @@ def buttonSolve():
     if 'TT' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('TT'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonTT.config(bg = 'red')
             elif prio == 4:
@@ -7233,12 +8072,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('TT'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -7249,6 +8090,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonTT.config(bg = 'red')
             elif prio == 2:
@@ -7259,22 +8101,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('TT'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonTT.config(bg = 'orange')
             elif prio == 2:
@@ -7287,32 +8134,39 @@ def buttonSolve():
     if 'T9s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T9s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT9s.config(bg = 'red')
             elif prio == 4:
@@ -7327,12 +8181,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T9s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -7343,6 +8199,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT9s.config(bg = 'red')
             elif prio == 2:
@@ -7353,22 +8210,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T9s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT9s.config(bg = 'orange')
             elif prio == 2:
@@ -7381,32 +8243,39 @@ def buttonSolve():
     if 'T8s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T8s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT8s.config(bg = 'red')
             elif prio == 4:
@@ -7421,12 +8290,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T8s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -7437,6 +8308,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT8s.config(bg = 'red')
             elif prio == 2:
@@ -7447,22 +8319,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T8s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT8s.config(bg = 'orange')
             elif prio == 2:
@@ -7475,32 +8352,39 @@ def buttonSolve():
     if 'T7s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T7s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT7s.config(bg = 'red')
             elif prio == 4:
@@ -7515,12 +8399,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T7s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -7531,6 +8417,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT7s.config(bg = 'red')
             elif prio == 2:
@@ -7541,22 +8428,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T7s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT7s.config(bg = 'orange')
             elif prio == 2:
@@ -7569,32 +8461,39 @@ def buttonSolve():
     if 'T6s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T6s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT6s.config(bg = 'red')
             elif prio == 4:
@@ -7609,12 +8508,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T6s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -7625,6 +8526,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT6s.config(bg = 'red')
             elif prio == 2:
@@ -7635,22 +8537,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T6s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT6s.config(bg = 'orange')
             elif prio == 2:
@@ -7663,32 +8570,39 @@ def buttonSolve():
     if 'T5s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T5s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT5s.config(bg = 'red')
             elif prio == 4:
@@ -7703,12 +8617,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T5s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -7719,6 +8635,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT5s.config(bg = 'red')
             elif prio == 2:
@@ -7729,22 +8646,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T5s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT5s.config(bg = 'orange')
             elif prio == 2:
@@ -7757,32 +8679,39 @@ def buttonSolve():
     if 'T4s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T4s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT4s.config(bg = 'red')
             elif prio == 4:
@@ -7797,12 +8726,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T4s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -7813,6 +8744,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT4s.config(bg = 'red')
             elif prio == 2:
@@ -7823,22 +8755,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T4s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT4s.config(bg = 'orange')
             elif prio == 2:
@@ -7851,32 +8788,39 @@ def buttonSolve():
     if 'T3s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T3s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT3s.config(bg = 'red')
             elif prio == 4:
@@ -7891,12 +8835,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T3s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -7907,6 +8853,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT3s.config(bg = 'red')
             elif prio == 2:
@@ -7917,22 +8864,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T3s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT3s.config(bg = 'orange')
             elif prio == 2:
@@ -7945,32 +8897,39 @@ def buttonSolve():
     if 'T2s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T2s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT2s.config(bg = 'red')
             elif prio == 4:
@@ -7985,12 +8944,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T2s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -8001,6 +8962,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT2s.config(bg = 'red')
             elif prio == 2:
@@ -8011,22 +8973,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('T2s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT2s.config(bg = 'orange')
             elif prio == 2:
@@ -8040,32 +9007,39 @@ def buttonSolve():
     if 'A9o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A9o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA9o.config(bg = 'red')
             elif prio == 4:
@@ -8080,12 +9054,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A9o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -8096,6 +9072,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA9o.config(bg = 'red')
             elif prio == 2:
@@ -8106,22 +9083,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A9o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA9o.config(bg = 'orange')
             elif prio == 2:
@@ -8134,32 +9116,39 @@ def buttonSolve():
     if 'K9o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K9o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK9o.config(bg = 'red')
             elif prio == 4:
@@ -8174,12 +9163,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K9o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -8190,6 +9181,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK9o.config(bg = 'red')
             elif prio == 2:
@@ -8200,22 +9192,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K9o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK9o.config(bg = 'orange')
             elif prio == 2:
@@ -8228,32 +9225,39 @@ def buttonSolve():
     if 'Q9o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q9o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ9o.config(bg = 'red')
             elif prio == 4:
@@ -8268,12 +9272,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q9o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -8284,6 +9290,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ9o.config(bg = 'red')
             elif prio == 2:
@@ -8294,22 +9301,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q9o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ9o.config(bg = 'orange')
             elif prio == 2:
@@ -8322,32 +9334,39 @@ def buttonSolve():
     if 'J9o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J9o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ9o.config(bg = 'red')
             elif prio == 4:
@@ -8362,12 +9381,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J9o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -8378,6 +9399,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ9o.config(bg = 'red')
             elif prio == 2:
@@ -8388,22 +9410,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J9o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ9o.config(bg = 'orange')
             elif prio == 2:
@@ -8416,32 +9443,39 @@ def buttonSolve():
     if 'T9o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T9o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT9o.config(bg = 'red')
             elif prio == 4:
@@ -8456,12 +9490,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T9o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -8472,6 +9508,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT9o.config(bg = 'red')
             elif prio == 2:
@@ -8482,22 +9519,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T9o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT9o.config(bg = 'orange')
             elif prio == 2:
@@ -8510,32 +9552,39 @@ def buttonSolve():
     if '99' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('99'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button99.config(bg = 'red')
             elif prio == 4:
@@ -8550,12 +9599,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('99'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -8566,6 +9617,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button99.config(bg = 'red')
             elif prio == 2:
@@ -8576,22 +9628,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('99'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button99.config(bg = 'orange')
             elif prio == 2:
@@ -8604,32 +9661,39 @@ def buttonSolve():
     if '98s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('98s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button98s.config(bg = 'red')
             elif prio == 4:
@@ -8644,12 +9708,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('98s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -8660,6 +9726,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button98s.config(bg = 'red')
             elif prio == 2:
@@ -8670,22 +9737,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('98s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button98s.config(bg = 'orange')
             elif prio == 2:
@@ -8698,32 +9770,39 @@ def buttonSolve():
     if '97s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('97s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button97s.config(bg = 'red')
             elif prio == 4:
@@ -8738,12 +9817,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('97s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -8754,6 +9835,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button97s.config(bg = 'red')
             elif prio == 2:
@@ -8764,22 +9846,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('97s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button97s.config(bg = 'orange')
             elif prio == 2:
@@ -8792,32 +9879,39 @@ def buttonSolve():
     if '96s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('96s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button96s.config(bg = 'red')
             elif prio == 4:
@@ -8832,12 +9926,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('96s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -8848,6 +9944,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button96s.config(bg = 'red')
             elif prio == 2:
@@ -8858,22 +9955,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('96s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button96s.config(bg = 'orange')
             elif prio == 2:
@@ -8886,32 +9988,39 @@ def buttonSolve():
     if '95s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('95s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button95s.config(bg = 'red')
             elif prio == 4:
@@ -8926,12 +10035,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('95s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -8942,6 +10053,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button95s.config(bg = 'red')
             elif prio == 2:
@@ -8952,22 +10064,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('95s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button95s.config(bg = 'orange')
             elif prio == 2:
@@ -8980,32 +10097,39 @@ def buttonSolve():
     if '94s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('94s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button94s.config(bg = 'red')
             elif prio == 4:
@@ -9020,12 +10144,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('94s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -9036,6 +10162,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button94s.config(bg = 'red')
             elif prio == 2:
@@ -9046,22 +10173,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('94s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button94s.config(bg = 'orange')
             elif prio == 2:
@@ -9074,32 +10206,39 @@ def buttonSolve():
     if '93s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('93s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button93s.config(bg = 'red')
             elif prio == 4:
@@ -9114,12 +10253,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('93s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -9130,6 +10271,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button93s.config(bg = 'red')
             elif prio == 2:
@@ -9140,22 +10282,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('93s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button93s.config(bg = 'orange')
             elif prio == 2:
@@ -9168,32 +10315,39 @@ def buttonSolve():
     if '92s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('92s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button92s.config(bg = 'red')
             elif prio == 4:
@@ -9208,12 +10362,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('92s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -9224,6 +10380,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button92s.config(bg = 'red')
             elif prio == 2:
@@ -9234,22 +10391,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('92s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button92s.config(bg = 'orange')
             elif prio == 2:
@@ -9263,32 +10425,39 @@ def buttonSolve():
     if 'A8o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A8o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA8o.config(bg = 'red')
             elif prio == 4:
@@ -9303,12 +10472,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A8o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -9319,6 +10490,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA8o.config(bg = 'red')
             elif prio == 2:
@@ -9329,22 +10501,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A8o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA8o.config(bg = 'orange')
             elif prio == 2:
@@ -9357,32 +10534,39 @@ def buttonSolve():
     if 'K8o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K8o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK8o.config(bg = 'red')
             elif prio == 4:
@@ -9397,12 +10581,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K8o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -9413,6 +10599,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK8o.config(bg = 'red')
             elif prio == 2:
@@ -9423,22 +10610,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K8o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK8o.config(bg = 'orange')
             elif prio == 2:
@@ -9451,32 +10643,39 @@ def buttonSolve():
     if 'Q8o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q8o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ8o.config(bg = 'red')
             elif prio == 4:
@@ -9491,12 +10690,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q8o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -9507,6 +10708,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ8o.config(bg = 'red')
             elif prio == 2:
@@ -9517,22 +10719,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q8o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ8o.config(bg = 'orange')
             elif prio == 2:
@@ -9545,32 +10752,39 @@ def buttonSolve():
     if 'J8o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J8o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ8o.config(bg = 'red')
             elif prio == 4:
@@ -9585,12 +10799,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J8o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -9601,6 +10817,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ8o.config(bg = 'red')
             elif prio == 2:
@@ -9611,22 +10828,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J8o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ8o.config(bg = 'orange')
             elif prio == 2:
@@ -9639,32 +10861,39 @@ def buttonSolve():
     if 'T8o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T8o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT8o.config(bg = 'red')
             elif prio == 4:
@@ -9679,12 +10908,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T8o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -9695,6 +10926,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT8o.config(bg = 'red')
             elif prio == 2:
@@ -9705,22 +10937,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T8o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT8o.config(bg = 'orange')
             elif prio == 2:
@@ -9733,32 +10970,39 @@ def buttonSolve():
     if '98o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('98o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button98o.config(bg = 'red')
             elif prio == 4:
@@ -9773,12 +11017,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('98o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -9789,6 +11035,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button98o.config(bg = 'red')
             elif prio == 2:
@@ -9799,22 +11046,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('98o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button98o.config(bg = 'orange')
             elif prio == 2:
@@ -9827,32 +11079,39 @@ def buttonSolve():
     if '88' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('88'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button88.config(bg = 'red')
             elif prio == 4:
@@ -9867,12 +11126,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('88'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -9883,6 +11144,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button88.config(bg = 'red')
             elif prio == 2:
@@ -9893,22 +11155,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('88'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button88.config(bg = 'orange')
             elif prio == 2:
@@ -9921,32 +11188,39 @@ def buttonSolve():
     if '87s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('87s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button87s.config(bg = 'red')
             elif prio == 4:
@@ -9961,12 +11235,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('87s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -9977,6 +11253,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button87s.config(bg = 'red')
             elif prio == 2:
@@ -9987,22 +11264,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('87s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button87s.config(bg = 'orange')
             elif prio == 2:
@@ -10015,32 +11297,39 @@ def buttonSolve():
     if '86s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('86s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button86s.config(bg = 'red')
             elif prio == 4:
@@ -10055,12 +11344,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('86s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -10071,6 +11362,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button86s.config(bg = 'red')
             elif prio == 2:
@@ -10081,22 +11373,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('86s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button86s.config(bg = 'orange')
             elif prio == 2:
@@ -10109,32 +11406,39 @@ def buttonSolve():
     if '85s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('85s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button85s.config(bg = 'red')
             elif prio == 4:
@@ -10149,12 +11453,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('85s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -10165,6 +11471,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button85s.config(bg = 'red')
             elif prio == 2:
@@ -10175,22 +11482,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('85s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button85s.config(bg = 'orange')
             elif prio == 2:
@@ -10203,32 +11515,39 @@ def buttonSolve():
     if '84s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('84s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button84s.config(bg = 'red')
             elif prio == 4:
@@ -10243,12 +11562,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('84s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -10259,6 +11580,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button84s.config(bg = 'red')
             elif prio == 2:
@@ -10269,22 +11591,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('84s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button84s.config(bg = 'orange')
             elif prio == 2:
@@ -10297,32 +11624,39 @@ def buttonSolve():
     if '83s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('83s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button83s.config(bg = 'red')
             elif prio == 4:
@@ -10337,12 +11671,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('83s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -10353,6 +11689,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button83s.config(bg = 'red')
             elif prio == 2:
@@ -10363,22 +11700,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('83s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button83s.config(bg = 'orange')
             elif prio == 2:
@@ -10391,32 +11733,39 @@ def buttonSolve():
     if '82s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('82s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button82s.config(bg = 'red')
             elif prio == 4:
@@ -10431,12 +11780,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('82s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -10447,6 +11798,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button82s.config(bg = 'red')
             elif prio == 2:
@@ -10457,22 +11809,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('82s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button82s.config(bg = 'orange')
             elif prio == 2:
@@ -10486,32 +11843,39 @@ def buttonSolve():
     if 'A7o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A7o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA7o.config(bg = 'red')
             elif prio == 4:
@@ -10526,12 +11890,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A7o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -10542,6 +11908,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA7o.config(bg = 'red')
             elif prio == 2:
@@ -10552,22 +11919,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A7o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA7o.config(bg = 'orange')
             elif prio == 2:
@@ -10580,32 +11952,39 @@ def buttonSolve():
     if 'K7o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K7o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK7o.config(bg = 'red')
             elif prio == 4:
@@ -10620,12 +11999,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K7o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -10636,6 +12017,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK7o.config(bg = 'red')
             elif prio == 2:
@@ -10646,22 +12028,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K7o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK7o.config(bg = 'orange')
             elif prio == 2:
@@ -10674,32 +12061,39 @@ def buttonSolve():
     if 'Q7o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q7o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ7o.config(bg = 'red')
             elif prio == 4:
@@ -10714,12 +12108,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q7o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -10730,6 +12126,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ7o.config(bg = 'red')
             elif prio == 2:
@@ -10740,22 +12137,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q7o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ7o.config(bg = 'orange')
             elif prio == 2:
@@ -10768,32 +12170,39 @@ def buttonSolve():
     if 'J7o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J7o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ7o.config(bg = 'red')
             elif prio == 4:
@@ -10808,12 +12217,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J7o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -10824,6 +12235,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ7o.config(bg = 'red')
             elif prio == 2:
@@ -10834,22 +12246,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J7o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ7o.config(bg = 'orange')
             elif prio == 2:
@@ -10862,32 +12279,39 @@ def buttonSolve():
     if 'T7o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T7o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT7o.config(bg = 'red')
             elif prio == 4:
@@ -10902,12 +12326,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T7o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -10918,6 +12344,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT7o.config(bg = 'red')
             elif prio == 2:
@@ -10928,22 +12355,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T7o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT7o.config(bg = 'orange')
             elif prio == 2:
@@ -10956,32 +12388,39 @@ def buttonSolve():
     if '97o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('97o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button97o.config(bg = 'red')
             elif prio == 4:
@@ -10996,12 +12435,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('97o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -11012,6 +12453,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button97o.config(bg = 'red')
             elif prio == 2:
@@ -11022,22 +12464,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('97o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button97o.config(bg = 'orange')
             elif prio == 2:
@@ -11050,32 +12497,39 @@ def buttonSolve():
     if '87o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('87o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button87o.config(bg = 'red')
             elif prio == 4:
@@ -11090,12 +12544,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('87o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -11106,6 +12562,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button87o.config(bg = 'red')
             elif prio == 2:
@@ -11116,22 +12573,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('87o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button87o.config(bg = 'orange')
             elif prio == 2:
@@ -11144,32 +12606,39 @@ def buttonSolve():
     if '77' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('77'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button77.config(bg = 'red')
             elif prio == 4:
@@ -11184,12 +12653,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('77'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -11200,6 +12671,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button77.config(bg = 'red')
             elif prio == 2:
@@ -11210,22 +12682,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('77'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button77.config(bg = 'orange')
             elif prio == 2:
@@ -11238,32 +12715,39 @@ def buttonSolve():
     if '76s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('76s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button76s.config(bg = 'red')
             elif prio == 4:
@@ -11278,12 +12762,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('76s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -11294,6 +12780,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button76s.config(bg = 'red')
             elif prio == 2:
@@ -11304,22 +12791,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('76s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button76s.config(bg = 'orange')
             elif prio == 2:
@@ -11332,32 +12824,39 @@ def buttonSolve():
     if '75s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('75s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button75s.config(bg = 'red')
             elif prio == 4:
@@ -11372,12 +12871,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('75s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -11388,6 +12889,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button75s.config(bg = 'red')
             elif prio == 2:
@@ -11398,22 +12900,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('75s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button75s.config(bg = 'orange')
             elif prio == 2:
@@ -11426,32 +12933,39 @@ def buttonSolve():
     if '74s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('74s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button74s.config(bg = 'red')
             elif prio == 4:
@@ -11466,12 +12980,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('74s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -11482,6 +12998,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button74s.config(bg = 'red')
             elif prio == 2:
@@ -11492,22 +13009,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('74s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button74s.config(bg = 'orange')
             elif prio == 2:
@@ -11520,32 +13042,39 @@ def buttonSolve():
     if '73s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('73s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button73s.config(bg = 'red')
             elif prio == 4:
@@ -11560,12 +13089,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('73s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -11576,6 +13107,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button73s.config(bg = 'red')
             elif prio == 2:
@@ -11586,22 +13118,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('73s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button73s.config(bg = 'orange')
             elif prio == 2:
@@ -11614,32 +13151,39 @@ def buttonSolve():
     if '72s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('72s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button72s.config(bg = 'red')
             elif prio == 4:
@@ -11654,12 +13198,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('72s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -11670,6 +13216,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button72s.config(bg = 'red')
             elif prio == 2:
@@ -11680,22 +13227,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('72s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button72s.config(bg = 'orange')
             elif prio == 2:
@@ -11709,32 +13261,39 @@ def buttonSolve():
     if 'A6o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A6o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA6o.config(bg = 'red')
             elif prio == 4:
@@ -11749,12 +13308,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A6o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -11765,6 +13326,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA6o.config(bg = 'red')
             elif prio == 2:
@@ -11775,22 +13337,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A6o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA6o.config(bg = 'orange')
             elif prio == 2:
@@ -11803,32 +13370,39 @@ def buttonSolve():
     if 'K6o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K6o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK6o.config(bg = 'red')
             elif prio == 4:
@@ -11843,12 +13417,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K6o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -11859,6 +13435,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK6o.config(bg = 'red')
             elif prio == 2:
@@ -11869,22 +13446,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K6o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK6o.config(bg = 'orange')
             elif prio == 2:
@@ -11897,32 +13479,39 @@ def buttonSolve():
     if 'Q6o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q6o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ6o.config(bg = 'red')
             elif prio == 4:
@@ -11937,12 +13526,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q6o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -11953,6 +13544,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ6o.config(bg = 'red')
             elif prio == 2:
@@ -11963,22 +13555,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q6o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ6o.config(bg = 'orange')
             elif prio == 2:
@@ -11991,32 +13588,39 @@ def buttonSolve():
     if 'J6o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J6o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ6o.config(bg = 'red')
             elif prio == 4:
@@ -12031,12 +13635,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J6o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -12047,6 +13653,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ6o.config(bg = 'red')
             elif prio == 2:
@@ -12057,22 +13664,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J6o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ6o.config(bg = 'orange')
             elif prio == 2:
@@ -12085,32 +13697,39 @@ def buttonSolve():
     if 'T6o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T6o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT6o.config(bg = 'red')
             elif prio == 4:
@@ -12125,12 +13744,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T6o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -12141,6 +13762,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT6o.config(bg = 'red')
             elif prio == 2:
@@ -12151,22 +13773,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T6o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT6o.config(bg = 'orange')
             elif prio == 2:
@@ -12179,32 +13806,39 @@ def buttonSolve():
     if '96o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('96o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button96o.config(bg = 'red')
             elif prio == 4:
@@ -12219,12 +13853,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('96o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -12235,6 +13871,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button96o.config(bg = 'red')
             elif prio == 2:
@@ -12245,22 +13882,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('96o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button96o.config(bg = 'orange')
             elif prio == 2:
@@ -12273,32 +13915,39 @@ def buttonSolve():
     if '86o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('86o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button86o.config(bg = 'red')
             elif prio == 4:
@@ -12313,12 +13962,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('86o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -12329,6 +13980,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button86o.config(bg = 'red')
             elif prio == 2:
@@ -12339,22 +13991,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('86o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button86o.config(bg = 'orange')
             elif prio == 2:
@@ -12367,32 +14024,39 @@ def buttonSolve():
     if '76o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('76o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button76o.config(bg = 'red')
             elif prio == 4:
@@ -12407,12 +14071,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('76o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -12423,6 +14089,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button76o.config(bg = 'red')
             elif prio == 2:
@@ -12433,22 +14100,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('76o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button76o.config(bg = 'orange')
             elif prio == 2:
@@ -12461,32 +14133,39 @@ def buttonSolve():
     if '66' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('66'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button66.config(bg = 'red')
             elif prio == 4:
@@ -12501,12 +14180,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('66'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -12517,6 +14198,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button66.config(bg = 'red')
             elif prio == 2:
@@ -12527,22 +14209,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('66'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button66.config(bg = 'orange')
             elif prio == 2:
@@ -12555,32 +14242,39 @@ def buttonSolve():
     if '65s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('65s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button65s.config(bg = 'red')
             elif prio == 4:
@@ -12595,12 +14289,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('65s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -12611,6 +14307,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button65s.config(bg = 'red')
             elif prio == 2:
@@ -12621,22 +14318,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('65s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button65s.config(bg = 'orange')
             elif prio == 2:
@@ -12649,32 +14351,39 @@ def buttonSolve():
     if '64s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('64s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button64s.config(bg = 'red')
             elif prio == 4:
@@ -12689,12 +14398,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('64s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -12705,6 +14416,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button64s.config(bg = 'red')
             elif prio == 2:
@@ -12715,22 +14427,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('64s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button64s.config(bg = 'orange')
             elif prio == 2:
@@ -12743,32 +14460,39 @@ def buttonSolve():
     if '63s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('63s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button63s.config(bg = 'red')
             elif prio == 4:
@@ -12783,12 +14507,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('63s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -12799,6 +14525,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button63s.config(bg = 'red')
             elif prio == 2:
@@ -12809,22 +14536,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('63s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button63s.config(bg = 'orange')
             elif prio == 2:
@@ -12837,32 +14569,39 @@ def buttonSolve():
     if '62s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('62s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button62s.config(bg = 'red')
             elif prio == 4:
@@ -12877,12 +14616,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('62s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -12893,6 +14634,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button62s.config(bg = 'red')
             elif prio == 2:
@@ -12903,22 +14645,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('62s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button62s.config(bg = 'orange')
             elif prio == 2:
@@ -12932,32 +14679,39 @@ def buttonSolve():
     if 'A5o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A5o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA5o.config(bg = 'red')
             elif prio == 4:
@@ -12972,12 +14726,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A5o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -12988,6 +14744,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA5o.config(bg = 'red')
             elif prio == 2:
@@ -12998,22 +14755,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A5o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA5o.config(bg = 'orange')
             elif prio == 2:
@@ -13026,32 +14788,39 @@ def buttonSolve():
     if 'K5o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K5o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK5o.config(bg = 'red')
             elif prio == 4:
@@ -13066,12 +14835,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K5o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -13082,6 +14853,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK5o.config(bg = 'red')
             elif prio == 2:
@@ -13092,22 +14864,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K5o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK5o.config(bg = 'orange')
             elif prio == 2:
@@ -13120,32 +14897,39 @@ def buttonSolve():
     if 'Q5o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q5o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ5o.config(bg = 'red')
             elif prio == 4:
@@ -13160,12 +14944,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q5o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -13176,6 +14962,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ5o.config(bg = 'red')
             elif prio == 2:
@@ -13186,22 +14973,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q5o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ5o.config(bg = 'orange')
             elif prio == 2:
@@ -13214,32 +15006,39 @@ def buttonSolve():
     if 'J5o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J5o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ5o.config(bg = 'red')
             elif prio == 4:
@@ -13254,12 +15053,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J5o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -13270,6 +15071,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ5o.config(bg = 'red')
             elif prio == 2:
@@ -13280,22 +15082,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J5o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ5o.config(bg = 'orange')
             elif prio == 2:
@@ -13308,32 +15115,39 @@ def buttonSolve():
     if 'T5o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T5o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT5o.config(bg = 'red')
             elif prio == 4:
@@ -13348,12 +15162,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T5o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -13364,6 +15180,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT5o.config(bg = 'red')
             elif prio == 2:
@@ -13374,22 +15191,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T5o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT5o.config(bg = 'orange')
             elif prio == 2:
@@ -13402,32 +15224,39 @@ def buttonSolve():
     if '95o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('95o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button95o.config(bg = 'red')
             elif prio == 4:
@@ -13442,12 +15271,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('95o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -13458,6 +15289,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button95o.config(bg = 'red')
             elif prio == 2:
@@ -13468,22 +15300,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('95o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button95o.config(bg = 'orange')
             elif prio == 2:
@@ -13496,32 +15333,39 @@ def buttonSolve():
     if '85o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('85o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button85o.config(bg = 'red')
             elif prio == 4:
@@ -13536,12 +15380,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('85o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -13552,6 +15398,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button85o.config(bg = 'red')
             elif prio == 2:
@@ -13562,22 +15409,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('85o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button85o.config(bg = 'orange')
             elif prio == 2:
@@ -13590,32 +15442,39 @@ def buttonSolve():
     if '75o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('75o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button75o.config(bg = 'red')
             elif prio == 4:
@@ -13630,12 +15489,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('75o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -13646,6 +15507,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button75o.config(bg = 'red')
             elif prio == 2:
@@ -13656,22 +15518,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('75o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button75o.config(bg = 'orange')
             elif prio == 2:
@@ -13684,32 +15551,39 @@ def buttonSolve():
     if '65o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('65o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button65o.config(bg = 'red')
             elif prio == 4:
@@ -13724,12 +15598,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('65o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -13740,6 +15616,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button65o.config(bg = 'red')
             elif prio == 2:
@@ -13750,22 +15627,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('65o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button65o.config(bg = 'orange')
             elif prio == 2:
@@ -13778,32 +15660,39 @@ def buttonSolve():
     if '55' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('55'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button55.config(bg = 'red')
             elif prio == 4:
@@ -13818,12 +15707,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('55'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -13834,6 +15725,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button55.config(bg = 'red')
             elif prio == 2:
@@ -13844,22 +15736,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('55'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button55.config(bg = 'orange')
             elif prio == 2:
@@ -13872,32 +15769,39 @@ def buttonSolve():
     if '54s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('54s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button54s.config(bg = 'red')
             elif prio == 4:
@@ -13912,12 +15816,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('54s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -13928,6 +15834,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button54s.config(bg = 'red')
             elif prio == 2:
@@ -13938,22 +15845,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('54s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button54s.config(bg = 'orange')
             elif prio == 2:
@@ -13966,32 +15878,39 @@ def buttonSolve():
     if '53s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('53s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button53s.config(bg = 'red')
             elif prio == 4:
@@ -14006,12 +15925,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('53s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -14022,6 +15943,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button53s.config(bg = 'red')
             elif prio == 2:
@@ -14032,22 +15954,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('53s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button53s.config(bg = 'orange')
             elif prio == 2:
@@ -14060,32 +15987,39 @@ def buttonSolve():
     if '52s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('52s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button52s.config(bg = 'red')
             elif prio == 4:
@@ -14100,12 +16034,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('52s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -14116,6 +16052,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button52s.config(bg = 'red')
             elif prio == 2:
@@ -14126,22 +16063,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('52s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button52s.config(bg = 'orange')
             elif prio == 2:
@@ -14155,32 +16097,39 @@ def buttonSolve():
     if 'A4o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A4o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA4o.config(bg = 'red')
             elif prio == 4:
@@ -14195,12 +16144,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A4o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -14211,6 +16162,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA4o.config(bg = 'red')
             elif prio == 2:
@@ -14221,22 +16173,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A4o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA4o.config(bg = 'orange')
             elif prio == 2:
@@ -14249,32 +16206,39 @@ def buttonSolve():
     if 'K4o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K4o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK4o.config(bg = 'red')
             elif prio == 4:
@@ -14289,12 +16253,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K4o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -14305,6 +16271,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK4o.config(bg = 'red')
             elif prio == 2:
@@ -14315,22 +16282,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K4o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK4o.config(bg = 'orange')
             elif prio == 2:
@@ -14343,32 +16315,39 @@ def buttonSolve():
     if 'Q4o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q4o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ4o.config(bg = 'red')
             elif prio == 4:
@@ -14383,12 +16362,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q4o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -14399,6 +16380,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ4o.config(bg = 'red')
             elif prio == 2:
@@ -14409,22 +16391,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q4o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ4o.config(bg = 'orange')
             elif prio == 2:
@@ -14437,32 +16424,39 @@ def buttonSolve():
     if 'J4o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J4o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ4o.config(bg = 'red')
             elif prio == 4:
@@ -14477,12 +16471,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J4o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -14493,6 +16489,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ4o.config(bg = 'red')
             elif prio == 2:
@@ -14503,22 +16500,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J4o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ4o.config(bg = 'orange')
             elif prio == 2:
@@ -14531,32 +16533,39 @@ def buttonSolve():
     if 'T4o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T4o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT4o.config(bg = 'red')
             elif prio == 4:
@@ -14571,12 +16580,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T4o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -14587,6 +16598,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT4o.config(bg = 'red')
             elif prio == 2:
@@ -14597,22 +16609,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T4o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT4o.config(bg = 'orange')
             elif prio == 2:
@@ -14625,32 +16642,39 @@ def buttonSolve():
     if '94o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('94o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button94o.config(bg = 'red')
             elif prio == 4:
@@ -14665,12 +16689,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('94o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -14681,6 +16707,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button94o.config(bg = 'red')
             elif prio == 2:
@@ -14691,22 +16718,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('94o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button94o.config(bg = 'orange')
             elif prio == 2:
@@ -14719,32 +16751,39 @@ def buttonSolve():
     if '84o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('84o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button84o.config(bg = 'red')
             elif prio == 4:
@@ -14759,12 +16798,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('84o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -14775,6 +16816,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button84o.config(bg = 'red')
             elif prio == 2:
@@ -14785,22 +16827,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('84o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button84o.config(bg = 'orange')
             elif prio == 2:
@@ -14813,32 +16860,39 @@ def buttonSolve():
     if '74o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('74o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button74o.config(bg = 'red')
             elif prio == 4:
@@ -14853,12 +16907,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('74o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -14869,6 +16925,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button74o.config(bg = 'red')
             elif prio == 2:
@@ -14879,22 +16936,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('74o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button74o.config(bg = 'orange')
             elif prio == 2:
@@ -14907,32 +16969,39 @@ def buttonSolve():
     if '64o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('64o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button64o.config(bg = 'red')
             elif prio == 4:
@@ -14947,12 +17016,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('64o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -14963,6 +17034,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button64o.config(bg = 'red')
             elif prio == 2:
@@ -14973,22 +17045,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('64o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button64o.config(bg = 'orange')
             elif prio == 2:
@@ -15001,32 +17078,39 @@ def buttonSolve():
     if '54o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('54o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button54o.config(bg = 'red')
             elif prio == 4:
@@ -15041,12 +17125,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('54o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -15057,6 +17143,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button54o.config(bg = 'red')
             elif prio == 2:
@@ -15067,22 +17154,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('54o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button54o.config(bg = 'orange')
             elif prio == 2:
@@ -15095,32 +17187,39 @@ def buttonSolve():
     if '44' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('44'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button44.config(bg = 'red')
             elif prio == 4:
@@ -15135,12 +17234,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('44'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -15151,6 +17252,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button44.config(bg = 'red')
             elif prio == 2:
@@ -15161,22 +17263,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('44'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button44.config(bg = 'orange')
             elif prio == 2:
@@ -15189,32 +17296,39 @@ def buttonSolve():
     if '43s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('43s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button43s.config(bg = 'red')
             elif prio == 4:
@@ -15229,12 +17343,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('43s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -15245,6 +17361,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button43s.config(bg = 'red')
             elif prio == 2:
@@ -15255,22 +17372,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('43s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button43s.config(bg = 'orange')
             elif prio == 2:
@@ -15283,32 +17405,39 @@ def buttonSolve():
     if '42s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('42s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button42s.config(bg = 'red')
             elif prio == 4:
@@ -15323,12 +17452,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('42s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -15339,6 +17470,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button42s.config(bg = 'red')
             elif prio == 2:
@@ -15349,22 +17481,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('42s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button42s.config(bg = 'orange')
             elif prio == 2:
@@ -15378,32 +17515,39 @@ def buttonSolve():
     if 'A3o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A3o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA3o.config(bg = 'red')
             elif prio == 4:
@@ -15418,12 +17562,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A3o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -15434,6 +17580,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA3o.config(bg = 'red')
             elif prio == 2:
@@ -15444,22 +17591,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A3o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA3o.config(bg = 'orange')
             elif prio == 2:
@@ -15472,32 +17624,39 @@ def buttonSolve():
     if 'K3o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K3o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK3o.config(bg = 'red')
             elif prio == 4:
@@ -15512,12 +17671,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K3o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -15528,6 +17689,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK3o.config(bg = 'red')
             elif prio == 2:
@@ -15538,22 +17700,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K3o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK3o.config(bg = 'orange')
             elif prio == 2:
@@ -15566,32 +17733,39 @@ def buttonSolve():
     if 'Q3o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q3o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ3o.config(bg = 'red')
             elif prio == 4:
@@ -15606,12 +17780,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q3o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -15622,6 +17798,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ3o.config(bg = 'red')
             elif prio == 2:
@@ -15632,22 +17809,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q3o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ3o.config(bg = 'orange')
             elif prio == 2:
@@ -15660,32 +17842,39 @@ def buttonSolve():
     if 'J3o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J3o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ3o.config(bg = 'red')
             elif prio == 4:
@@ -15700,12 +17889,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J3o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -15716,6 +17907,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ3o.config(bg = 'red')
             elif prio == 2:
@@ -15726,22 +17918,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J3o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ3o.config(bg = 'orange')
             elif prio == 2:
@@ -15754,32 +17951,39 @@ def buttonSolve():
     if 'T3o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T3o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT3o.config(bg = 'red')
             elif prio == 4:
@@ -15794,12 +17998,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T3o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -15810,6 +18016,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT3o.config(bg = 'red')
             elif prio == 2:
@@ -15820,22 +18027,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T3o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT3o.config(bg = 'orange')
             elif prio == 2:
@@ -15848,32 +18060,39 @@ def buttonSolve():
     if '93o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('93o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button93o.config(bg = 'red')
             elif prio == 4:
@@ -15888,12 +18107,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('93o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -15904,6 +18125,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button93o.config(bg = 'red')
             elif prio == 2:
@@ -15914,22 +18136,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('93o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button93o.config(bg = 'orange')
             elif prio == 2:
@@ -15942,32 +18169,39 @@ def buttonSolve():
     if '83o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('83o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button83o.config(bg = 'red')
             elif prio == 4:
@@ -15982,12 +18216,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('83o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -15998,6 +18234,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button83o.config(bg = 'red')
             elif prio == 2:
@@ -16008,22 +18245,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('83o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button83o.config(bg = 'orange')
             elif prio == 2:
@@ -16036,32 +18278,39 @@ def buttonSolve():
     if '73o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('73o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button73o.config(bg = 'red')
             elif prio == 4:
@@ -16076,12 +18325,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('73o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -16092,6 +18343,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button73o.config(bg = 'red')
             elif prio == 2:
@@ -16102,22 +18354,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('73o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button73o.config(bg = 'orange')
             elif prio == 2:
@@ -16130,32 +18387,39 @@ def buttonSolve():
     if '63o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('63o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button63o.config(bg = 'red')
             elif prio == 4:
@@ -16170,12 +18434,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('63o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -16186,6 +18452,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button63o.config(bg = 'red')
             elif prio == 2:
@@ -16196,22 +18463,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('63o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button63o.config(bg = 'orange')
             elif prio == 2:
@@ -16224,32 +18496,39 @@ def buttonSolve():
     if '53o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('53o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button53o.config(bg = 'red')
             elif prio == 4:
@@ -16264,12 +18543,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('53o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -16280,6 +18561,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button53o.config(bg = 'red')
             elif prio == 2:
@@ -16290,22 +18572,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('53o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button53o.config(bg = 'orange')
             elif prio == 2:
@@ -16318,32 +18605,39 @@ def buttonSolve():
     if '43o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('43o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button43o.config(bg = 'red')
             elif prio == 4:
@@ -16358,12 +18652,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('43o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -16374,6 +18670,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button43o.config(bg = 'red')
             elif prio == 2:
@@ -16384,22 +18681,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('43o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button43o.config(bg = 'orange')
             elif prio == 2:
@@ -16412,32 +18714,39 @@ def buttonSolve():
     if '33' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('33'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button33.config(bg = 'red')
             elif prio == 4:
@@ -16452,12 +18761,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('33'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -16468,6 +18779,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button33.config(bg = 'red')
             elif prio == 2:
@@ -16478,22 +18790,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('33'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button33.config(bg = 'orange')
             elif prio == 2:
@@ -16506,32 +18823,39 @@ def buttonSolve():
     if '32s' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('32s'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button32s.config(bg = 'red')
             elif prio == 4:
@@ -16546,12 +18870,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('32s'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -16562,6 +18888,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button32s.config(bg = 'red')
             elif prio == 2:
@@ -16572,22 +18899,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandSuit('32s'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button32s.config(bg = 'orange')
             elif prio == 2:
@@ -16601,32 +18933,39 @@ def buttonSolve():
     if 'A2o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A2o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonA2o.config(bg = 'red')
             elif prio == 4:
@@ -16641,12 +18980,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A2o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -16657,6 +18998,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA2o.config(bg = 'red')
             elif prio == 2:
@@ -16667,22 +19009,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('A2o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonA2o.config(bg = 'orange')
             elif prio == 2:
@@ -16695,32 +19042,39 @@ def buttonSolve():
     if 'K2o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K2o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonK2o.config(bg = 'red')
             elif prio == 4:
@@ -16735,12 +19089,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K2o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -16751,6 +19107,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK2o.config(bg = 'red')
             elif prio == 2:
@@ -16761,22 +19118,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('K2o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonK2o.config(bg = 'orange')
             elif prio == 2:
@@ -16789,32 +19151,39 @@ def buttonSolve():
     if 'Q2o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q2o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonQ2o.config(bg = 'red')
             elif prio == 4:
@@ -16829,12 +19198,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q2o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -16845,6 +19216,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ2o.config(bg = 'red')
             elif prio == 2:
@@ -16855,22 +19227,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('Q2o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonQ2o.config(bg = 'orange')
             elif prio == 2:
@@ -16883,32 +19260,39 @@ def buttonSolve():
     if 'J2o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J2o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonJ2o.config(bg = 'red')
             elif prio == 4:
@@ -16923,12 +19307,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J2o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -16939,6 +19325,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ2o.config(bg = 'red')
             elif prio == 2:
@@ -16949,22 +19336,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('J2o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonJ2o.config(bg = 'orange')
             elif prio == 2:
@@ -16977,32 +19369,39 @@ def buttonSolve():
     if 'T2o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T2o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 buttonT2o.config(bg = 'red')
             elif prio == 4:
@@ -17017,12 +19416,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T2o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -17033,6 +19434,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT2o.config(bg = 'red')
             elif prio == 2:
@@ -17043,22 +19445,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('T2o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 buttonT2o.config(bg = 'orange')
             elif prio == 2:
@@ -17071,32 +19478,39 @@ def buttonSolve():
     if '92o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('92o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button92o.config(bg = 'red')
             elif prio == 4:
@@ -17111,12 +19525,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('92o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -17127,6 +19543,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button92o.config(bg = 'red')
             elif prio == 2:
@@ -17137,22 +19554,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('92o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button92o.config(bg = 'orange')
             elif prio == 2:
@@ -17165,32 +19587,39 @@ def buttonSolve():
     if '82o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('82o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button82o.config(bg = 'red')
             elif prio == 4:
@@ -17205,12 +19634,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('82o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -17221,6 +19652,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button82o.config(bg = 'red')
             elif prio == 2:
@@ -17231,22 +19663,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('82o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button82o.config(bg = 'orange')
             elif prio == 2:
@@ -17259,32 +19696,39 @@ def buttonSolve():
     if '72o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('72o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button72o.config(bg = 'red')
             elif prio == 4:
@@ -17299,12 +19743,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('72o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -17315,6 +19761,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button72o.config(bg = 'red')
             elif prio == 2:
@@ -17325,22 +19772,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('72o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button72o.config(bg = 'orange')
             elif prio == 2:
@@ -17353,32 +19805,39 @@ def buttonSolve():
     if '62o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('62o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button62o.config(bg = 'red')
             elif prio == 4:
@@ -17393,12 +19852,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('62o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -17409,6 +19870,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button62o.config(bg = 'red')
             elif prio == 2:
@@ -17419,22 +19881,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('62o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button62o.config(bg = 'orange')
             elif prio == 2:
@@ -17447,32 +19914,39 @@ def buttonSolve():
     if '52o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('52o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button52o.config(bg = 'red')
             elif prio == 4:
@@ -17487,12 +19961,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('52o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -17503,6 +19979,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button52o.config(bg = 'red')
             elif prio == 2:
@@ -17513,22 +19990,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('52o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button52o.config(bg = 'orange')
             elif prio == 2:
@@ -17541,32 +20023,39 @@ def buttonSolve():
     if '42o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('42o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button42o.config(bg = 'red')
             elif prio == 4:
@@ -17581,12 +20070,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('42o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -17597,6 +20088,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button42o.config(bg = 'red')
             elif prio == 2:
@@ -17607,22 +20099,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('42o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button42o.config(bg = 'orange')
             elif prio == 2:
@@ -17635,32 +20132,39 @@ def buttonSolve():
     if '32o' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('32o'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button32o.config(bg = 'red')
             elif prio == 4:
@@ -17675,12 +20179,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('32o'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -17691,6 +20197,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button32o.config(bg = 'red')
             elif prio == 2:
@@ -17701,22 +20208,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandOffsuit('32o'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button32o.config(bg = 'orange')
             elif prio == 2:
@@ -17729,32 +20241,39 @@ def buttonSolve():
     if '22' in selected_range:
         if var.get()  == 1: #A
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('22'):
                 for hh in a_check_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in a_bet_fold:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in a_check_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
                 for hh in a_bet_call:
                     if hand == hh.pohand:
                         ###print("4")
                         if prio < 4:
-                            prio = 4
+                            prio += 4
+                            prio_counter += 1
                 for hh in a_check_raise:
                     if hand == hh.pohand:
                         ###print("5")
                         if prio < 5:
-                            prio = 5
+                            prio += 5
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 5:
                 button22.config(bg = 'red')
             elif prio == 4:
@@ -17769,12 +20288,14 @@ def buttonSolve():
                 pass
         elif var.get() == 2: #B
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('22'):
                 for hh in b_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in b_call:
                     if hand == hh.pohand:
                         ###print("2")
@@ -17785,6 +20306,7 @@ def buttonSolve():
                         ###print("3")
                         if prio < 1:
                             prio = 3
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button22.config(bg = 'red')
             elif prio == 2:
@@ -17795,22 +20317,27 @@ def buttonSolve():
                 pass
         elif var.get() == 3: #C
             prio = 0
+            prio_counter = 0
             for hand in expander.expandPP('22'):
                 for hh in c_bet_fold:
                     if hand == hh.pohand:
                         ###print("1--------------" + hand)
                         if prio < 1:
-                            prio = 1
+                            prio += 1
+                            prio_counter += 1
                 for hh in c_check:
                     if hand == hh.pohand:
                         ###print("2")
                         if prio < 2:
-                            prio = 2
+                            prio += 2
+                            prio_counter += 1
                 for hh in c_bet_call:
                     if hand == hh.pohand:
                         ###print("3")
                         if prio < 3:
-                            prio = 3
+                            prio += 3
+                            prio_counter += 1
+            prio = int(prio/prio_counter)
             if prio == 3:
                 button22.config(bg = 'orange')
             elif prio == 2:
