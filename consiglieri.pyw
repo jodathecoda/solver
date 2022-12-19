@@ -112,7 +112,7 @@ h = 55.3
 j = 60.5
 #B
 k = 33.3
-m = 36.0
+m = 35.0
 n = 75.2
 
 def clear_players_ranges():
