@@ -19874,6 +19874,9 @@ def pressATo(par):
             if 'ATo' in selected_range:
                 buttonATo.config(bg = color_offsuit)
                 selected_range.remove('ATo')
+            else:
+                buttonATo.config(bg = color_offsuit_selected)
+                selected_range.append('ATo')
     else:
         open_solutionOffsuit('ATo')
     
