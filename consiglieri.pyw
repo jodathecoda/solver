@@ -73,6 +73,20 @@ solved = 0
 global board_string
 board_string = ""
 
+allBoard = ['As', 'Ah', 'Ad', 'Ac', 
+            'Ks', 'Kh', 'Kd', 'Kc',
+            'Qs', 'Qh', 'Qd', 'Qc', 
+            'Js', 'Jh', 'Jd', 'Jc', 
+            'Ts', 'Th', 'Td', 'Tc', 
+            '9s', '9h', '9d', '9c', 
+            '8s', '8h', '8d', '8c', 
+            '7s', '7h', '7d', '7c', 
+            '6s', '6h', '6d', '6c', 
+            '5s', '5h', '5d', '5c', 
+            '4s', '4h', '4d', '4c', 
+            '3s', '3h', '3d', '3c', 
+            '2s', '2h', '2d', '2c']
+
 #Player OP ranges var = 1   A:                       priority:
 a_bet_fold     = []       # 0-a; d-e     lightblue       2
 a_check_fold   = []       # a-b          blue            1
@@ -758,7 +772,7 @@ def open_solutionPP(ha):
 
     global c_bet_fold
     global c_check
-    global c_bet_call
+    global c_bet_call      
 
     board_string
 
@@ -885,97 +899,97 @@ def open_solutionSuit(ha):
     secondary_window.title(ha)
     secondary_window.config(width=160, height=150)
     secondary_window.iconbitmap("cap.ico")
-    range_pp = expander.expandSuit(ha)
+    range_suite = expander.expandSuit(ha)
     xcoord = 15
     ycoord = 20
-    for i in range(len(range_pp)):
+    for i in range(len(range_suite)):
         color_but1 = 'white'
         color_but2 = 'white'
         color3 = 'white'
         label3 = "Not in Range"
         #color1
-        if 's' in str(range_pp[i][:2]):
+        if 's' in str(range_suite[i][:2]):
             color_but1 = color_spade
-        elif 'h' in str(range_pp[i][:2]):
+        elif 'h' in str(range_suite[i][:2]):
             color_but1 = color_heart
-        elif 'd' in str(range_pp[i][:2]):
+        elif 'd' in str(range_suite[i][:2]):
             color_but1 = color_diamond
-        elif 'c' in str(range_pp[i][:2]):
+        elif 'c' in str(range_suite[i][:2]):
             color_but1 = color_club
         else:
             pass
         #color2
-        if 's' in str(range_pp[i][2:]):
+        if 's' in str(range_suite[i][2:]):
             color_but2 = color_spade
-        elif 'h' in str(range_pp[i][2:]):
+        elif 'h' in str(range_suite[i][2:]):
             color_but2 = color_heart
-        elif 'd' in str(range_pp[i][2:]):
+        elif 'd' in str(range_suite[i][2:]):
             color_but2 = color_diamond
-        elif 'c' in str(range_pp[i][2:]):
+        elif 'c' in str(range_suite[i][2:]):
             color_but2 = color_club
         else:
             pass
         #color3
         #A
         for hande in a_bet_fold:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_suite[i]) in hande.pohand:
                 label3 = 'BET-FOLD'
                 color3 = 'lightblue'
         for hande in a_check_fold:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_suite[i]) in hande.pohand:
                 label3 = 'CHECK-FOLD'
                 color3 = 'blue'
         for hande in a_check_raise:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_suite[i]) in hande.pohand:
                 label3 = 'CHECK-RAISE'
                 color3 = 'red'
         for hande in a_check_call:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_suite[i]) in hande.pohand:
                 label3 = 'CHECK-CALL'
                 color3 = 'green'
         for hande in a_bet_call:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_suite[i]) in hande.pohand:
                 label3 = 'BET-CALL'
                 color3 = 'orange'
         #B
         for hande in b_fold:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_suite[i]) in hande.pohand:
                 label3 = 'FOLD'
                 color3 = 'blue'
         for hande in b_raise:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_suite[i]) in hande.pohand:
                 label3 = 'RAISE'
                 color3 = 'red'
         for hande in b_call:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_suite[i]) in hande.pohand:
                 label3 = 'CALL'
                 color3 = 'yellow'
 
         #C
         for hande in c_bet_fold:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_suite[i]) in hande.pohand:
                 label3 = 'BET-FOLD'
                 color3 = 'lightblue'
         for hande in c_check:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_suite[i]) in hande.pohand:
                 label3 = 'CHECK'
                 color3 = 'green'
         for hande in c_bet_call:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_suite[i]) in hande.pohand:
                 label3 = 'BET-CALL'
                 color3 = 'orange'
 
         #D -ead Man's Hand        
-        if str(range_pp[i][:2]) in board_string or str(range_pp[i][2:]) in board_string:
+        if str(range_suite[i][:2]) in board_string or str(range_suite[i][2:]) in board_string:
             label3 = 'DEAD'
             color3 = 'grey'
         ###print(board_string)
 
 
         #make two buttons out of string next to each other and colur them!!!
-        newButton1 = tk.Button(secondary_window, text=str(range_pp[i][:2]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but1)
+        newButton1 = tk.Button(secondary_window, text=str(range_suite[i][:2]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but1)
         newButton1.place(x = xcoord, y = ycoord)
-        newButton2 = tk.Button(secondary_window, text=str(range_pp[i][2:]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but2)
+        newButton2 = tk.Button(secondary_window, text=str(range_suite[i][2:]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but2)
         newButton2.place(x = xcoord + 30, y = ycoord)
         newButton3 = tk.Button(secondary_window, text=label3, bg=color3)
         newButton3.place(x = xcoord + 60, y = ycoord)
@@ -1003,119 +1017,136 @@ def open_solutionOffsuit(ha):
     secondary_window.title(ha)
     secondary_window.config(width=160, height=400)
     secondary_window.iconbitmap("cap.ico")
-    range_pp = expander.expandOffsuit(ha)
+    range_offsuite = expander.expandOffsuit(ha)
     xcoord = 15
     ycoord = 20
-    for i in range(len(range_pp)):
+    for i in range(len(range_offsuite)):
         color_but1 = 'white'
         color_but2 = 'white'
         color3 = 'white'
         label3 = "Not in Range"
         #color1
-        if 's' in str(range_pp[i][:2]):
+        if 's' in str(range_offsuite[i][:2]):
             color_but1 = color_spade
-        elif 'h' in str(range_pp[i][:2]):
+        elif 'h' in str(range_offsuite[i][:2]):
             color_but1 = color_heart
-        elif 'd' in str(range_pp[i][:2]):
+        elif 'd' in str(range_offsuite[i][:2]):
             color_but1 = color_diamond
-        elif 'c' in str(range_pp[i][:2]):
+        elif 'c' in str(range_offsuite[i][:2]):
             color_but1 = color_club
         else:
             pass
         #color2
-        if 's' in str(range_pp[i][2:]):
+        if 's' in str(range_offsuite[i][2:]):
             color_but2 = color_spade
-        elif 'h' in str(range_pp[i][2:]):
+        elif 'h' in str(range_offsuite[i][2:]):
             color_but2 = color_heart
-        elif 'd' in str(range_pp[i][2:]):
+        elif 'd' in str(range_offsuite[i][2:]):
             color_but2 = color_diamond
-        elif 'c' in str(range_pp[i][2:]):
+        elif 'c' in str(range_offsuite[i][2:]):
             color_but2 = color_club
         else:
             pass
         #color3
         #A
         for hande in a_bet_fold:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_offsuite[i]) in hande.pohand:
                 label3 = 'BET-FOLD'
                 color3 = 'lightblue'
         for hande in a_check_fold:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_offsuite[i]) in hande.pohand:
                 label3 = 'CHECK-FOLD'
                 color3 = 'blue'
         for hande in a_check_raise:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_offsuite[i]) in hande.pohand:
                 label3 = 'CHECK-RAISE'
                 color3 = 'red'
         for hande in a_check_call:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_offsuite[i]) in hande.pohand:
                 label3 = 'CHECK-CALL'
                 color3 = 'green'
         for hande in a_bet_call:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_offsuite[i]) in hande.pohand:
                 label3 = 'BET-CALL'
                 color3 = 'orange'
         #B
         for hande in b_fold:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_offsuite[i]) in hande.pohand:
                 label3 = 'FOLD'
                 color3 = 'blue'
         for hande in b_raise:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_offsuite[i]) in hande.pohand:
                 label3 = 'RAISE'
                 color3 = 'red'
         for hande in b_call:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_offsuite[i]) in hande.pohand:
                 label3 = 'CALL'
                 color3 = 'yellow'
 
         #C
         for hande in c_bet_fold:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_offsuite[i]) in hande.pohand:
                 label3 = 'BET-FOLD'
                 color3 = 'lightblue'
         for hande in c_check:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_offsuite[i]) in hande.pohand:
                 label3 = 'CHECK'
                 color3 = 'green'
         for hande in c_bet_call:
-            if str(range_pp[i]) in hande.pohand:
+            if str(range_offsuite[i]) in hande.pohand:
                 label3 = 'BET-CALL'
                 color3 = 'orange'
 
         #D -ead Man's Hand        
-        if str(range_pp[i][:2]) in board_string or str(range_pp[i][2:]) in board_string:
+        if str(range_offsuite[i][:2]) in board_string or str(range_offsuite[i][2:]) in board_string:
             label3 = 'DEAD'
             color3 = 'grey'
         ###print(board_string)
 
 
         #make two buttons out of string next to each other and colur them!!!
-        newButton1 = tk.Button(secondary_window, text=str(range_pp[i][:2]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but1)
+        newButton1 = tk.Button(secondary_window, text=str(range_offsuite[i][:2]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but1)
         newButton1.place(x = xcoord, y = ycoord)
-        newButton2 = tk.Button(secondary_window, text=str(range_pp[i][2:]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but2)
+        newButton2 = tk.Button(secondary_window, text=str(range_offsuite[i][2:]).replace("s", suit_spade).replace("h", suit_heart).replace("d", suit_diamond).replace("c", suit_club), bg=color_but2)
         newButton2.place(x = xcoord + 30, y = ycoord)
         newButton3 = tk.Button(secondary_window, text=label3, bg=color3)
         newButton3.place(x = xcoord + 60, y = ycoord)
         ycoord += 30
 
-#label.grid(row=0,column=1)
-allBoard = ['As', 'Ah', 'Ad', 'Ac', 
-            'Ks', 'Kh', 'Kd', 'Kc',
-            'Qs', 'Qh', 'Qd', 'Qc', 
-            'Js', 'Jh', 'Jd', 'Jc', 
-            'Ts', 'Th', 'Td', 'Tc', 
-            '9s', '9h', '9d', '9c', 
-            '8s', '8h', '8d', '8c', 
-            '7s', '7h', '7d', '7c', 
-            '6s', '6h', '6d', '6c', 
-            '5s', '5h', '5d', '5c', 
-            '4s', '4h', '4d', '4c', 
-            '3s', '3h', '3d', '3c', 
-            '2s', '2h', '2d', '2c']
-
 def ClearAll():
+
+    global a_bet_fold
+    global a_check_fold
+    global a_check_raise
+    global a_check_call
+    global a_bet_call
+
+    global b_fold
+    global b_raise
+    global b_call
+
+    global c_bet_fold
+    global c_check
+    global c_bet_call
+
+    #clear all ranges
+    a_bet_fold      = []
+    a_check_fold    = []
+    a_check_raise   = []
+    a_check_call    = []
+    a_bet_call      = []
+
+    b_fold          = []
+    b_raise         = []
+    b_call          = []
+
+    c_bet_fold      = []
+    c_check         = []
+    c_bet_call      = []
+    
     global solved
+
+
     solved = 0
     Slider.set(0)
     pressAA(1)
