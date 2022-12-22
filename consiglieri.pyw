@@ -1117,6 +1117,7 @@ allBoard = ['As', 'Ah', 'Ad', 'Ac',
 def ClearAll():
     global solved
     solved = 0
+    Slider.set(0)
     pressAA(1)
     pressAKs(1)
     pressAQs(1)
