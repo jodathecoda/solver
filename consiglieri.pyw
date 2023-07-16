@@ -1,5 +1,5 @@
 import tkinter as tk
-
+import os
 import expander
 import calculator
 import random
@@ -8,6 +8,9 @@ import time
 
 import matplotlib.pyplot as plt
 import numpy as np
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 mywindow = tk.Tk()
 mywindow.geometry("500x400")
@@ -1900,6 +1903,7 @@ def buttonSolve():
 
     #random_hand = str(random.choice(expanded_range))
     counter_hands_range = 0
+    clear_screen()
     for nexthand in expanded_range:
         str_hand = str(nexthand)
         Bigcard1 = str_hand[:2]
@@ -1918,7 +1922,13 @@ def buttonSolve():
 
         resultlist = []
         resultlist = calculator.find_equx(card1, card2, boardd)
+        #print(resultlist)
         equx = round(float(resultlist[1]), 5)*100
+        #print(str(len(expanded_range)))
+        if len(expanded_range) < 13:
+            print("----------------")
+            print(str_hand + " : " + str(equx))
+            print("----------------")
         handzArr[counter_hands_range].equx = round(equx, 5)
         handzArr[counter_hands_range].x = counter_hands_range
         counter_hands_range += 1
