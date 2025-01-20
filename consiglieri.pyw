@@ -13,7 +13,7 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 mywindow = tk.Tk()
-mywindow.geometry("500x400")
+mywindow.geometry("575x545")
 mywindow.title("Consiglieri")
 mywindow.iconbitmap("cap.ico")
 
