@@ -120,20 +120,20 @@ var.set(1)
 
 #solved game coefficients: zz
 #A
-a = 5.1
-b = 40         #16.0
-c = 45          #17.0
-d = 50
-e = 55
-f = 91.0
+a = 5.9
+b = 51.1         
+c = 52.6         
+d = 82.1
+e = 85.0
+f = 93.9
 #C
-g = 8.0
-h = 55.3
-j = 60.5
+g = 14.0
+h = 71.9
+j = 79.0
 #B
-k = 36.3
-m = 41.0
-n = 75.2
+k = 50.0
+m = 52.6
+n = 89.5
 
 def clear_players_ranges():
     global a_bet_fold
