@@ -9,6 +9,8 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 
+debugprint = False
+
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -120,20 +122,20 @@ var.set(1)
 
 #solved game coefficients: zz
 #A
-a = 5.9
-b = 51.1         
-c = 52.6         
-d = 82.1
-e = 85.0
-f = 93.9
+a = 6.9
+b = 26.9         
+c = 28.3        
+d = 64.4
+e = 69.0
+f = 91.9
 #C
-g = 14.0
-h = 71.9
-j = 79.0
+g = 11.7
+h = 53.0
+j = 60.9
 #B
-k = 50.0
-m = 52.6
-n = 89.5
+k = 25.0
+m = 28.3
+n = 80.4
 
 def clear_players_ranges():
     global a_bet_fold
@@ -1922,10 +1924,13 @@ def buttonSolve():
 
         resultlist = []
         resultlist = calculator.find_equx(card1, card2, boardd)
-        #print(resultlist)
+        if debugprint:
+            print(resultlist)
         equx = round(float(resultlist[1]), 5)*100
-        #print(str(len(expanded_range)))
-        if len(expanded_range) < 13:
+        if debugprint:
+            print(str(len(expanded_range)))
+        # if len(expanded_range) < 13:
+        if debugprint:
             print("----------------")
             print(str_hand + " : " + str(equx))
             print("----------------")
